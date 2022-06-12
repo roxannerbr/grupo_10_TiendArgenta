@@ -1,4 +1,4 @@
-# grupo_10_CRPD
+# grupo_10_TiendArgenta
 Es una página enfocada en el público futbolero argento. Comercializando productos de distintas variedades sobre la historia mundialista Argentina, apoyando a la selección para "Qatar2022". Los productos a comercializar son: cotillón, camisetas, indumentaria, accesorios, figuras 3d y tecnología.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
