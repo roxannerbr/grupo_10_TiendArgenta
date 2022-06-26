@@ -13,8 +13,8 @@ Los integrantes son:
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Paginas referentes:                                                                                                                                                     
-• www.afashop.com.ar Nos gusta como esta aplicado el fondo de la página, que sería el diseño de la tela de la camiseta de la selección, el carrusel.
-• www.tiendariver.com Los iconos personalizados, la suscripción al newslester, y como se desplaza las opciones en las categorías al pasar el mouse.             
+• www.afashop.com.ar Nos gusta como esta aplicado el fondo de la página, que sería el diseño de la tela de la camiseta de la selección, el carrusel.                     
+• www.tiendariver.com Los iconos personalizados, la suscripción al newslester, y como se desplaza las opciones en las categorías al pasar el mouse.                       
 • www.nike.com/ar Nos pareció muy original en cuanto a la presentación del home.                                                                                 
 • store3.psg.fr/fr/ La ergonomía general de la pagina es muy buena, prolija y completa.                                                                          
 • www.realmadrid.com Tiene un footer muy completo y el estadio virtual.
