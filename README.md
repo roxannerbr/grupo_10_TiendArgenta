@@ -19,3 +19,5 @@ Paginas referentes:
 • store3.psg.fr/fr/ La ergonomía general de la pagina es muy buena, prolija y completa.                                                                          
 • www.realmadrid.com Tiene un footer muy completo y el estadio virtual.
 
+### Link al tablero de Trello
+![Trello](https://trello.com/b/go3IV3hT/grupo10)
