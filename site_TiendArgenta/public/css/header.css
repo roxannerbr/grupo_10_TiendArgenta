@@ -1,0 +1,33 @@
+
+header .logo img{
+    margin-left: -36px;
+    /* background: white; */
+    height: 73px;
+    width: 164px;
+}
+header .buscador{
+    background: white;
+}
+header .login_carrito img{
+    /* background: white; */
+    display: inline-block;
+    height: 58px;
+    margin: 2px;
+    width: 136px;
+}
+header ul li {
+    color:var(--azulPetroleo);
+   
+
+}
+header {
+    margin: 10px;
+    color: white;
+        background-color: white;
+        background-size: 100% 160px;
+        height: 160px;
+    
+}
+.contenedor{
+    margin: 10px;
+}
