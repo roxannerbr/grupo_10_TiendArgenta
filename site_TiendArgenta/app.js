@@ -1,6 +1,5 @@
 /* Livereload */
-const livereload = require('livereload');
-const liveReloadServer = livereload.createServer();
+
 
 /* Entry point */
 const express = require('express')
