@@ -9,6 +9,7 @@ Los integrantes son:
 • Patricio Cristaldo 21 años, estudiante de Desarrollo Web Full Stack con Digital House y Fundación Formar.// https://github.com/PatricioCristaldo                      
 • Cristian Ramirez 31 años, estudiante de Programación con Digital House y Fundación Formar, y DT "Deportivo La Solis".// https://github.com/CristianR9090             
 • Roxana Romaniello 34 años, estudiante de Desarrollo Web Full Stack con Digital House y Fundación Formar. 
+• Mariana Blanez 27 años, estudiante de Desarrollo Web FullStack con Digital House y Fundación Formar. Tambien CM, fotógrafa, y autodidacta en Diseño Gráfico. // https://github.com/MeridaBZ
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
