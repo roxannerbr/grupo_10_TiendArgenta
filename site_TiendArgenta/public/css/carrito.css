@@ -3,7 +3,17 @@ main .registro{
     margin: 10px;
     padding: 5%;
 }
-main input{
+main section{
+    margin: 0px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 370px;
+    height: 47px;
+}
+main .email{
     margin-top: 8px;
     margin-left: 5px;
 }
@@ -15,5 +25,34 @@ main button{
 }
 main .resumen{
     background-color: white;
-    
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 60px;
+    padding: 20px;
+}
+main select{
+    margin: 7px;
+    text-align: center;
+    padding: 2px;
+    width: 200px;
+}
+main p .cuenta{
+    margin: 10px;
+}
+main img{
+    border-style: ridge;
+    width: 200px;
+    height: 200px;
+}
+main .codigo{
+    background-color: white;
+    margin: 10px;
+    text-align: center;
+    padding: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }

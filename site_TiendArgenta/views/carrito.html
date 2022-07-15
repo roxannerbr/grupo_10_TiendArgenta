@@ -36,18 +36,27 @@
         </ul>
       </nav>
     </header>
+
     <main>
        <form action="/site_TiendArgenta/views/carrito.html" method="post">
         <div class="registro">
-            <p>La creación de una cuenta implica que pueda comprar más deprisa, mantenerse al dia sobre el proceso de la orden actual y comprobar el estado de ordenes anteriores.</p>
+            <section class="radio">
+            <label for="anonimo">Continuar como anónimo</label>
+            <input type="radio" name="anonimo">
+            <label for="cuenta">Conectarse a una cuenta</label>
+            <input type="radio" name="cuenta">
+            </section>
+            <p class="cuenta">La creación de una cuenta implica que pueda comprar más deprisa, mantenerse al dia sobre el proceso de la orden actual y comprobar el estado de ordenes anteriores.</p>
+            <div class="email">  
             <label for="email"></label>
             <input type="text" name="email" id="email" placeholder="e-mail">
+            </div>
         </div>
         <button type="submit">Siguiente</button>
         <div class="resumen">
             <h4>Resumen de compra</h4>
-            <p>Producto:</p><img src="/images/home/main/infantiles.jpg" alt="producto seleccionado"><button type="reset">X</button>
-            <p>Cantidad:</p>
+            <p class="detalle">Producto:</p><img src="/images/home/main/infantiles.jpg" alt="producto seleccionado"><button type="reset">X</button>
+            <p class="detalle">Cantidad:</p>
                <select name="cantidad" id="cantidad">
                   <option value="0">0</option>
                   <option value="1">1</option>
@@ -62,13 +71,17 @@
                   <option value="10">10</option>
                   <option value="mas">Compras por mayor, contactese con atención al cliente</option>
             </select>
-            <p>Precio</p><p>$8.000</p>
-            <p>Subtotal</p><p>$8.000</p>
-            <p>Intereses</p><p>$150</p>
-            <p>Envío</p><p>$0</p>
-            <p>TOTAL</p><p>$8.000</p>
-
+            <p class="detalle">Precio</p><p class="precio">$8.000</p>
+            <p class="detalle">Subtotal</p><p class="precio">$8.000</p>
+            <p class="detalle">Intereses</p><p class="precio">$150</p>
+            <p class="detalle">Envío</p><p class="precio">$0</p>
+            <p class="detalle">TOTAL</p><p class="precio">$8.000</p>
         </div>
+        <div class="codigo">
+        <label for="codigo">Agregar un código<br>de promoción</label>
+        <input type="text" name="codigo" id="codigo" placeholder="ingrese su código">
+        </div>
+        <button class="codigo">Aplicar promoción</button>
        </form>
     </main>
     <footer>
