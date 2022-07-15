@@ -1,0 +1,19 @@
+main .registro{
+    background-color: white;
+    margin: 10px;
+    padding: 5%;
+}
+main input{
+    margin-top: 8px;
+    margin-left: 5px;
+}
+main button{
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+    padding: 2%;
+}
+main .resumen{
+    background-color: white;
+    
+}
