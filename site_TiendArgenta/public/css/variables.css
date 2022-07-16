@@ -1,5 +1,5 @@
 /* Fuente a utilizar */
-@import url();
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500&family=Roboto:wght@300;400;500;700&display=swap');
 
 :root{
     /* Colores */
@@ -10,6 +10,7 @@
     --dorado: #BFB063;
     
     /* Fuentes */
+    
 
 
 

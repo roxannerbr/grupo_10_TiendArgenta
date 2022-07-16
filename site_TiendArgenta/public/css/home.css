@@ -1,0 +1,35 @@
+.home main .categorias img{
+    display: flex;
+    width: 332px;
+    margin: 40px 40px 10px 40px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    border-top-style: groove;
+    border-radius: 15px;
+}
+.home main p{
+    text-transform: uppercase;
+    color: rgb(9, 9, 84);
+    text-align: center;
+    -webkit-text-stroke: thick;
+}
+.home main .carrusel .banner{
+    width: 100%;
+}
+.home main .carrusel .banner img{
+    width: 100%;
+}
+.home main .carrusel .info{
+    display: none;   
+}
+/* main section .carrusel{
+    margin: 0px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 100%;
+} */
