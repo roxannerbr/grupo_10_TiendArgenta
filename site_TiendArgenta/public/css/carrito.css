@@ -33,6 +33,10 @@ main .resumen{
     margin: 60px;
     padding: 20px;
 }
+main hr{
+    width: 100%;
+    align-items: center;
+}
 main select{
     margin: 7px;
     text-align: center;
@@ -50,9 +54,23 @@ main img{
 main .codigo{
     background-color: white;
     margin: 10px;
-    text-align: center;
-    padding: 5%;
+    padding: 3%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    color: var(--azulPetroleo);
+    border-radius: 15px;
+    border: solid 1px var(--azulPetroleo);
+}
+main .codigo input{
+    width: 169px;
+    height: 45px;
+    border: solid 1px var(--azulPetroleo);
+}
+main .codigo button{
+    width: 157px;
+    height: 45px;
+    background-color: skyblue;
 }
