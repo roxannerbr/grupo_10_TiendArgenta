@@ -1,6 +1,7 @@
-.home main .categorias img{
+.home main section article img{
     display: flex;
     width: 332px;
+    margin: 40px;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
@@ -13,6 +14,7 @@
     color: rgb(9, 9, 84);
     text-align: center;
     -webkit-text-stroke: thick;
+    background-color:rgba(255, 255, 255, 0.7); 
 }
 .home main .carrusel .banner{
     width: 100%;
@@ -30,10 +32,10 @@
         width: 49%;
         display: inline-block;
     }
-    .home main .categorias img{
+    /* .home main .categorias img{
         width: 40%;
         margin: 50px 0 18px 50px;
-    }
+    } */
     .home main p{
         width: 40%;
         margin: 40px;
