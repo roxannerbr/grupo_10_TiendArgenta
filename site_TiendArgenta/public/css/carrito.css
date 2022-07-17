@@ -1,5 +1,5 @@
 .carrito main .registro{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.7);
     margin: 10px;
     padding: 5%;
 }
@@ -24,7 +24,7 @@
     padding: 2%;
 }
 .carrito main .resumen{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.7);
     display: flex;
     flex-direction: column;
     align-content: space-around;
@@ -52,7 +52,7 @@
     height: 200px;
 }
 .carrito main .codigo{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.7);
     margin: 10px;
     padding: 3%;
     display: flex;
@@ -73,4 +73,24 @@
     width: 157px;
     height: 45px;
     background-color: skyblue;
+}
+@media(min-width:460px){
+    .carrito main .registro{
+        width: 92%;
+    }
+    .carrito main .registro .radio{
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 85%;
+        margin: 5px;
+    }
+    .carrito main .registro p{
+        margin-bottom: 26px;
+    }
+    .carrito main .codigo{
+        width: 96%;
+        margin: 5px;
+        padding: 10px;
+    }
 }
