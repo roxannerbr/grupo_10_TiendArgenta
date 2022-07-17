@@ -11,68 +11,214 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="detalles">
     <header>
       <div class="contenedor">
-        <a class="logo" href="/"
-          ><img src="/images/home/header/logofinalizado.png" alt="" />
+        <button class="burger"><i class="fa-solid fa-futbol"></i></button>
+
+        <a class="logo" href="/">
+          <img src="/images/home/header/logofinalizado.png" alt="" />
         </a>
-        <form class="buscador" action="">
-          <input type="text" placeholder="" name="buscador" />
+
+        <form class="search" action="search">
+          <input type="text" placeholder="" name="search" />
           <button class="search"><i class="fa fa-search"></i></button>
         </form>
+
         <nav class="login_carrito">
           <a href=""><img src="/images/home/header/Login.png" alt="" /></a>
           <a href=""
             ><img src="/images/home/header/carrito_png.png" alt=""
           /></a>
         </nav>
-      </div>
 
-      <nav class="secciones_desplegables">
-        <ul>
-          <li><a href="">Accesorio</a></li>
-          <li><a href="">Indumentaria</a></li>
-          <li><a href="">Cotillon</a></li>
-          <li><a href="">Tecnología</a></li>
-        </ul>
-      </nav>
+        <nav class="secciones">
+          <ul>
+            <li><a href="">Accesorios</a></li>
+            <li><a href="">Indumentaria</a></li>
+            <li><a href="">Cotillón</a></li>
+            <li><a href="">Tecnología</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
-    <main class="detalles">
-     <h1>Título del producto</h1>   
-     <img src="/images/detalles/PRINCIPAL.jpg" alt="">
-<div class="miniaturas">
-         <img src="/images/detalles/PRINCIPAL.jpg" alt="">
-         <img src="/images/detalles/DORSO.jpg" alt="">
-         <img src="/images/detalles/FRENTE.jpg" alt="">
-         <img src="/images/detalles/DORSO2.jpg" alt="">
-</div>
-     <h2>stock :</h2>
-     <h3>Descripcion del producto</h3>
-     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo commodi soluta fuga quas voluptatem officiis, eos nulla? Natus, quibusdam. Quam molestias voluptates aspernatur dolor vitae animi magni non saepe fuga?</p>
-<h3>Talles</h3>
-     <div>
-         <label for="XS">XS</label>
-         <input type="radio" name="talle" id="XS" value="XS">
-         <label for="S">S</label>
-         <input type="radio" name="talle" id="S" value="S">
-         <label for="M">M</label>
-        <input type="radio" name="talle" id="M" value="M">
-        <label for="L">L</label>
-        <input type="radio" name="talle" id="XL" value="XL">
-        <label for="XL">XL</label>
-        <input type="radio" name="talle" id="XL" value="XL">
-     </div>
-     <h3>Cantidad</h3>
-     <textarea name="cantidad" id="cantidad" cols="3" rows="1">- 1 +</textarea>
-     <h4>subtotal</h4>
-     <p>$_____</p>
-     <h3>Total</h3>
-     <p>$_____</p>
-     <button type="submit">Agregar al carrito</button>
+    <main>
+      <h1>Título del producto</h1>
+      <section class="imagenes">
+        <div class="img_principal">
+          <img src="/images/detalles/PRINCIPAL.jpg" alt="" />
+        </div>
+        <div class="miniaturas">
+          <img src="/images/detalles/PRINCIPAL.jpg" alt="" />
+          <img src="/images/detalles/DORSO.jpg" alt="" />
+          <img src="/images/detalles/FRENTE.jpg" alt="" />
+          <img src="/images/detalles/DORSO2.jpg" alt="" />
+        </div>
+      </section>
+      <section class="descripcion">
+        <h2>Stock : 1</h2>
+        <div class="desc">
+          <h3>Descripcion del producto</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo commodi
+            soluta fuga quas voluptatem officiis, eos nulla? Natus, quibusdam.
+            Quam molestias voluptates aspernatur dolor vitae animi magni non saepe
+            fuga?
+          </p>
+        </div>
+        <h3>Talles</h3>
+        <div>
+          <label for="XS">XS</label>
+          <input type="radio" name="talle" id="XS" value="XS" />
+          <label for="S">S</label>
+          <input type="radio" name="talle" id="S" value="S" />
+          <label for="M">M</label>
+          <input type="radio" name="talle" id="M" value="M" />
+          <label for="L">L</label>
+          <input type="radio" name="talle" id="XL" value="XL" />
+          <label for="XL">XL</label>
+          <input type="radio" name="talle" id="XL" value="XL" />
+        </div>
+        <h3>Cantidad</h3>
+        <div class="agregar_al_carrito">
+          <div class="restar">-</div>
+          <input type="number" />
+          <div class="sumar">+</div>
+        </div>
+        <div class="envio"><i class="fa fa-truck"></i></div>
+        <h3>Envíos a todo el país</h3>
+        <a href="">Ver costo de envío</a>
+      <h3>Precio</h3>
+      <span>$10.000</span>
+      <small>10%</small>
+    
+        <h4>Descuento</h4>
+        <p>$1.000</p>
+        <h3>Total</h3>
+        <p>$9.000</p>
+        <button type="submit">Añadir al carrito</button>
+      </section>
+      <section class="relacionados">
+        <h2>Productos relacionados</h2>
+        <article>
+          <div><img src="" alt="" /></div>
+          <span></span>
+          <p></p>
+          <h4></h4>
+        </article>
+        <article>
+          <div><img src="/images/detalles/camisetafrente.jpg" alt="" /></div>
+          <span>10% de descuento</span>
+          <p></p>
+          <h4></h4>
+          <button>Añadir al carrito</button>
+        </article>
+        <article>
+          <div>
+            <img src="/images/detalles/camisetamujerfrente.jpg" alt="" />
+          </div>
+          <span>20% de descuento</span>
+          <p></p>
+          <h4></h4>
+          <button>Añadir al carrito</button>
+        </article>
+        <article>
+          <div>
+            <img src="/images/detalles/camisetaniñofrente.jpg" alt="" />
+          </div>
+          <span>15% de descuento</span>
+          <p></p>
+          <h4></h4>
+          <button>Añadir al carrito</button>
+        </article>
+      </section>
+      <div class="flecha">
+        <a href="#"><i class="fa-solid fa-up-long"></i></a>
+      </div>
     </main>
 
-    <footer></footer>
+    <footer>
+      <div class="row primary">
+        <div class="column links">
+          <ul>
+            <li>ESTO PODRIA SER UN MAPA DE SITIO</li>
+            <li>
+              <i class="fa-solid fa-square-rss"
+                ><a href="https://www.ole.com.ar/seleccion/">NOTICIAS</a></i
+              >
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"
+                ><a href="/contacto">CONTACTANOS</a></i
+              >
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-question"
+                ><a href="#">PREGUNTAS FRECUENTES</a></i
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="column about">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13136.557944164106!2d-58.395053169068795!3d-34.60063418736252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac708c492db%3A0xd382ce07c0e451c0!2sAsociaci%C3%B3n%20del%20F%C3%BAtbol%20Argentino!5e0!3m2!1ses-419!2sar!4v1657577299170!5m2!1ses-419!2sar"
+            width="400"
+            height="200"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            >Viamonte 1366</iframe
+          >
+        </div>
+        <div class="column links">
+          <h3>LOCALES</h3>
+          <ul>
+            <li>
+              <i class="fas fa-map-marker-alt"
+                ><a href="https://goo.gl/maps/4E5Zar7nWi8YCZkK6" target="_blank"
+                  >Viamonte 1366, CABA</a
+                ></i
+              >
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"
+                ><a href="https://goo.gl/maps/985ZB6jJi1JSJvyFA" target="_blank"
+                  >Brandsen 805, CABA</a
+                ></i
+              >
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"
+                ><a href="https://goo.gl/maps/ASpENfYAkSSafL6T7" target="_blank"
+                  >Av. Figueroa Alcorta 7597, CABA</a
+                ></i
+              >
+            </li>
+          </ul>
+          <br />
+          <h3>¡SEGUINOS EN NUESTRAS REDES!</h3>
+          <div class="redes">
+            <a href="https://www.facebook.com/" target="_blank"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a href="https://www.instagram.com/" target="_blank"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="https://www.twitter.com/" target="_blank"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+            <a href="https://www.whatsapp.com/" target="_blank"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <small>
+        &#169; Copyright 2022 &#8212; TiendArgenta.com.ar &#8212;
+        <span>Diseñado por Grupo 10</span></small
+      >
+    </footer>
   </body>
 </html>

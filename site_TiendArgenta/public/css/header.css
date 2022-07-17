@@ -1,4 +1,4 @@
-.home header .contenedor{
+ header .contenedor{
     background-color: white;
     margin: 10px;
     padding: 2%;
@@ -8,7 +8,7 @@
     justify-content: space-between;
     align-items: center;
 }
-.home header .contenedor .burger{
+ header .contenedor .burger{
     width: 25px;
     height: 25px;
     background-color:rgba(60, 207, 230, 0.40);
@@ -17,12 +17,12 @@
     border-radius: 15px;
 
 }
-.home header .contenedor .logo img{
+ header .contenedor .logo img{
     height: 85px;
     width: 85px;
 
 }
-.home header .contenedor .search input{
+ header .contenedor .search input{
     width: 120px;
     height: 20px;
     background-color: skyblue;
@@ -30,7 +30,7 @@
     border-radius: 15px;
 
 }
-.home header .contenedor .search button{
+ header .contenedor .search button{
     width: 29px;
     height: 22px;
     margin: 3px;
@@ -40,7 +40,7 @@
     border-radius: 18px;
 
 }
-.home header .contenedor .login_carrito img{
+header .contenedor .login_carrito img{
     width: 40px;
     height: 40px;
     margin: 2px;
@@ -48,7 +48,7 @@
     border-radius: 25px;
     background-color: rgba(60, 207, 230, 0.40);
 }
-.home header .contenedor .secciones{
+header .contenedor .secciones{
     display: none;
 }
 
