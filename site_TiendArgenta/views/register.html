@@ -12,36 +12,37 @@
     </header>
     <main>
         <section class="form-reg">
-            <h4>Crear cuenta</h4>
-            <p>Complete este formulario para poder crear una cuenta.</p>
+            <h1>Crear cuenta</h1>
+            <p class="textcrear">Complete este formulario para poder crear una cuenta.</p>
             <form action="" method="post">
                 <div>
-                    <input class="controles" type="text" name="Nombres" id="Nombres" placeholder="Ingrese su nombre" required>
-                    <small>Ingresa tu nombre</small>
+                    <input class="ingreso" type="text" name="Nombres" id="Nombres" placeholder="Ingrese su nombre" required>
+                    <small>*Ingresa tu nombre</small>
                 </div>
                 <div>
-                    <input class="controles" type="text" name="Nombres" id="Apellidos" placeholder="Ingrese su apellido" required>
-                    <small>Ingrese tu apellido</small>
+                    <input class="ingreso" type="text" name="Nombres" id="Apellidos" placeholder="Ingrese su apellido" required>
+                    <small>*Ingrese tu apellido</small>
                 </div>
                 <div>
-                    <input class="controles" type="email" name="Correo" id="Correo" placeholder="Ingrese su correo electr&oacute;nico" required>
-                    <small>Ingrese su E-mail</small>
+                    <input class="ingreso" type="email" name="Correo" id="Correo" placeholder="Ingrese su correo electr&oacute;nico" required>
+                    <small>*Ingrese su E-mail</small>
                 </div>
                 <div>
-                    <input class="controles" type="password" name="pass" id="pass" placeholder="Ingrese su contraseña" required>
-                    <small>Ingresa tu contraseña</small>
+                    <input class="ingreso" type="password" name="pass" id="pass" placeholder="Ingrese su contraseña" required>
+                    <small>*Ingresa tu contraseña</small>
                 </div>
                 <div>
-                    <input class="controles" type="password" name="pass2" id="pass2" placeholder="Confirme su contraseña" required>
-                    <small>Las contraseñas no coinciden</small>
+                    <input class="ingreso" type="password" name="pass2" id="pass2" placeholder="Confirme su contraseña" required>
+                    <small>*Las contraseñas no coinciden.</small>
                 </div>
                 <div>
-                    <p><input type="checkbox" name="check" required> Estoy de acuerdo con los <a href="#">Terminos y condiciones</a>.</p>
+                    <p><input type="checkbox" name="check" required> Acepto los <a href="#">Términos y Condiciones.</a></p>
                 </div>
                 <div> 
                     <button type="submit"class="boton">Registrarme</button>
                 </div>
-                <p>¿Ya tiene una cuenta?<a href="#"> Iniciar sesi&oacute;n</a></p>
+                <div class="linea"></div>
+                <p>¿Ya tienes cuenta?<a href="#"> Iniciar sesión</a></p>
             </form>
         </section>
     </main>

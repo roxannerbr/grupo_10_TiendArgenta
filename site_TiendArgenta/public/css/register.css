@@ -1,31 +1,32 @@
 .register .form-reg {
-    width: 400px;
+
+    width:  350px;
     background: white;
     padding: 20px;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
-    border-radius: 4px;
+    border-radius: 15px;
     font-family: 'Roboto';
     color: var(--azulPetroleo);
-    box-shadow: 7px 13px 37px var(--azulPetroleo); 
+    box-shadow: 7px 13px 37px var(--azulPetroleo);
+    
 }
-.register .form-reg h4 {
+.register .form-reg h1 {
     text-align: center;
-    font-size: 30px;
-    line-height: 10px;
     color: var(--azulPetroleo);
 }
-.register .controles {
+.register .ingreso {
     width: 100%;
     background: var(--azulPetroleo);
-    padding: 10px;
-    border-radius: 4px;
+    padding: 8px;
+    border-radius: 5px;
     margin-top: 10px;
     border: 1px solid var(--dorado);
     font-family: 'Roboto';
     font-size: 16px;
     color: white;
+    transition: 1s all;
 }
 .register .form-reg p {
     margin-top: 20px;
@@ -41,7 +42,9 @@
 }
 .register .form-reg a:hover{
     color: var(--cyan);
-    text-decoration: underline;
+}
+.register .form-reg small {
+    color: #ff0000;
 }
 .register .boton {
     width: 100%;
@@ -49,14 +52,25 @@
     border: none;
     padding: 12px;
     margin: 16px 0;
+    border-radius: 5px;
     cursor: pointer;
-    color: white;
-    font-size: 14px;
-    opacity: 100%;
+    color: var(--azulPetroleo);
+    font-size: 18px;
     align-content: center;
     }
 
 .register .boton:hover {
     background: var(--cyan) ;
-    opacity: 75%;
+    color: white;
+    
+}
+.register hr.linea{
+    color: var(--azulPetroleo);
+}
+.register .linea {
+    border-top: 1px solid var(--azulPetroleo);
+    height: 2px;
+    max-width: 400px;
+    padding: 0;
+    margin: 5px auto 0 auto;
 }
