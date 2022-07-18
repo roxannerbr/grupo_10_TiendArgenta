@@ -5,4 +5,5 @@
 }
 body{
     background-image: url(/images/home/FondoPagina.png);
+    font-family: var(--font);
 }
