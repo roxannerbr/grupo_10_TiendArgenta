@@ -8,6 +8,10 @@
     border-radius: 15px;
 }
 .detalles main .imagenes img {
+    border: solid 1px var(--azulPetroleo);
+    width: 350px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,18);
     width: 100%;
 }
 .detalles main .imagenes .miniaturas img{
@@ -16,22 +20,64 @@
 .detalles main .relacionados img{
     width: 25%;
 }
-.detalles main .descripcion h2 {
-    width: 94px;
+.detalles main .descripcion{
+    border: solid 1px var(--azulPetroleo);
+    border-radius: 15px;
+    width: auto;
     margin: 4px;
     background-color: white;
 }
-.detalles main .descripcion h3 {
-    width: 94px;
+.detalles main .descripcion h2 {
     margin: 4px;
-    background-color: white;
+}
+.detalles main .descripcion h3 {
+    border-top: 1px solid var(--azulPetroleo);
+    width: auto;
+    margin: 4px;
+    
 }
 .detalles main .descripcion .desc h3{
     text-decoration: underline;
 }
+.detalles main p{
+    font-size: x-large;
+}
 .detalles main .descripcion .desc{
+    background-color: var(--celesteClaro);
     margin: 4px;
-    background-color: white;
+  
+}
+.detalles main .descripcion .talles{
+    display: flex;
+    margin: 8px 0px;
+}
+
+.detalles main .descripcion .agregar_al_carrito{
+display: flex;
+width: 90px;
+}
+.detalles main .descripcion .agregar_al_carrito h3{
+    margin:5px 5px;
+}
+.detalles main .descripcion .agregar_al_carrito input{
+    width: 90px;
+}
+.detalles main .descripcion .agregar_al_carrito div{
+    margin: 0px 10px;
+    background-color: var(--celeste);
+    padding: 5px;
+    border: solid 1px var(--azulPetroleo);
+    border-radius: 3px;
+    color: white;
+
+}
+.detalles main .descripcion .envio{
+    display: flex;
+    align-items: baseline
+}
+.detalles main .descripcion .envio i{
+    color: var(--celeste);
+    margin: 5px;
 }
 .detalles main .descripcion span{
    
@@ -41,6 +87,48 @@
     color: green;
     font-size: 24px;
 }
+
+.detalles main .precio p{
+    background-color: white;
+    font-size: x-large;
+    text-decoration: underline;
+}
+.detalles main .precio h4{
+    margin:4px
+}
+.detalles main button{
+    padding: 3px;
+    color: white;
+    background-color: var(--celeste);
+    margin:6px;
+    border-radius: 8px;
+}
+
+.detalles main .relacionados span{
+    width: 254px;
+}
+.detalles main .relacionados article{
+    background-color: var(--dorado);
+    display: flex;
+    flex-wrap: nowrap;
+    border: solid 1px var(--azulPetroleo);
+    border-radius: 15px;
+    align-items: center;
+}
+.detalles main .relacionados img{
+    margin: 1px;
+    display: flex;
+    border: solid 1px var(--azulPetroleo);
+    border-radius: 15px;
+}
+.detalles main .relacionados p{
+    font-size: unset;
+}
+.detalles main .relacionados button{
+    padding: 6px;
+}
+
+
 
 @media(min-width:769px){}
 
