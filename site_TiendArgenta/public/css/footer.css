@@ -6,59 +6,59 @@ footer {
     outline: none;
 }
 
-.row {
+footer .row {
     padding: 1em 1em;
 }
-.row.primary {
+footer .row.primary {
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;
     align-items: stretch;
 }
-.column {
+footer .column {
     width: 100%;
     display: flex;
     flex-direction: column;
     padding: 0 0.5em;
     padding-bottom: 2em;
 }
-.column img{
+footer .column img{
     width: 25%;
     padding-bottom: 0.5em
 }
-h3 {
+footer h3 {
     width: 100%;
     text-align: center;
     color: var(--dorado);
     white-space: nowrap;
     padding-bottom: 0.5em;
 }
-ul {
+footer ul {
     list-style: none;
     display: flex;
     flex-direction: column;
     padding: 0;
     margin: 0;
 }
-li:not(:first-child) {
+footer li:not(:first-child) {
     margin-top: 0.8em;
 }
-ul li a {
+footer ul li a {
     padding-left: 15px;
     color: var(--azulPetroleo);
     text-decoration: none;
 }
-ul li a:hover {
+footer ul li a:hover {
     color: var(--dorado);
     transition: .5s all;
 }
-.about p {
+footer .about p {
     color: var(--azulOscuro);
     text-align: justify;
     line-height: 1;
     margin: 0;
     font-weight: 600;
 }
-.links i {
+footer .links i {
     color: var(--cyan);
 }
 div.redes{
@@ -66,7 +66,7 @@ div.redes{
     justify-content: space-around;
     font-size: 30px;
 }
-.redes i:hover{
+footer .redes i:hover{
     color: var(--dorado);
     transition: .5s all;
 }
@@ -74,19 +74,19 @@ footer small{
     display: flex;
     justify-content: center;
 }
-.footer-menu{
+footer .footer-menu{
     float: left;
     margin-top: 10px;
 }
-.footer-menu a{
+footer .footer-menu a{
     color: #cfd2d6;
     padding: 6px;
     text-decoration: none;
 }
-.footer-menu a:hover{
+footer .footer-menu a:hover{
     color: #27bcda;
 }
-.copyright p {
+footer .copyright p {
     font-size: 0.9em;
     text-align: center;
 }
