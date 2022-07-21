@@ -60,7 +60,6 @@ header .contenedor-header .icons img{
     width: 35px;
     object-fit: cover;
 }
-
 header .contenedor-header .burger input[type="checkbox"]{
     display: none;
 }
@@ -75,21 +74,29 @@ header .contenedor-header .burger label{
 header .contenedor-header .burger nav{
     display: block;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: center;
 }
-header .contenedor-header .burger nav ul{
-    padding-bottom: 20px;
-}
+
 header .contenedor-header .burger nav ul li{
-    margin: 20px 0;
+    display: block;
+    list-style: none;
+    line-height: 40px;
 }
 header .contenedor-header .burger nav a{
-    color: white;
+    color: var(--cyan);
+    text-decoration: none;
     text-transform: uppercase;
     font-size: 18px;
+    display: block;
+    padding: 5px 5px;
 }
-
+header .contenedor-header .burger ul li:hover{
+        background-color: var(--dorado);
+    }
+    header .contenedor-header .burger ul li:hover a{
+        color:white;
+    }
 header .contenedor-header .nav-desktop{
     display: none;
 }
@@ -100,10 +107,10 @@ header .contenedor-header .nav-desktop{
         flex-direction: row;
         flex-wrap: wrap;
     }
-    header .contenedor-header .burger{
+    header .contenedor-header .burger label{
         display: none;
     }
-    header .contenedor-header .nav-desktop{
+    header .contenedor-header .burger{
         display: block;
         width: 100%;
     }
@@ -112,7 +119,7 @@ header .contenedor-header .nav-desktop{
         font-weight: 500;
         text-decoration:none;
     }
-    header .contenedor-header .nav-desktop ul{
+    header .contenedor-header .burger ul{
         display: flex;
         justify-content: center;
         border-top: solid 1px var(--dorado);
@@ -120,15 +127,15 @@ header .contenedor-header .nav-desktop{
         align-items: center;
         list-style: none;
     }
-    header .contenedor-header .nav-desktop ul li {
-        padding: 1rem 0;
+    header .contenedor-header .burger ul li {
+        padding: 1rem;
         width: 20%;
         text-align: center;
     }
-    header .contenedor-header .nav-desktop ul li:hover{
+    header .contenedor-header .burger ul li:hover{
         background-color: var(--dorado);
     }
-    header .contenedor-header .nav-desktop ul li:hover a{
+    header .contenedor-header .burger ul li:hover a{
         color:white;
     }
 }
