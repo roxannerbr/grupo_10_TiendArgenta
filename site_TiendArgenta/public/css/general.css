@@ -4,6 +4,8 @@
     margin: 0;
 }
 body{
+    max-width: 1440px;
+    margin: 0 auto;
     background-image: url(/images/home/FondoPagina.png);
     font-family: var(--font);
 }
