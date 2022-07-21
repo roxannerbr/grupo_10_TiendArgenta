@@ -42,63 +42,79 @@
         </nav>
     </header>
 
-    <main>
-        <form action="/site_TiendArgenta/views/carrito.html" method="post">
-          <div class="registro">
-            <section class="radio">
-            <label for="anonimo">Continuar como anónimo</label>
-            <input type="radio" name="seleccion">
+    <main class="buy">
 
-            <label for="cuenta">Conectarse a una cuenta</label>
-            <input type="radio" name="seleccion">
+        <section class="radio">
+
+          <label for="anonimo">Continuar como anónimo</label>
+          <input class="select" type="radio" name="seleccion">
+
+          <label for="cuenta">Conectarse a una cuenta</label>
+          <input class="select" type="radio" name="seleccion">
 
         </section>
-          <p class="cuenta">La creación de una cuenta implica que pueda comprar más deprisa, mantenerse al dia sobre el proceso de la orden actual y comprobar el estado de ordenes anteriores.</p>
-            <div class="email">  
-            <label for="email"></label>
-            <input type="text" name="email" id="email" placeholder="e-mail">
-            </div>
 
-        </div>
+        <section class="submit">
 
-        <button type="submit">Siguiente</button>
+        <p class="cuenta">La creación de una cuenta implica que pueda comprar más deprisa, mantenerse al dia sobre el proceso de la orden actual y comprobar el estado de ordenes anteriores.</p>
+          <div class="email">  
+          <label for="email"></label>
+          <input type="text" name="email" id="email" placeholder="e-mail">
+          </div>        
+            
+        <button type="submit">Subscribirse</button>
+        </section>
 
-        <div class="resumen">
-          <h4>Resumen de compra</h4>
-            <hr>
-          <p class="detalle">Producto: Camiseta de niño</p>
-          <img src="/images/home/indumentaria/camisetaniñofrente.jpg" alt="producto seleccionado"><button type="reset">X</button>
-          <p class="detalle">Cantidad:</p>
-          <select name="cantidad" id="cantidad">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="mas">Compras por mayor, contactese con atención al cliente</option>
-          </select>
-            <p class="detalle">Precio........................ $8.000</p>
-            <hr>
-            <p class="detalle">Subtotal..................... $8.000</p>
-            <p class="detalle">Intereses....................... $150</p>
-            <p class="detalle">Envío................................ $0</p>
-            <br>
-            <p class="detalle">TOTAL...................... $8.000</p>
-        </div>
+        <div class="compra">
+
+        <section class="product">
+          <article>
+            <h4>Resumen de compra</h4>
+          <hr>
+
+          <div>
+            <img src="/images/home/indumentaria/camisetaniñofrente.jpg" alt="producto seleccionado">
+          </div>
+
+          <h3>Producto: Camiseta de niño</h3>
+
+          <p class="secundario">$8000</p>
+          <p class="descuento">25%</p>
+          <p class="principal">$6000</p>
+
+          <div class="añadir">
+            <div class="restar">-</div>
+            <input type="number">
+            <div class="agregar">+</div>
+          </div>
+
+          <div class="button">
+          <button type="reset"><i class="fa-solid fa-trash-can"></i></button>
+          <button><i class="fa-solid fa-pen-to-square"></i></button>
+          </div>
+
+        </article>
+      </section>
+<div class="total">
+      <section class="resumen">
+            
+          <p class="detalle">Precio........................ $8000</p>
+          <hr>
+          <p class="detalle">Subtotal..................... $8000</p>
+          <p class="detalle">Descuentos................... $2000</p>
+          <p class="detalle">Intereses....................... $0</p>
+          <p class="detalle">Envío................................ $0</p>
+          <br>
+          <p class="detalle">TOTAL........................ $6000</p>
+      </section>
 
         <div class="codigo">
-          <label for="codigo">Agregar un código de promoción</label>
+          <label class="promo" for="codigo">Agregar un código de promoción</label>
           <input type="text" name="codigo" id="codigo" placeholder="ingrese su código">
           <button class="codigo">Aplicar promoción</button>
-        </div>  
-
-       </form>
+        </div> 
+        </div>
+      </div>
 
     </main>
 
