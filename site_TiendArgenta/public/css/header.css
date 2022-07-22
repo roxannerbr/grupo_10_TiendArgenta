@@ -9,58 +9,33 @@ header marquee{
 header marquee i{
     color: white;
 }
-header .content-header{
+header .contenedor-header{
     display: flex;
     width: 100%;
+    position: relative;
     align-items: center;
     align-content: center;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-direction: row;
+    flex-wrap: wrap;
+}
+header .contenedor-header .logo{
+    display: flex;
+    width: 20%;
     
 }
 
-header .content-header .burger label{
-    font-size: 30px;
-    color: var(--dorado);
-    display: inline-block;
-}
-header .content-header .burger input{
-    display: none;
-}
-header .content-header .burger input:checked ~ nav{
-    display: none;
-}
-header .content-header .burger nav{
+header .contenedor-header .logo img{
     width: 100%;
-    display: block;
-    margin-top: 20px;
-    text-align: center;
-}
-header .content-header .burger nav ul{
-    padding-bottom: 20px;
-}
-header .content-header .burger nav ul li{
-    margin: 20px 0;
-}
-header .content-header .burger nav a{
-    color: white;
-    text-transform: uppercase;
-    font-size: 18px;
-}
-header .content-header .logo{
-    width: 100px;
-    display: flex;
-}
-
-header .content-header .logo img{
-    width: 100%;
-    height: 100%;
+    height: 100px;
+    margin-left: 10px;
     object-fit: cover;
 }
-header .content-header form{
+header .contenedor-header form{
     display: flex;
+    margin-right: 10px;
 }
-input[type="search"]{
+header .contenedor-header input[type="search"]{
     width: 40px;
     background-color: white;
     background-image: url('/images/home/header/search-icon.png');
@@ -70,64 +45,118 @@ input[type="search"]{
     padding: 11px 10px 10px 25px;
     font-size: 12px;
     border-radius: 50px;
-    transition: all .5s; 
+    transition: .5s; 
     outline: none; 
 }
-input[type="search"]:focus{
+header .contenedor-header input[type="search"]:focus{
     width: 130px;
     background-position: left center;
     color: #000;
     background-color: var(--dorado);
 }
-header .content-header .icons{
+header .contenedor-header .icons{
     display: flex;
-    
+    justify-content: flex-end;
+    width: 70%;
 }
-header .content-header .icons img{
+
+header .contenedor-header .icons img{
     display: flex;
     margin: 2px;
     width: 35px;
     object-fit: cover;
 }
-header .content-header .nav-desktop{
+header .contenedor-header .burger{
+    display: flex;
+    width: 100%;
+    border-top: solid 1px var(--dorado);
+}
+header .contenedor-header .burger input[type="checkbox"]{
+    display: none;
+}
+header .contenedor-header .burger input[type="checkbox"]:checked ~ nav{
+    display: none;
+}
+header .contenedor-header .burger label{
+    display: flex;
+    font-size: 30px;
+    color: var(--dorado);
+    position: absolute;
+    top: 37px;
+    right: 10px;
+}
+header .contenedor-header .burger nav{
+    width: 100%;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+}
+
+header .contenedor-header .burger nav ul li{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    line-height: 40px;
+}
+header .contenedor-header .burger nav a{
+    color: var(--cyan);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    display: block;
+    padding: 5px 5px;
+}
+header .contenedor-header .burger ul li:hover{
+        background-color: var(--dorado);
+    }
+    header .contenedor-header .burger ul li:hover a{
+        color:white;
+    }
+header .contenedor-header .nav-desktop{
     display: none;
 }
 
 @media(min-width:768px){
-    header .content-header{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+    header .contenedor-header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
     }
-    header .content-header .burger{
+    header .contenedor-header .burger{
+        display: flex;
+        width: 100%;
+        border-top: solid 1px var(--dorado);
+    }
+    header .contenedor-header .burger label{
         display: none;
     }
-    header .content-header .nav-desktop{
-        display: block;
-        width: 100%;
+    header .contenedor-header .burger input[type="checkbox"]:checked ~ nav{
+        display: flex;
+        justify-content: space-around;
     }
     a:link, a:visited, a:active {
         color: var(--azulPetroleo);
         font-weight: 500;
         text-decoration:none;
     }
-    header .content-header .nav-desktop ul{
+    header .contenedor-header .burger ul{
         display: flex;
-        justify-content: center;
-        border-top: solid 1px var(--dorado);
+        justify-content: space-evenly;
         flex-direction: row;
         align-items: center;
         list-style: none;
     }
-    header .content-header .nav-desktop ul li {
-        padding: 1rem 0;
-        width: 20%;
+    header .contenedor-header .burger ul li {
+        width: 100%;
         text-align: center;
+        margin: 0 20px;
     }
-    header .content-header .nav-desktop ul li:hover{
+    header .contenedor-header .burger ul li:hover{
         background-color: var(--dorado);
     }
-    header .content-header .nav-desktop ul li:hover a{
+    header .contenedor-header .burger ul li:hover a{
         color:white;
     }
 }
