@@ -1,4 +1,4 @@
-.register .form-reg {
+.login .form-reg {
 
     width:  350px;
     background: white;
@@ -12,11 +12,11 @@
     box-shadow: 7px 13px 37px var(--azulPetroleo);
     
 }
-.register .form-reg h1 {
+.login .form-reg h1 {
     text-align: center;
     color: var(--azulPetroleo);
 }
-.register .ingreso {
+.login .ingreso {
     width: 100%;
     background: var(--azulPetroleo);
     padding: 8px;
@@ -28,25 +28,25 @@
     color: white;
     transition: 1s all;
 }
-.register .form-reg p {
+.login .form-reg p {
     margin-top: 20px;
     text-align: center;
     font-size: 12px;
     line-height: 20px;
     color: var(--azulPetroleo);
 }
-.register .form-reg a {
+.login .form-reg a {
     color: var(--azulPetroleo);
     font-weight: 600;
     text-decoration: none;
 }
-.register .form-reg a:hover{
+.login .form-reg a:hover{
     color: var(--cyan);
 }
-.register .form-reg small {
+.login .form-reg small {
     color: #ff0000;
 }
-.register .boton {
+.login .boton {
     width: 100%;
     background: var(--dorado);
     border: none;
@@ -59,15 +59,15 @@
     align-content: center;
     }
 
-.register .boton:hover {
+.login .boton:hover {
     background: var(--cyan) ;
     color: white;
     
 }
-.register hr.linea{
+.login hr.linea{
     color: var(--azulPetroleo);
 }
-.register .linea {
+.login .linea {
     border-top: 1px solid var(--azulPetroleo);
     height: 2px;
     max-width: 400px;
