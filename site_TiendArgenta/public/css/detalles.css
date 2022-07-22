@@ -136,6 +136,15 @@ margin-bottom: 10px;
     background-color: var(--dorado);
     color: white;
 }
+.detalles main .relacionados h2{
+text-align: center;
+font-size: 2em;
+width: auto;
+height: auto;
+background-color: white;
+border: solid 1px var(--azulPetroleo);
+border-radius: 15px;
+}
 .detalles main .relacionados h4{
     color: black;
 }
@@ -185,9 +194,25 @@ margin-bottom: 10px;
 }
 
 @media(min-width:769px){
+    .detalles main{
+        margin-left: 10px;
+    margin-right: 10px;
+    }
         .detalles main .desk{
-            display: flex;
+            display: flex; 
         } 
+        
+        .detalles main .descripcion h2{
+            margin-bottom: 10px;
+        }
+        .detalles main .descripcion .desc{
+            background-color: var(--celesteClaro);
+     margin: 4px;
+     margin-bottom: 20px;
+        }
+        .detalles main .relacionados{
+            margin-top: 25px;
+        }
         .detalles main .relacionados h2{
             text-align: center;
     font-size: 2em;
@@ -202,17 +227,18 @@ margin-bottom: 10px;
             font-size: 1.5em;
         }
         .detalles main .relacionados span{
-            font-size: 2em;
+            font-size: 1.5em;
             color: green;
         }
         .detalles main .relacionados article{
             margin: 10px;
-            background-color: var(--dorado);
             display: flex;
-            flex-wrap: nowrap;
+            flex-direction: column;
+            width: 800px;
+            background-color: var(--dorado);
             border: solid 1px var(--azulPetroleo);
             border-radius: 15px;
-            align-items: center;
+            text-align: center;
         }
         .detalles main .relacionados img{
             margin: 1px;
@@ -237,4 +263,8 @@ margin-bottom: 10px;
             background-color: var(--dorado);
             color: white;
         }
+.detalles main .relacionados .articulos {
+display: flex;
+    flex-direction: row;
+}
 }

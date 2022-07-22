@@ -1,43 +1,56 @@
 <!DOCTYPE html>
-<html lang="es">
+  <html lang="es">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Detalles</title>
+      <link rel="stylesheet" href="/css/styles.css" />
+      <!--ICONS-->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+      <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    </head>
+
+<body class="detalles">
   <header>
-    <marquee loop="infinite" behavior="scroll">ENVIOS GRATIS A PARTIR DE $11.999</marquee>
-      <div class="content-header">
-        <div class="logo">
-        <a href="/">
-        <img src="/images/home/header/logofinalizado.png" alt="logo de Tienda Argenta" >
-        </a>
+      <marquee loop="infinite" behavior="scroll">ENVIOS GRATIS A PARTIR DE $11.999</marquee>
+        <div class="content-header">
+          <div class="logo">
+          <a href="/">
+          <img src="/images/home/header/logofinalizado.png" alt="logo de Tienda Argenta" >
+          </a>
+          </div>
+          <div class="icons">
+              <form  action="">
+                <input type="search" name="search" placeholder="Buscar">
+              </form>
+              <a href="/login">
+                <img src="/images/home/header/Login.png" alt="imagen de login con gorrito" />
+              </a>
+              <a href="/carrito">
+                <img src="/images/home/header/carrito_png.png" alt="carrito de compras con bandera argentina"/>
+              </a>
+          </div>
+          <div class="burger">
+            <input type="checkbox" name="burger" id="burger">
+            <label for="burger"><i class="fas fa-bars"></i></div>
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/#">Productos</a></li>
+                    <li><a href="/#">Novedades</a></li>
+                    <li><a href="/#">Contactanos</a></li>
+                </ul>
+          </nav>
         </div>
-        <div class="icons">
-            <form  action="">
-              <input type="search" name="search" placeholder="Buscar">
-            </form>
-            <a href="/login">
-              <img src="/images/home/header/Login.png" alt="imagen de login con gorrito" />
-            </a>
-            <a href="/carrito">
-              <img src="/images/home/header/carrito_png.png" alt="carrito de compras con bandera argentina"/>
-            </a>
         </div>
-        <div class="burger">
-          <input type="checkbox" name="burger" id="burger">
-          <label for="burger"><i class="fas fa-bars"></i></div>
-          <nav class="nav-desktop">
-              <ul>
-                  <li><a href="/">Inicio</a></li>
-                  <li><a href="/#">Productos</a></li>
-                  <li><a href="/#">Novedades</a></li>
-                  <li><a href="/#">Contactanos</a></li>
-              </ul>
-        </nav>
-      </div>
-      </div>
-  </header>
+    </header>
 
     <main>
+      <h1>Título del producto</h1>
       <div class="desk">
         <section class="imagenes">
-          <h1>Título del producto</h1>
           <div class="img_principal">
             <img src="/images/detalles/PRINCIPAL.jpg" alt="" />
           </div>
@@ -99,29 +112,31 @@
       </div>
       <section class="relacionados">
         <h2>Productos relacionados</h2>
-        <article>
-          <img src="/images/detalles/camisetafrente.jpg" alt="" />
-          <h4>Camiseta selección hombre</h4>
-          <span>10% de descuento</span>
-          <p>$10.000</p>
-          <button>Ver más</button>
-        </article>
-        <article>
-          <img src="/images/detalles/camisetamujerfrente.jpg" alt="" />
-
-          <h4>Camiseta selección mujer</h4>
-          <span>20% de descuento</span>
-          <p>$10.000</p>
-          <button>Ver más</button>
-        </article>
-        <article>
-          <img src="/images/detalles/camisetaniñofrente.jpg" alt="" />
-
-          <h4>Camiseta selección niños</h4>
-          <span>15% de descuento</span>
-          <p>$8.000</p>
-          <button>Ver más</button>
-        </article>
+        <div class="articulos">
+          <article>
+            <img src="/images/detalles/camisetafrente.jpg" alt="" />
+            <h4>Camiseta selección hombre</h4>
+            <span>10% de descuento</span>
+            <p>$10.000</p>
+            <button>Ver más</button>
+          </article>
+          <article>
+            <img src="/images/detalles/camisetamujerfrente.jpg" alt="" />
+          
+            <h4>Camiseta selección mujer</h4>
+            <span>20% de descuento</span>
+            <p>$10.000</p>
+            <button>Ver más</button>
+          </article>
+          <article>
+            <img src="/images/detalles/camisetaniñofrente.jpg" alt="" />
+          
+            <h4>Camiseta selección niños</h4>
+            <span>15% de descuento</span>
+            <p>$8.000</p>
+            <button>Ver más</button>
+          </article>
+        </div class="articulos"v>
       </section>
       <div class="flecha">
         <a href="#"><i class="fa-solid fa-up-long"></i></a>
@@ -132,83 +147,44 @@
       <div class="row primary">
         <div class="column links">
           <ul>
-            <li>ESTO PODRIA SER UN MAPA DE SITIO</li>
-            <li>
-              <i class="fa-solid fa-square-rss"
-                ><a href="https://www.ole.com.ar/seleccion/">NOTICIAS</a></i
-              >
-            </li>
-            <li>
-              <i class="fa-solid fa-envelope"
-                ><a href="/contacto">CONTACTANOS</a></i
-              >
-            </li>
-            <li>
-              <i class="fa-solid fa-circle-question"
-                ><a href="#">PREGUNTAS FRECUENTES</a></i
-              >
-            </li>
-          </ul>
+            <li><i class="fas fa-home"><a href="/">INICIO</a></i></li>
+            <li><i class="fas fa-trophy"><a href="#">PRODUCTOS</a></i></li>
+            <li><i class="fas fa-rss"><a href="#">NOVEDADES</a></i></li>
+            <li><i class="fas fa-envelope"><a href="#">CONTACTANOS</a></i></li>
+            <li><i class="fas fa-newspaper"><a href="https://www.ole.com.ar/seleccion/">NOTICIAS</a></i></li>
+            <li><i class="fas fa-question-circle"><a href="#">PREGUNTAS FRECUENTES</a></i></li>
+          </ul>    
         </div>
         <div class="column about">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13136.557944164106!2d-58.395053169068795!3d-34.60063418736252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac708c492db%3A0xd382ce07c0e451c0!2sAsociaci%C3%B3n%20del%20F%C3%BAtbol%20Argentino!5e0!3m2!1ses-419!2sar!4v1657577299170!5m2!1ses-419!2sar"
-            width="400"
-            height="200"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            >Viamonte 1366</iframe
-          >
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13136.557944164106!2d-58.395053169068795!3d-34.60063418736252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac708c492db%3A0xd382ce07c0e451c0!2sAsociaci%C3%B3n%20del%20F%C3%BAtbol%20Argentino!5e0!3m2!1ses-419!2sar!4v1657577299170!5m2!1ses-419!2sar"
+          width="100%"
+          height="200"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          >Viamonte 1366</iframe
+        >
         </div>
         <div class="column links">
           <h3>LOCALES</h3>
           <ul>
-            <li>
-              <i class="fas fa-map-marker-alt"
-                ><a href="https://goo.gl/maps/4E5Zar7nWi8YCZkK6" target="_blank"
-                  >Viamonte 1366, CABA</a
-                ></i
-              >
-            </li>
-            <li>
-              <i class="fas fa-map-marker-alt"
-                ><a href="https://goo.gl/maps/985ZB6jJi1JSJvyFA" target="_blank"
-                  >Brandsen 805, CABA</a
-                ></i
-              >
-            </li>
-            <li>
-              <i class="fas fa-map-marker-alt"
-                ><a href="https://goo.gl/maps/ASpENfYAkSSafL6T7" target="_blank"
-                  >Av. Figueroa Alcorta 7597, CABA</a
-                ></i
-              >
-            </li>
+            <li> <i class="fas fa-map-marker-alt"><a href="https://goo.gl/maps/4E5Zar7nWi8YCZkK6" target="_blank">Viamonte 1366, CABA</a></i></li>
+            <li> <i class="fas fa-map-marker-alt"><a href="https://goo.gl/maps/985ZB6jJi1JSJvyFA" target="_blank">Brandsen 805, CABA</a></i></li>
+            <li> <i class="fas fa-map-marker-alt"><a href="https://goo.gl/maps/ASpENfYAkSSafL6T7" target="_blank">Av. Figueroa Alcorta 7597, CABA</a></i></li>
           </ul>
-          <br />
+          <br>
           <h3>¡SEGUINOS EN NUESTRAS REDES!</h3>
           <div class="redes">
-            <a href="https://www.facebook.com/" target="_blank"
-              ><i class="fa-brands fa-facebook"></i
-            ></a>
-            <a href="https://www.instagram.com/" target="_blank"
-              ><i class="fa-brands fa-instagram"></i
-            ></a>
-            <a href="https://www.twitter.com/" target="_blank"
-              ><i class="fa-brands fa-twitter"></i
-            ></a>
-            <a href="https://www.whatsapp.com/" target="_blank"
-              ><i class="fa-brands fa-whatsapp"></i
-            ></a>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square"></i></a>
+            <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter-square"></i></a>
+            <a href="https://www.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp-square"></i></a>
           </div>
         </div>
       </div>
-      <small>
-        &#169; Copyright 2022 &#8212; TiendArgenta.com.ar &#8212;
-        <span>Diseñado por Grupo 10</span></small
-      >
+      <small> &#169; Copyright 2022 &#8212; TiendArgenta.com.ar &#8212;</small>
     </footer>
   </body>
 </html>
