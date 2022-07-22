@@ -12,24 +12,28 @@ header marquee i{
 header .contenedor-header{
     display: flex;
     width: 100%;
+    position: relative;
     align-items: center;
     align-content: center;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-direction: row;
-    
+    flex-wrap: wrap;
 }
 header .contenedor-header .logo{
-    width: 100px;
     display: flex;
+    width: 20%;
+    
 }
 
 header .contenedor-header .logo img{
     width: 100%;
-    height: 100%;
+    height: 100px;
+    margin-left: 10px;
     object-fit: cover;
 }
 header .contenedor-header form{
     display: flex;
+    margin-right: 10px;
 }
 header .contenedor-header input[type="search"]{
     width: 40px;
@@ -52,34 +56,45 @@ header .contenedor-header input[type="search"]:focus{
 }
 header .contenedor-header .icons{
     display: flex;
-    
+    justify-content: flex-end;
+    width: 70%;
 }
+
 header .contenedor-header .icons img{
     display: flex;
     margin: 2px;
     width: 35px;
     object-fit: cover;
 }
+header .contenedor-header .burger{
+    display: flex;
+    width: 100%;
+    border-top: solid 1px var(--dorado);
+}
 header .contenedor-header .burger input[type="checkbox"]{
     display: none;
 }
-header .contenedor-header .burger input[type="checkbox"]:checked ~ nav.nav-desktop{
+header .contenedor-header .burger input[type="checkbox"]:checked ~ nav{
     display: none;
 }
 header .contenedor-header .burger label{
-    display: inline-block;
+    display: flex;
     font-size: 30px;
     color: var(--dorado);
+    position: absolute;
+    top: 37px;
+    right: 10px;
 }
 header .contenedor-header .burger nav{
-    display: block;
     width: 100%;
+    display: block;
     margin-top: 10px;
     text-align: center;
 }
 
 header .contenedor-header .burger nav ul li{
-    display: block;
+    display: flex;
+    flex-direction: column;
     list-style: none;
     line-height: 40px;
 }
@@ -103,16 +118,23 @@ header .contenedor-header .nav-desktop{
 
 @media(min-width:768px){
     header .contenedor-header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+    }
+    header .contenedor-header .burger{
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        width: 100%;
+        border-top: solid 1px var(--dorado);
     }
     header .contenedor-header .burger label{
         display: none;
     }
-    header .contenedor-header .burger{
-        display: block;
-        width: 100%;
+    header .contenedor-header .burger input[type="checkbox"]:checked ~ nav{
+        display: flex;
+        justify-content: space-around;
     }
     a:link, a:visited, a:active {
         color: var(--azulPetroleo);
@@ -121,16 +143,15 @@ header .contenedor-header .nav-desktop{
     }
     header .contenedor-header .burger ul{
         display: flex;
-        justify-content: center;
-        border-top: solid 1px var(--dorado);
+        justify-content: space-evenly;
         flex-direction: row;
         align-items: center;
         list-style: none;
     }
     header .contenedor-header .burger ul li {
-        padding: 1rem;
-        width: 20%;
+        width: 100%;
         text-align: center;
+        margin: 0 20px;
     }
     header .contenedor-header .burger ul li:hover{
         background-color: var(--dorado);
