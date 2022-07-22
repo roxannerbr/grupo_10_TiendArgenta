@@ -1,57 +1,133 @@
- header .contenedor{
+header{
+    width: 100%;
     background-color: white;
-    margin: 10px;
-    padding: 2%;
-    height: 70px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
 }
- header .contenedor .burger{
-    width: 25px;
-    height: 25px;
-    background-color:rgba(60, 207, 230, 0.40);
-    color: rgba(53, 27, 186, 0.841);
-    border: none;
-    border-radius: 15px;
-
-}
- header .contenedor .logo img{
-    height: 85px;
-    width: 85px;
-
-}
- header .contenedor .search input{
-    width: 120px;
-    height: 20px;
-    background-color: skyblue;
-    border: solid 1px var(--azulPetroleo);
-    border-radius: 15px;
-
-}
- header .contenedor .search button{
-    width: 29px;
-    height: 22px;
-    margin: 3px;
-    background-color: skyblue;
+header marquee{
+    background-color: var(--cyan);
     color: white;
-    border: solid 1px var(--azulPetroleo);
-    border-radius: 18px;
+}
+header marquee i{
+    color: white;
+}
+header .content-header{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    flex-direction: row;
+    
+}
 
+header .content-header .burger label{
+    font-size: 30px;
+    color: var(--dorado);
+    display: inline-block;
 }
-header .contenedor .login_carrito img{
+header .content-header .burger input{
+    display: none;
+}
+header .content-header .burger input:checked ~ nav{
+    display: none;
+}
+header .content-header .burger nav{
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+}
+header .content-header .burger nav ul{
+    padding-bottom: 20px;
+}
+header .content-header .burger nav ul li{
+    margin: 20px 0;
+}
+header .content-header .burger nav a{
+    color: white;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+header .content-header .logo{
+    width: 100px;
+    display: flex;
+}
+
+header .content-header .logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+header .content-header form{
+    display: flex;
+}
+input[type="search"]{
     width: 40px;
-    height: 40px;
-    margin: 2px;
-    border: solid 1px var(--azulPetroleo);
-    border-radius: 25px;
-    background-color: rgba(60, 207, 230, 0.40);
+    background-color: white;
+    background-image: url('/images/home/header/search-icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+	background-size: 20px;
+    padding: 11px 10px 10px 25px;
+    font-size: 12px;
+    border-radius: 50px;
+    transition: all .5s; 
+    outline: none; 
 }
-header .contenedor .secciones{
+input[type="search"]:focus{
+    width: 130px;
+    background-position: left center;
+    color: #000;
+    background-color: var(--dorado);
+}
+header .content-header .icons{
+    display: flex;
+    
+}
+header .content-header .icons img{
+    display: flex;
+    margin: 2px;
+    width: 35px;
+    object-fit: cover;
+}
+header .content-header .nav-desktop{
     display: none;
 }
 
-
-
-
+@media(min-width:768px){
+    header .content-header{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    header .content-header .burger{
+        display: none;
+    }
+    header .content-header .nav-desktop{
+        display: block;
+        width: 100%;
+    }
+    a:link, a:visited, a:active {
+        color: var(--azulPetroleo);
+        font-weight: 500;
+        text-decoration:none;
+    }
+    header .content-header .nav-desktop ul{
+        display: flex;
+        justify-content: center;
+        border-top: solid 1px var(--dorado);
+        flex-direction: row;
+        align-items: center;
+        list-style: none;
+    }
+    header .content-header .nav-desktop ul li {
+        padding: 1rem 0;
+        width: 20%;
+        text-align: center;
+    }
+    header .content-header .nav-desktop ul li:hover{
+        background-color: var(--dorado);
+    }
+    header .content-header .nav-desktop ul li:hover a{
+        color:white;
+    }
+}
