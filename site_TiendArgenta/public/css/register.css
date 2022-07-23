@@ -1,5 +1,4 @@
-.register .form-reg {
-
+.register main .form-reg {
     width:  350px;
     background: white;
     padding: 20px;
@@ -12,11 +11,11 @@
     box-shadow: 7px 13px 37px var(--azulPetroleo);
     
 }
-.register .form-reg h1 {
+.register main .form-reg h1 {
     text-align: center;
     color: var(--azulPetroleo);
 }
-.register .ingreso {
+.register main .ingreso {
     width: 100%;
     background: var(--azulPetroleo);
     padding: 8px;
@@ -28,25 +27,25 @@
     color: white;
     transition: 1s all;
 }
-.register .form-reg p {
+.register main .form-reg p {
     margin-top: 20px;
     text-align: center;
     font-size: 12px;
     line-height: 20px;
     color: var(--azulPetroleo);
 }
-.register .form-reg a {
+.register main .form-reg a {
     color: var(--azulPetroleo);
     font-weight: 600;
     text-decoration: none;
 }
-.register .form-reg a:hover{
+.register main .form-reg a:hover{
     color: var(--cyan);
 }
-.register .form-reg small {
+.register main .form-reg small {
     color: #ff0000;
 }
-.register .boton {
+.register main .boton {
     width: 100%;
     background: var(--dorado);
     border: none;
@@ -59,15 +58,15 @@
     align-content: center;
     }
 
-.register .boton:hover {
+.register main .boton:hover {
     background: var(--cyan) ;
     color: white;
     
 }
-.register hr.linea{
+.register main hr.linea{
     color: var(--azulPetroleo);
 }
-.register .linea {
+.register main .linea {
     border-top: 1px solid var(--azulPetroleo);
     height: 2px;
     max-width: 400px;
