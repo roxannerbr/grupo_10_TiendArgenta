@@ -1,0 +1,76 @@
+.login .form-reg {
+
+    width:  350px;
+    background: white;
+    padding: 20px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    font-family: 'Roboto';
+    color: var(--azulPetroleo);
+    box-shadow: 7px 13px 37px var(--azulPetroleo);
+    
+}
+.login .form-reg h1 {
+    text-align: center;
+    color: var(--azulPetroleo);
+}
+.login .ingreso {
+    width: 100%;
+    background: var(--azulPetroleo);
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid var(--dorado);
+    font-family: 'Roboto';
+    font-size: 16px;
+    color: white;
+    transition: 1s all;
+}
+.login .form-reg p {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    color: var(--azulPetroleo);
+}
+.login .form-reg a {
+    color: var(--azulPetroleo);
+    font-weight: 600;
+    text-decoration: none;
+}
+.login .form-reg a:hover{
+    color: var(--cyan);
+}
+.login .form-reg small {
+    color: #ff0000;
+}
+.login .boton {
+    width: 100%;
+    background: var(--dorado);
+    border: none;
+    padding: 12px;
+    margin: 16px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--azulPetroleo);
+    font-size: 18px;
+    align-content: center;
+    }
+
+.login .boton:hover {
+    background: var(--cyan) ;
+    color: white;
+    
+}
+.login hr.linea{
+    color: var(--azulPetroleo);
+}
+.login .linea {
+    border-top: 1px solid var(--azulPetroleo);
+    height: 2px;
+    max-width: 400px;
+    padding: 0;
+    margin: 5px auto 0 auto;
+}

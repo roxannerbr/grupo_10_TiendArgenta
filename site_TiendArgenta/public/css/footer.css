@@ -1,72 +1,67 @@
 footer {
-    font-size: 16px;
+    font-size: 14px;
     background-color: white;
     box-sizing: border-box;
     border: none;
     outline: none;
 }
 
-.row {
-    padding: 1em 1em;
-}
-.row.primary {
-    display: grid;
-    grid-template-columns: 2fr 2fr 2fr;
-    align-items: stretch;
-}
-.column {
-    width: 100%;
+footer .row.primary {
     display: flex;
     flex-direction: column;
-    padding: 0 0.5em;
-    padding-bottom: 2em;
+    align-items: stretch;
 }
-.column img{
-    width: 25%;
-    padding-bottom: 0.5em
+footer .column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 10px;
 }
-h3 {
+footer h3 {
     width: 100%;
     text-align: center;
     color: var(--dorado);
     white-space: nowrap;
     padding-bottom: 0.5em;
 }
-ul {
+footer ul {
     list-style: none;
     display: flex;
     flex-direction: column;
     padding: 0;
     margin: 0;
 }
-li:not(:first-child) {
+footer li:not(:first-child) {
     margin-top: 0.8em;
 }
-ul li a {
-    padding-left: 15px;
+footer ul li a {
+    padding-left: 8px;
     color: var(--azulPetroleo);
+    font-family: var(--font);
+    font-weight: 400;
     text-decoration: none;
+    text-align:start;
 }
-ul li a:hover {
+footer ul li a:hover {
     color: var(--dorado);
     transition: .5s all;
 }
-.about p {
+footer .about p {
     color: var(--azulOscuro);
     text-align: justify;
     line-height: 1;
     margin: 0;
     font-weight: 600;
 }
-.links i {
+footer .links i {
     color: var(--cyan);
 }
-div.redes{
+footer div.redes{
     display: flex;
     justify-content: space-around;
     font-size: 30px;
 }
-.redes i:hover{
+footer .redes i:hover{
     color: var(--dorado);
     transition: .5s all;
 }
@@ -74,24 +69,26 @@ footer small{
     display: flex;
     justify-content: center;
 }
-.footer-menu{
+footer .footer-menu{
     float: left;
     margin-top: 10px;
 }
-.footer-menu a{
+footer .footer-menu a{
     color: #cfd2d6;
     padding: 6px;
     text-decoration: none;
 }
-.footer-menu a:hover{
+footer .footer-menu a:hover{
     color: #27bcda;
 }
-.copyright p {
+footer .copyright p {
     font-size: 0.9em;
     text-align: center;
 }
-@media screen and (max-width: 768px) {
-    .row.primary {
-        grid-template-columns: 1fr;
+@media screen and (min-width: 768px) {
+    footer .row.primary {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 }

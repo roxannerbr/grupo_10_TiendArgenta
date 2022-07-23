@@ -4,102 +4,146 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Tienda Argenta</title>
     <link rel="stylesheet" href="/css/styles.css" />
-    <script
-      src="https://kit.fontawesome.com/9c9712e45b.js"
-      crossorigin="anonymous"
-    ></script>
+    <!--ICONS-->
+    <link rel="icon" href="/images/home/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   </head>
   
   <body class="home">
-    <header class="header">
-      <div class="contenedor">
-
-        <button class="burger"><i class="fa-solid fa-futbol"></i></button>
-
-        <a class="logo" href="/">
-          <img src="/images/home/header/logofinalizado.png" alt="" />
-        </a>
-
-        <form class="search" action="search">
-          <input type="text" placeholder="" name="search" />
-          <button class="search"><i class="fa fa-search"></i></button>
-        </form>
-
-        <nav class="login_carrito">
-          <a href=""><img src="/images/home/header/Login.png" alt="" /></a>
-          <a href=""><img src="/images/home/header/carrito_png.png" alt=""
-          /></a>
-        </nav>
-      </div>
-
-        <nav class="secciones">
-          <ul class="seccion">
-            <li><a href="">Accesorios</a></li>
-            <li><a href="">Indumentaria</a></li>
-            <li><a href="">Cotillón</a></li>
-            <li><a href="">Tecnología</a></li>
-          </ul>
-        </nav>
+    <header>
+      <marquee loop="infinite" behavior="scroll">ENVIOS GRATIS A PARTIR DE $11.999</marquee>
+        <div class="contenedor-header">
+          <div class="logo">
+          <a href="/">
+          <img src="/images/home/header/logofinalizado.png" alt="logo de Tienda Argenta" />
+          </a>
+          </div>
+          <div class="icons">
+              <form action="">
+                <input type="search" name="search" placeholder="Buscar"/>
+              </form>
+              <a class href="/login">
+                <img src="/images/home/header/Login.png" alt="imagen de login con gorrito" />
+              </a>
+              <a class href="/carrito">
+                <img src="/images/home/header/carrito_png.png" alt="carrito de compras con bandera argentina"/>
+              </a>
+          </div>
+          <div class="burger">
+            <input type="checkbox" name="burger" id="burger" checked>
+            <label for="burger"><i class="fas fa-bars"></i></label>
+          
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/#">Productos</a></li>
+                    <li><a href="/#">Novedades</a></li>
+                    <li><a href="/#">Contactanos</a></li>
+                </ul>
+            </nav>
+          </div>
+        </div>
+        </div>
     </header>
-
     <main>
-      <section>
-       <!--  <div class="video"> 
+      <!-- <section>
+        <div class="video"> 
             <iframe width="560" height="315" src="https://www.youtube.com/embed/gm3J5adMXfw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div> -->
+        </div> 
+      </section>-->
+      <!--CATEGORIAS-->
+      <section class="cards">
+        <article class="card card1">
+          <div class="container">
+            <a href="/detalles"><img src="/images/home/indumentaria/infantiles.png" alt="camiseta niño"/></a>
+          </div>
+          <div class="nombre">
+            <h2>INDUMENTARIA</h2>
+          </div>
+        </article>
+        <article class="card card2">
+          <div class="container">
+            <a href=""><img src="/images/home/cotillon/promosyofertas.png" alt="promos"/></a></div>
+          <div class="nombre">
+            <h2>COTILLON</h2>
+          </div>
+        </article>
+        <article class="card card3">
+          <div class="container">
+            <a href=""><img src="/images/home/novedades/perfume.png" alt="novedades"/></a>
+          </div>
+          <div class="nombre">
+            <h2>NOVEDADES</h2>
+          </div>
+        </article>
+        <article class="card card4">
+          <div class="container">
+            <a href=""><img src="/images/home/impresiones/impresiones_3d.png" alt="impresiones 3d"/></a>
+          </div>
+          <div class="nombre">
+            <h2>FIGURAS 3D</h2>
+          </div>
+        </article>
+        <article class="card card5">
+          <div class="container">
+          <a href=""><img src="/images/home/tecnologia/smartxiaomi55.png" alt=""></a>
+          </div>
+          <div class="nombre">
+            <h2>TECNOLOGIA</h2>
+          </div>
+        </article>
+        <article class="card card6">
+          <div class="container">
+          <a href=""><img src="/images/home/novedades/manta.png" alt=""></a>
+          </div>
+          <div class="nombre">
+            <h2>VARIOS</h2>
+          </div>
+        </article>
       </section>
-      
-    <section class="categorias">
-        <article>
-          <a href=""><img src="/images/home/indumentaria/camisetaniñofrente.jpg" alt="camiseta niño"/><p>indumentaria</p></a>
-          
-        </article>
-        <article>
-          <a href=""><img src="/images/home/cotillon/promosyofertas.jpg" alt="promos"/><p>Promos</p></a>
-          
-        </article>
-        <article>
-          <a href=""><img src="/images/home/novedades/perfume.jpg" alt="novedades"/><p>Novedades</p></a>
-          
-        </article>
-        <article>
-          <a href=""><img src="/images/home/impresiones/impresiones_3d.jpg" alt="impresiones 3d"/><p>impresiones 3d</p></a>
-          
-        </article>
-        <article>
-          <a href=""><img src="/images/home/tecnologia/smartxiaomi55.jpg" alt=""><p>tecnologia</p></a>
-          
-        </article>
-      </section>
-
-      <section class="carrusel">
-        <div class="banner">
-          <img src="/images/home/carrousel/bannermessi.jpg" alt="banner messi" />
+      <!--CARROUSEL-->
+        <div class="container-all">
+            <input type="radio" name="imagen-slide" id="1" hidden>
+            <input type="radio" name="imagen-slide" id="2" hidden>
+            <input type="radio" name="imagen-slide" id="3" hidden>
+            <input type="radio" name="imagen-slide" id="4" hidden>
+          <div class="slide">
+            <div class="img-slide">
+              <img src="/images/home/carrousel/bannermessi.png" alt="">
+            </div>
+            <div class="img-slide">
+              <img src="/images/home/main/envios_gratis.png" alt="">
+            </div>
+            <div class="img-slide">
+              <img src="/images/home/carrousel/categorias_carrusel.png" alt="">
+            </div>
+            <div class="img-slide">
+              <img src="/images/home/main/modos_de_pago.png" alt="">
+            </div>
+          </div>
         </div>
-        <div class="info">
-          <img src="/images/home/main/envios_gratis.jpg" alt="envios gratis" />
-          <a href=""><img src="/images/home/main/modos_de_pago.jpg" alt="modos de pago" /></a>
-          <a href=""><img src="/images/home/carrousel/categorias_carrusel.jpg" alt="enlace a categorias"/></a>
-        </div>
-      </section>
-    </main> 
+    </main>
     <!--FOOTER-->
     <footer>
       <div class="row primary">
         <div class="column links">
           <ul>
-            <li>ESTO PODRIA SER UN MAPA DE SITIO</li>
-            <li><i class="fa-solid fa-square-rss"><a href="https://www.ole.com.ar/seleccion/">NOTICIAS</a></i></li>
-            <li><i class="fa-solid fa-envelope"><a href="/contacto">CONTACTANOS</a></i></li>
-            <li><i class="fa-solid fa-circle-question"><a href="#">PREGUNTAS FRECUENTES</a></i></li>
+            <li><i class="fas fa-home"><a href="/">INICIO</a></i></li>
+            <li><i class="fas fa-trophy"><a href="#">PRODUCTOS</a></i></li>
+            <li><i class="fas fa-rss"><a href="#">NOVEDADES</a></i></li>
+            <li><i class="fas fa-envelope"><a href="#">CONTACTANOS</a></i></li>
+            <li><i class="fas fa-newspaper"><a href="https://www.ole.com.ar/seleccion/">NOTICIAS</a></i></li>
+            <li><i class="fas fa-question-circle"><a href="#">PREGUNTAS FRECUENTES</a></i></li>
           </ul>    
         </div>
         <div class="column about">
           <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13136.557944164106!2d-58.395053169068795!3d-34.60063418736252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac708c492db%3A0xd382ce07c0e451c0!2sAsociaci%C3%B3n%20del%20F%C3%BAtbol%20Argentino!5e0!3m2!1ses-419!2sar!4v1657577299170!5m2!1ses-419!2sar"
-          width="400"
+          width="100%"
           height="200"
           style="border: 0"
           allowfullscreen=""
@@ -118,14 +162,14 @@
           <br>
           <h3>¡SEGUINOS EN NUESTRAS REDES!</h3>
           <div class="redes">
-            <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-            <a href="https://www.whatsapp.com/" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square"></i></a>
+            <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter-square"></i></a>
+            <a href="https://www.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp-square"></i></a>
           </div>
         </div>
       </div>
-      <small> &#169; Copyright 2022 &#8212; TiendArgenta.com.ar &#8212; <span>Diseñado por Grupo 10</span></small>
+      <small> &#169; Copyright 2022 &#8212; TiendArgenta.com.ar &#8212;</small>
     </footer>
   </body>
 </html>
