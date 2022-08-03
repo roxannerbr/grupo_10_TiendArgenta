@@ -21,4 +21,4 @@ Paginas referentes:
 • www.realmadrid.com Tiene un footer muy completo y el estadio virtual.
 
 ### Link al tablero de Trello
-![Trello](https://trello.com/b/go3IV3hT/grupo10)
+https://trello.com/invite/b/go3IV3hT/a24a3e5810e8f245606444ac76c6f357/grupo10
