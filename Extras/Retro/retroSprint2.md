@@ -23,4 +23,4 @@
 - Atrasarse con Playground y Trabajos Practicos.
 
  ___
-![STARFISH SPRINT2](https://raw.githubusercontent.com/CrisNied/Grupo_8_Integrador/master/extras/retroSprint/Starfish-SPRINT1.png)
+![STARFISH SPRINT2](https://github.com/roxannerbr/grupo_10_TiendArgenta/blob/develop/Extras/Retro/StarfishRetro2.jpg)
