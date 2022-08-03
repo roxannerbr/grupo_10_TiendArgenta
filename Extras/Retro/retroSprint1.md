@@ -20,4 +20,4 @@
 - Dejar de lado herramientas sin sentido.
 
  ___
-![STARFISH SPRINT1](https://raw.githubusercontent.com/CrisNied/Grupo_8_Integrador/master/extras/retroSprint/Starfish-SPRINT1.png)
+![STARFISH SPRINT1](https://github.com/roxannerbr/grupo_10_TiendArgenta/blob/develop/Extras/Retro/StarfishRetro1.jpg)
