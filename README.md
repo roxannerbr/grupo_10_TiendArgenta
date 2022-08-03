@@ -13,9 +13,13 @@ ___
 ___
 ## Paginas Referencia:
 [AFA](http://www.afashop.com.ar/): Nos gusta como esta aplicado el fondo de la página, que sería el diseño de la tela de la camiseta de la selección, el carrusel.
-[RIVER](http://www.tiendariver.com/): Los iconos personalizados, la suscripción al newslester, y como se desplaza las opciones en las categorías al pasar el mouse
+
+[RIVER](http://www.tiendariver.com/): Los iconos personalizados, la suscripción al newslester, y como se desplaza las opciones en las categorías al pasar el mouse.
+
 [NIKE](http://www.nike.com/ar/): Nos pareció muy original en cuanto a la presentación del home.
+
 [PSG](http://store3.psg.fr/fr/): La ergonomía general de la pagina es muy buena, prolija y completa.
+
 [REAL MADRID](http://www.realmadrid.com): Tiene un footer muy completo y el estadio virtual.
 ___
 ### TRELLO:
