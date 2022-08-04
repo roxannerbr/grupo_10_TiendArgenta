@@ -28,7 +28,7 @@
     text-align: center;
     margin: 10px;
 }
-@media(min-width:460px){
+@media(min-width:425px){
     .home main section article{
         width: 49%;
         display: inline-block;
