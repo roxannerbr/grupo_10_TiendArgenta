@@ -46,6 +46,15 @@
 .login .form-reg small {
     color: #ff0000;
 }
+.login .form-reg div.recForm {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+}
+
 .login .boton {
     width: 100%;
     background: var(--dorado);
