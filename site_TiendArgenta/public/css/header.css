@@ -9,6 +9,7 @@ header marquee{
 header marquee i{
     color: white;
 }
+/*LOGO*/
 header .contenedor-header{
     display: flex;
     width: 100%;
@@ -24,13 +25,15 @@ header .contenedor-header .logo{
     width: 20%;
     
 }
-
 header .contenedor-header .logo img{
     width: 100%;
     height: 100px;
     margin-left: 10px;
     object-fit: cover;
 }
+
+/*ICONOS*/
+
 header .contenedor-header form{
     display: flex;
     margin-right: 10px;
@@ -66,6 +69,9 @@ header .contenedor-header .icons img{
     width: 35px;
     object-fit: cover;
 }
+
+/*MENU*/
+
 header .contenedor-header .burger{
     display: flex;
     width: 100%;
@@ -90,6 +96,7 @@ header .contenedor-header .burger nav{
     display: block;
     margin-top: 10px;
     text-align: center;
+    color: var(--cyan);
 }
 
 header .contenedor-header .burger nav ul li{
@@ -97,13 +104,16 @@ header .contenedor-header .burger nav ul li{
     flex-direction: column;
     list-style: none;
     line-height: 40px;
+    color: var(--cyan);
 }
-header .contenedor-header .burger nav a{
+header .contenedor-header .burger nav ul li a{
     color: var(--cyan);
     text-decoration: none;
     text-transform: uppercase;
     font-size: 18px;
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 5px 5px;
 }
 header .contenedor-header .burger ul li:hover{
@@ -115,7 +125,30 @@ header .contenedor-header .burger ul li:hover{
 header .contenedor-header .nav-desktop{
     display: none;
 }
+/*DESPLEGABLE */
+header .contenedor-header .burger ul ul {
+    display:none;
+    top:100%;
+    left:0;
+    background-color: var(--cyan);    
+}
+/*ITEMS DESPLEGABLE*/
+header .contenedor-header .burger ul ul li {
+    width: 100%;
+    color: var(--dorado);
+    
+}
+/*ENLACE DESPLEGABLE*/
+header .contenedor-header .burgerul ul ul li a {
+    line-height: 120%;
+    padding: 10px 15px;
+}
+/*DESPLEGABLE HOVER*/
+header .contenedor-header .burger ul li:hover > ul {
+    display:block;
+}
 
+/*MEDIA*/
 @media(min-width:768px){
     header .contenedor-header{
     display: flex;
@@ -158,5 +191,22 @@ header .contenedor-header .nav-desktop{
     }
     header .contenedor-header .burger ul li:hover a{
         color:white;
+    }
+    /*DESPLEGABLE */
+    header .contenedor-header .burger nav ul ul {
+        display: none;
+    }
+    /*ITEMS DESPLEGABLE*/
+    header .contenedor-header .burger nav ul ul li {
+        color: var(--dorado);
+        display: table-cell;
+    }
+    /*ENLACE DESPLEGABLE*/
+    header .contenedor-header .burger nav ul ul li a {
+        line-height: 100%;
+    }
+    /*DESPLEGABLE HOVER*/
+    header .contenedor-header .burger nav ul li:hover > ul {
+        display:block;
     }
 }
