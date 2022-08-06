@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('./partials/head',{title: 'Login'}) %>
+<body class="login">
+  <%- include('./partials/header') %>
+    <main>
+        <section class="form-reg">
+            <h1>Iniciar sesion</h1>
+            <form action="" method="post">
+                <div>
+                    <input class="ingreso" type="email" name="Correo" id="Correo" placeholder="Ingrese su correo electr&oacute;nico" required>
+                    <small>*Ingrese su E-mail</small>
+                </div>
+                <div>
+                    <input class="ingreso" type="password" name="pass" id="pass" placeholder="Ingrese su contraseña" required>
+                    <small>*Ingresa tu contraseña</small>
+                </div>
+                <div class="recForm">
+                    <p><input type="checkbox" name="check"> Recordarme</p>
+                    <p><a href="/">Olvide mi contraseña</a></p>
+                </div>
+                <div> 
+                    <button type="submit"class="boton">Iniciar sesion</button>
+                </div>
+                <div class="linea"></div>
+                <p>¿No tenes cuenta?<a href="/register"> Registrarme</a></p>
+            </form>
+        </section>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>

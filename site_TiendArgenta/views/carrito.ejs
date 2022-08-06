@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('./partials/head',{title: 'Carrito'}) %>
+
+  <body class="carrito">
+    <%- include('./partials/header') %>
+    <main class="buy">
+
+        <section class="radio">
+
+          <label for="anonimo">Continuar como anónimo</label>
+          <input class="select" type="radio" name="seleccion">
+
+          <label for="cuenta">Conectarse a una cuenta</label>
+          <input class="select" type="radio" name="seleccion">
+
+        </section>
+
+        <section class="submit">
+
+        <p class="cuenta">La creación de una cuenta implica que pueda comprar más deprisa, mantenerse al dia sobre el proceso de la orden actual y comprobar el estado de ordenes anteriores.</p>
+          <div class="email">  
+          <label for="email"></label>
+          <input type="text" name="email" id="email" placeholder="e-mail">
+          </div>        
+            
+        <button type="submit">Subscribirse</button>
+        </section>
+
+        <div class="compra">
+
+        <section class="product">
+          <article>
+            <h4>Resumen de compra</h4>
+          <hr>
+
+          <div>
+            <img src="/images/home/indumentaria/camisetaniñofrente.jpg" alt="producto seleccionado">
+          </div>
+
+          <h3>Producto: Camiseta de niño</h3>
+
+          <p class="secundario">$8000</p>
+          <p class="descuento">25%</p>
+          <p class="principal">$6000</p>
+
+          <div class="añadir">
+            <div class="restar">-</div>
+            <input type="number">
+            <div class="agregar">+</div>
+          </div>
+
+          <div class="button">
+          <button type="reset"><i class="fa-solid fa-trash-can"></i></button>
+          <button><i class="fa-solid fa-pen-to-square"></i></button>
+          </div>
+
+        </article>
+      </section>
+<div class="total">
+      <section class="resumen">
+            
+          <p class="detalle">Precio........................ $8000</p>
+          <hr>
+          <p class="detalle">Subtotal..................... $8000</p>
+          <p class="detalle">Descuentos................... $2000</p>
+          <p class="detalle">Intereses....................... $0</p>
+          <p class="detalle">Envío................................ $0</p>
+          <br>
+          <p class="detalle">TOTAL........................ $6000</p>
+      </section>
+
+        <div class="codigo">
+          <label class="promo" for="codigo">Agregar un código de promoción</label>
+          <input type="text" name="codigo" id="codigo" placeholder="ingrese su código">
+          <button class="codigo">Aplicar promoción</button>
+        </div> 
+        </div>
+      </div>
+
+    </main>
+
+    <!--FOOTER-->
+    <%- include('./partials/footer') %>
+
+    </body>
+    
+    </html>

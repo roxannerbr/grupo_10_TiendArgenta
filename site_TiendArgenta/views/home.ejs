@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('./partials/head',{title: 'TiendArgenta'}) %>
+  
+  <body class="home">
+    
+    <main>
+      <%- include('./partials/header') %>
+      <!--OFERTAS-->
+      <h1>NUEVOS INGRESOS</h1>
+      <section class="nuevos">
+        <article class="ofertas">
+          <div class="imgBox">
+            <img src="/images/home/ofertas/sinbg-infantiles.png" alt="Camiseta de oferta" class="itemOferta">
+          </div>
+          <div class="DatosBox">
+            <h4>Camiseta Infantil</h4>
+            <h2 class="price">$12.999<small>,00</small></h2>
+            <a href="/carrito.html" class="comprar">Comprar</a>
+          </div>
+        </article>
+        <article class="ofertas">
+          <div class="imgBox">
+            <img src="/images/home/ofertas/sinbg-infantiles.png" alt="Camiseta de oferta" class="itemOferta">
+          </div>
+          <div class="DatosBox">
+            <h4>Camiseta Messi Titular</h4>
+            <h2 class="price">$17.999<small>,00</small></h2>
+            <a href="/carrito.html" class="comprar">Comprar</a>
+          </div>
+        </article>
+        <article class="ofertas">
+          <div class="imgBox">
+            <img src="/images/home/ofertas/sinbg-infantiles.png" alt="Camiseta de oferta" class="itemOferta">
+          </div>
+          <div class="DatosBox">
+            <h4>Camiseta Mujer Suplente</h4>
+            <h2 class="price">$13.999<small>,00</small></h2>
+            <a href="/carrito.html" class="comprar">Comprar</a>
+          </div>
+        </article>
+        <article class="ofertas">
+          <div class="imgBox">
+            <img src="/images/home/ofertas/sinbg-infantiles.png" alt="Camiseta de oferta" class="itemOferta">
+          </div>
+          <div class="DatosBox">
+            <h4>Camiseta Hombre Suplente</h4>
+            <h2 class="price">$13.999<small>,00</small></h2>
+            <a href="/carrito.html" class="comprar">Comprar</a>
+          </div>
+        </article>
+      </section>
+      <!--CATEGORIAS-->
+      <h1>CONOCÉ TODOS NUESTROS PRODUCTOS</h1>
+      <section class="cards">
+        <article class="card card1">
+          <div class="container">
+            <a href="/detalles"><img src="/images/home/indumentaria/infantiles.png" alt="camiseta niño"/></a>
+          </div>
+          <div class="nombre">
+            <h2>INDUMENTARIA</h2>
+          </div>
+        </article>
+        <article class="card card2">
+          <div class="container">
+            <a href=""><img src="/images/home/cotillon/promosyofertas.png" alt="promos"/></a></div>
+          <div class="nombre">
+            <h2>COTILLON</h2>
+          </div>
+        </article>
+        <article class="card card3">
+          <div class="container">
+            <a href=""><img src="/images/home/novedades/perfume.png" alt="novedades"/></a>
+          </div>
+          <div class="nombre">
+            <h2>NOVEDADES</h2>
+          </div>
+        </article>
+        <article class="card card4">
+          <div class="container">
+            <a href=""><img src="/images/home/impresiones/impresiones_3d.png" alt="impresiones 3d"/></a>
+          </div>
+          <div class="nombre">
+            <h2>COLECCIONABLES</h2>
+          </div>
+        </article>
+      </section>
+      <!--CARROUSEL-->
+        <div class="container-all">
+            <input type="radio" name="imagen-slide" id="1" hidden>
+            <input type="radio" name="imagen-slide" id="2" hidden>
+            <input type="radio" name="imagen-slide" id="3" hidden>
+            <input type="radio" name="imagen-slide" id="4" hidden>
+          <div class="slide">
+            <div class="img-slide">
+              <img src="/images/home/carrousel/bannermessi.png" alt="">
+            </div>
+            <div class="img-slide">
+              <img src="/images/home/main/envios_gratis.png" alt="">
+            </div>
+            <div class="img-slide">
+              <img src="/images/home/carrousel/categorias_carrusel.png" alt="">
+            </div>
+            <div class="img-slide">
+              <img src="/images/home/main/modos_de_pago.png" alt="">
+            </div>
+          </div>
+        </div>
+    </main>
+    <!--FOOTER-->
+    <%- include('./partials/footer') %>
+  </body>
+</html>
