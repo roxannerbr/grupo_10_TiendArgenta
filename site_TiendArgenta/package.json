@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "nodemon --ext js,html --ignore public"
+    "watch": "nodemon --ext js,ejs --ignore public"
   },
   "keywords": [],
   "author": "",
