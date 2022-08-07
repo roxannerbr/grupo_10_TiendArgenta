@@ -1,5 +1,4 @@
-/*OFERTAS*/
-.home main .nuevos{
+.hombre main .nuevos{
     display: grid;
     grid-template-columns: repeat(auto-fit, max(3, 1fr));
     margin: 20px;
@@ -7,14 +6,14 @@
     justify-content: space-around;
     justify-items: center
 }
-.home main h1{
+.hombre main h1{
     width: 100%;
     background: var(--dorado);
     color: white;
     text-align: center;
     padding: 10px 0;
 }
-.home main .ofertas {
+.hombre main .ofertas {
     position: relative;
     width: 300px;
     height: 380px;
@@ -22,7 +21,7 @@
     border-radius: 20px;
     overflow: hidden;
 }
-.home main .ofertas::before {
+.hombre main .ofertas::before {
     content: "";
     position: absolute;
     top: -50%;
@@ -32,11 +31,11 @@
     transform: skewY(345deg);
     transition: 0.5s;
 }
-.home main .ofertas:hover::before {
+.hombre main .ofertas:hover::before {
     top: -70%;
     transform: skewY(390deg);
 }
-.home main .ofertas::after {
+.hombre main .ofertas::after {
     content: "ORIGINAL";
     position: absolute;
     bottom: 0;
@@ -45,7 +44,7 @@
     font-size: 3.6em;
     color: #010a261a;
 }
-.home main .ofertas .imgBox {
+.hombre main .ofertas .imgBox {
     position: relative;
     width: 100%;
     display: flex;
@@ -62,7 +61,7 @@
     max-width: 50%;
         
 }*/
-.home main .ofertas .DatosBox {
+.hombre main .ofertas .DatosBox {
     position: relative;
     padding: 20px;
     display: flex;
@@ -71,7 +70,7 @@
     flex-direction: column;
     z-index: 2;
 }
-.home main .ofertas .DatosBox h4 {
+.hombre main .ofertas .DatosBox h4 {
     font-size: 14px;
     color: white;
     font-weight: 500;
@@ -85,7 +84,7 @@
     letter-spacing: 1px;
     text-align: center;
 }
-.home main .ofertas .DatosBox .comprar {
+.hombre main .ofertas .DatosBox .comprar {
     position: relative;
     top: 100px;
     opacity: 0;
@@ -99,101 +98,19 @@
     letter-spacing: 1px;
     transition: 0.5s;
 }
-.home main .ofertas:hover .DatosBox .comprar {
+.hombre main .ofertas:hover .DatosBox .comprar {
     top: 0;
     opacity: 1;
 }
-.home main .imgBox img.itemOferta {
+.hombre main .imgBox img.itemOferta {
     width: 100%;
-}
-
-
-/*PRODUCTOS*/
-.home main .cards{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, max(3, 1fr));
-    margin: 20px;
-    grid-gap: 20px;
-    justify-content: space-around;
-    justify-items: center
-}
-.home main .card{
-    background-color: var(--azulPetroleo);
-    width: 300px;
-    margin-top: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(0,0,0,18);
-    transition: all 0.25s;  
-}
-.home main .container{
-    position: relative;
-}
-.home main .container img{
-    width: 100%;
-    display: block;
-    border-radius: 20px 20px 0 0;
-}
-.home main .nombre h2{
-    color: #fff;
-    text-align: center;
-    margin: 10px;
-}
-/*SLIDER*/
-.home main .container-all{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    max-width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 100%;
-    border-radius: 6px;
-    overflow: hidden;
-}
-.home main .slide img{
-    max-width: 100%;
-}
-.home main .slide{
-    display: flex;
-    transform: translate3d(0, 0, 0);
-    transition: all 600ms;
-    animation-name: inicioauto;
-    animation-duration: 6.5s;
-    animation-direction: alternate;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-}
-.home main .img-slide{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    flex-grow: 0;
-    max-width: 100%;
-}
-
-@keyframes inicioauto{
-    25%{
-        transform: translate3d(calc(100% * 0), 0, 0);
-    }
-    
-    50%{
-        transform: translate3d(calc(-100% * 1), 0, 0);
-    }
-    75%{
-        transform: translate3d(calc(-100% * 2), 0, 0);
-    }
-    100%{
-        transform: translate3d(calc(-100% * 3), 0, 0);
-    }
 }
 @media(min-width:425px){
-    .home main section article{
+    .hombre main section article{
         width: 49%;
         display: inline-block;
     }
-    .home main p{
+    .hombre main p{
         width: 40%;
         margin: 40px;
         font-size: 20px;
@@ -201,13 +118,8 @@
         border-radius: 13px;
         background-color: rgba(255, 255, 255, 0.7);
     }
-
-.home main .card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 12px 16px var(--dorado);
-  }
 @media (min-width:768px) {
-    .home main .nuevos, .home main .cards{
+    .hombre main .nuevos{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         margin: 20px;
@@ -218,7 +130,7 @@
 
 }
 @media (min-width:1024px){
-    .home main .nuevos, .home main .cards{
+    .hombre main .nuevos{
         display: grid;
         grid-template-columns: repeat(4, 120px);
         margin: 20px;
@@ -227,15 +139,8 @@
         justify-content: space-around;
         justify-items: center;
     }
-    .home main .card{
-        background-color: var(--azulPetroleo);
-        width: 220px;
-        margin-top: 20px;
-        border-radius: 20px;
-        box-shadow: 0 0 30px rgba(0,0,0,18);
-        transition: all 0.25s;  
-    }
-    .home main .ofertas {
+    
+    .hombre main .ofertas {
         position: relative;
         width: 230px;
         height: 350px;
@@ -243,7 +148,7 @@
         border-radius: 20px;
         overflow: hidden;
     }
-    .home main .ofertas::after {
+    .hombre main .ofertas::after {
         content: "ORIGINAL";
         position: absolute;
         bottom: 0;
@@ -252,7 +157,7 @@
         font-size: 43.5px;
         color: #010a261a;
     }
-    .home main .ofertas .DatosBox h4 {
+    .hombre main .ofertas .DatosBox h4 {
         font-size: 14px;
         color: white;
         text-align: center;
@@ -260,7 +165,7 @@
         text-transform: uppercase;
         letter-spacing: 1px;
     }
-    .home main .nombre h2{
+    .hombre main .nombre h2{
         color: #fff;
         font-size:20px;
         text-align: center;

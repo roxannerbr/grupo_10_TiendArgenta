@@ -23,9 +23,6 @@ module.exports = {
     mujer : (req,res) => {
         return res.render('mujer')
     },
-    hombre : (req,res) => {
-        return res.render('hombre')
-    },
     infantil : (req,res) => {
         return res.render('infantil')
     }
