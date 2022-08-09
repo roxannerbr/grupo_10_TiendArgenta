@@ -25,5 +25,8 @@ module.exports = {
     },
     infantil : (req,res) => {
         return res.render('infantil')
+    },
+    hombre : (req,res) => {
+        return res.render('hombre')
     }
 }
