@@ -1,4 +1,3 @@
-
 module.exports = {
     listar: (req,res) => {
         return res.render('admin/listar')

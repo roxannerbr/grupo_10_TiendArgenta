@@ -86,6 +86,10 @@
     justify-content: space-around;
     margin-bottom: 20px;
 }
+.carrito .buy .product .button:hover {
+    color: var(--dorado);
+    transition: .5s all;
+}
 .carrito .buy .resumen{
     width: 100%;
     text-align: center;
