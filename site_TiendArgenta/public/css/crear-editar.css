@@ -1,0 +1,27 @@
+.crear-editar main h1{
+    width: 100%;
+    background: var(--dorado);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.crear-editar main form .agregar{
+    background: var(--cyan);
+    padding: 20px;
+}
+
+.crear-editar main form .form-floating{
+    padding: 8px 0 ;
+}
+
+.crear-editar main form .form-floating small{
+    color: white;
+}
+.crear-editar main form .btn{
+    color: white;
+    background: var(--dorado)
+}
+.crear-editar main form .btn:hover{
+    color: white;
+}

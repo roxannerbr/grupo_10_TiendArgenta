@@ -1,0 +1,18 @@
+.listar main h1{
+    width: 100%;
+    background: var(--dorado);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+.listar main a .btn{
+    color: white;
+    background: var(--dorado)
+}
+.listar main form .btn:hover{
+    color: white;
+}
+.listar main form .table-responsive{
+    background: var(--cyan);
+    padding: 20px;
+}

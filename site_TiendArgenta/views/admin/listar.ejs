@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('../partials/head',{title:'ADMIN | Lista de Productos'}) %>
+<body class="listar">
+  <%- include('../partials/header') %>
+  <main>
+    <h1>Admin</h1>
+    <a href="/admin/crear">
+        <button type="button" class="btn">Crear Producto</button>
+    </a>
+    <div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">producto</th>
+            <th scope="col">stock</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Des</th>
+            <th scope="col">Accion</th>
+          </tr>
+        </thead>
+        
+      </table>
+    </div>
+</main>
+</body>
+</html>
