@@ -6,23 +6,21 @@ footer {
     outline: none;
 }
 
-footer .row.primary {
+footer .hilera.primer {
     display: flex;
     flex-direction: column;
     align-items: stretch;
 }
-footer .column {
+footer .columnas {
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 10px 10px;
 }
-footer h3 {
+footer h6 {
     width: 100%;
     text-align: center;
     color: var(--dorado);
-    white-space: nowrap;
-    padding-bottom: 0.5em;
 }
 footer ul {
     list-style: none;
@@ -86,7 +84,7 @@ footer .copyright p {
     text-align: center;
 }
 @media screen and (min-width: 768px) {
-    footer .row.primary {
+    footer .hilera.primer {
         display: flex;
         flex-direction: row;
         align-items: center;

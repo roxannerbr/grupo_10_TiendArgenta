@@ -36,12 +36,12 @@
     transform: skewY(390deg);
 }
 .coleccionables main .ofertas::after {
-    content: "ORIGINAL";
+    content: "COLECCION";
     position: absolute;
     bottom: 0;
     left: 0;
     font-weight: 600;
-    font-size: 3.6em;
+    font-size: 3em;
     color: #010a261a;
 }
 .coleccionables main .ofertas .imgBox {
@@ -149,12 +149,12 @@
         overflow: hidden;
     }
     .coleccionables main .ofertas::after {
-        content: "ORIGINAL";
+        content: "COLECCION";
         position: absolute;
         bottom: 0;
         left: 0;
         font-weight: 600;
-        font-size: 43.5px;
+        font-size: 36.5px;
         color: #010a261a;
     }
     .coleccionables main .ofertas .DatosBox h4 {
