@@ -21,10 +21,10 @@
     box-shadow: 0 0 30px rgba(0,0,0,18);
     transition: all 0.25s;  
 }
-.indumentaria main .container{
+.indumentaria main .contenedor{
     position: relative;
 }
-.indumentaria main .container img{
+.indumentaria main .contenedor img{
     width: 100%;
     display: block;
     border-radius: 20px 20px 0 0;

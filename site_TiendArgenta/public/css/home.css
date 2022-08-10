@@ -125,10 +125,10 @@
     box-shadow: 0 0 30px rgba(0,0,0,18);
     transition: all 0.25s;  
 }
-.home main .container{
+.home main .contenedor{
     position: relative;
 }
-.home main .container img{
+.home main .contenedor img{
     width: 100%;
     display: block;
     border-radius: 20px 20px 0 0;
@@ -139,7 +139,7 @@
     margin: 10px;
 }
 /*SLIDER*/
-.home main .container-all{
+.home main .contenedor-all{
     display: flex;
     align-items: center;
     justify-content: center;

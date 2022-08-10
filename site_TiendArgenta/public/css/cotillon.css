@@ -36,12 +36,12 @@
     transform: skewY(390deg);
 }
 .cotillon main .ofertas::after {
-    content: "ORIGINAL";
+    content: "COTILLON";
     position: absolute;
     bottom: 0;
     left: 0;
     font-weight: 600;
-    font-size: 3.6em;
+    font-size: 3.5em;
     color: #010a261a;
 }
 .cotillon main .ofertas .imgBox {
@@ -149,12 +149,12 @@
         overflow: hidden;
     }
     .cotillon main .ofertas::after {
-        content: "ORIGINAL";
+        content: "COTILLON";
         position: absolute;
         bottom: 0;
         left: 0;
         font-weight: 600;
-        font-size: 43.5px;
+        font-size: 43.2px;
         color: #010a261a;
     }
     .cotillon main .ofertas .DatosBox h4 {

@@ -1,4 +1,4 @@
-.mujer main .nuevos{
+.vender main .nuevos{
     display: grid;
     grid-template-columns: repeat(auto-fit, max(3, 1fr));
     margin: 20px;
@@ -6,14 +6,14 @@
     justify-content: space-around;
     justify-items: center
 }
-.mujer main h1{
+.vender main h1{
     width: 100%;
     background: var(--dorado);
     color: white;
     text-align: center;
     padding: 10px 0;
 }
-.mujer main .ofertas {
+.vender main .ofertas {
     position: relative;
     width: 300px;
     height: 380px;
@@ -21,7 +21,7 @@
     border-radius: 20px;
     overflow: hidden;
 }
-.mujer main .ofertas::before {
+.vender main .ofertas::before {
     content: "";
     position: absolute;
     top: -50%;
@@ -31,11 +31,11 @@
     transform: skewY(345deg);
     transition: 0.5s;
 }
-.mujer main .ofertas:hover::before {
+.vender main .ofertas:hover::before {
     top: -70%;
     transform: skewY(390deg);
 }
-.mujer main .ofertas::after {
+.vender main .ofertas::after {
     content: "ORIGINAL";
     position: absolute;
     bottom: 0;
@@ -44,7 +44,7 @@
     font-size: 3.6em;
     color: #010a261a;
 }
-.mujer main .ofertas .imgBox {
+.vender main .ofertas .imgBox {
     position: relative;
     width: 100%;
     display: flex;
@@ -61,7 +61,7 @@
     max-width: 50%;
         
 }*/
-.mujer main .ofertas .DatosBox {
+.vender main .ofertas .DatosBox {
     position: relative;
     padding: 20px;
     display: flex;
@@ -70,7 +70,7 @@
     flex-direction: column;
     z-index: 2;
 }
-.mujer main .ofertas .DatosBox h4 {
+.vender main .ofertas .DatosBox h4 {
     font-size: 14px;
     color: white;
     font-weight: 500;
@@ -84,7 +84,7 @@
     letter-spacing: 1px;
     text-align: center;
 }
-.mujer main .ofertas .DatosBox .comprar {
+.vender main .ofertas .DatosBox .comprar {
     position: relative;
     top: 100px;
     opacity: 0;
@@ -98,19 +98,19 @@
     letter-spacing: 1px;
     transition: 0.5s;
 }
-.mujer main .ofertas:hover .DatosBox .comprar {
+.vender main .ofertas:hover .DatosBox .comprar {
     top: 0;
     opacity: 1;
 }
-.mujer main .imgBox img.itemOferta {
+.vender main .imgBox img.itemOferta {
     width: 100%;
 }
 @media(min-width:425px){
-    .mujer main section article{
+    .vender main section article{
         width: 49%;
         display: inline-block;
     }
-    .mujer main p{
+    .vender main p{
         width: 40%;
         margin: 40px;
         font-size: 20px;
@@ -119,7 +119,7 @@
         background-color: rgba(255, 255, 255, 0.7);
     }
 @media (min-width:768px) {
-    .mujer main .nuevos{
+    .vender main .nuevos{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         margin: 20px;
@@ -130,7 +130,7 @@
 
 }
 @media (min-width:1024px){
-    .mujer main .nuevos{
+    .vender main .nuevos{
         display: grid;
         grid-template-columns: repeat(4, 120px);
         margin: 20px;
@@ -140,7 +140,7 @@
         justify-items: center;
     }
     
-    .mujer main .ofertas {
+    .vender main .ofertas {
         position: relative;
         width: 230px;
         height: 350px;
@@ -148,7 +148,7 @@
         border-radius: 20px;
         overflow: hidden;
     }
-    .mujer main .ofertas::after {
+    .vender main .ofertas::after {
         content: "ORIGINAL";
         position: absolute;
         bottom: 0;
@@ -157,7 +157,7 @@
         font-size: 43.5px;
         color: #010a261a;
     }
-    .mujer main .ofertas .DatosBox h4 {
+    .vender main .ofertas .DatosBox h4 {
         font-size: 14px;
         color: white;
         text-align: center;
@@ -165,7 +165,7 @@
         text-transform: uppercase;
         letter-spacing: 1px;
     }
-    .mujer main .nombre h2{
+    .vender main .nombre h2{
         color: #fff;
         font-size:20px;
         text-align: center;
