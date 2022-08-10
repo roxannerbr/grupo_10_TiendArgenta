@@ -202,6 +202,9 @@
         margin-top: 25px;
         margin-bottom: 20px;
     }
+    .carrito .buy .product .añadir{
+        width: 60%;
+    }
 }
 
 @media(min-width:769px){
@@ -230,6 +233,18 @@
         margin: 10px;
         margin-bottom: 20px;
         justify-content: space-around;
+    }
+    .carrito .buy .product .añadir{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row-reverse;
+    }
+    .carrito .buy .resumen{
+        margin-left: 60px;
+    }
+    .carrito .buy .codigo{
+        margin-left: 60px;
     }
 }
 
