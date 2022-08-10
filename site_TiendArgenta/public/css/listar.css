@@ -9,10 +9,14 @@
     color: white;
     background: var(--dorado)
 }
-.listar main form .btn:hover{
-    color: white;
+.listar main a .btn:hover{
+    background-color: var(--cyan);
 }
-.listar main form .table-responsive{
+.listar main .table-responsive{
     background: var(--cyan);
     padding: 20px;
+    margin-top: 20px;
+}
+.listar main .table-responsive th{
+    color: white;
 }
