@@ -22,6 +22,7 @@
     color: var(--dorado);
     text-transform: uppercase;
     margin-left: 10%;
+    text-decoration: underline;
 }
 .usuario main .desplegable{
     border-radius: 10px;
@@ -29,6 +30,8 @@
     list-style: none;
     text-decoration: none;
     background-color: white;
+    margin-bottom:20px;
+    padding: 10px;
 }
 .usuario main .desplegable small{
     color:var(--azulPetroleo);
@@ -37,7 +40,14 @@
 .usuario main .desplegable h3{
     display: contents;
 }
+.usuario main .desplegable h3:hover{
+    color: var(--dorado);
+}
 .usuario main .desplegable input{
 display: flex;
 }
-
+.usuario main .desplegable a{
+    border-radius: 10px;
+    color: var(--cyan);
+    background-color: white;
+}

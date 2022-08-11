@@ -59,7 +59,7 @@
 
 .detalles main .descripcion .agregar_al_carrito{
 display: flex;
-width: 90px;
+/* width: 90px; */
 margin-bottom: 10px;
 }
 .detalles main .descripcion .agregar_al_carrito h3{
@@ -105,6 +105,14 @@ margin-bottom: 10px;
     color:var(--celeste);
     margin:4px
 }
+.detalles main  h3,h4{
+    color:var(--celeste);
+    margin:4px
+}
+.detalles main .precio{
+display: flex;
+    justify-content: space-evenly;
+}
 .detalles main .precio p{
     
     background-color: white;
@@ -119,15 +127,18 @@ margin-bottom: 10px;
     margin: 0%;
     padding-bottom: 8px;
 }
+.detalles main .linea p{
+    font-size: 22px;
+}
 .detalles main .btn{
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    
+    justify-content: space-evenly
 }
 .detalles main .btn button {
     background-color: var(--celeste);
     color: white;
-    padding: 8px;
+    padding: 20px;
     border-radius: 8px;
     cursor: pointer;
     transition: 1s hall;
@@ -267,4 +278,8 @@ border-radius: 15px;
 display: flex;
     flex-direction: row;
 }
+}
+@media(min-width:1025px){ 
+.detalles main .descripcion {
+    height: 600px;}
 }
