@@ -24,7 +24,17 @@
     margin-left: 10%;
     text-decoration: underline;
 }
-.usuario main .desplegable{
+.usuario main .accordion-item{
+    margin: 10px;
+    border-radius: 10px;
+    padding: 2%;
+}
+.usuario main .accordion-button {
+    font-size: 80%;
+    border-radius: 10px;
+    color: var(--cyan);
+}
+.usuario main .accordion-body{
     border-radius: 10px;
     color: var(--cyan);
     list-style: none;
@@ -33,21 +43,22 @@
     margin-bottom:20px;
     padding: 10px;
 }
-.usuario main .desplegable small{
+.usuario main .accordion-body small{
     color:var(--azulPetroleo);
     display: flex;
 }
-.usuario main .desplegable h3{
+.usuario main .accordion-body h3{
     display: contents;
 }
-.usuario main .desplegable h3:hover{
+.usuario main .accordion-body h3:hover{
     color: var(--dorado);
 }
-.usuario main .desplegable input{
+.usuario main .accordion-body input{
 display: flex;
 }
-.usuario main .desplegable a{
+.usuario main .accordion-body a{
     border-radius: 10px;
     color: var(--cyan);
     background-color: white;
 }
+
