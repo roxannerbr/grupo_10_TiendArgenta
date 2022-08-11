@@ -1,6 +1,5 @@
 .carrito .buy{
-    margin: 10px;
-    padding: 5%;
+    margin: 20px;
 }
 .carrito .buy .radio{
     border: solid 1px var(--azulPetroleo);
@@ -10,14 +9,17 @@
     display: flex;
     font-weight: bold;
     font-size: 11px;
-    margin: 10px;
     margin-bottom: 20px;
     flex-direction: row-reverse;
     align-items: stretch;
     padding: 8px;
+    justify-content: center;
 }
 .carrito .buy .radio input{
-    margin-right: 8px;
+    margin-right: 2px;
+}
+.carrito .buy .radio label.cuenta-text{
+   margin-right: 15px;
 }
 .carrito .buy .submit{
     border: solid 1px var(--azulPetroleo);
@@ -30,24 +32,33 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 8px;
 }
 .carrito .buy .email{
+    width: 100%;
+    margin-bottom: 10px;
     border: solid 1px var(--azulPetroleo);
     border-radius: 5px;
     box-shadow: 0 0 3px rgba(0,0,0,18);
-    margin-top: 20px;
-    margin-bottom: 10px;
 }
-.carrito .buy .subscribirse{
+.carrito .buy .email input{
+    border: none;
+}
+.carrito .buy .registrarse{
     margin-bottom: 10px;
     border-radius: 5px;
     background-color: var(--celeste);
     color: white;
     padding: 5px;
 }
-.carrito .buy .subscribirse:hover {
+.carrito .buy .registrarse:hover {
     background-color: var(--dorado);
     color: white;
+}
+.carrito .buy .registrarse a {
+    color: white;
+    font-weight: 400;
+    text-decoration: none;
 }
 .carrito .buy .product h4{
     background-color: white;

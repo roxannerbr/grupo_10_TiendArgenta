@@ -5,26 +5,20 @@
   <body class="carrito">
     <%- include('./partials/header') %>
     <main class="buy">
-
         <section class="radio">
-
           <label for="anonimo">Continuar como anónimo</label>
           <input class="select" type="radio" name="seleccion">
-
-          <label for="cuenta">Conectarse a una cuenta</label>
+          <label  for="cuenta" class="cuenta-text">Conectarse a una cuenta</label>
           <input class="select" type="radio" name="seleccion">
-
         </section>
-
         <section class="submit">
-
-        <p class="cuenta">La creación de una cuenta implica que pueda comprar más deprisa, mantenerse al dia sobre el proceso de la orden actual y comprobar el estado de ordenes anteriores.</p>
+          <p class="cuenta">La creación de una cuenta implica que pueda comprar más deprisa, mantenerse al dia sobre el proceso de la orden actual y comprobar el estado de ordenes anteriores.</p>
           <div class="email">  
-          <label for="email"></label>
-          <input type="text" name="email" id="email" placeholder="e-mail">
+            <label for="email"></label>
+            <input type="text" name="email" id="email" placeholder="ingrese su e-mail">
           </div>        
             
-        <button class="subscribirse" type="submit">Subscribirse</button>
+        <button class="registrarse" type="submit"><a href="/usuario/register">Registrarme</a></button>
         </section>
 
         <div class="compra">
