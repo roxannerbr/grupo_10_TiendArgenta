@@ -230,9 +230,7 @@
         margin-top: 25px;
         margin-bottom: 20px;
     }
-    .carrito .buy .compra .product{
-
-    }
+    
     .carrito .buy .product .añadir{
         width: 60%;
     }
@@ -265,10 +263,10 @@
         margin-bottom: 20px;
         justify-content: space-around;
     }
-    .carrito .buy .compra .product{
-    }
+    
     .carrito .buy .resumen{
         margin-left: 60px;
+        width: 400px;
     }
     .carrito .buy .product .añadir{
         display: flex;
