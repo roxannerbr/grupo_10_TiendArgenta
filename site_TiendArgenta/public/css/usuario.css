@@ -1,0 +1,241 @@
+.usuario main{margin: 10px}
+
+.usuario main .foto{
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 5%;
+}
+.usuario main .foto img{
+    border-radius: 50% ;
+    display: inline-block;
+    width: 10%;
+    border-top: 1px solid var(--dorado);
+    margin-left: 5%;
+    
+}
+h2{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: var(--dorado);
+    text-transform: uppercase;
+    margin-left: 10%;
+}
+.usuario main .desplegable{
+    border-radius: 10px;
+    color: var(--cyan);
+    list-style: none;
+    text-decoration: none;
+background-color: white;
+}
+.usuario main .desplegable small{
+    color:var(--azulPetroleo);
+    display: flex;
+}
+.usuario main .desplegable h3{
+    display: contents;
+}
+.usuario main .desplegable input{
+display: flex;}
+/*LOGO*/
+ .contenedor-{
+    display: flex;
+    width: 100%;
+    position: relative;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+ .contenedor- .logo{
+    display: flex;
+    width: 20%;
+    
+}
+ .contenedor- .logo img{
+    width: 100%;
+    height: 100px;
+    margin-left: 10px;
+    object-fit: cover;
+}
+
+/*ICONOS*/
+
+ .contenedor- form{
+    display: flex;
+    margin-right: 10px;
+}
+ .contenedor- input[type="search"]{
+    width: 40px;
+    background-color: white;
+    background-image: url('/images/home//search-icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+	background-size: 20px;
+    padding: 11px 10px 10px 25px;
+    font-size: 12px;
+    border-radius: 50px;
+    transition: .5s; 
+    outline: none; 
+}
+ .contenedor- input[type="search"]:focus{
+    width: 130px;
+    background-position: left center;
+    color: #000;
+    background-color: var(--dorado);
+}
+ .contenedor- .icons{
+    display: flex;
+    justify-content: flex-end;
+    width: 70%;
+}
+
+ .contenedor- .icons img{
+    display: flex;
+    margin: 2px;
+    width: 35px;
+    object-fit: cover;
+}
+
+/*MENU*/
+
+ .contenedor- .burger{
+    display: flex;
+    width: 100%;
+    border-top: solid 1px var(--dorado);
+}
+ .contenedor- .burger input[type="checkbox"]{
+    display: none;
+}
+ .contenedor- .burger input[type="checkbox"]:checked ~ nav{
+    display: none;
+}
+ .contenedor- .burger label{
+    display: flex;
+    font-size: 30px;
+    color: var(--dorado);
+    position: absolute;
+    top: 37px;
+    right: 10px;
+}
+ .contenedor- .burger nav{
+    width: 100%;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: var(--cyan);
+}
+
+ .contenedor- .burger nav ul li{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    line-height: 40px;
+    color: var(--cyan);
+}
+ .contenedor- .burger nav ul li a{
+    color: var(--cyan);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 5px;
+}
+ .contenedor- .burger ul li:hover{
+        background-color: var(--dorado);
+    }
+     .contenedor- .burger ul li:hover a{
+        color:white;
+    }
+ .contenedor- .nav-desktop{
+    display: none;
+}
+/*DESPLEGABLE */
+ .contenedor- .burger ul ul {
+    display:none;
+    top:100%;
+    left:0;
+    background-color: var(--cyan);    
+}
+/*ITEMS DESPLEGABLE*/
+ .contenedor- .burger ul ul li {
+    width: 100%;
+    color: var(--dorado);
+    
+}
+/*ENLACE DESPLEGABLE*/
+ .contenedor- .burgerul ul ul li a {
+    line-height: 120%;
+    padding: 10px 15px;
+}
+/*DESPLEGABLE HOVER*/
+ .contenedor- .burger ul li:hover > ul {
+    display:block;
+}
+
+/*MEDIA*/
+@media(min-width:768px){
+     .contenedor-{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+    }
+     .contenedor- .burger{
+        display: flex;
+        width: 100%;
+        border-top: solid 1px var(--dorado);
+    }
+     .contenedor- .burger label{
+        display: none;
+    }
+     .contenedor- .burger input[type="checkbox"]:checked ~ nav{
+        display: flex;
+        justify-content: space-around;
+    }
+    a:link, a:visited, a:active {
+        color: var(--azulPetroleo);
+        font-weight: 500;
+        text-decoration:none;
+    }
+     .contenedor- .burger ul{
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        align-items: center;
+        list-style: none;
+    }
+     .contenedor- .burger ul li {
+        width: 100%;
+        text-align: center;
+        margin: 0 20px;
+    }
+     .contenedor- .burger ul li:hover{
+        background-color: var(--dorado);
+    }
+     .contenedor- .burger ul li:hover a{
+        color:white;
+    }
+    /*DESPLEGABLE */
+     .contenedor- .burger nav ul ul {
+        display: none;
+    }
+    /*ITEMS DESPLEGABLE*/
+     .contenedor- .burger nav ul ul li {
+        color: var(--dorado);
+        display: table-cell;
+    }
+    /*ENLACE DESPLEGABLE*/
+     .contenedor- .burger nav ul ul li a {
+        line-height: 100%;
+    }
+    /*DESPLEGABLE HOVER*/
+     .contenedor- .burger nav ul li:hover > ul {
+        display:block;
+    }
+}
