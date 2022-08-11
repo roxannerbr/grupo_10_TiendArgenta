@@ -1,4 +1,4 @@
-.contacto .form-reg {
+.contacto .form-reglog {
 
     width:  350px;
     background: white;
@@ -7,12 +7,12 @@
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 15px;
-    font-family: 'Roboto';
+    font-family: var(--font);
     color: var(--azulPetroleo);
     box-shadow: 7px 13px 37px var(--azulPetroleo);
     
 }
-.contacto .form-reg h1 {
+.contacto .form-reglog h1 {
     text-align: center;
     color: var(--azulPetroleo);
 }
@@ -23,30 +23,30 @@
     border-radius: 5px;
     margin-top: 10px;
     border: 1px solid var(--dorado);
-    font-family: 'Roboto';
+    font-family: var(--font);
     font-size: 16px;
     color: white;
     transition: 1s all;
 }
-.contacto .form-reg p {
+.contacto .form-reglog p {
     margin-top: 20px;
     text-align: center;
     font-size: 12px;
     line-height: 20px;
     color: var(--azulPetroleo);
 }
-.contacto .form-reg a {
+.contacto .form-reglog a {
     color: var(--azulPetroleo);
     font-weight: 600;
     text-decoration: none;
 }
-.contacto .form-reg a:hover{
+.contacto .form-reglog a:hover{
     color: var(--cyan);
 }
-.contacto .form-reg small {
+.contacto .form-reglog small {
     color: #ff0000;
 }
-.contacto .form-reg div.recForm {
+.contacto .form-reglog div.recForm {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

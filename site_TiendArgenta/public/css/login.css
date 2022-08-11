@@ -1,5 +1,4 @@
-.login .form-reg {
-
+.login .form-reglog {
     width:  350px;
     background: white;
     padding: 20px;
@@ -7,12 +6,12 @@
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 15px;
-    font-family: 'Roboto';
+    font-family: var(--font);
     color: var(--azulPetroleo);
     box-shadow: 7px 13px 37px var(--azulPetroleo);
     
 }
-.login .form-reg h1 {
+.login .form-reglog h1 {
     text-align: center;
     color: var(--azulPetroleo);
 }
@@ -23,30 +22,30 @@
     border-radius: 5px;
     margin-top: 10px;
     border: 1px solid var(--dorado);
-    font-family: 'Roboto';
+    font-family: var(--font);
     font-size: 16px;
     color: white;
     transition: 1s all;
 }
-.login .form-reg p {
+.login .form-reglog p {
     margin-top: 20px;
     text-align: center;
     font-size: 12px;
     line-height: 20px;
     color: var(--azulPetroleo);
 }
-.login .form-reg a {
+.login .form-reglog a {
     color: var(--azulPetroleo);
     font-weight: 600;
     text-decoration: none;
 }
-.login .form-reg a:hover{
+.login .form-reglog a:hover{
     color: var(--cyan);
 }
-.login .form-reg small {
+.login .form-reglog small {
     color: #ff0000;
 }
-.login .form-reg div.recForm {
+.login .form-reglog div.recForm {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
