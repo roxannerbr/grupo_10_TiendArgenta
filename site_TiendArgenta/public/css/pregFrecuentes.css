@@ -1,4 +1,4 @@
-.crear-editar main h1{
+.preg-Frec main .accordion-header h2{
     width: 100%;
     background: var(--dorado);
     color: white;
@@ -6,38 +6,38 @@
     padding: 10px 0;
 }
 
-.crear-editar main form {
+.preg-Frec main .accordion{
     margin: 0 20px 20px;
 }
 
-.crear-editar main form .agregar{
+.preg-Frec main .accordion{
     background: var(--cyan);
     padding: 20px;
     border-radius: 20px;
 }
 
-.crear-editar main form .form-floating{
+.preg-Frec main form .form-floating{
     padding: 8px 0 ;
 }
 
-.crear-editar main form .form-floating small{
+.preg-Frec main form .form-floating small{
     color: white;
 }
-.crear-editar main form .btn{
+.preg-Frec main form .btn{
     width: 400px;
     color: white;
     background: var(--dorado)
 }
-.crear-editar main form .btn:hover{
+.preg-Frec main form .btn:hover{
     color: white;
 }
 @media (min-width:768px){
-    .crear-editar main form {
+    .preg-Frec main form {
         margin: 0 90px 20px;
     }
 }
 @media (min-width:1024px){
-    .crear-editar main form {
+    .preg-Frec main form {
         margin: 0 100px 20px;
     }
 }

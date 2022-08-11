@@ -68,7 +68,7 @@
     margin-top: 30px;
 }
 .carrito .buy .product img{
-    width: 100%;
+    height: 70px;
     border: solid 1px var(--azulPetroleo);
     border-radius: 20px;
     box-shadow: 0 0 3px rgba(0,0,0,18);
@@ -82,45 +82,65 @@
     border-radius: 20px;
     box-shadow: 0 0 30px rgba(0,0,0,18);
     padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
 }
 .carrito .buy .product h3{
     margin-top: 10px;
     font-weight: bold;
     color: var(--cyan);
+    width: 90%;
+    font-size: 15px;
+    margin-left: 5px;
+}
+.carrito .buy .product .precio{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    flex-direction: column;
+    width: 18%;
+    padding: 5px;
 }
 .carrito .buy .product .principal{
     color: green;
-    font-size: 35px;
+    font-size: 20px;
     font-weight: bold;
     text-align: right;
+    width: 30%;
+    
 }
 .carrito .buy .product .secundario{
     text-decoration: line-through;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
     color: var(--cyan);
     text-align: right;
+    width: 30%;
+    
 }
 .carrito .buy .product .descuento{
-    font-size: 30px;
+    font-size: 18px;
     color: red;
     font-weight: bold;
     text-align: right;
-}
-.carrito .buy .product input{
-    border: solid;
-    width: 20%;
-    height: 65px;
+    width: 30%;
 }
 .carrito .buy .product .añadir{
     display: flex;
     font-weight: 900;
     color: var(--azulPetroleo);
-    width: 70%;
-    font-size: 4px;
-    padding: 10px;
+    width: 25%;
+    height: 50px;
     flex-direction: row-reverse;
-    align-items: stretch;
+    justify-content: space-between;
+    align-items: center;
+}
+.carrito .buy .product input{
+    border: solid;
+    height: 40px;
+    width: 30%;
 }
 .carrito .buy .product .restar, .carrito .buy .product .agregar{
     font-size: 2rem;
@@ -128,16 +148,17 @@
     padding: 10px;
     height: 3rem;
     margin-bottom: 20px;
+    width: 10%;
 }
 .carrito .buy .product .botones{
     display: flex;
     margin-bottom: 20px;
-    width: 100%;
+    width: 20%;
     height: 50px;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: stretch;
-    padding: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
 }
 .carrito .buy .product .botones i{
     padding: 5px;
@@ -213,6 +234,7 @@
         margin-top: 25px;
         margin-bottom: 20px;
     }
+    
     .carrito .buy .product .añadir{
         width: 60%;
     }
@@ -245,14 +267,16 @@
         margin-bottom: 20px;
         justify-content: space-around;
     }
+    
+    .carrito .buy .resumen{
+        margin-left: 60px;
+        width: 400px;
+    }
     .carrito .buy .product .añadir{
         display: flex;
         justify-content: flex-start;
         align-items: center;
         flex-direction: row-reverse;
-    }
-    .carrito .buy .resumen{
-        margin-left: 60px;
     }
     .carrito .buy .codigo{
         margin-left: 60px;

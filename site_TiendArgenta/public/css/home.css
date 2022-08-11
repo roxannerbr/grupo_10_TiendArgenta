@@ -118,7 +118,7 @@
     justify-items: center
 }
 .home main .card{
-    background-color: var(--azulPetroleo);
+    background-color: var(--cyan);
     width: 300px;
     margin-top: 20px;
     border-radius: 20px;
@@ -228,7 +228,7 @@
         justify-items: center;
     }
     .home main .card{
-        background-color: var(--azulPetroleo);
+        background-color: var(--cyan);
         width: 220px;
         margin-top: 20px;
         border-radius: 20px;

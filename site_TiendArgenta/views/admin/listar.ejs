@@ -4,9 +4,9 @@
 <body class="listar">
   <%- include('../partials/header') %>
   <main>
-    <h1>Admin</h1>
+    <h1>Administracion</h1>
     <a href="/admin/crear">
-        <button type="button" class="btn">Crear Producto</button>
+        <button type="button" class="btn crear">Crear Producto</button>
     </a>
     <div class="table-responsive">
     <table class="table table-hover">
@@ -24,6 +24,7 @@
         </thead>
         <tbody>
           <tr>
+            <!-- esto se completaria en sprint 4 con json -->
             <th scope="row">1</th>
             <td></td>
             <td></td>
@@ -42,5 +43,6 @@
       </table>
     </div>
 </main>
+<%- include('../partials/footer') %>
 </body>
 </html>

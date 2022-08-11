@@ -5,9 +5,13 @@
     text-align: center;
     padding: 10px 0;
 }
+.listar main a .crear{
+    width: 300px;
+}
 .listar main a .btn{
     color: white;
-    background: var(--dorado)
+    background: var(--dorado);
+    font-weight: 600;
 }
 .listar main a .btn:hover{
     background-color: var(--cyan);
@@ -15,7 +19,7 @@
 .listar main .table-responsive{
     background: var(--cyan);
     padding: 20px;
-    margin-top: 20px;
+    margin: 10px 0 20px 0;
 }
 .listar main .table-responsive th{
     color: white;
