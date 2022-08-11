@@ -1,4 +1,4 @@
-.register main .form-reg {
+.register main .form-reglog {
     width:  350px;
     background: white;
     padding: 20px;
@@ -6,12 +6,12 @@
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 15px;
-    font-family: 'Roboto';
+    font-family: var(--font);
     color: var(--azulPetroleo);
     box-shadow: 7px 13px 37px var(--azulPetroleo);
     
 }
-.register main .form-reg h1 {
+.register main .form-reglog h1 {
     text-align: center;
     color: var(--azulPetroleo);
 }
@@ -22,27 +22,27 @@
     border-radius: 5px;
     margin-top: 10px;
     border: 1px solid var(--dorado);
-    font-family: 'Roboto';
+    font-family: var(--font);
     font-size: 16px;
     color: white;
     transition: 1s all;
 }
-.register main .form-reg p {
+.register main .form-reglog p {
     margin-top: 20px;
     text-align: center;
     font-size: 12px;
     line-height: 20px;
     color: var(--azulPetroleo);
 }
-.register main .form-reg a {
+.register main .form-reglog a {
     color: var(--azulPetroleo);
     font-weight: 600;
     text-decoration: none;
 }
-.register main .form-reg a:hover{
+.register main .form-reglog a:hover{
     color: var(--cyan);
 }
-.register main .form-reg small {
+.register main .form-reglog small {
     color: #ff0000;
 }
 .register main .boton {

@@ -167,7 +167,7 @@ header .contenedor-header .burger ul li:hover > ul {
     }
     header .contenedor-header .burger input[type="checkbox"]:checked ~ nav{
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
     }
     a:link, a:visited, a:active {
         color: var(--azulPetroleo);
@@ -184,7 +184,7 @@ header .contenedor-header .burger ul li:hover > ul {
     header .contenedor-header .burger ul li {
         width: 100%;
         text-align: center;
-        margin: 0 20px;
+        margin: 0 5px;
     }
     header .contenedor-header .burger ul li:hover{
         background-color: var(--dorado);
@@ -204,6 +204,7 @@ header .contenedor-header .burger ul li:hover > ul {
     /*ENLACE DESPLEGABLE*/
     header .contenedor-header .burger nav ul ul li a {
         line-height: 100%;
+
     }
     /*DESPLEGABLE HOVER*/
     header .contenedor-header .burger nav ul li:hover > ul {

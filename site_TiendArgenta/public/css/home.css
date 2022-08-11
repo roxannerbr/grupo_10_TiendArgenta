@@ -118,7 +118,7 @@
     justify-items: center
 }
 .home main .card{
-    background-color: var(--azulPetroleo);
+    background-color: var(--cyan);
     width: 300px;
     margin-top: 20px;
     border-radius: 20px;
@@ -159,7 +159,7 @@
     transform: translate3d(0, 0, 0);
     transition: all 600ms;
     animation-name: inicioauto;
-    animation-duration: 6.5s;
+    animation-duration: 20s;
     animation-direction: alternate;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
@@ -228,7 +228,7 @@
         justify-items: center;
     }
     .home main .card{
-        background-color: var(--azulPetroleo);
+        background-color: var(--cyan);
         width: 220px;
         margin-top: 20px;
         border-radius: 20px;

@@ -1,0 +1,43 @@
+.usuario main{
+    margin: 10px;
+}
+.usuario main .foto{
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 5%;
+}
+.usuario main .foto img{
+    border-radius: 50% ;
+    display: inline-block;
+    width: 10%;
+    border-top: 1px solid var(--dorado);
+    margin-left: 5%;
+    
+}
+.usuario h2{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: var(--dorado);
+    text-transform: uppercase;
+    margin-left: 10%;
+}
+.usuario main .desplegable{
+    border-radius: 10px;
+    color: var(--cyan);
+    list-style: none;
+    text-decoration: none;
+    background-color: white;
+}
+.usuario main .desplegable small{
+    color:var(--azulPetroleo);
+    display: flex;
+}
+.usuario main .desplegable h3{
+    display: contents;
+}
+.usuario main .desplegable input{
+display: flex;
+}
+
