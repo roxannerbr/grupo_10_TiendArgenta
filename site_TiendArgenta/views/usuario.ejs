@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('./partials/head',{title: 'Usuario'}) %>
+  <body class="usuario">
+      <%- include('./partials/header') %>
+    <main>
+      <div class="foto">
+        <img src="/images/usuario/perfil.jpg" alt="">
+        <h2>Usuario Anonimo</h2>
+      </div>
+      <li class="desplegable">
+        <h3>Datos personales</h3><i class="fas fa-angle-down"></i>
+        <ul>
+          <li><span>Email</span><small>usuario@gmail.com</small></li>
+          <li>
+            <span>DNI</span><small>50.123.456</small>
+          </li>
+          <li><span>Teléfono</span> <small>1122334455</small></li>
+        </ul>
+      </li>
+      <li class="desplegable">
+        <h3>Contraseña</h3><i class="fas fa-angle-down"></i>
+        <ul>
+          <li ><span>Contraseña</span
+            ><input
+              class="ingreso"
+              type="password"
+              name="pass"
+              id="pass"
+              placeholder="**********"
+              required
+            />
+       <a href=""><small>Cambiar constraseña</small></a></li>
+        </ul>
+      </li>
+      <li class="desplegable">
+        <h3>Medio de pago</h3><i class="fas fa-angle-down"></i>
+        <ul>
+          <li>
+            <span>Tarjeta Visa</span><small>Terminada en 0000</small><small>Vencimiento: 11/2077</small>
+          </li>
+          <li><span>Tarjeta Mastercard</span><small>Terminada en 1111</small><small>Vencimiento: 11/2099</small></li>
+        </ul>
+      </li>
+        <li class="desplegable">
+            <h3>Datos de envío</h3><i class="fas fa-angle-down"></i>
+            <ul>
+              <li><span>Dirección</span><small>Mi casa</small></li>
+              <li>
+                <span>Provincia</span><small>Buenos Aires</small>
+              </li>
+              <li><span>Localidad</span> <small>Mar de las Pompas</small></li>
+              <li><span>Código postal</span> <small>1663</small></li>
+            </ul>
+          </li>
+      <%- include('./partials/footer') %>
+    </main>
+  </body>
+</html>
