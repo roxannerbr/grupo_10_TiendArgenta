@@ -1,0 +1,64 @@
+.usuario main{
+    margin: 10px;
+}
+.usuario main .foto{
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 5%;
+}
+.usuario main .foto img{
+    border-radius: 50% ;
+    display: inline-block;
+    width: 10%;
+    border-top: 1px solid var(--dorado);
+    margin-left: 5%;
+    
+}
+.usuario .foto h2{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: var(--dorado);
+    text-transform: uppercase;
+    margin-left: 10%;
+    text-decoration: underline;
+}
+.usuario main .accordion-item{
+    margin: 10px;
+    border-radius: 10px;
+    padding: 2%;
+}
+.usuario main .accordion-button {
+    font-size: 80%;
+    border-radius: 10px;
+    color: var(--cyan);
+}
+.usuario main .accordion-body{
+    border-radius: 10px;
+    color: var(--cyan);
+    list-style: none;
+    text-decoration: none;
+    background-color: white;
+    margin-bottom:20px;
+    padding: 10px;
+}
+.usuario main .accordion-body small{
+    color:var(--azulPetroleo);
+    display: flex;
+}
+.usuario main .accordion-body h3{
+    display: contents;
+}
+.usuario main .accordion-body h3:hover{
+    color: var(--dorado);
+}
+.usuario main .accordion-body input{
+display: flex;
+}
+.usuario main .accordion-body a{
+    border-radius: 10px;
+    color: var(--cyan);
+    background-color: white;
+}
+

@@ -1,0 +1,84 @@
+.login .form-reglog {
+    width:  350px;
+    background: white;
+    padding: 20px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    font-family: var(--font);
+    color: var(--azulPetroleo);
+    box-shadow: 7px 13px 37px var(--azulPetroleo);
+    
+}
+.login .form-reglog h1 {
+    text-align: center;
+    color: var(--azulPetroleo);
+}
+.login .ingreso {
+    width: 100%;
+    background: var(--azulPetroleo);
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid var(--dorado);
+    font-family: var(--font);
+    font-size: 16px;
+    color: white;
+    transition: 1s all;
+}
+.login .form-reglog p {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    color: var(--azulPetroleo);
+}
+.login .form-reglog a {
+    color: var(--azulPetroleo);
+    font-weight: 600;
+    text-decoration: none;
+}
+.login .form-reglog a:hover{
+    color: var(--cyan);
+}
+.login .form-reglog small {
+    color: #ff0000;
+}
+.login .form-reglog div.recForm {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+}
+
+.login .boton {
+    width: 100%;
+    background: var(--dorado);
+    border: none;
+    padding: 12px;
+    margin: 16px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--azulPetroleo);
+    font-size: 18px;
+    align-content: center;
+    }
+
+.login .boton:hover {
+    background: var(--cyan) ;
+    color: white;
+    
+}
+.login hr.linea{
+    color: var(--azulPetroleo);
+}
+.login .linea {
+    border-top: 1px solid var(--azulPetroleo);
+    height: 2px;
+    max-width: 400px;
+    padding: 0;
+    margin: 5px auto 0 auto;
+}

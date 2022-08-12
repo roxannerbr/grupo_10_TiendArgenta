@@ -1,0 +1,31 @@
+.listar main h1{
+    width: 100%;
+    background: var(--dorado);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+.listar main .btncrear{
+margin-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+.listar main a .crear{
+    width: 300px;
+}
+.listar main a .btn{
+    color: white;
+    background: var(--dorado);
+    font-weight: 600;
+}
+.listar main a .btn:hover{
+    background-color: var(--cyan);
+}
+.listar main .table-responsive{
+    background: var(--cyan);
+    padding: 20px;
+    margin: 20px;
+}
+.listar main .table-responsive th{
+    color: white;
+}
