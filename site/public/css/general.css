@@ -12,3 +12,6 @@ body{
     background-attachment: fixed;
     font-family: var(--font);
 }
+a{
+    text-decoration: none;
+}
