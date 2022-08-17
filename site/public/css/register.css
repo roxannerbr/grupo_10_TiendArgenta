@@ -45,6 +45,15 @@
 .register main .form-reglog small {
     color: #ff0000;
 }
+.register .aceptoTerm label {
+    display: flex;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    color: var(--azulPetroleo);
+    justify-content: center;
+    align-content: center;
+}
 .register main .boton {
     width: 100%;
     background: var(--dorado);

@@ -206,7 +206,7 @@
     transform: translateY(-15px);
     box-shadow: 0 12px 16px var(--dorado);
   }
-@media (min-width:768px) {
+@media (min-width:700px) {
     .home main .nuevos, .home main .cards{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
