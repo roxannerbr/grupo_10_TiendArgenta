@@ -28,7 +28,7 @@
     background-color: white;
 }
 .detalles main .descripcion h2 {
-    margin: 4px;
+    /* margin: 4px; */
     color:var(--celeste);
 }
 .detalles main p{
@@ -56,11 +56,15 @@
     color:var(--celeste);
     margin: 8px 0px;
 }
+.detalles main .descripcion .talles select{
+margin-right: 50px;
+}
 
 .detalles main .descripcion .agregar_al_carrito{
 display: flex;
-/* width: 90px; */
+width: 90px;
 margin-bottom: 10px;
+align-items: center;
 }
 .detalles main .descripcion .agregar_al_carrito h3{
     margin:5px 5px;
@@ -120,6 +124,7 @@ display: flex;
     text-decoration: underline;
 }
 .detalles main .linea{
+    display: flex;
     border-top: solid 1px var(--cyan);
     height: 2px;
     max-width: 400px;
@@ -142,6 +147,8 @@ display: flex;
     border-radius: 8px;
     cursor: pointer;
     transition: 1s hall;
+    margin-top: 10%;
+
 }
 .detalles main .btn button:hover{
     background-color: var(--dorado);
@@ -169,6 +176,7 @@ border-radius: 15px;
     border: solid 1px var(--azulPetroleo);
     border-radius: 15px;
     align-items: center;
+    flex-direction: column;
 }
 .detalles main .relacionados img{
     margin: 1px;
@@ -192,7 +200,11 @@ border-radius: 15px;
     color: white;
 }
 
+@media(min-width:425px){
+    .detalles main .linea {
+        display: block}
 
+}
 @media(min-width:426px){
     .detalles main .imagenes .img_principal{
         width: 95%;
