@@ -17,7 +17,7 @@
 .home main .ofertas {
     position: relative;
     width: 300px;
-    height: 380px;
+    height: 400px;
     background: var(--cyan);
     border-radius: 20px;
     overflow: hidden;
@@ -78,6 +78,29 @@
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+.ofertas .DatosBox .descard{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.ofertas .DatosBox .descard small{
+    font-size: 14px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: line-through;
+    text-align: center;
+}
+.ofertas .DatosBox .descard h4{
+    padding: 4px;
+    font-size: 14px;
+    background-color: green;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+}
 .ofertas .DatosBox .price {
     font-size: 24px;
     color: white;
@@ -90,7 +113,6 @@
     top: 100px;
     opacity: 0;
     padding: 10px 30px;
-    margin-top: 15px;
     color: white;
     text-decoration: none;
     background: var(--azulPetroleo);
