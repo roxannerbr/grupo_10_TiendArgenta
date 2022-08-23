@@ -33,6 +33,18 @@ app.use("/usuario", usuariosRouter);
 app.use("/productos", productosRouter);
 app.use("/admin", adminRouter);
 
+/* Trabajar con metodos HTTP (post) */
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+try {
+  const result = JSON.parse('');
+  console.log(result);
+} catch (err) {
+  // SyntaxError: Unexpected end of JSON input
+  console.log('error', err);
+}
+
 /* Levantamos el servidor con app listen */
 app.listen(port,function(){
     return console.log(`Se levanta el servidor en http://localhost:${port}`)
