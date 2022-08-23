@@ -290,8 +290,21 @@ border-radius: 15px;
 display: flex;
     flex-direction: row;
 }
+.detalles main .descripcion{
+    padding: 10px;
+    border: solid 1px var(--azulPetroleo);
+    border-radius: 15px;
+    width: 70%;
+    margin: 4px;
+    background-color: white;
+}
 }
 @media(min-width:1025px){ 
-.detalles main .descripcion {
-    height: 600px;}
-}
+    .detalles main .descripcion{
+        padding: 10px;
+        border: solid 1px var(--azulPetroleo);
+        border-radius: 15px;
+        width: 70%;
+        margin: 4px;
+        background-color: white;
+    }}
