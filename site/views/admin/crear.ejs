@@ -5,15 +5,15 @@
   <%- include('../partials/header') %>
     <main>
         <h1>Agregar Producto</h1>        
-        <form action="" method="post">
+        <form action="/admin/crear" method="post">
             <section class="agregar">
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="Titulo" placeholder="Titulo">
+                    <input type="text" name="Titulo" class="form-control" id="Titulo" placeholder="Titulo">
                     <label for="Titulo">Titulo</label>
                     <small>Obligatorio</small>
                 </div>
                 <div class="form-floating">
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                    <select class="form-select" name="Categoria" id="floatingSelect" aria-label="Floating label select example">
                       <option selected hidden>Tipo de Producto</option>
                       <option value="Cotillon">Cotillon</option>
                       <option value="Coleccionables">Coleccionables</option>
@@ -25,22 +25,22 @@
                     <small>Obligatorio</small>
                   </div>
                 <div class="form-floating">
-                    <input type="number" class="form-control" id="Precio" placeholder="Precio">
+                    <input type="number" name="Precio" class="form-control" id="Precio" placeholder="Precio">
                     <label for="Precio">Precio</label>
                     <small>Obligatorio</small>
                 </div>
                 <div class="form-floating">
-                    <input type="number" class="form-control" id="Descuento" value="0" placeholder="Descuento">
+                    <input type="number" name="Descuento" class="form-control" id="Descuento" value="0" placeholder="Descuento">
                     <label for="Descuento">Descuento</label>
                     <small>De no aplicar descuento inserte 0 (Cero)</small>
                 </div>
                 <div class="form-floating">
-                    <input type="number" class="form-control" id="Stock" placeholder="Stock">
+                    <input type="number" name="Stock" class="form-control" id="Stock" placeholder="Stock">
                     <label for="Stock" value="1">Stock</label>
                     <small>Obligatorio</small>
                 </div>
                 <div class="form-floating">
-                    <textarea class="form-control" placeholder="Por favor inserte la descripcion del producto"
+                    <textarea class="form-control" name="Descripcion" placeholder="Por favor inserte la descripcion del producto"
                         id="floatingTextarea"></textarea>
                     <label for="floatingTextarea">Descripcion</label>
                     <small>Obligatorio</small>
@@ -53,7 +53,7 @@
                 </div>
                 
                 <div class="button d-flex justify-content-center">
-                    <button type="button" class="btn" type="submit">Crear Producto</button>
+                    <button class="btn" type="submit">Crear Producto</button>
                 </div>
                 
             </section>
