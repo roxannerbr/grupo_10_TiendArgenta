@@ -37,12 +37,12 @@
     transform: skewY(390deg);
 }
 .home main .ofertas::after {
-    content: "ORIGINAL";
+    content: "NUEVO";
     position: absolute;
     bottom: 0;
     left: 0;
     font-weight: 600;
-    font-size: 3.6em;
+    font-size: 4.9em;
     color: #010a261a;
 }
 .home main .ofertas .imgBox {
@@ -126,7 +126,7 @@
     opacity: 1;
 }
 .home main .imgBox img.itemOferta {
-    width: 100%;
+    height: 215px;
 }
 
 
@@ -151,7 +151,9 @@
     position: relative;
 }
 .home main .contenedor img{
+    background-color: white;
     width: 100%;
+    height: 200px;
     display: block;
     border-radius: 20px 20px 0 0;
 }
@@ -260,18 +262,18 @@
     .home main .ofertas {
         position: relative;
         width: 230px;
-        height: 350px;
+        height: auto;
         background: var(--cyan);
         border-radius: 20px;
         overflow: hidden;
     }
     .home main .ofertas::after {
-        content: "ORIGINAL";
+        content: "NUEVO";
         position: absolute;
         bottom: 0;
         left: 0;
         font-weight: 600;
-        font-size: 43.5px;
+        font-size: 59.5px;
         color: #010a261a;
     }
     .home main .ofertas .DatosBox h4 {

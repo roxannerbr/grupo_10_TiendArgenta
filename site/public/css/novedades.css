@@ -89,7 +89,6 @@
     top: 100px;
     opacity: 0;
     padding: 10px 30px;
-    margin-top: 15px;
     color: white;
     text-decoration: none;
     background: var(--azulPetroleo);
@@ -143,7 +142,7 @@
     .novedades main .ofertas {
         position: relative;
         width: 230px;
-        height: 350px;
+        height: auto;
         background: var(--cyan);
         border-radius: 20px;
         overflow: hidden;

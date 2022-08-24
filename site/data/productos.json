@@ -2,7 +2,7 @@
     {
         "id": 1,
         "titulo": "Maquillaje clasico",
-        "categoria": "Cotillon",
+        "categoria": "cotillon",
         "precio": 750,
         "descuento": 5,
         "stock": 15,
@@ -12,7 +12,7 @@
     {
         "id": 2,
         "titulo": "Maquillaje glitter",
-        "categoria": "Cotillon",
+        "categoria": "cotillon",
         "precio": 800,
         "descuento": 5,
         "stock": 15,
@@ -22,7 +22,7 @@
     {
         "id": 3,
         "titulo": "Kit Hincha",
-        "categoria": "Cotillon",
+        "categoria": "cotillon",
         "precio": 8500,
         "descuento": 0,
         "stock": 5,
@@ -32,7 +32,7 @@
     {
         "id": 4,
         "titulo": "Kit Globos",
-        "categoria": "Cotillon",
+        "categoria": "cotillon",
         "precio": 2800,
         "descuento": 15,
         "stock": 10,
@@ -42,7 +42,7 @@
     {
         "id": 5,
         "titulo": "Combo Fan",
-        "categoria": "Cotillon",
+        "categoria": "cotillon",
         "precio": 5000,
         "descuento": 10,
         "stock": 20,
@@ -52,7 +52,7 @@
     {
         "id": 6,
         "titulo": "Combo Gorros x6",
-        "categoria": "Cotillon",
+        "categoria": "cotillon",
         "precio": 6500,
         "descuento": 15,
         "stock": 13,
@@ -62,7 +62,7 @@
     {
         "id": 7,
         "titulo": "Combo Pareja",
-        "categoria": "Cotillon",
+        "categoria": "cotillon",
         "precio": 1500,
         "descuento": 0,
         "stock": 20,
@@ -72,7 +72,7 @@
     {
         "id": 8,
         "titulo": "Combo Vinchas",
-        "categoria": "Cotillon",
+        "categoria": "cotillon",
         "precio": 1500,
         "descuento": 5,
         "stock": 25,

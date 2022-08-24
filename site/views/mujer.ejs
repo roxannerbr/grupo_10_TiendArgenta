@@ -6,102 +6,24 @@
     <main>
       <h1>MUJER</h1>
       <section class="nuevos">
-        <article class="ofertas">
-          <a href="/productos/detalles">
-            <div class="imgBox">
-              <img src="/images/home/ofertas/sinbg-infantiles.png" alt="Camiseta de oferta" class="itemOferta">
-            </div>
-            <div class="DatosBox">
-              <h4>Camiseta Infantil</h4>
-              <h2 class="price">$12.999<small>,00</small></h2>
-              <a href="/productos/carrito" class="comprar">Comprar</a>
-            </div>
-            </a>
-        </article>
-        <article class="ofertas">
-          <a href="/productos/detalles">
-            <div class="imgBox">
-              <img src="/images/home/ofertas/sinbg-infantiles.png" alt="Camiseta de oferta" class="itemOferta">
-            </div>
-            <div class="DatosBox">
-              <h4>Camiseta Messi Titular</h4>
-              <h2 class="price">$17.999<small>,00</small></h2>
-              <a href="/productos/carrito" class="comprar">Comprar</a>
-            </div>
-          </a> 
-        </article>
-        <article class="ofertas">
-          <a href="/productos/detalles">
-            <div class="imgBox">
-              <img src="/images/home/ofertas/sinbg-infantiles.png" alt="Camiseta de oferta" class="itemOferta">
-            </div>
-            <div class="DatosBox">
-              <h4>Camiseta Mujer Suplente</h4>
-              <h2 class="price">$13.999<small>,00</small></h2>
-              <a href="/productos/carrito" class="comprar">Comprar</a>
-            </div>
-          </a>
-        </article>
-        <article class="ofertas">
-          <a href="/productos/detalles">
-            <div class="imgBox">
-              <img src="/images/home/ofertas/sinbg-infantiles.png" alt="Camiseta de oferta" class="itemOferta">
-            </div>
-            <div class="DatosBox">
-                <h4>Camiseta Hombre Suplente</h4>
-                <h2 class="price">$13.999<small>,00</small></h2>
+        <% mujer.forEach(producto => { %>
+          <article class="ofertas">
+            <a href="/productos/detalles/<%= producto.id %>">
+              <div class="imgBox">
+                <img src="/images/productos/<%= producto.imagen %>" alt="<%= producto.titulo %>" class="itemOferta">
+              </div>
+              <div class="DatosBox">
+                <h4><%= producto.titulo.slice(0,50) %></h4>
+                <div class="descard">
+                  <small >$<%= producto.precio %></small>
+                  <h4><%= producto.descuento %>%</h4>
+                </div>
+                <h2 class="price">$<%= producto.precio - (producto.precio * producto.descuento / 100)%><small>,00</small></h2>
                 <a href="/productos/carrito" class="comprar">Comprar</a>
-            </div>
-          </a>
-        </article>
-        <article class="ofertas">
-          <a href="/productos/detalles">
-            <div class="imgBox">
-              <img src="/images/home/ofertas/sinbg-infantiles.png" alt="Camiseta de oferta" class="itemOferta">
-            </div>
-            <div class="DatosBox">
-              <h4>Camiseta Infantil</h4>
-              <h2 class="price">$12.999<small>,00</small></h2>
-              <a href="/productos/carrito" class="comprar">Comprar</a>
-            </div>
-            </a>
-        </article>
-        <article class="ofertas">
-          <a href="/productos/detalles">
-            <div class="imgBox">
-              <img src="/images/home/ofertas/sinbg-infantiles.png" alt="Camiseta de oferta" class="itemOferta">
-            </div>
-            <div class="DatosBox">
-              <h4>Camiseta Messi Titular</h4>
-              <h2 class="price">$17.999<small>,00</small></h2>
-              <a href="/productos/carrito" class="comprar">Comprar</a>
-            </div>
-          </a> 
-        </article>
-        <article class="ofertas">
-          <a href="/productos/detalles">
-            <div class="imgBox">
-              <img src="/images/home/ofertas/sinbg-infantiles.png" alt="Camiseta de oferta" class="itemOferta">
-            </div>
-            <div class="DatosBox">
-              <h4>Camiseta Mujer Suplente</h4>
-              <h2 class="price">$13.999<small>,00</small></h2>
-              <a href="/productos/carrito" class="comprar">Comprar</a>
-            </div>
-          </a>
-        </article>
-        <article class="ofertas">
-          <a href="/productos/detalles">
-            <div class="imgBox">
-              <img src="/images/home/ofertas/sinbg-infantiles.png" alt="Camiseta de oferta" class="itemOferta">
-            </div>
-            <div class="DatosBox">
-                <h4>Camiseta Hombre Suplente</h4>
-                <h2 class="price">$13.999<small>,00</small></h2>
-                <a href="/productos/carrito" class="comprar">Comprar</a>
-            </div>
-          </a>
-        </article>
+              </div>
+              </a>
+          </article>
+          <% }) %>
       </section>
     </main>
     <%- include('./partials/footer') %>
