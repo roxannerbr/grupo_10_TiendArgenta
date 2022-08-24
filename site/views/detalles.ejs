@@ -6,109 +6,97 @@
   <%- include('./partials/header') %>
 
     <main>
-      <h1>Título del producto</h1>
+      <h1><%= producto.titulo %></h1>
       <div class="desk">
+        <!--IMAGEN DEL PRODUCTO-->
         <section class="imagenes">
           <div class="img_principal">
-            <img src="/images/detalles/PRINCIPAL.jpg" alt="" />
+            <img src="/images/productos/<%= producto.imagen %>" alt="" />
           </div>
-        <!--   <div class="miniaturas">
-            <img src="/images/detalles/PRINCIPAL.jpg" alt="" />
-            <img src="/images/detalles/DORSO.jpg" alt="" />
-            <img src="/images/detalles/FRENTE.jpg" alt="" />
-            <img src="/images/detalles/DORSO2.jpg" alt="" />
-          </div> -->
         </section>
+        <!--DATOS DEL PRODUCTO-->
         <section class="descripcion">
-          
+          <div class="contDescripcion">
           <div class="desc">
-            <h3>Descripcion del producto</h3>
+            <h4>Descripcion del producto</h4>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo
-              commodi soluta fuga quas voluptatem officiis, eos nulla? Natus,
-              quibusdam. Quam molestias voluptates aspernatur dolor vitae animi
-              magni non saepe fuga?
+              <%= producto.descripcion %>
             </p>
           </div>
           <div class="talles">
-            <h3>Talles</h3>
-            <select name="talles" id="talles">
-              <option value="">XS</option>
-              <option value="">S</option>
-              <option value="">M</option>
-              <option value="">L</option>
-              <option value="">XL</option>
-            </select>
-            <h2>Stock : 1</h2>
+            <h4>Talles</h4>
+            <label for="select">
+              <select name="talles" id="talles">
+                <option value="">XS</option>
+                <option value="">S</option>
+                <option value="">M</option>
+                <option value="">L</option>
+                <option value="">XL</option>
+              </select>
+            </label>
+            <h4>Stock:<%= producto.stock %></h4>
           </div>
-          <div class="agregar_al_carrito">
-            <h3>Cantidad</h3>
-            <div class="restar">-</div>
-            <input type="number" value="1" />
-            <div class="sumar">+</div>
-            
+          <div class="agregarCarrito">
+            <h4>Cantidad</h4>
+              <button class="button button--addOnLeft">-</button>
+              <input type="text" placeholder="Stock" value="1" class="input agregarCarrito__input"/>
+              <button class="button button--addOnRight">+</button>
           </div>
-          
-          <div class="linea"></div>
+            <div class="linea"></div>
           <div class="envio">
             <h3><i class="fa fa-truck"></i>Envíos a todo el país</h3>
-        
-            <a href="">Ver costo de envío</a>
+            <a href="https://www.correoargentino.com.ar/" target="_blank">Ver costo de envío</a>
           </div>
           <div class="linea"></div>
           <div class="precio">
-            <div>
-            <h3>Precio</h3>
-            <span>$10.000</span>
-            <small>10%</small>
+            <div class="contPrice">
+              <h4>Precio</h4>
+              <div class="precioViejo">
+                <small>$<%= producto.precio%></small>
+                <h4><%= producto.descuento%>%</h4>
+              </div>
+            </div>
+            <div class="contPrice">
+              <h4>Descuento</h4>
+              <h5>$<%=(producto.precio * producto.descuento / 100)%></h5>
+            </div>
           </div>
-          <div >
-            <h4>Descuento</h4>
-              <p>$1.000</p>
+          <div class="linea"></div>
+          <div class="totalFinal">
+            <h4>Total</h4>
+            <h4>$<%= producto.precio - (producto.precio * producto.descuento / 100)%></h4>
           </div>
+          <div class="btnComprar">
+            <button type="submit"><a href="/productos/carrito">AÑADIR AL CARRITO</a></button>
+          </div>
+          </section>
         </div>
-        <div class="linea">
-        <h3>Total</h3>
-        <p>$9.000</p>
-      </div>
-          <div class="btn">
-            <a href="/productos/carrito"><button type="submit">AÑADIR AL CARRITO</button></a>
-          </div>
-        </section>
-      </div>
-      <section class="relacionados">
-        <h2>Productos relacionados</h2>
-        <div class="articulos">
-          <article>
-            <img src="/images/detalles/camisetafrente.jpg" alt="" />
-            <h4>Camiseta selección hombre</h4>
-            <span>10% de descuento</span>
-            <p>$10.000</p>
-            <button>Ver más</button>
-          </article>
-          <article>
-            <img src="/images/detalles/camisetamujerfrente.jpg" alt="" />
-          
-            <h4>Camiseta selección mujer</h4>
-            <span>20% de descuento</span>
-            <p>$10.000</p>
-            <button>Ver más</button>
-          </article>
-          <article>
-            <img src="/images/detalles/camisetaniñofrente.jpg" alt="" />
-          
-            <h4>Camiseta selección niños</h4>
-            <span>15% de descuento</span>
-            <p>$8.000</p>
-            <button>Ver más</button>
-          </article>
-        </div class="articulos"v>
-      </section>
-      <div class="flecha">
-        <a href="#"><i class="fa-solid fa-up-long"></i></a>
-      </div>
-    </main>
 
+      <h1>Productos relacionados</h1>
+      <section class="relacionados">
+          <% detalles.forEach(producto => { %>
+            <article class="ofertas">
+              <a href="/productos/detalles/<%= producto.id %>">
+                <div class="imgBox">
+                  <img src="/images/productos/<%= producto.imagen %>" alt="<%= producto.titulo %>" class="itemOferta">
+                </div>
+                <div class="DatosBox">
+                  <h4><%= producto.titulo.slice(0,50) %></h4>
+                  <div class="descard">
+                    <small >$<%= producto.precio %></small>
+                    <h4><%= producto.descuento %>%</h4>
+                  </div>
+                  <h2 class="price">$<%= producto.precio - (producto.precio * producto.descuento / 100)%><small>,00</small></h2>
+                  <a href="/productos/carrito" class="comprar">Comprar</a>
+                </div>
+                </a>
+            </article>
+          <% }) %>
+      </section>
+        
+    </main>
+    
     <%- include('./partials/footer') %>
+    
   </body>
 </html>

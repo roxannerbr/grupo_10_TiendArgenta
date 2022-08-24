@@ -16,7 +16,7 @@
 .novedades main .ofertas {
     position: relative;
     width: 300px;
-    height: 380px;
+    height: auto;
     background: var(--cyan);
     border-radius: 20px;
     overflow: hidden;
@@ -117,7 +117,7 @@
         border-radius: 13px;
         background-color: rgba(255, 255, 255, 0.7);
     }
-@media (min-width:768px) {
+@media (min-width:700px) {
     .novedades main .nuevos{
         display: grid;
         grid-template-columns: repeat(2, 1fr);

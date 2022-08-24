@@ -1,87 +1,117 @@
 .detalles main h1{
+    width: 100%;
+    background: var(--dorado);
+    color: white;
     text-align: center;
-    font-size: 2em;
-    width: auto;
-    height: auto;
-    background-color: white;
-    border: solid 1px var(--azulPetroleo);
-    border-radius: 15px;
+    padding: 10px 0;
 }
-.detalles main .imagenes img {
+.detalles main .desk{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+.detalles main h3,h4{
+    color:var(--celeste);
+}
+.detalles main .imagenes .img_principal{
+    width: 90%;
+    background-color: white;
     border: solid 1px var(--azulPetroleo);
     border-radius: 20px;
     box-shadow: 0 0 30px rgba(0,0,0,18);
+}
+.detalles main .imagenes {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: 10px;
+}
+.detalles main .imagenes img {
     width: 100%;
 }
-.detalles main .imagenes .miniaturas img{
+/*.detalles main .imagenes .miniaturas img{
     width: 24%;
 }
 .detalles main .relacionados img{
     width: 25%;
-}
+}*/
 .detalles main .descripcion{
+    width: 90%;
+    background-color: white;
     padding: 10px;
     border: solid 1px var(--azulPetroleo);
     border-radius: 15px;
-    width: auto;
-    margin: 4px;
-    background-color: white;
-}
-.detalles main .descripcion h2 {
-    /* margin: 4px; */
-    color:var(--celeste);
-}
-.detalles main p{
-    padding-bottom: 5px;
-    font-size: 16px;
-    margin: 4px;
-}
-.detalles main .descripcion h3 {
-    /* border-top: 1px solid var(--azulPetroleo); */
-    width: auto;
-    margin: 4px;
-    
-    
-}
-.detalles main .descripcion .desc h3{
-    text-decoration: underline;
-}
+}   
 .detalles main .descripcion .desc{
     background-color: var(--celesteClaro);
     margin: 4px;
-  
+    border-radius: 15px;
+}    
+.detalles main .descripcion .desc h4{
+    text-decoration: underline;
+    padding: 3px;
+}
+.detalles main .descripcion .desc p{
+    padding: 2px 9px;
+    font-size: 12px;
+}
+.detalles main .descripcion h4 {
+    width: auto;
+    margin-right: 10px;
 }
 .detalles main .descripcion .talles{
     display: flex;
-    color:var(--celeste);
+    color: var(--celeste);
     margin: 8px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 }
 .detalles main .descripcion .talles select{
 margin-right: 50px;
 }
+.detalles main .descripcion .agregarCarrito {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
 
-.detalles main .descripcion .agregar_al_carrito{
-display: flex;
-width: 90px;
-margin-bottom: 10px;
-align-items: center;
-}
-.detalles main .descripcion .agregar_al_carrito h3{
-    margin:5px 5px;
-    color:var(--celeste)
-}
-.detalles main .descripcion .agregar_al_carrito input{
-    width: 90px;
+.detalles main .descripcion .agregarCarrito .agregarCarrito__input {
+    border-left: 0;
+    border-right: 0;
+    width: 50px;
     text-align: center;
-}
-.detalles main .descripcion .agregar_al_carrito div{
-    margin: 0px 10px;
+    }
+.detalles main .descripcion .agregarCarrito .button {
+    cursor: pointer;
+    padding: 5px 10px;
+    color: #FFFFFF;
     background-color: var(--celeste);
-    padding: 5px;
-    border: solid 1px var(--azulPetroleo);
-    border-radius: 3px;
-    color: white;
+    font-weight: 600;
+    border: 1px solid var(--azulPetroleo);
+    border-radius: 4px;
+}
+.detalles main .descripcion .agregarCarrito .button--addOnLeft {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.detalles main .descripcion .agregarCarrito .button--addOnRight {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
 
+.detalles main .descripcion .agregarCarrito .input {
+    border: 1px solid #D7DBDD;
+    padding: 0 10px;
+    border-radius: 0;
+    box-shadow: none;
+}
+.detalles main .linea{
+    border-top: solid 1px var(--cyan);
+    height: 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .detalles main .descripcion .envio{
     display: flex;
@@ -93,213 +123,308 @@ align-items: center;
     color: var(--celeste);
     margin: 5px;
 }
-.detalles main .descripcion a{
-    margin-bottom: 10px;
+.detalles main .descripcion .envio a{
     padding-left: 10px;
 }
-.detalles main .descripcion span{
-    text-decoration: line-through;
-    font-size: 20px;
-}
-.detalles main .descripcion small{
-    color: green;
-    font-size: 24px;
-}
-.detalles main .precio h3,h4{
-    color:var(--celeste);
-    margin:4px
-}
-.detalles main  h3,h4{
-    color:var(--celeste);
-    margin:4px
-}
 .detalles main .precio{
-display: flex;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-content: center;
+}
+.detalles main .descripcion .contPrice{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.detalles main .descripcion .precioViejo{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: baseline;
+}
+.detalles main .descripcion .precioViejo small{
+    text-decoration: line-through;
+    font-size: 16px;
+}
+.detalles main .descripcion .precioViejo h4{
+    background-color: green;
+    padding: 3px;
+    color: white;
+}
+.detalles main .totalFinal{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
     justify-content: space-evenly;
 }
-.detalles main .precio p{
-    
-    background-color: white;
-    font-size: x-large;
-    text-decoration: underline;
-}
-.detalles main .linea{
+.detalles main .btnComprar{
     display: flex;
-    border-top: solid 1px var(--cyan);
-    height: 2px;
-    max-width: 400px;
-    padding: 10px;
-    margin: 0%;
-    padding-bottom: 8px;
-}
-.detalles main .linea p{
-    font-size: 22px;
-}
-.detalles main .btn{
-    display: flex;
-    
     justify-content: space-evenly
 }
-.detalles main .btn button {
+.detalles main .btnComprar button {
     background-color: var(--celeste);
     color: white;
-    padding: 20px;
+    padding: 14px;
     border-radius: 8px;
     cursor: pointer;
     transition: 1s hall;
-    margin-top: 10%;
-
 }
-.detalles main .btn button:hover{
+.detalles main .btnComprar button:hover{
     background-color: var(--dorado);
     color: white;
 }
-.detalles main .relacionados h2{
-text-align: center;
-font-size: 2em;
-width: auto;
-height: auto;
-background-color: white;
-border: solid 1px var(--azulPetroleo);
-border-radius: 15px;
+.detalles main .btnComprar a{
+    color: white;
 }
-.detalles main .relacionados h4{
-    color: black;
+
+.detalles main .relacionados{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, max(3, 1fr));
+    margin: 20px;
+    grid-gap: 20px;
+    justify-content: space-around;
+    justify-items: center
 }
-.detalles main .relacionados span{
-    width: 254px;
+
+.detalles main .ofertas {
+    position: relative;
+    width: 300px;
+    height: auto;
+    background: var(--cyan);
+    border-radius: 20px;
+    overflow: hidden;
 }
-.detalles main .relacionados article{
-    background-color: var(--dorado);
+.detalles main .ofertas::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    width: 100%;
+    height: 100%;
+    background: var(--celesteClaro);
+    transform: skewY(345deg);
+    transition: 0.5s;
+}
+.detalles main .ofertas:hover::before {
+    top: -70%;
+    transform: skewY(390deg);
+}
+.detalles main .ofertas::after {
+    content: "RELACIONADO";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: 600;
+    font-size: 2.4em;
+    color: #010a261a;
+}
+.detalles main .ofertas .imgBox {
+    position: relative;
+    width: 100%;
     display: flex;
-    flex-wrap: nowrap;
-    border: solid 1px var(--azulPetroleo);
-    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1;
+}
+/*.home main .ofertas .imgBox img {
+    max-width: 100%;
+    transition: .5s;
+}
+.ofertas:hover .imgBox img {
+    max-width: 50%;
+        
+}*/
+.detalles main .ofertas .DatosBox {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
+    z-index: 2;
 }
-.detalles main .relacionados img{
-    margin: 1px;
-    display: flex;
-    border: solid 1px var(--azulPetroleo);
-    border-radius: 15px;
-}
-.detalles main .relacionados p{
-    font-size: unset;
-}
-.detalles main .relacionados button{
-    background-color: var(--celeste);
+.detalles main .ofertas .DatosBox h4 {
+    font-size: 14px;
     color: white;
-    padding: 8px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 1s hall;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
-.detalles main .relacionados button:hover{
-    background-color: var(--dorado);
+.ofertas .DatosBox .price {
+    font-size: 24px;
     color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.detalles main .ofertas .DatosBox .comprar {
+    position: relative;
+    top: 100px;
+    opacity: 0;
+    padding: 10px 30px;
+    color: white;
+    text-decoration: none;
+    background: var(--azulPetroleo);
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+.detalles main .ofertas:hover .DatosBox .comprar {
+    top: 0;
+    opacity: 1;
+}
+.detalles main .imgBox img.itemOferta {
+    width: 100%;
 }
 
+
+/*MEDIA MOBILE*/
 @media(min-width:425px){
     .detalles main .linea {
-        display: block}
+        display: block
+    }
+    .detalles main section .relacionados article{
+        width: 49%;
+        display: inline-block;
+    }
+    .detalles main .relacionados p{
+        width: 40%;
+        margin: 40px;
+        font-size: 20px;
+        border: 3px solid var(--azulPetroleo);
+        border-radius: 13px;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+}
+@media (min-width:700px) {
+    .detalles main .relacionados{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 20px;
+        grid-gap: 10px;
+        justify-content: space-around;
+        justify-items: center
+    }
 
 }
-@media(min-width:426px){
-    .detalles main .imagenes .img_principal{
-        width: 95%;
+/*MEDIA TABLET*/
+@media(min-width:768px){
+    .detalles main .desk{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        height: auto;
+        width: 100%;
+    } 
+    .detalles main .descripcion{
+        padding: 10px;
+        border: solid 1px var(--azulPetroleo);
+        border-radius: 15px;
+        width: 70%;
+        background-color: white;
     }
-    .detalles main .imagenes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    .detalles main .descripcion h2{
+        margin-bottom: 10px;
+    }
+    .detalles main .descripcion .desc{
+        background-color: var(--celesteClaro);
+        margin: 4px;
+        margin-bottom: 20px;
+    }
+    .detalles main .descripcion .talles{
+        display: flex;
+        color: var(--celeste);
+        margin: 8px 0px;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: baseline;
+    }
+    .detalles main .descripcion .talles h4, .agregarCarrito h4{
+        font-size: 18px;
+    }
+    .detalles main .descripcion .talles select{
+        margin-right: 50px;
+        width: 50px;
+        height: 25px;
+    }
+    .detalles main .descripcion .agregarCarrito {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: baseline;
+    }
+    .detalles main .descripcion .agregarCarrito .input {
+        border: 1px solid #D7DBDD;
+        padding: 0 10px;
+        border-radius: 0;
+        box-shadow: none;
+        height: 28px;
+    }
+    .detalles main .descripcion .envio {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        align-content: center;
+    }
+    .detalles main .descripcion .envio h3{
+        font-size: 16px;
+    }
+    .detalles main .descripcion .envio a{
+        color: var(--dorado);
+        font-size: 14px;
+    }
+    .detalles main .descripcion .envio a:hover{
+        color: var(--celeste);
+        font-size: 14px;
+    }
+    .detalles main .descripcion .contPrice h4{
+        font-size: 16px;
+        text-align: center;
+        margin-right: 0;
+    }
+    .detalles main .descripcion .contPrice h5{
+        font-size: 16px;
+    }
+    .detalles main .descripcion .precioViejo h4 {
+        background-color: green;
+        padding: 3px;
+        color: white;
+        font-size: 16px;
+        text-align: center;
+    }
+    .detalles main .precio{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        align-content: center;
+    }
+    .detalles main .descripcion .contPrice{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .detalles main .descripcion .precioViejo{
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        align-items: baseline;
+        justify-content: space-evenly;
+    }
+    .detalles main .btnComprar button {
+        background-color: var(--celeste);
+        color: white;
+        padding: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 1s all;
     }
 }
-
-@media(min-width:769px){
-    .detalles main{
-        margin-left: 10px;
-    margin-right: 10px;
-    }
-        .detalles main .desk{
-            display: flex; 
-        } 
-        
-        .detalles main .descripcion h2{
-            margin-bottom: 10px;
-        }
-        .detalles main .descripcion .desc{
-            background-color: var(--celesteClaro);
-     margin: 4px;
-     margin-bottom: 20px;
-        }
-        .detalles main .relacionados{
-            margin-top: 25px;
-        }
-        .detalles main .relacionados h2{
-            text-align: center;
-    font-size: 2em;
-    width: auto;
-    height: auto;
-    background-color: white;
-    border: solid 1px var(--azulPetroleo);
-    border-radius: 15px;
-        }
-        .detalles main .relacionados h4{
-            color: black;
-            font-size: 1.5em;
-        }
-        .detalles main .relacionados span{
-            font-size: 1.5em;
-            color: green;
-        }
-        .detalles main .relacionados article{
-            margin: 10px;
-            display: flex;
-            flex-direction: column;
-            width: 800px;
-            background-color: var(--dorado);
-            border: solid 1px var(--azulPetroleo);
-            border-radius: 15px;
-            text-align: center;
-        }
-        .detalles main .relacionados img{
-            margin: 1px;
-            display: flex;
-            border: solid 1px var(--azulPetroleo);
-            border-radius: 15px;
-        }
-        .detalles main .relacionados p{
-            font-weight: bold;
-            font-size: 1.5em;
-        }
-        .detalles main .relacionados button{
-            background-color: var(--celeste);
-            color: white;
-            padding: 2vh;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 1s hall;
-            margin:10px;
-        }
-        .detalles main .relacionados button:hover{
-            background-color: var(--dorado);
-            color: white;
-        }
-.detalles main .relacionados .articulos {
-display: flex;
-    flex-direction: row;
-}
-.detalles main .descripcion{
-    padding: 10px;
-    border: solid 1px var(--azulPetroleo);
-    border-radius: 15px;
-    width: 70%;
-    margin: 4px;
-    background-color: white;
-}
-}
-@media(min-width:1025px){ 
+/*MEDIA DESKTOP*/
+@media(min-width:1024px){ 
     .detalles main .descripcion{
         padding: 10px;
         border: solid 1px var(--azulPetroleo);
@@ -307,4 +432,49 @@ display: flex;
         width: 70%;
         margin: 4px;
         background-color: white;
-    }}
+    }
+    .detalles main .descripcion .envio h3 {
+        font-size: 24px;
+    }
+    .detalles main .relacionados{
+        display: grid;
+        grid-template-columns: repeat(4, 120px);
+        margin: 20px;
+        grid-gap:10px;
+        grid-auto-rows: minmax(100px, auto);
+        justify-content: space-around;
+        justify-items: center;
+    }
+    
+    .detalles main .ofertas {
+        position: relative;
+        width: 230px;
+        height: auto;
+        background: var(--cyan);
+        border-radius: 20px;
+        overflow: hidden;
+    }
+    .detalles main .ofertas::after {
+        content: "RELACIONADO";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-weight: 600;
+        font-size: 28.5px;
+        color: #010a261a;
+    }
+    .detalles main .ofertas .DatosBox h4 {
+        font-size: 14px;
+        color: white;
+        text-align: center;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .detalles main .nombre h2{
+        color: #fff;
+        font-size:20px;
+        text-align: center;
+        margin: 10px;
+    }
+}
