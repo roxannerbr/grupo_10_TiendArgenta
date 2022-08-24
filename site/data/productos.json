@@ -121,7 +121,7 @@
     },
     {
         "id": 11,
-        "titulo": "Copa Mundial 3D",
+        "titulo": "Copa del Mundo 3D",
         "categoria": "Coleccionables",
         "precio": 2500,
         "descuento": 10,
@@ -169,27 +169,23 @@
     },
     {
         "id": 15,
-        "titulo": "Combo Vinchas",
+        "titulo": "Camiseta Edicion Especial Titular",
         "categoria": "Coleccionables",
         "precio": 1500,
         "descuento": 5,
         "stock": 25,
         "descripcion": "lorem ipsum",
-        "imagen": [
-            "Col-.png"
-        ]
+        "imagen": ["Col-.png"]
     },
     {
         "id": 16,
-        "titulo": "Combo Vinchas",
+        "titulo": "Camiseta Edicion Especial Alternativa",
         "categoria": "Coleccionables",
         "precio": 1500,
         "descuento": 5,
         "stock": 25,
         "descripcion": "lorem ipsum",
-        "imagen": [
-            "Col-.png"
-        ]
+        "imagen": ["Col-.png"]
     },
     {
         "id": 17,

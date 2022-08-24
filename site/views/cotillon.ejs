@@ -14,10 +14,12 @@
             </div>
             <div class="DatosBox">
               <h4><%= producto.titulo.slice(0,50) %></h4>
+              <% if (producto.descuento !== 0) { %>
               <div class="descard">
                 <small >$<%= producto.precio %></small>
                 <h4><%= producto.descuento %>%</h4>
               </div>
+              <% } %>
               <h2 class="price">$<%= producto.precio - (producto.precio * producto.descuento / 100)%><small>,00</small></h2>
               <a href="/productos/carrito" class="comprar">Comprar</a>
             </div>
