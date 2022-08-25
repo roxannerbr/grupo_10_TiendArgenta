@@ -5,43 +5,50 @@
   <%- include('../partials/header') %>
   <main>
     <h1>Administracion</h1>
-    <div class="btncrear">
-      <a href="/admin/crear">
-          <button type="button" class="btn crear">Crear Producto</button>
-      </a>
+    <div class="btnHeader">
+      <div class="btncrear">
+        <a href="/admin/crear">
+            <button type="button" class="btn crear">Crear Producto</button>
+        </a>
+      </div>
+      <div class="btncrear">
+        <a href="/admin/<%= redirection %>">
+          <button type="button" class="btn crear"><%= redirection==="historial"?"Historial Productos":"Listar" %> </button>
+        </a>
+      </div>
     </div>
-    <a href="/admin<%= redirection %>">
-      <button type="button" class="btn btn-warning"><%= redirection==="historial"?"HistorialProductos":"Listar" %> </button>
-    </a>
-    <div class="table-responsive">
+    <div class="table-responsive tabla-mob">
     <table class="table table-hover">
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Marca</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Producto</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Categoria</th>
             <th scope="col">Stock</th>
             <th scope="col">Precio</th>
-            <th scope="col">Des</th>
+            <th scope="col">Desc</th>
             <th scope="col">Acción</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row"><a href="/admin/crear" target="_self"><%= productos.id %></a></th>
-            <td><a href="/admin/crear/<%= productos.id %>"> <%= productos.marca %></a></td>
-            <td><a href="/admin/crear/<%= productos.id %>"> <%= productos.titulo %></a></td>
-            <td><a href="/admin/crear/<%= productos.id %>"> <%= productos.stock %></a></td>
-            <td><a href="/admin/crear/<%= productos.id %>"> <%= productos.precio %></a></td>
-            <td><a href="/admin/crear/<%= productos.id %>"> <%= productos.descuento %></a></td>
-            <td>
-              <div>
-                <a href="/admin/crear"><button type="button" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></button></a>
-                <a href=""><button type="button" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button></a>
-              </div>
-            </td>
-          </tr>
+          <% productos.forEach(producto => { %>
+            <tr>
+              <th scope="row"><a href="/admin/editar/<%= producto.id %>"><%= producto.id %> </a></th>
+              <td><a href="/admin/editar/<%= producto.id %>"><%= producto.titulo %></a></td>
+              <td><a href="/products/detail/<%= producto.id %>"><%= producto.categoria %></a></td>
+              <td><a href="/admin/editar/<%= producto.id %> "><%= producto.stock %></a></td>
+              <td><a href="/admin/editar/<%= producto.id %> ">$<%= producto.precio %></a></td>
+              <td><a href="/admin/editar/<%= producto.id %> "><%= producto.descuento %>%</a></td>
+              <td class="btnMod"><a href="/admin/editar/<%= producto.id%>">
+                <button type="edit" class="btn btn-success">
+                  <a href="/admin/editar/<%= producto.id %> "><i class="fa-solid fa-pen-to-square"></i></a></button>
+                    <form class="trashForm" action="/admin/eliminar/<%= producto.id %>?_method=DELETE" method="post" >
+                      <button type="submit" class="btn btn-danger trash"><i class="fa-solid fa-trash-can"></i></button>
+                    </form>
+                  </a>
+              </td>
+            </tr>
+                <% }) %> 
         </tbody>        
       </table>
     </div>

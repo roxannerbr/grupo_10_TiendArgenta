@@ -16,7 +16,7 @@
                 <img src="/images/productos/<%= producto.imagen %>" alt="<%= producto.titulo %>" class="itemOferta">
               </div>
               <div class="DatosBox">
-                <h4><%= producto.titulo.slice(0,50) %></h4>
+                <h4><%= producto.titulo %></h4>
                 <% if (producto.descuento !== 0) { %>
                   <div class="descard">
                     <small >$<%= producto.precio %></small>

@@ -12,38 +12,35 @@ module.exports = {
     listar: (req, res) => {
         return res.render('admin/listar', {
             productos,
-            redirection: "history"
+            redirection: "historial"
         })
     },
     crear: (req, res) => {
         return res.render('admin/crear')
     },
     store:(req,res) => {
-        let {titulo,categoria,Precio,Descuento,Stock,Descripcion} = req.body
+        let {Titulo,Categoria,Precio,Descuento,Stock,Descripcion} = req.body
 
         let productoNuevo = {
             id: productos[productos.length - 1].id + 1,
-            titulo:[titulo],
-            categorias:[productos.categoria],
-            precio:productos.Precio,
-            descuento:[Descuento],
-            stock:Stock,
-            descripcion:[Descripcion],
+            titulo: Titulo,
+            categorias: Categoria,
+            precio: Precio,
+            descuento: Descuento,
+            stock: Stock,
+            descripcion: Descripcion,
             imagen: [
-                "default-image.png",
-                "default-image.png",
-                "default-image.png",
                 "default-image.png"
             ],
         }
 
-        productos.push(productoNuevo)
-        guardar(productos)
+        productos.push(productoNuevo);
+        guardar(productos);
 
         res.redirect('/admin/listar')
     },
     editar: (req, res) => {
-        let categorias = ['Cotillon', 'Coleccionables', 'Indumentaria']
+        let categorias = ['Cotillon', 'Coleccionables', 'Ind-Mujer', 'Ind-Hombre', 'Ind-Infantil']
         id = +req.params.id
         let producto = productos.find((elemento) => {
             return elemento.id == id
@@ -55,25 +52,28 @@ module.exports = {
         })
     },
     update: (req, res) => {
-        idParams = +req.params.id
-        let { Marca, Titulo, Categoria, Precio, Descuento, Stock, Descripcion } = req.body
+        let id = +req.params.id
+        let {Titulo,Categoria,Precio,Descuento,Stock,Descripcion} = req.body
 
         productos.forEach(producto => {
-            if (producto.id === idParams) {
-                producto.marca = Marca
+            if (producto.id === id) {
                 producto.titulo = Titulo
                 producto.categorias = Categoria
-                producto.precio = +Precio
-                producto.descuento = +Descuento
-                producto.stock = +Stock
+                producto.precio = Precio
+                producto.descuento = Descuento
+                producto.stock = Stock
                 producto.descripcion = Descripcion
-            }
-        })
+                producto.imagen =[
+                    "default-image.png"
+                    ]
+            }   
+    });
+
         guardar(productos)
         return res.redirect('/admin/listar')
     },
     destroy: (req, res) => {
-        idParams = +req.params.id
+        const id = +req.params.id
 
         let productoParaEliminar = productos.find((elemento) => {
             return elemento.id == idParams

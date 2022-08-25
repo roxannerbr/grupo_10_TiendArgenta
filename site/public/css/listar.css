@@ -5,11 +5,17 @@
     text-align: center;
     padding: 10px 0;
 }
+.listar main .btnHeader{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
 .listar main .btncrear{
-margin-left: 20px;
+    margin-left: 20px;
     display: flex;
     justify-content: flex-start;
 }
+
 .listar main a .crear{
     width: 300px;
 }
@@ -18,14 +24,87 @@ margin-left: 20px;
     background: var(--dorado);
     font-weight: 600;
 }
+
 .listar main a .btn:hover{
     background-color: var(--cyan);
 }
 .listar main .table-responsive{
-    background: var(--cyan);
+    background: var(--celesteClaro);
     padding: 20px;
     margin: 20px;
 }
-.listar main .table-responsive th{
+.listar main .table-responsive thead{
     color: white;
+    background-color: var(--cyan);
+}
+.listar main .table-responsive .btnMod{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.listar main .table-responsive .btnMod i{
+    color: white;
+}
+
+@media only screen and (max-width:680px) {
+    .listar main .btnHeader{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .listar main .btncrear{
+        margin-left: 20px;
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .listar main a .crear{
+        width: 150px;
+    }
+    .listar main a .btn{
+        color: white;
+        background: var(--dorado);
+        font-weight: 600;
+    }
+    
+    .listar main a .btn:hover{
+        background-color: var(--cyan);
+    }
+    .listar main .tabla-mob table{
+        display: flex;
+        width: 100%;
+    }
+    .listar main .tabla-mob thead{
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 40%;
+    }
+    .listar main .tabla-mob thead tr{
+        display: flex;
+        color: white;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+    .listar main .tabla-mob tbody{
+        display: flex;
+        color: black;
+        flex-direction: column;
+        align-items: stretch;
+        width: 80%;
+    }
+    .listar main .tabla-mob tbody tr{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+    }
+    .listar main .tabla-mob td:before{
+        font-weight: bold;
+        color: black;
+    }
+    .listar main .tabla-mob a{
+        color: black;
+    }
 }

@@ -175,7 +175,9 @@
         "descuento": 5,
         "stock": 25,
         "descripcion": "lorem ipsum",
-        "imagen": ["Col-.png"]
+        "imagen": [
+            "Col-.png"
+        ]
     },
     {
         "id": 16,
@@ -185,7 +187,9 @@
         "descuento": 5,
         "stock": 25,
         "descripcion": "lorem ipsum",
-        "imagen": ["Col-.png"]
+        "imagen": [
+            "Col-.png"
+        ]
     },
     {
         "id": 17,
@@ -449,27 +453,6 @@
         "descripcion": "UNA CAMISETA DE VISITANTE DE ARGENTINA INSPIRADA EN LOS PAISAJES DEL PAIS AUSTRAL",
         "imagen": [
             "H-Alter.png"
-        ]
-    },
-    {
-        "id": 39,
-        "titulo": [
-            null
-        ],
-        "categorias": [
-            null
-        ],
-        "descuento": [
-            null
-        ],
-        "descripcion": [
-            null
-        ],
-        "imagen": [
-            "default-image.png",
-            "default-image.png",
-            "default-image.png",
-            "default-image.png"
         ]
     }
 ]

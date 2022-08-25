@@ -8,7 +8,7 @@ const app = express();
 const port = 3012;
 const connectLivereload = require('connect-livereload');
 const path = require('path');
-const methodOverride=require('method-override');
+/*const methodOverride=require('method-override');*/
 
 /*Requerir Rutas */
 const indexRouter = require('./routes/index')
@@ -39,7 +39,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
-app.use(methodOverride('_method'));
+/*app.use(methodOverride('_method'));*/
 
 /* Levantamos el servidor con app listen */
 app.listen(port,function(){
