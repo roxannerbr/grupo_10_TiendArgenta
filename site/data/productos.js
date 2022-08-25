@@ -1,30 +1,32 @@
 const fs=require('fs');
 const productos=require('./productos.json')
 
-let ultimoId=productos[productos.length-1].id+1
-console.log(ultimoId);
+/*let ultimoId=productos[productos.length-1].id+1
+console.log(ultimoId);*/
 
 let nuevoProducto=[
     {        
-        "id":1,
-        "marca":"adidas",
-        "titulo":"camiseta niño",
-        "precio":"8000",
-        "descuento":"10",
-        "descripcion":"camiseta original.",
-        "stock":"15",
-        "imagenes":"camisetaniñofrente.jpg"
-    }
+        "id": 38,
+        "titulo": "Camiseta Alternativa Hombre",
+        "categoria": "Ind-Hombre",
+        "precio": 17000,
+        "descuento": 30,
+        "stock": 13,
+        "descripcion": "UNA CAMISETA DE VISITANTE DE ARGENTINA INSPIRADA EN LOS PAISAJES DEL PAIS AUSTRAL",
+        "imagen": [
+            "H-Alter.png"
+        ]
+    },
 ]
 
 
 /* Editar producto */
 let ProduEdit = productos.map((element,index) => {
-    if (element.id === 6) {
-        element.marca = "Iphone"
-        element.titulo = "Iphone 13 pro max plus extra super ultra violeta"
-        element.precio = 530000
-        element.stock = 3
+    if (element.id === 1) {
+        element.titulo = "Maquillaje clasico"
+        element.precio = 750
+        element.descuento = 5
+        element.stock = 15
     }
     return element
 })
