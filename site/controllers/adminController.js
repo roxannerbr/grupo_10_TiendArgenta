@@ -85,9 +85,9 @@ module.exports = {
         let productosModificados = productos.filter(producto => producto.id !== idParams)
         guardar(productosModificados)
 
-        return res.redirect('/admin/historial')
+        return res.redirect('/admin/listar')
     },
-    history: (req, res) => {
+    historial: (req, res) => {
 
         return res.render('admin/listar', {
             productos: historial,

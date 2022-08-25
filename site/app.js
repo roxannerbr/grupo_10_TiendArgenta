@@ -20,6 +20,10 @@ const usuariosRouter = require('./routes/usuario')
 liveReloadServer.watch(path.join(__dirname, 'public'));
 app.use(connectLivereload());
 
+/* Trabajar con metodos HTTP (post) */
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 //View Engine
 app.set('views', path.join(__dirname,'views'));
 app.set('view engine','ejs')
@@ -34,12 +38,9 @@ app.use("/usuario", usuariosRouter);
 app.use("/productos", productosRouter);
 app.use("/admin", adminRouter);
 
-/* Trabajar con metodos HTTP (post) */
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 
 
-/*app.use(methodOverride('_method'));*/
+/* app.use(methodOverride('_method')); */
 
 /* Levantamos el servidor con app listen */
 app.listen(port,function(){

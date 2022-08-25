@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include('../partials/head',{title: 'Crear'}) %>
+  <%- include('../partials/head',{title: 'Editar'}) %>
 <body class="crear-editar">
   <%- include('../partials/header') %>
     <main>
@@ -8,52 +8,55 @@
         <form action="/admin/editar/<%= producto.id %>_method=PUT" method="post">
             <section class="agregar">
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="Titulo" placeholder="Titulo">
+                    <input type="text" name="Titulo" class="form-control" id="Titulo" placeholder="Titulo" value="<%= producto.titulo %> ">
                     <label for="Titulo">Titulo</label>
                     <small>Obligatorio</small>
                 </div>
                 <div class="form-floating">
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                      <option selected hidden>Tipo de Producto</option>
+                    <select class="form-select" name="Categoria" id="floatingSelect" aria-label="Floating label select example">
+                       
+                        <option selected hidden>Tipo de Producto</option>
                       <option value="Cotillon">Cotillon</option>
                       <option value="Coleccionables">Coleccionables</option>
                       <option value="Ind-Hombre">Ind-Hombre</option>
                       <option value="Ind-Mujer">Ind-Mujer</option>
                       <option value="Ind-Infantil">Ind-Infantil</option>
+        
                     </select>
+                    
                     <label for="floatingSelect">Producto</label>
                     <small>Obligatorio</small>
                   </div>
                 <div class="form-floating">
-                    <input type="number" class="form-control" id="Precio" placeholder="Precio">
+                    <input type="number" name="Precio" class="form-control" id="Precio" placeholder="Precio" value="<%=producto.precio%>">
                     <label for="Precio">Precio</label>
                     <small>Obligatorio</small>
                 </div>
                 <div class="form-floating">
-                    <input type="number" class="form-control" id="Descuento" value="0" placeholder="Descuento">
+                    <input type="number" name="Descuento" class="form-control" id="Descuento" placeholder="Descuento" value="<%=producto.descuento%>">
                     <label for="Descuento">Descuento</label>
                     <small>De no aplicar descuento inserte 0 (Cero)</small>
                 </div>
                 <div class="form-floating">
-                    <input type="number" class="form-control" id="Stock" placeholder="Stock">
+                    <input type="number" name="Stock" class="form-control" id="Stock" placeholder="Stock" value="<%=producto.stock%>">
                     <label for="Stock" value="1">Stock</label>
                     <small>Obligatorio</small>
                 </div>
                 <div class="form-floating">
-                    <textarea class="form-control" placeholder="Por favor inserte la descripcion del producto"
-                        id="floatingTextarea"></textarea>
+                    <textarea name="descripcion" id="description" cols="300" rows="300" class="form-control" placeholder="Leave a comment here" style="resize: none;"><%= producto.descripcion %></textarea>
+                                    
                     <label for="floatingTextarea">Descripcion</label>
                     <small>Obligatorio</small>
                 </div>
 
                 <div class="mb-3">
-                    <label for="formFileMultiple" class="form-label">Subir imagenes del producto</label>
+                    <label for="formFileMultiple" name="imagenes" class="form-label">Subir imagenes del producto</label>
                     <input class="form-control" type="file" id="formFileMultiple" multiple>
                     <small>Obligatorio</small>
                 </div>
                 
                 <div class="button d-flex justify-content-center">
-                    <button type="button" class="btn" type="submit">Editar Producto</button>
+                    <button class="btn" type="submit">Editar Producto</button>
                 </div>
                 
             </section>
