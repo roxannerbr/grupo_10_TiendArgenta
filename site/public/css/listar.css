@@ -37,6 +37,11 @@
     color: white;
     background-color: var(--cyan);
 }
+.listar main .table-responsive tbody td a{
+    color: var(--azulPetroleo);
+    font-weight: 500;
+    text-decoration: none;
+}
 .listar main .table-responsive .btnMod{
     display: flex;
     justify-content: space-between;

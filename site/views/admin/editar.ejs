@@ -5,7 +5,7 @@
   <%- include('../partials/header') %>
     <main>
         <h1>Editar Producto</h1>        
-        <form action="/admin/editar/<%= producto.id %>_method=PUT" method="post">
+        <form action="/admin/editar/<%= producto.id %>?_method=PUT" method="POST">
             <section class="agregar">
                 <div class="form-floating">
                     <input type="text" name="Titulo" class="form-control" id="Titulo" placeholder="Titulo" value="<%= producto.titulo %> ">
@@ -16,11 +16,11 @@
                     <select class="form-select" name="Categoria" id="floatingSelect" aria-label="Floating label select example">
                        
                         <option selected hidden>Tipo de Producto</option>
-                      <option value="Cotillon">Cotillon</option>
-                      <option value="Coleccionables">Coleccionables</option>
-                      <option value="Ind-Hombre">Ind-Hombre</option>
-                      <option value="Ind-Mujer">Ind-Mujer</option>
-                      <option value="Ind-Infantil">Ind-Infantil</option>
+                            <option value="Cotillon">Cotillon</option>
+                            <option value="Coleccionables">Coleccionables</option>
+                            <option value="Ind-Hombre">Ind-Hombre</option>
+                            <option value="Ind-Mujer">Ind-Mujer</option>
+                            <option value="Ind-Infantil">Ind-Infantil</option>
         
                     </select>
                     
@@ -51,7 +51,7 @@
 
                 <div class="mb-3">
                     <label for="formFileMultiple" name="imagenes" class="form-label">Subir imagenes del producto</label>
-                    <input class="form-control" type="file" id="formFileMultiple" multiple>
+                    <input class="form-control" type="file" name="imagen" id="formFileMultiple" accept="image/png" width="200%" height="200%">
                     <small>Obligatorio</small>
                 </div>
                 

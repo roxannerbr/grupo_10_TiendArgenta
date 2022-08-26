@@ -24,7 +24,7 @@ module.exports = {
         let productoNuevo = {
             id: productos[productos.length - 1].id + 1,
             titulo: Titulo,
-            categorias: Categoria,
+            categoria: Categoria,
             precio: Precio,
             descuento: Descuento,
             stock: Stock,
@@ -41,7 +41,7 @@ module.exports = {
     },
     editar: (req, res) => {
         let categorias = ['Cotillon', 'Coleccionables', 'Ind-Mujer', 'Ind-Hombre', 'Ind-Infantil']
-        id = +req.params.id
+        let id = +req.params.id
         let producto = productos.find((elemento) => {
             return elemento.id == id
         })

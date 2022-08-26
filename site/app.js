@@ -8,7 +8,7 @@ const app = express();
 const port = 3012;
 const connectLivereload = require('connect-livereload');
 const path = require('path');
-/*const methodOverride=require('method-override');*/
+const methodOverride=require('method-override');
 
 /*Requerir Rutas */
 const indexRouter = require('./routes/index')
@@ -24,13 +24,18 @@ app.use(connectLivereload());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+//PUT Y DELETE
+app.use(methodOverride('_method'));
+
 //View Engine
 app.set('views', path.join(__dirname,'views'));
 app.set('view engine','ejs')
 
 //Middlewares
-app.use(express.json()); //si se usa JSON CLASE54, 1:10:48
+app.use(express.json()); //si se usa JSON CLASE54
 app.use(express.static(path.resolve(__dirname,'public')));
+
+
 
 //Rutas
 app.use("/", indexRouter);
@@ -38,9 +43,6 @@ app.use("/usuario", usuariosRouter);
 app.use("/productos", productosRouter);
 app.use("/admin", adminRouter);
 
-
-
-/* app.use(methodOverride('_method')); */
 
 /* Levantamos el servidor con app listen */
 app.listen(port,function(){

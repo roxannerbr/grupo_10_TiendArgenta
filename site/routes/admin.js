@@ -10,9 +10,11 @@ router.get('/historial',historial);
 router.get('/crear',crear);
 router.post('/crear',store)
 
+//editar un producto
 router.get('/editar/:id',editar);
 router.put('/editar/:id', update);
 
+//eliminar un producto
 router.delete('/destroy/:id', destroy);
 
 module.exports = router;
