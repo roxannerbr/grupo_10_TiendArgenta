@@ -427,9 +427,8 @@
         "descuento": "10",
         "stock": "6",
         "imagen": [
-            "default-image.png"
-        ],
-        "categorias": "Tipo de Producto"
+            "H-shortnegro.png"
+        ]
     },
     {
         "id": 37,
@@ -453,6 +452,17 @@
         "descripcion": "UNA CAMISETA DE VISITANTE DE ARGENTINA INSPIRADA EN LOS PAISAJES DEL PAIS AUSTRAL",
         "imagen": [
             "H-Alter.png"
+        ]
+    },
+    {
+        "id": 39,
+        "titulo": "suerte",
+        "categoria": "Ind-Infantil",
+        "precio": "255",
+        "descuento": "15",
+        "stock": "654",
+        "imagen": [
+            "diego.PNG"
         ]
     }
 ]

@@ -19,6 +19,7 @@ module.exports = {
         return res.render('admin/crear')
     },
     store:(req,res) => {
+        
         let {Titulo,Categoria,Precio,Descuento,Stock,Descripcion} = req.body
 
         let productoNuevo = {
@@ -29,9 +30,7 @@ module.exports = {
             descuento: Descuento,
             stock: Stock,
             descripcion: Descripcion,
-            imagen: [
-                "default-image.png"
-            ],
+            imagen: req.file ? req.file.filename : 'default-image.png'
         }
 
         productos.push(productoNuevo);
@@ -58,14 +57,11 @@ module.exports = {
         productos.forEach(producto => {
             if (producto.id === id) {
                 producto.titulo = Titulo
-                producto.categorias = Categoria
+                producto.categoria = Categoria
                 producto.precio = Precio
                 producto.descuento = Descuento
                 producto.stock = Stock
                 producto.descripcion = Descripcion
-                producto.imagen =[
-                    "default-image.png"
-                    ]
             }   
     });
 
