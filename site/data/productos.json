@@ -48,6 +48,18 @@
         ]
     },
     {
+        "id": 5,
+        "titulo": "Combo Fan",
+        "categoria": "cotillon",
+        "precio": 5000,
+        "descuento": 10,
+        "stock": 20,
+        "descripcion": "lorem ipsum",
+        "imagen": [
+            "Combo-Fan.png"
+        ]
+    },
+    {
         "id": 6,
         "titulo": "Combo Gorros x6",
         "categoria": "cotillon",
@@ -384,6 +396,18 @@
         ]
     },
     {
+        "id": 34,
+        "titulo": "Camiseta Titular Messi",
+        "categoria": "Ind-Hombre",
+        "precio": 19000,
+        "descuento": 10,
+        "stock": 20,
+        "descripcion": "Una camiseta de la Selección Argentina con la estampa de Messi, hecha con material reciclado",
+        "imagen": [
+            "H-messi.png"
+        ]
+    },
+    {
         "id": 35,
         "titulo": "Short Seleccion Blanco",
         "categoria": "Ind-Hombre",
@@ -420,36 +444,13 @@
     },
     {
         "id": 38,
-        "titulo": "Camiseta Alternativa Hombre",
+        "titulo": "Camiseta Alternativa Hombre  ",
         "categoria": "Ind-Hombre",
-        "precio": 17000,
-        "descuento": 30,
-        "stock": 13,
-        "descripcion": "UNA CAMISETA DE VISITANTE DE ARGENTINA INSPIRADA EN LOS PAISAJES DEL PAIS AUSTRAL",
+        "precio": "17000",
+        "descuento": "30",
+        "stock": "13",
         "imagen": [
             "H-Alter.png"
         ]
-    },
-    {
-        "id": 5,
-        "titulo": "Combo Fan",
-        "categoria": "cotillon",
-        "precio": 5000,
-        "descuento": 10,
-        "stock": 20,
-        "descripcion": "lorem ipsum",
-        "imagen": [
-            "Combo-Fan.png"
-        ]
-    },
-    {
-        "id": 6,
-        "titulo": "",
-        "categoria": "Tipo de Producto",
-        "precio": "",
-        "descuento": "0",
-        "stock": "",
-        "descripcion": "",
-        "imagen": "img-1661521241494.png"
     }
 ]
