@@ -30,7 +30,7 @@
             <th scope="col">Acción</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody> 
           <% productos.forEach(producto => { %>
             <tr>
               <th scope="row"><a href="/admin/editar/<%= producto.id %>"><%= producto.id %> </a></th>
@@ -40,10 +40,26 @@
               <td><a href="/admin/editar/<%= producto.id %> ">$<%= producto.precio %></a></td>
               <td><a href="/admin/editar/<%= producto.id %> "><%= producto.descuento %>%</a></td>
               <td class="btnMod">                
-                <button type="edit" class="btn btn-success"><a href="/admin/editar/<%= producto.id%>"><i class="fa-solid fa-pen-to-square"></i></a></button>
-                <form class="trashForm" action="/admin/destroy/<%= producto.id %>?_method=DELETE" method="post" >
-                  <button type="submit" class="btn btn-danger trash"><i class="fa-solid fa-trash-can"></i></button>                
-                </form>
+                
+                  <% if (redirection !== "listar") { %>
+                    <a href="/admin/editar/<%= producto.id%>">
+                      <button type="edit" class="btn btn-success"><i class="fas fa-edit"></i></button>
+                  </a>
+                  <% }else{ %>
+                    <form action="/admin/restore/<%= producto.id%>?_method=DELETE" method="post">
+                      <button type="submit" class="btn btn-success"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+                    </form>
+                  <% } %>
+                  <% if (redirection !== "listar") { %>
+                    <form action="/admin/destroy/<%= producto.id%>?_method=DELETE" method="post">
+                      <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                    </form>
+                  <% }else{ %>
+                    <form action="/admin/crash/<%= producto.id%>?_method=DELETE" method="post">
+                      <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                    </form>
+                  <% } %>
+                </div>
               </td>
             </tr>
                 <% }) %> 

@@ -18,13 +18,10 @@
 
 .listar main a .crear{
     width: 300px;
-}
-.listar main a .btn{
     color: white;
     background: var(--dorado);
     font-weight: 600;
 }
-
 .listar main a .btn:hover{
     background-color: var(--cyan);
 }
@@ -44,7 +41,7 @@
 }
 .listar main .table-responsive .btnMod{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: baseline;
 }
 .listar main .table-responsive .btnMod i{

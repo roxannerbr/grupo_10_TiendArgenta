@@ -48,18 +48,6 @@
         ]
     },
     {
-        "id": 5,
-        "titulo": "Combo Fan",
-        "categoria": "cotillon",
-        "precio": 5000,
-        "descuento": 10,
-        "stock": 20,
-        "descripcion": "lorem ipsum",
-        "imagen": [
-            "Combo-Fan.png"
-        ]
-    },
-    {
         "id": 6,
         "titulo": "Combo Gorros x6",
         "categoria": "cotillon",
@@ -396,18 +384,6 @@
         ]
     },
     {
-        "id": 34,
-        "titulo": "Camiseta Titular Messi",
-        "categoria": "Ind-Hombre",
-        "precio": 19000,
-        "descuento": 10,
-        "stock": 20,
-        "descripcion": "Una camiseta de la Selección Argentina con la estampa de Messi, hecha con material reciclado",
-        "imagen": [
-            "H-messi.png"
-        ]
-    },
-    {
         "id": 35,
         "titulo": "Short Seleccion Blanco",
         "categoria": "Ind-Hombre",
@@ -455,14 +431,25 @@
         ]
     },
     {
-        "id": 39,
-        "titulo": "suerte",
-        "categoria": "Ind-Infantil",
-        "precio": "255",
-        "descuento": "15",
-        "stock": "654",
+        "id": 5,
+        "titulo": "Combo Fan",
+        "categoria": "cotillon",
+        "precio": 5000,
+        "descuento": 10,
+        "stock": 20,
+        "descripcion": "lorem ipsum",
         "imagen": [
-            "diego.PNG"
+            "Combo-Fan.png"
         ]
+    },
+    {
+        "id": 6,
+        "titulo": "",
+        "categoria": "Tipo de Producto",
+        "precio": "",
+        "descuento": "0",
+        "stock": "",
+        "descripcion": "",
+        "imagen": "img-1661521241494.png"
     }
 ]

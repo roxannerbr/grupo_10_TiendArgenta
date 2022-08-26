@@ -1,3 +1,25 @@
 [
-    
+    {
+        "id": 5,
+        "titulo": "Combo Fan",
+        "categoria": "cotillon",
+        "precio": 5000,
+        "descuento": 10,
+        "stock": 20,
+        "descripcion": "lorem ipsum",
+        "imagen": [
+            "Combo-Fan.png"
+        ]
+    },
+    {
+        "id": 39,
+        "titulo": "suerte",
+        "categoria": "Ind-Infantil",
+        "precio": "255",
+        "descuento": "15",
+        "stock": "654",
+        "imagen": [
+            "diego.PNG"
+        ]
+    }
 ]
