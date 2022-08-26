@@ -58,7 +58,7 @@ module.exports = {
         productos.forEach(producto => {
             if (producto.id === id) {
                 producto.titulo = Titulo
-                producto.categorias = Categoria
+                producto.categoria = Categoria
                 producto.precio = Precio
                 producto.descuento = Descuento
                 producto.stock = Stock
