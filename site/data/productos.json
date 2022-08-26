@@ -7,9 +7,7 @@
         "descuento": 5,
         "stock": 15,
         "descripcion": "lorem ipsum",
-        "imagen": [
-            "Kit-Clasico.png"
-        ]
+        "imagen": "Kit-Clasico.png"
     },
     {
         "id": 2,
@@ -19,9 +17,7 @@
         "descuento": 5,
         "stock": 15,
         "descripcion": "lorem ipsum",
-        "imagen": [
-            "Kit-Glitter.png"
-        ]
+        "imagen": "Kit-Glitter.png"
     },
     {
         "id": 3,
@@ -31,9 +27,7 @@
         "descuento": 0,
         "stock": 5,
         "descripcion": "lorem ipsum",
-        "imagen": [
-            "Kit-Hincha.png"
-        ]
+        "imagen": "Kit-Hincha.png"
     },
     {
         "id": 4,
@@ -43,9 +37,7 @@
         "descuento": 15,
         "stock": 10,
         "descripcion": "lorem ipsum",
-        "imagen": [
-            "Kit-Globos.png"
-        ]
+        "imagen": "Kit-Globos.png"
     },
     {
         "id": 5,
@@ -55,9 +47,7 @@
         "descuento": 10,
         "stock": 20,
         "descripcion": "lorem ipsum",
-        "imagen": [
-            "Combo-Fan.png"
-        ]
+        "imagen": "Combo-Fan.png"
     },
     {
         "id": 6,
@@ -67,9 +57,7 @@
         "descuento": 15,
         "stock": 13,
         "descripcion": "lorem ipsum",
-        "imagen": [
-            "Combo-Gorros.png"
-        ]
+        "imagen": "Combo-Gorros.png"
     },
     {
         "id": 7,
@@ -79,9 +67,7 @@
         "descuento": 0,
         "stock": 20,
         "descripcion": "lorem ipsum",
-        "imagen": [
-            "Combo-Parejas.png"
-        ]
+        "imagen": "Combo-Parejas.png"
     },
     {
         "id": 8,
@@ -91,9 +77,7 @@
         "descuento": 5,
         "stock": 25,
         "descripcion": "lorem ipsum",
-        "imagen": [
-            "Combo-Vinchas.png"
-        ]
+        "imagen": "Combo-Vinchas.png"
     },
     {
         "id": 9,
@@ -103,9 +87,7 @@
         "descuento": 0,
         "stock": 2,
         "descripcion": "lorem ipsum",
-        "imagen": [
-            "Col-Aguero.png"
-        ]
+        "imagen": "Col-Aguero.png"
     },
     {
         "id": 10,
@@ -115,9 +97,7 @@
         "descuento": 5,
         "stock": 25,
         "descripcion": "lorem ipsum",
-        "imagen": [
-            "Col-Messi.png"
-        ]
+        "imagen": "Col-Messi.png"
     },
     {
         "id": 11,
@@ -127,9 +107,7 @@
         "descuento": 10,
         "stock": 25,
         "descripcion": "lorem ipsum",
-        "imagen": [
-            "Col-CopaMundial.png"
-        ]
+        "imagen": "Col-CopaMundial.png"
     },
     {
         "id": 12,
@@ -139,9 +117,7 @@
         "descuento": 10,
         "stock": 15,
         "descripcion": "Pelota N°5 OFICIAL Competición MUNDIAL - 2022",
-        "imagen": [
-            "Col-Pelota.png"
-        ]
+        "imagen": "Col-Pelota.png"
     },
     {
         "id": 13,
@@ -151,9 +127,7 @@
         "descuento": 5,
         "stock": 5,
         "descripcion": "lorem ipsum",
-        "imagen": [
-            "Col-Mascota.png"
-        ]
+        "imagen": "Col-Mascota.png"
     },
     {
         "id": 14,
@@ -163,9 +137,7 @@
         "descuento": 10,
         "stock": 2,
         "descripcion": "lorem ipsum",
-        "imagen": [
-            "Col-Funkopop.png"
-        ]
+        "imagen": "Col-Funkopop.png"
     },
     {
         "id": 15,
@@ -175,9 +147,7 @@
         "descuento": 5,
         "stock": 25,
         "descripcion": "lorem ipsum",
-        "imagen": [
-            "Col-.png"
-        ]
+        "imagen": "Col-.png"
     },
     {
         "id": 16,
@@ -187,9 +157,7 @@
         "descuento": 5,
         "stock": 25,
         "descripcion": "lorem ipsum",
-        "imagen": [
-            "Col-.png"
-        ]
+        "imagen": "Col-.png"
     },
     {
         "id": 17,
@@ -199,9 +167,7 @@
         "descuento": 5,
         "stock": 25,
         "descripcion": "Para que tengas el mate cocido siempre caliente. Pico vertedor. Capacidad 500ml",
-        "imagen": [
-            "Inf-vasoTermico.png"
-        ]
+        "imagen": "Inf-vasoTermico.png"
     },
     {
         "id": 18,
@@ -211,9 +177,7 @@
         "descuento": 10,
         "stock": 12,
         "descripcion": "Manta Fluorecente Seleccion Argenntina - AFA, para que encuentres la cama en las noches sin luz.",
-        "imagen": [
-            "Inf-manta.png"
-        ]
+        "imagen": "Inf-manta.png"
     },
     {
         "id": 19,
@@ -223,9 +187,7 @@
         "descuento": 30,
         "stock": 12,
         "descripcion": "Fragancia a choripan",
-        "imagen": [
-            "Inf-perfume.png"
-        ]
+        "imagen": "Inf-perfume.png"
     },
     {
         "id": 20,
@@ -235,9 +197,7 @@
         "descuento": 0,
         "stock": 25,
         "descripcion": "botella reutilizable de Polipropileno bpa free capacidad 700cc",
-        "imagen": [
-            "Inf-botella.png"
-        ]
+        "imagen": "Inf-botella.png"
     },
     {
         "id": 21,
@@ -247,9 +207,7 @@
         "descuento": 0,
         "stock": 5,
         "descripcion": "Una camiseta de la Selección Argentina con la estampa de Messi, hecha con material reciclado",
-        "imagen": [
-            "Inf-Messi.png"
-        ]
+        "imagen": "Inf-Messi.png"
     },
     {
         "id": 22,
@@ -259,9 +217,7 @@
         "descuento": 0,
         "stock": 10,
         "descripcion": "100% Argentina. Diseñada para los hinchas, ofrece comodidad en todo momento gracias a su tejido suave con tecnología de absorción AEROREADY.",
-        "imagen": [
-            "Inf-Titular.png"
-        ]
+        "imagen": "Inf-Titular.png"
     },
     {
         "id": 23,
@@ -271,9 +227,7 @@
         "descuento": 30,
         "stock": 20,
         "descripcion": "Presentamos la nueva Camiseta Infantil Adidas Alternativa de Juego de la Selección Argentina para la temporada 2019/2020",
-        "imagen": [
-            "Inf-alternativa.png"
-        ]
+        "imagen": "Inf-alternativa.png"
     },
     {
         "id": 24,
@@ -283,9 +237,7 @@
         "descuento": 30,
         "stock": 20,
         "descripcion": "Todos somos uno cuando juega la selección. Los jugadores de la selección Argentina usan una versión de este pantalón de fútbol para jóvenes en sus apariciones en público. ",
-        "imagen": [
-            "Inf-pantalon.png"
-        ]
+        "imagen": "Inf-pantalon.png"
     },
     {
         "id": 25,
@@ -295,9 +247,7 @@
         "descuento": 0,
         "stock": 20,
         "descripcion": "Todos somos uno cuando juega la selección. Los jugadores de la selección Argentina usan una versión de este pantalón de fútbol para jóvenes en sus apariciones en público. ",
-        "imagen": [
-            "M-titular.png"
-        ]
+        "imagen": "M-titular.png"
     },
     {
         "id": 26,
@@ -307,9 +257,7 @@
         "descuento": 30,
         "stock": 5,
         "descripcion": "Dedicada a la tierra que nos hace soñar. El kit de visitante de Argentina es un emblema pintado en tonos azules que reflejan el esplendor de los glaciares del país.",
-        "imagen": [
-            "M-Alternativa.png"
-        ]
+        "imagen": "M-Alternativa.png"
     },
     {
         "id": 27,
@@ -319,9 +267,7 @@
         "descuento": 0,
         "stock": 10,
         "descripcion": "Siempre Argentina hasta los pies. Estas medias de fútbol adidas lucen los clásicos colores del uniforme de la selección y ofrecen amortiguación localizada y soporte en el arco.",
-        "imagen": [
-            "M-Medias.png"
-        ]
+        "imagen": "M-Medias.png"
     },
     {
         "id": 28,
@@ -331,9 +277,7 @@
         "descuento": 10,
         "stock": 10,
         "descripcion": "Las camisetas viejitas, pero mas baratas. Camiseta Celeste Adidas Seleccion Argentina - Copa America 2021",
-        "imagen": [
-            "M-copaamerica.png"
-        ]
+        "imagen": "M-copaamerica.png"
     },
     {
         "id": 29,
@@ -343,9 +287,7 @@
         "descuento": 10,
         "stock": 10,
         "descripcion": "u short",
-        "imagen": [
-            "M-shortblanco.png"
-        ]
+        "imagen": "M-shortblanco.png"
     },
     {
         "id": 30,
@@ -355,9 +297,7 @@
         "descuento": 30,
         "stock": 5,
         "descripcion": "Todos somos uno cuando juega la selección. Los jugadores de la selección Argentina usan una versión de este pantalón de fútbol para jóvenes en sus apariciones en público. ",
-        "imagen": [
-            "M-pantalon.png"
-        ]
+        "imagen": "M-pantalon.png"
     },
     {
         "id": 31,
@@ -367,9 +307,7 @@
         "descuento": 10,
         "stock": 10,
         "descripcion": "Siempre Argentina hasta los pies. Estas medias de fútbol adidas lucen los clásicos colores del uniforme de la selección y ofrecen amortiguación localizada y soporte en el arco.",
-        "imagen": [
-            "H-Medias.png"
-        ]
+        "imagen": "H-Medias.png"
     },
     {
         "id": 32,
@@ -379,9 +317,7 @@
         "descuento": 30,
         "stock": 20,
         "descripcion": "Todos somos uno cuando juega la selección. Los jugadores de la selección Argentina usan una versión de este pantalón de fútbol para jóvenes en sus apariciones en público. ",
-        "imagen": [
-            "H-pantalon.png"
-        ]
+        "imagen": "H-pantalon.png"
     },
     {
         "id": 33,
@@ -391,9 +327,7 @@
         "descuento": 10,
         "stock": 20,
         "descripcion": "100% Argentina. Diseñada para los hinchas, ofrece comodidad en todo momento gracias a su tejido suave con tecnología de absorción AEROREADY.",
-        "imagen": [
-            "H-titular.png"
-        ]
+        "imagen": "H-titular.png"
     },
     {
         "id": 34,
@@ -403,9 +337,7 @@
         "descuento": 10,
         "stock": 20,
         "descripcion": "Una camiseta de la Selección Argentina con la estampa de Messi, hecha con material reciclado",
-        "imagen": [
-            "H-messi.png"
-        ]
+        "imagen": "H-messi.png"
     },
     {
         "id": 35,
@@ -415,9 +347,7 @@
         "descuento": 10,
         "stock": 5,
         "descripcion": "Luciendo el clásico color blanco, este short de fútbol adidas de la Selección Argentina sigue el ejemplo de la camiseta a la que acompañan. Creado para mantener cómodo al hincha, están hechos de tejido suave y cuentan con tecnología de absorción AEROREADY. EL logo de la selección bordado le pone el toque final al diseño.",
-        "imagen": [
-            "H-shortblanco.png"
-        ]
+        "imagen": "H-shortblanco.png"
     },
     {
         "id": 36,
@@ -426,9 +356,7 @@
         "precio": "10000",
         "descuento": "10",
         "stock": "6",
-        "imagen": [
-            "H-shortnegro.png"
-        ]
+        "imagen": "H-shortnegro.png"
     },
     {
         "id": 37,
@@ -438,9 +366,7 @@
         "descuento": 30,
         "stock": 9,
         "descripcion": "Para que no tengas frio en invierno",
-        "imagen": [
-            "H-AlterLarga.png"
-        ]
+        "imagen": "H-AlterLarga.png"
     },
     {
         "id": 38,
@@ -449,8 +375,6 @@
         "precio": "17000",
         "descuento": "30",
         "stock": "13",
-        "imagen": [
-            "H-Alter.png"
-        ]
+        "imagen": "H-Alter.png"
     }
 ]

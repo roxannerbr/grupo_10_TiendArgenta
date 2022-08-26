@@ -1,12 +1,20 @@
 [
     {
         "id": 39,
-        "titulo": "Camiseta Roja",
-        "categoria": "Coleccionables",
-        "precio": "33333333",
-        "descuento": "4",
-        "stock": "44",
-        "descripcion": "",
-        "imagen": "img-1661535742259.png"
+        "titulo": "Prueba 1",
+        "categoria": "Ind-Hombre",
+        "precio": "17000",
+        "descuento": "30",
+        "stock": "13",
+        "imagen": "default-image.png"
+    },
+    {
+        "id": 40,
+        "titulo": "Prueba 2",
+        "categoria": "Ind-Hombre",
+        "precio": "17000",
+        "descuento": "30",
+        "stock": "13",
+        "imagen": "default-image.png"
     }
 ]
