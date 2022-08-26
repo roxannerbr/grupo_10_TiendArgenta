@@ -94,12 +94,18 @@
     font-size: 15px;
     margin-left: 5px;
 }
+.carrito .buy .product .detalle{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
 .carrito .buy .product .precio{
     display: flex;
-    justify-content: space-evenly;
-    align-items: stretch;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
     padding: 5px;
+    flex-wrap: wrap;
 }
 .carrito .buy .product .principal{
     color: green;
@@ -125,7 +131,47 @@
     text-align: right;
     width: 30%;
 }
-.carrito .buy .product .añadir{
+
+.carrito .buy .agregarCarrito {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 16px;
+}
+
+.carrito .buy .agregarCarrito .agregarCarrito__input {
+    border-left: 0;
+    border-right: 0;
+    width: 30px;
+    text-align: center;
+    padding: 5px;
+    }
+.carrito .buy .agregarCarrito .button {
+    cursor: pointer;
+    padding: 5px 10px;
+    color: #FFFFFF;
+    background-color: var(--celeste);
+    font-weight: 600;
+    border: 1px solid var(--azulPetroleo);
+    border-radius: 4px;
+}
+.carrito .buy .agregarCarrito .button--addOnLeft{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 5px;
+}
+.carrito .buy .agregarCarrito .button--addOnRight{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 5px;
+}
+.carrito .buy .agregarCarrito .input {
+    border: 1px solid #D7DBDD;
+    padding: 0 10px;
+    border-radius: 0;
+    box-shadow: none;
+}
+/* .carrito .buy .product .añadir{
     display: flex;
     font-weight: 900;
     color: var(--azulPetroleo);
@@ -134,8 +180,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-}
-.carrito .buy .product input{
+} */
+/* .carrito .buy .product input{
     border: solid 2px;
     height: 30px;
     width: 20px;
@@ -144,7 +190,7 @@
     font-size: 2rem;
     border: none;
     height: 3rem;
-}
+} */
 .carrito .buy .product .botones{
     display: flex;
     width: 20%;
@@ -300,12 +346,26 @@
         max-width: 400px;
         padding: 0;
     }
-    .carrito .buy .product .añadir{
+
+    .carrito .buy .agregarCarrito {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: baseline;
+    }
+    .carrito .buy .agregarCarrito .input {
+        border: 1px solid #D7DBDD;
+        padding: 0 10px;
+        border-radius: 0;
+        box-shadow: none;
+        height: 28px;
+    }
+    /* .carrito .buy .product .añadir{
         display: flex;
         justify-content: flex-start;
         align-items: center;
         flex-direction: row-reverse;
-    }
+    } */
     .carrito .buy .codigo .btnfinal{
         width: 90%;
         background-color: var(--celeste);

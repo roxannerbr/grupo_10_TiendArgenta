@@ -39,13 +39,11 @@
               <td><a href="/admin/editar/<%= producto.id %> "><%= producto.stock %></a></td>
               <td><a href="/admin/editar/<%= producto.id %> ">$<%= producto.precio %></a></td>
               <td><a href="/admin/editar/<%= producto.id %> "><%= producto.descuento %>%</a></td>
-              <td class="btnMod"><a href="/admin/editar/<%= producto.id%>">
-                <button type="edit" class="btn btn-success">
-                  <a href="/admin/editar/<%= producto.id %> "><i class="fa-solid fa-pen-to-square"></i></a></button>
-                    <form class="trashForm" action="/admin/destroy/<%= producto.id %>?_method=DELETE" method="post" >
-                      <button type="submit" class="btn btn-danger trash"><i class="fa-solid fa-trash-can"></i></button>
-                    </form>
-                  </a>
+              <td class="btnMod">                
+                <button type="edit" class="btn btn-success"><a href="/admin/editar/<%= producto.id%>"><i class="fa-solid fa-pen-to-square"></i></a></button>
+                <form class="trashForm" action="/admin/destroy/<%= producto.id %>?_method=DELETE" method="post" >
+                  <button type="submit" class="btn btn-danger trash"><i class="fa-solid fa-trash-can"></i></button>                
+                </form>
               </td>
             </tr>
                 <% }) %> 
