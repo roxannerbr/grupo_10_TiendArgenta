@@ -147,7 +147,7 @@
         "descuento": 5,
         "stock": 25,
         "descripcion": "lorem ipsum",
-        "imagen": "Col-.png"
+        "imagen": "Col-titular.png"
     },
     {
         "id": 16,
@@ -157,7 +157,7 @@
         "descuento": 5,
         "stock": 25,
         "descripcion": "lorem ipsum",
-        "imagen": "Col-.png"
+        "imagen": "Col-alternativa.png"
     },
     {
         "id": 17,
