@@ -9,6 +9,7 @@ const port = 3012;
 const connectLivereload = require('connect-livereload');
 const path = require('path');
 const methodOverride=require('method-override');
+const session= require ('express-session');
 
 /*Requerir Rutas */
 const indexRouter = require('./routes/index')
@@ -26,6 +27,10 @@ app.use(express.urlencoded({ extended: false }));
 
 //PUT Y DELETE
 app.use(methodOverride('_method'));
+
+/* login e inicio de sesion */
+app.use(session({
+  secret:"TiendArgenta"}));
 
 //View Engine
 app.set('views', path.join(__dirname,'views'));
