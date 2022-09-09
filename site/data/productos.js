@@ -13,9 +13,7 @@ let nuevoProducto=[
         "descuento": 30,
         "stock": 13,
         "descripcion": "UNA CAMISETA DE VISITANTE DE ARGENTINA INSPIRADA EN LOS PAISAJES DEL PAIS AUSTRAL",
-        "imagen": [
-            "H-Alter.png"
-        ]
+        "imagen": "H-Alter.png"
     },
 ]
 

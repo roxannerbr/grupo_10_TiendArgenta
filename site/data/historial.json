@@ -1,17 +1,15 @@
 [
     {
-        "id": 5,
-        "titulo": "Combo Fan",
-        "categoria": "cotillon",
-        "precio": 5000,
-        "descuento": 10,
-        "stock": 20,
-        "descripcion": "lorem ipsum",
-        "imagen": [
-            "Combo-Fan.png"
-        ]
+        "id": 39,
+        "titulo": "Prueba 1",
+        "categoria": "Ind-Hombre",
+        "precio": "17000",
+        "descuento": "30",
+        "stock": "13",
+        "imagen": "default-image.png"
     },
     {
+<<<<<<< HEAD
         "id": 39,
         "titulo": "suerte",
         "categoria": "Ind-Infantil",
@@ -33,5 +31,14 @@
         "imagen": [
             "Combo-Gorros.png"
         ]
+=======
+        "id": 40,
+        "titulo": "Prueba 2",
+        "categoria": "Ind-Hombre",
+        "precio": "17000",
+        "descuento": "30",
+        "stock": "13",
+        "imagen": "default-image.png"
+>>>>>>> 4abdf2b0236e4d98bdd2627737bcd7b9527e561f
     }
 ]

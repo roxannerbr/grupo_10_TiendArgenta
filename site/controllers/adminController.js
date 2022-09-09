@@ -158,18 +158,25 @@ module.exports = {
         id= +req.params.id
 
         let producto = historial.find(product => product.id === id)
+<<<<<<< HEAD
         /* res.send(fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'productos', producto.imagen))) */
+=======
+        //res.send(fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'productos', producto.imagen)))
+>>>>>>> 4abdf2b0236e4d98bdd2627737bcd7b9527e561f
         let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'productos', dato))
-
+        
         //producto.imagen.forEach(imagen => {
             if (ruta(producto.imagen) && (producto.imagen !== "default-image.png")) {
                 fs.unlinkSync(path.join(__dirname, '..','public', 'images', 'productos', producto.imagen))
             }
+<<<<<<< HEAD
             //console.log(ruta)
+=======
+>>>>>>> 4abdf2b0236e4d98bdd2627737bcd7b9527e561f
         //})
 
-        let productosModificados = productos.filter(producto => producto.id !== id)
-        guardar(productosModificados)
+        let historialModificado = historial.filter(producto => producto.id !== id)
+        guardarHistorial(historialModificado)
 
         return res.redirect('/admin/listar')
     },
