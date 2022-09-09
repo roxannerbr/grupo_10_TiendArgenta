@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {listar,crear,editar,store,update,destroy,historial,restore,crash} = require('../controllers/adminController');
+const productsValidation=require('../validations/productsValidation');
 
 const multer = require('multer')
 const upload = require('../middlewares/multerProductos')
@@ -12,11 +13,11 @@ router.get('/historial',historial);
 
 /* Añadir un producto */
 router.get('/crear',crear);
-router.post('/crear',upload.single('imagen'),store)
+router.post('/crear',upload.single('imagen'),productsValidation,store)
 
 //editar un producto
 router.get('/editar/:id',editar);
-router.put('/editar/:id',upload.single('imagen'), update);
+router.put('/editar/:id',upload.single('imagen'),productsValidation, update);
 
 //eliminar un producto
 router.delete('/destroy/:id', destroy);
