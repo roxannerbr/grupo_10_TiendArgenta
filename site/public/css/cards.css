@@ -1,19 +1,4 @@
-.cotillon main .nuevos{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, max(3, 1fr));
-    margin: 20px;
-    grid-gap: 20px;
-    justify-content: space-around;
-    justify-items: center
-}
-.cotillon main h1{
-    width: 100%;
-    background: var(--dorado);
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-}
-.cotillon main .ofertas {
+.ofertas {
     position: relative;
     width: 300px;
     height: auto;
@@ -21,7 +6,7 @@
     border-radius: 20px;
     overflow: hidden;
 }
-.cotillon main .ofertas::before {
+.ofertas::before {
     content: "";
     position: absolute;
     top: -50%;
@@ -31,20 +16,20 @@
     transform: skewY(345deg);
     transition: 0.5s;
 }
-.cotillon main .ofertas:hover::before {
+.ofertas:hover::before {
     top: -70%;
     transform: skewY(390deg);
 }
-.cotillon main .ofertas::after {
-    content: "COTILLON";
+.ofertas::after {
+    content: "COLECCION";
     position: absolute;
     bottom: 0;
     left: 0;
     font-weight: 600;
-    font-size: 3.5em;
+    font-size: 3em;
     color: #010a261a;
 }
-.cotillon main .ofertas .imgBox {
+.ofertas .imgBox {
     position: relative;
     width: 100%;
     display: flex;
@@ -53,15 +38,7 @@
     padding-top: 20px;
     z-index: 1;
 }
-/*.home main .ofertas .imgBox img {
-    max-width: 100%;
-    transition: .5s;
-}
-.ofertas:hover .imgBox img {
-    max-width: 50%;
-        
-}*/
-.cotillon main .ofertas .DatosBox {
+.ofertas .DatosBox {
     position: relative;
     padding: 20px;
     display: flex;
@@ -70,7 +47,7 @@
     flex-direction: column;
     z-index: 2;
 }
-.cotillon main .ofertas .DatosBox h4 {
+.ofertas .DatosBox h4 {
     font-size: 14px;
     color: white;
     font-weight: 500;
@@ -84,7 +61,7 @@
     letter-spacing: 1px;
     text-align: center;
 }
-.cotillon main .ofertas .DatosBox .comprar {
+.ofertas .DatosBox .comprar {
     position: relative;
     top: 100px;
     opacity: 0;
@@ -97,19 +74,19 @@
     letter-spacing: 1px;
     transition: 0.5s;
 }
-.cotillon main .ofertas:hover .DatosBox .comprar {
+.ofertas:hover .DatosBox .comprar {
     top: 0;
     opacity: 1;
 }
-.cotillon main .imgBox img.itemOferta {
+.imgBox img.itemOferta {
     width: 100%;
 }
 @media(min-width:425px){
-    .cotillon main section article{
+    .ofertas section article{
         width: 49%;
         display: inline-block;
     }
-    .cotillon main p{
+    .ofertas p{
         width: 40%;
         margin: 40px;
         font-size: 20px;
@@ -118,7 +95,7 @@
         background-color: rgba(255, 255, 255, 0.7);
     }
 @media (min-width:700px) {
-    .cotillon main .nuevos{
+    .nuevos{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         margin: 20px;
@@ -129,7 +106,7 @@
 
 }
 @media (min-width:1024px){
-    .cotillon main .nuevos{
+    .nuevos{
         display: grid;
         grid-template-columns: repeat(4, 120px);
         margin: 20px;
@@ -139,7 +116,7 @@
         justify-items: center;
     }
     
-    .cotillon main .ofertas {
+    .ofertas {
         position: relative;
         width: 230px;
         height: auto;
@@ -147,16 +124,16 @@
         border-radius: 20px;
         overflow: hidden;
     }
-    .cotillon main .ofertas::after {
-        content: "COTILLON";
+    .ofertas::after {
+        content: "COLECCION";
         position: absolute;
         bottom: 0;
         left: 0;
         font-weight: 600;
-        font-size: 43.2px;
+        font-size: 36.5px;
         color: #010a261a;
     }
-    .cotillon main .ofertas .DatosBox h4 {
+    .ofertas .DatosBox h4 {
         font-size: 14px;
         color: white;
         text-align: center;
@@ -164,7 +141,7 @@
         text-transform: uppercase;
         letter-spacing: 1px;
     }
-    .cotillon main .nombre h2{
+    .nombre h2{
         color: #fff;
         font-size:20px;
         text-align: center;
