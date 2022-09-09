@@ -8,28 +8,46 @@
             <h1>Crear cuenta</h1>
             <p class="textcrear">Complete este formulario para poder crear una cuenta.</p>
             <form action="" method="post">
+                <div class="">
+                    <label for="imagen">Subi tu imagén</label>
+                    <input type="file" name="imagen" id="imagen">
+                </div>
+
                 <div>
-                    <input class="ingreso" type="text" name="Nombres" id="Nombres" placeholder="Ingrese su nombre" required>
-                    <small>*Ingresa tu nombre</small>
+                    <input class="ingreso" type="text" name="Nombres" id="Nombres" value=" <%= locals.old && old.nombres ? old.nombres: null %> " placeholder="Ingrese su nombre" >
+                    <% if (locals.errors && errors.nombres) { %>
+                        <small><%= errors.nombres.msg %> </small>
+                    <% } %>                    
                 </div>
                 <div>
-                    <input class="ingreso" type="text" name="Nombres" id="Apellidos" placeholder="Ingrese su apellido" required>
-                    <small>*Ingrese tu apellido</small>
+                    <input class="ingreso" type="text" name="Apellidos" id="Apellidos" value=" <%= locals.old && old.apellidos ? old.apellidos: null %> " placeholder="Ingrese su apellido" >
+                    <% if (locals.errors && errors.apellidos) { %>
+                        <small><%= errors.apellidos.msg %> </small>
+                    <% } %>  
                 </div>
                 <div>
-                    <input class="ingreso" type="email" name="Correo" id="Correo" placeholder="Ingrese su correo electr&oacute;nico" required>
-                    <small>*Ingrese su E-mail</small>
+                    <input class="ingreso" type="email" name="Correo" id="Correo" value=" <%= locals.old && old.correo ? old.correo: null %> " placeholder="Ingrese su correo electr&oacute;nico" >
+                    <% if (locals.errors && errors.correo) { %>
+                        <small><%= errors.correo.msg %> </small>
+                    <% } %>  
                 </div>
                 <div>
-                    <input class="ingreso" type="password" name="pass" id="pass" placeholder="Ingrese su contraseña" required>
-                    <small>*Ingresa tu contraseña</small>
+                    <input class="ingreso" type="password" name="pass" id="pass" value=" <%= locals.old && old.pass ? old.pass: null %> " placeholder="Ingrese su contraseña" >
+                    <% if (locals.errors && errors.pass) { %>
+                        <small><%= errors.pass.msg %> </small>
+                    <% } %>  
                 </div>
                 <div>
-                    <input class="ingreso" type="password" name="pass2" id="pass2" placeholder="Confirme su contraseña" required>
-                    <small>*Las contraseñas no coinciden.</small>
+                    <input class="ingreso" type="password" name="pass2" id="pass2" value=" <%= locals.old && old.pass2 ? old.pass2: null %> " placeholder="Confirme su contraseña" >
+                    <% if (locals.errors && errors.pass2) { %>
+                        <small><%= errors.pass2.msg %> </small>
+                    <% } %>  
                 </div>
                 <div class="aceptoTerm">
-                    <label><input type="checkbox" name="check" required>&nbsp;Acepto los&nbsp;<a href="#">Términos y Condiciones.</a></label>
+                    <label><input type="checkbox" name="Terminos">&nbsp;Acepto los&nbsp;<a href="#">Términos y Condiciones.</a></label>
+                    <% if (locals.errors && errors.terminos) { %>
+                        <small><%= errors.terminos.msg %> </small>
+                    <% } %>  
                 </div>
                 <div> 
                     <button type="submit"class="boton">Registrarme</button>

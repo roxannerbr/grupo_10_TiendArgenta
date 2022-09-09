@@ -21,5 +21,17 @@
         "imagen": [
             "diego.PNG"
         ]
+    },
+    {
+        "id": 6,
+        "titulo": "Combo Gorros x6",
+        "categoria": "cotillon",
+        "precio": 6500,
+        "descuento": 15,
+        "stock": 13,
+        "descripcion": "lorem ipsum",
+        "imagen": [
+            "Combo-Gorros.png"
+        ]
     }
 ]

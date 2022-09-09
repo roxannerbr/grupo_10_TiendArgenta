@@ -1,7 +1,8 @@
-const fs = require('fs')
-const path = require('path')
-const productos = require('../data/productos.json')
-const historial = require('../data/historial.json')
+const fs = require('fs');
+const path = require('path');
+const productos = require('../data/productos.json');
+const historial = require('../data/historial.json');
+const {validationResult} = require('express-validator');
 
 const guardar = (dato) => fs.writeFileSync(path.join(__dirname, '../data/productos.json')
     , JSON.stringify(dato, null, 4), 'utf-8')
@@ -20,6 +21,19 @@ module.exports = {
     },
     store:(req,res) => {
         //return res.send(req.file)
+        let errors = validationResult(req)
+        if (req.fileValidationError) {
+            let imagen = {
+                param: 'imagen',
+                msg: req.fileValidationError,
+            }
+            errors.errors.push(imagen)
+        }
+
+        if (errors.isEmpty()) {
+            let img = req.file.map(imagen => {
+                return imagen.filename
+            })
 
         let {Titulo,Categoria,Precio,Descuento,Stock,Descripcion} = req.body
 
@@ -38,7 +52,24 @@ module.exports = {
         guardar(productos);
 
         res.redirect('/admin/listar')
-    },
+    }else{
+        id= +req.params.id
+        let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'productos', dato))
+        let producto =productos.find(product => product.id === id)
+
+        /* req.files.forEach(imagen => { */
+      if (ruta(producto.imagen) && (producto.imagen !== 'default-image.png')) {
+         fs.unlinkSync(path.join(__dirname, '..', 'public', 'images', 'productos', producto.imagen))
+     }
+     //})
+     /*  return res.send(errors.mapped()) */
+      return res.render('admin/crear', {
+          errors: errors.mapped(),
+          old: req.body
+      })
+    }
+     },
+
     editar: (req, res) => {
         let categorias = ['Cotillon', 'Coleccionables', 'Ind-Mujer', 'Ind-Hombre', 'Ind-Infantil']
         let id = +req.params.id
@@ -55,20 +86,37 @@ module.exports = {
         let id = +req.params.id
         let {Titulo,Categoria,Precio,Descuento,Stock,Descripcion} = req.body
 
-        productos.forEach(producto => {
-            if (producto.id === id) {
-                producto.titulo = Titulo
-                producto.categoria = Categoria
-                producto.precio = Precio
-                producto.descuento = Descuento
-                producto.stock = Stock
-                producto.descripcion = Descripcion
-            }   
-    });
-
-        guardar(productos)
-        return res.redirect('/admin/listar')
+        let errors = validationResult(req)
+        if (req.fileValidationError) {
+            let imagen = {
+                param: 'imagen',
+                msg: req.fileValidationError,
+            }
+            errors.errors.push(imagen)
+        }
+        if (errors.isEmpty()) {
+            productos.forEach(producto => {
+                if (producto.id === id) {
+                    producto.marca = Marca
+                    producto.titulo = Titulo
+                    producto.categoria = Categoria
+                    producto.precio = +Precio
+                    producto.descuento = +Descuento
+                    producto.stock = +Stock
+                    producto.descripcion = Descripcion
+                }
+            })
+            guardar(productos)
+            return res.redirect('/admin/listar')
+        } else {
+            /* return res.send(errors.mapped()) */
+            return res.render('admin/crear', {
+                errors: errors.mapped(),
+                old: req.body
+            })
+        }
     },
+
     destroy: (req, res) => {
         id = +req.params.id
 
@@ -110,14 +158,14 @@ module.exports = {
         id= +req.params.id
 
         let producto = historial.find(product => product.id === id)
-        res.send(fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'productos', producto.imagen)))
+        /* res.send(fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'productos', producto.imagen))) */
         let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'productos', dato))
 
         //producto.imagen.forEach(imagen => {
             if (ruta(producto.imagen) && (producto.imagen !== "default-image.png")) {
                 fs.unlinkSync(path.join(__dirname, '..','public', 'images', 'productos', producto.imagen))
             }
-            console.log(ruta)
+            //console.log(ruta)
         //})
 
         let productosModificados = productos.filter(producto => producto.id !== id)

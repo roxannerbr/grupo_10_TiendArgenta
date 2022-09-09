@@ -8,48 +8,71 @@
         <form action="/admin/crear" method="post" enctype="multipart/form-data">
             <section class="agregar">
                 <div class="form-floating">
-                    <input type="text" name="Titulo" class="form-control" id="Titulo" placeholder="Titulo">
+                    <input type="text" name="Titulo" class="form-control" id="Titulo" value="<%=locals.old && old.titulo ?old.nombre: null %>" placeholder="Titulo">
                     <label for="Titulo">Titulo</label>
-                    <small>Obligatorio</small>
+                    <% if (locals.errors && errors.titulo) { %>
+                        <small><%= errors.titulo.msg %> </small>
+                    <% } %>
+                    
                 </div>
                 <div class="form-floating">
                     <select class="form-select" name="Categoria" id="floatingSelect" aria-label="Floating label select example">
-                      <option selected hidden>Tipo de Producto</option>
-                      <option value="Cotillon">Cotillon</option>
-                      <option value="Coleccionables">Coleccionables</option>
-                      <option value="Ind-Hombre">Ind-Hombre</option>
-                      <option value="Ind-Mujer">Ind-Mujer</option>
-                      <option value="Ind-Infantil">Ind-Infantil</option>
+                        <% if (locals.errors && old.categoria) { %>
+                            <option selected hidden>Tipo de Producto</option>
+                            <option <%= old.categoria === "cotillon"?"selected":null %> value="cotillon">Cotillón</option>
+                            <option <%= old.categoria === "coleccionables"?"selected":null %> value="coleccionables">Coleccionables</option>
+                            <option <%= old.categoria === "Ind-Hombre"?"selected":null %> value="Ind-Hombre">Ind-Hombre</option>
+                            <option <%= old.categoria === "Ind-Mujer"?"selected":null %> value="Ind-Mujer">Ind-Mujer</option>
+                            <option <%= old.categoria === "Ind-Infantil"?"selected":null %> value="Ind-Infantil">Ind-Infantil</option>                         
+                        <% } else { %>
+                            <option selected hidden>Tipo de Producto</option>
+                            <option value="Cotillon">Cotillon</option>
+                            <option value="Coleccionables">Coleccionables</option>
+                            <option value="Ind-Hombre">Ind-Hombre</option>
+                            <option value="Ind-Mujer">Ind-Mujer</option>
+                            <option value="Ind-Infantil">Ind-Infantil</option>
+                        <% } %> 
                     </select>
-                    <label for="floatingSelect">Producto</label>
-                    <small>Obligatorio</small>
-                  </div>
+                         <label for="floatingSelect">Producto</label>
+                         <% if (locals.errors && errors.producto) { %>
+                             <small><%= errors.producto.msg %> </small>
+                         <% } %>
+                </div>
                 <div class="form-floating">
-                    <input type="number" name="Precio" class="form-control" id="Precio" placeholder="Precio">
+                    <input type="number" name="Precio" class="form-control" id="Precio" value="<%=locals.old && old.precio ?old.nombre: null%>" placeholder="Precio">
                     <label for="Precio">Precio</label>
-                    <small>Obligatorio</small>
+                    <% if (locals.errors && errors.precio) { %>
+                        <small><%= errors.precio.msg %> </small>
+                    <% } %>
                 </div>
                 <div class="form-floating">
-                    <input type="number" name="Descuento" class="form-control" id="Descuento" value="0" placeholder="Descuento">
+                    <input type="number" name="Descuento" class="form-control" id="Descuento" value="<%=locals.old && old.descuento ? old.nombre: null%>" placeholder="Descuento">
                     <label for="Descuento">Descuento</label>
-                    <small>De no aplicar descuento inserte 0 (Cero)</small>
+                    <% if (locals.errors && errors.descuento) { %>
+                        <small><%= errors.descuento.msg %> </small>
+                    <% } %>
                 </div>
                 <div class="form-floating">
-                    <input type="number" name="Stock" class="form-control" id="Stock" placeholder="Stock">
+                    <input type="number" name="Stock" class="form-control" id="Stock" value="<%=locals.old && old.stock ?old.nombre: null %>" placeholder="Stock">
                     <label for="Stock" value="1">Stock</label>
-                    <small>Obligatorio</small>
+                    <% if (locals.errors && errors.stock) { %>
+                        <small><%= errors.stock.msg %> </small>
+                    <% } %>
                 </div>
                 <div class="form-floating">
-                    <textarea class="form-control" name="Descripcion" placeholder="Por favor inserte la descripcion del producto"
-                        id="floatingTextarea"></textarea>
+                    <input type="text" class="form-control" id="description" placeholder="Descripción" name="descripcion" >
                     <label for="floatingTextarea">Descripcion</label>
-                    <small>Obligatorio</small>
+                    <% if (locals.errors && errors.descripcion) { %>
+                        <small><%= errors.descripcion.msg %> </small>
+                    <% } %>
                 </div>
 
                 <div class="mb-3">
                     <label for="formFileMultiple" class="form-label">Subir imagenes del producto</label>
-                    <input class="form-control" type="file" name="imagen" id="formFileMultiple" accept="image/png" width="200%" height="200%">
-                    <small>Obligatorio</small>
+                    <input class="form-control" type="file" name="imagen" id="formFileMultiple" accept="image/png" width="200%" height="200%" value="<%= locals.old && old.imagen ? old.nombre: null %>" >
+                    <% if (locals.errors && errors.imagen) { %>
+                        <small><%= errors.imagen.msg %> </small>
+                    <% } %>
                 </div>
                 
                 <div class="button d-flex justify-content-center">
