@@ -37,384 +37,7 @@
         "descuento": 15,
         "stock": 10,
         "descripcion": "lorem ipsum",
-<<<<<<< HEAD
-        "imagen": [
-            "Kit-Globos.png"
-        ]
-    },
-    {
-        "id": 7,
-        "titulo": "Combo Pareja",
-        "categoria": "cotillon",
-        "precio": 1500,
-        "descuento": 0,
-        "stock": 20,
-        "descripcion": "lorem ipsum",
-        "imagen": [
-            "Combo-Parejas.png"
-        ]
-    },
-    {
-        "id": 8,
-        "titulo": "Combo Vinchas",
-        "categoria": "cotillon",
-        "precio": 1500,
-        "descuento": 5,
-        "stock": 25,
-        "descripcion": "lorem ipsum",
-        "imagen": [
-            "Combo-Vinchas.png"
-        ]
-    },
-    {
-        "id": 9,
-        "titulo": "Aguero Miniatura",
-        "categoria": "Coleccionables",
-        "precio": 700,
-        "descuento": 0,
-        "stock": 2,
-        "descripcion": "lorem ipsum",
-        "imagen": [
-            "Col-Aguero.png"
-        ]
-    },
-    {
-        "id": 10,
-        "titulo": "Messi Cabezon 3D",
-        "categoria": "Coleccionables",
-        "precio": 1500,
-        "descuento": 5,
-        "stock": 25,
-        "descripcion": "lorem ipsum",
-        "imagen": [
-            "Col-Messi.png"
-        ]
-    },
-    {
-        "id": 11,
-        "titulo": "Copa del Mundo 3D",
-        "categoria": "Coleccionables",
-        "precio": 2500,
-        "descuento": 10,
-        "stock": 25,
-        "descripcion": "lorem ipsum",
-        "imagen": [
-            "Col-CopaMundial.png"
-        ]
-    },
-    {
-        "id": 12,
-        "titulo": "Pelota Qatar '22",
-        "categoria": "Coleccionables",
-        "precio": 45500,
-        "descuento": 10,
-        "stock": 15,
-        "descripcion": "Pelota N°5 OFICIAL Competición MUNDIAL - 2022",
-        "imagen": [
-            "Col-Pelota.png"
-        ]
-    },
-    {
-        "id": 13,
-        "titulo": "Mascota Mundial '22",
-        "categoria": "Coleccionables",
-        "precio": 4000,
-        "descuento": 5,
-        "stock": 5,
-        "descripcion": "lorem ipsum",
-        "imagen": [
-            "Col-Mascota.png"
-        ]
-    },
-    {
-        "id": 14,
-        "titulo": "Funko Pop Messi",
-        "categoria": "Coleccionables",
-        "precio": 3800,
-        "descuento": 10,
-        "stock": 2,
-        "descripcion": "lorem ipsum",
-        "imagen": [
-            "Col-Funkopop.png"
-        ]
-    },
-    {
-        "id": 15,
-        "titulo": "Camiseta Edicion Especial Titular",
-        "categoria": "Coleccionables",
-        "precio": 1500,
-        "descuento": 5,
-        "stock": 25,
-        "descripcion": "lorem ipsum",
-        "imagen": [
-            "Col-.png"
-        ]
-    },
-    {
-        "id": 16,
-        "titulo": "Camiseta Edicion Especial Alternativa",
-        "categoria": "Coleccionables",
-        "precio": 1500,
-        "descuento": 5,
-        "stock": 25,
-        "descripcion": "lorem ipsum",
-        "imagen": [
-            "Col-.png"
-        ]
-    },
-    {
-        "id": 17,
-        "titulo": "Vaso Termico Seleccion",
-        "categoria": "Ind-Infantil",
-        "precio": 700,
-        "descuento": 5,
-        "stock": 25,
-        "descripcion": "Para que tengas el mate cocido siempre caliente. Pico vertedor. Capacidad 500ml",
-        "imagen": [
-            "Inf-vasoTermico.png"
-        ]
-    },
-    {
-        "id": 18,
-        "titulo": "Manta Luminosa",
-        "categoria": "Ind-Infantil",
-        "precio": 7500,
-        "descuento": 10,
-        "stock": 12,
-        "descripcion": "Manta Fluorecente Seleccion Argenntina - AFA, para que encuentres la cama en las noches sin luz.",
-        "imagen": [
-            "Inf-manta.png"
-        ]
-    },
-    {
-        "id": 19,
-        "titulo": "Perfume Cancha",
-        "categoria": "Ind-Infantil",
-        "precio": 700,
-        "descuento": 30,
-        "stock": 12,
-        "descripcion": "Fragancia a choripan",
-        "imagen": [
-            "Inf-perfume.png"
-        ]
-    },
-    {
-        "id": 20,
-        "titulo": "Botella Reutilizable",
-        "categoria": "Ind-Infantil",
-        "precio": 500,
-        "descuento": 0,
-        "stock": 25,
-        "descripcion": "botella reutilizable de Polipropileno bpa free capacidad 700cc",
-        "imagen": [
-            "Inf-botella.png"
-        ]
-    },
-    {
-        "id": 21,
-        "titulo": "Camiseta Titular Messi",
-        "categoria": "Ind-Infantil",
-        "precio": 18000,
-        "descuento": 0,
-        "stock": 5,
-        "descripcion": "Una camiseta de la Selección Argentina con la estampa de Messi, hecha con material reciclado",
-        "imagen": [
-            "Inf-Messi.png"
-        ]
-    },
-    {
-        "id": 22,
-        "titulo": "Camiseta Titular Seleccion",
-        "categoria": "Ind-Infantil",
-        "precio": 15000,
-        "descuento": 0,
-        "stock": 10,
-        "descripcion": "100% Argentina. Diseñada para los hinchas, ofrece comodidad en todo momento gracias a su tejido suave con tecnología de absorción AEROREADY.",
-        "imagen": [
-            "Inf-Titular.png"
-        ]
-    },
-    {
-        "id": 23,
-        "titulo": "Camiseta Alternativa Seleccion",
-        "categoria": "Ind-Infantil",
-        "precio": 15000,
-        "descuento": 30,
-        "stock": 20,
-        "descripcion": "Presentamos la nueva Camiseta Infantil Adidas Alternativa de Juego de la Selección Argentina para la temporada 2019/2020",
-        "imagen": [
-            "Inf-alternativa.png"
-        ]
-    },
-    {
-        "id": 24,
-        "titulo": "Pantalon Presentacion",
-        "categoria": "Ind-Infantil",
-        "precio": 14000,
-        "descuento": 30,
-        "stock": 20,
-        "descripcion": "Todos somos uno cuando juega la selección. Los jugadores de la selección Argentina usan una versión de este pantalón de fútbol para jóvenes en sus apariciones en público. ",
-        "imagen": [
-            "Inf-pantalon.png"
-        ]
-    },
-    {
-        "id": 25,
-        "titulo": "Camiseta Titular",
-        "categoria": "Ind-Mujer",
-        "precio": 15000,
-        "descuento": 0,
-        "stock": 20,
-        "descripcion": "Todos somos uno cuando juega la selección. Los jugadores de la selección Argentina usan una versión de este pantalón de fútbol para jóvenes en sus apariciones en público. ",
-        "imagen": [
-            "M-titular.png"
-        ]
-    },
-    {
-        "id": 26,
-        "titulo": "Camiseta Alternativa Mujer",
-        "categoria": "Ind-Mujer",
-        "precio": 15000,
-        "descuento": 30,
-        "stock": 5,
-        "descripcion": "Dedicada a la tierra que nos hace soñar. El kit de visitante de Argentina es un emblema pintado en tonos azules que reflejan el esplendor de los glaciares del país.",
-        "imagen": [
-            "M-Alternativa.png"
-        ]
-    },
-    {
-        "id": 27,
-        "titulo": "Medias Mujer",
-        "categoria": "Ind-Mujer",
-        "precio": 3500,
-        "descuento": 0,
-        "stock": 10,
-        "descripcion": "Siempre Argentina hasta los pies. Estas medias de fútbol adidas lucen los clásicos colores del uniforme de la selección y ofrecen amortiguación localizada y soporte en el arco.",
-        "imagen": [
-            "M-Medias.png"
-        ]
-    },
-    {
-        "id": 28,
-        "titulo": "Camiseta Copa America",
-        "categoria": "Ind-Mujer",
-        "precio": 10000,
-        "descuento": 10,
-        "stock": 10,
-        "descripcion": "Las camisetas viejitas, pero mas baratas. Camiseta Celeste Adidas Seleccion Argentina - Copa America 2021",
-        "imagen": [
-            "M-copaamerica.png"
-        ]
-    },
-    {
-        "id": 29,
-        "titulo": "Short Seleccion Blanco",
-        "categoria": "Ind-Mujer",
-        "precio": 3000,
-        "descuento": 10,
-        "stock": 10,
-        "descripcion": "u short",
-        "imagen": [
-            "M-shortblanco.png"
-        ]
-    },
-    {
-        "id": 30,
-        "titulo": "Pantalon Presentacion",
-        "categoria": "Ind-Mujer",
-        "precio": 14000,
-        "descuento": 30,
-        "stock": 5,
-        "descripcion": "Todos somos uno cuando juega la selección. Los jugadores de la selección Argentina usan una versión de este pantalón de fútbol para jóvenes en sus apariciones en público. ",
-        "imagen": [
-            "M-pantalon.png"
-        ]
-    },
-    {
-        "id": 31,
-        "titulo": "Medias Blancas",
-        "categoria": "Ind-Hombre",
-        "precio": 4000,
-        "descuento": 10,
-        "stock": 10,
-        "descripcion": "Siempre Argentina hasta los pies. Estas medias de fútbol adidas lucen los clásicos colores del uniforme de la selección y ofrecen amortiguación localizada y soporte en el arco.",
-        "imagen": [
-            "H-Medias.png"
-        ]
-    },
-    {
-        "id": 32,
-        "titulo": "Pantalon Presentacion",
-        "categoria": "Ind-Hombre",
-        "precio": 14000,
-        "descuento": 30,
-        "stock": 20,
-        "descripcion": "Todos somos uno cuando juega la selección. Los jugadores de la selección Argentina usan una versión de este pantalón de fútbol para jóvenes en sus apariciones en público. ",
-        "imagen": [
-            "H-pantalon.png"
-        ]
-    },
-    {
-        "id": 33,
-        "titulo": "Camiseta Titular",
-        "categoria": "Ind-Hombre",
-        "precio": 17000,
-        "descuento": 10,
-        "stock": 20,
-        "descripcion": "100% Argentina. Diseñada para los hinchas, ofrece comodidad en todo momento gracias a su tejido suave con tecnología de absorción AEROREADY.",
-        "imagen": [
-            "H-titular.png"
-        ]
-    },
-    {
-        "id": 35,
-        "titulo": "Short Seleccion Blanco",
-        "categoria": "Ind-Hombre",
-        "precio": 10000,
-        "descuento": 10,
-        "stock": 5,
-        "descripcion": "Luciendo el clásico color blanco, este short de fútbol adidas de la Selección Argentina sigue el ejemplo de la camiseta a la que acompañan. Creado para mantener cómodo al hincha, están hechos de tejido suave y cuentan con tecnología de absorción AEROREADY. EL logo de la selección bordado le pone el toque final al diseño.",
-        "imagen": [
-            "H-shortblanco.png"
-        ]
-    },
-    {
-        "id": 36,
-        "titulo": "Short Seleccion",
-        "categoria": "Ind-Hombre",
-        "precio": "10000",
-        "descuento": "10",
-        "stock": "6",
-        "imagen": [
-            "H-shortnegro.png"
-        ]
-    },
-    {
-        "id": 37,
-        "titulo": "Alternativa Manga Larga",
-        "categoria": "Ind-Hombre",
-        "precio": 23000,
-        "descuento": 30,
-        "stock": 9,
-        "descripcion": "Para que no tengas frio en invierno",
-        "imagen": [
-            "H-AlterLarga.png"
-        ]
-    },
-    {
-        "id": 38,
-        "titulo": "Camiseta Alternativa Hombre",
-        "categoria": "Ind-Hombre",
-        "precio": 17000,
-        "descuento": 30,
-        "stock": 13,
-        "descripcion": "UNA CAMISETA DE VISITANTE DE ARGENTINA INSPIRADA EN LOS PAISAJES DEL PAIS AUSTRAL",
-        "imagen": [
-            "H-Alter.png"
-        ]
-=======
         "imagen": "Kit-Globos.png"
->>>>>>> 4abdf2b0236e4d98bdd2627737bcd7b9527e561f
     },
     {
         "id": 5,
@@ -424,11 +47,6 @@
         "descuento": 10,
         "stock": 20,
         "descripcion": "lorem ipsum",
-<<<<<<< HEAD
-        "imagen": [
-            "Combo-Fan.png"
-        ]
-=======
         "imagen": "Combo-Fan.png"
     },
     {
@@ -544,7 +162,7 @@
     {
         "id": 17,
         "titulo": "Vaso Termico Seleccion",
-        "categoria": "Ind-Infantil",
+        "categoria": "Infantil",
         "precio": 700,
         "descuento": 5,
         "stock": 25,
@@ -554,7 +172,7 @@
     {
         "id": 18,
         "titulo": "Manta Luminosa",
-        "categoria": "Ind-Infantil",
+        "categoria": "Infantil",
         "precio": 7500,
         "descuento": 10,
         "stock": 12,
@@ -564,7 +182,7 @@
     {
         "id": 19,
         "titulo": "Perfume Cancha",
-        "categoria": "Ind-Infantil",
+        "categoria": "Infantil",
         "precio": 700,
         "descuento": 30,
         "stock": 12,
@@ -574,7 +192,7 @@
     {
         "id": 20,
         "titulo": "Botella Reutilizable",
-        "categoria": "Ind-Infantil",
+        "categoria": "Infantil",
         "precio": 500,
         "descuento": 0,
         "stock": 25,
@@ -584,7 +202,7 @@
     {
         "id": 21,
         "titulo": "Camiseta Titular Messi",
-        "categoria": "Ind-Infantil",
+        "categoria": "Infantil",
         "precio": 18000,
         "descuento": 0,
         "stock": 5,
@@ -594,7 +212,7 @@
     {
         "id": 22,
         "titulo": "Camiseta Titular Seleccion",
-        "categoria": "Ind-Infantil",
+        "categoria": "Infantil",
         "precio": 15000,
         "descuento": 0,
         "stock": 10,
@@ -604,7 +222,7 @@
     {
         "id": 23,
         "titulo": "Camiseta Alternativa Seleccion",
-        "categoria": "Ind-Infantil",
+        "categoria": "Infantil",
         "precio": 15000,
         "descuento": 30,
         "stock": 20,
@@ -614,7 +232,7 @@
     {
         "id": 24,
         "titulo": "Pantalon Presentacion",
-        "categoria": "Ind-Infantil",
+        "categoria": "Infantil",
         "precio": 14000,
         "descuento": 30,
         "stock": 20,
@@ -624,7 +242,7 @@
     {
         "id": 25,
         "titulo": "Camiseta Titular",
-        "categoria": "Ind-Mujer",
+        "categoria": "Mujer",
         "precio": 15000,
         "descuento": 0,
         "stock": 20,
@@ -634,7 +252,7 @@
     {
         "id": 26,
         "titulo": "Camiseta Alternativa Mujer",
-        "categoria": "Ind-Mujer",
+        "categoria": "Mujer",
         "precio": 15000,
         "descuento": 30,
         "stock": 5,
@@ -644,7 +262,7 @@
     {
         "id": 27,
         "titulo": "Medias Mujer",
-        "categoria": "Ind-Mujer",
+        "categoria": "Mujer",
         "precio": 3500,
         "descuento": 0,
         "stock": 10,
@@ -654,7 +272,7 @@
     {
         "id": 28,
         "titulo": "Camiseta Copa America",
-        "categoria": "Ind-Mujer",
+        "categoria": "Mujer",
         "precio": 10000,
         "descuento": 10,
         "stock": 10,
@@ -664,7 +282,7 @@
     {
         "id": 29,
         "titulo": "Short Seleccion Blanco",
-        "categoria": "Ind-Mujer",
+        "categoria": "Mujer",
         "precio": 3000,
         "descuento": 10,
         "stock": 10,
@@ -674,7 +292,7 @@
     {
         "id": 30,
         "titulo": "Pantalon Presentacion",
-        "categoria": "Ind-Mujer",
+        "categoria": "Mujer",
         "precio": 14000,
         "descuento": 30,
         "stock": 5,
@@ -684,7 +302,7 @@
     {
         "id": 31,
         "titulo": "Medias Blancas",
-        "categoria": "Ind-Hombre",
+        "categoria": "Hombre",
         "precio": 4000,
         "descuento": 10,
         "stock": 10,
@@ -694,7 +312,7 @@
     {
         "id": 32,
         "titulo": "Pantalon Presentacion",
-        "categoria": "Ind-Hombre",
+        "categoria": "Hombre",
         "precio": 14000,
         "descuento": 30,
         "stock": 20,
@@ -704,7 +322,7 @@
     {
         "id": 33,
         "titulo": "Camiseta Titular",
-        "categoria": "Ind-Hombre",
+        "categoria": "Hombre",
         "precio": 17000,
         "descuento": 10,
         "stock": 20,
@@ -714,7 +332,7 @@
     {
         "id": 34,
         "titulo": "Camiseta Titular Messi",
-        "categoria": "Ind-Hombre",
+        "categoria": "Hombre",
         "precio": 19000,
         "descuento": 10,
         "stock": 20,
@@ -724,7 +342,7 @@
     {
         "id": 35,
         "titulo": "Short Seleccion Blanco",
-        "categoria": "Ind-Hombre",
+        "categoria": "Hombre",
         "precio": 10000,
         "descuento": 10,
         "stock": 5,
@@ -734,7 +352,7 @@
     {
         "id": 36,
         "titulo": "Short Seleccion",
-        "categoria": "Ind-Hombre",
+        "categoria": "Hombre",
         "precio": "10000",
         "descuento": "10",
         "stock": "6",
@@ -743,7 +361,7 @@
     {
         "id": 37,
         "titulo": "Alternativa Manga Larga",
-        "categoria": "Ind-Hombre",
+        "categoria": "Hombre",
         "precio": 23000,
         "descuento": 30,
         "stock": 9,
@@ -753,11 +371,10 @@
     {
         "id": 38,
         "titulo": "Camiseta Alternativa Hombre  ",
-        "categoria": "Ind-Hombre",
+        "categoria": "Hombre",
         "precio": "17000",
         "descuento": "30",
         "stock": "13",
         "imagen": "H-Alter.png"
->>>>>>> 4abdf2b0236e4d98bdd2627737bcd7b9527e561f
     }
 ]

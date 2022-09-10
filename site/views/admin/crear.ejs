@@ -69,15 +69,10 @@
 
                 <div class="mb-3">
                     <label for="formFileMultiple" class="form-label">Subir imagenes del producto</label>
-<<<<<<< HEAD
                     <input class="form-control" type="file" name="imagen" id="formFileMultiple" accept="image/png" width="200%" height="200%" value="<%= locals.old && old.imagen ? old.nombre: null %>" >
                     <% if (locals.errors && errors.imagen) { %>
                         <small><%= errors.imagen.msg %> </small>
                     <% } %>
-=======
-                    <input class="form-control" type="file" name="imagen" id="formFileMultiple" accept="image/png">
-                    <small>Obligatorio</small>
->>>>>>> 4abdf2b0236e4d98bdd2627737bcd7b9527e561f
                 </div>
                 
                 <div class="button d-flex justify-content-center">

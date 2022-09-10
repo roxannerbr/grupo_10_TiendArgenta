@@ -12,17 +12,9 @@
     align-items: center;
     flex-direction: column;
 }
-.busqueda main section img{
+.busqueda main section .resultados img{
     display: flex;
     align-items: center;
     flex-direction: column;
     background-color: white;
-}
-.busqueda main h4{
-    width: 100%;
-    background: var(--azulPetroleo);
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    margin:0;
 }

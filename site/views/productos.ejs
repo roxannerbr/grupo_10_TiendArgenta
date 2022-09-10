@@ -5,15 +5,17 @@
   <%- include('./partials/header') %>
     <main>
         <h1><%= categoriaSeleccionada %></h1>
-        <% productoPorCategoria.forEach(producto => { %>
-            <%- include('./partials/cards',{
-                id: producto.id,
-                imagen: producto.imagen,
-                titulo: producto.titulo,
-                descuento: producto.descuento,
-                precio: producto.precio
-            }) %> 
-        <% }) %>
+        <section class="cardProduct">
+          <% productoPorCategoria.forEach(producto => { %>
+              <%- include('./partials/cards',{
+                  id: producto.id,
+                  imagen: producto.imagen,
+                  titulo: producto.titulo,
+                  descuento: producto.descuento,
+                  precio: producto.precio
+              }) %> 
+          <% }) %>
+        </section>
     </main>
     <%- include('./partials/footer') %>
 </body>

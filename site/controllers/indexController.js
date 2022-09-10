@@ -24,10 +24,10 @@ module.exports = {
         let elemento = req.query.search
 
         let resultados = productos.filter(producto => {
-            return producto.marca === elemento || (producto.titulo.includes(elemento)) /* || (producto.descripcion.toLowerCase().includes(elemento.toLowerCase())) */
+            return producto.titulo.toLowerCase().indexOf(elemento.toLowerCase()) != -1
+            /* || (producto.descripcion.toLowerCase().includes(elemento.toLowerCase())) */
         })
-        return res.render('busqueda', 
-        {
+        return res.render('busqueda',{
             busqueda: elemento,
             resultados
         });
@@ -47,47 +47,5 @@ module.exports = {
     },
     indumentaria : (req,res) => {
         return res.render('indumentaria')
-    },
-    /*producto : (req,res) => {
-        return res.render('producto',
-        {
-            productos,
-            producto
-        })
-    },
-    cotillon : (req,res) => {
-        return res.render('cotillon',
-        {
-            productos,
-            cotillon
-        })
-    },
-    coleccionables : (req,res) => {
-        return res.render('coleccionables',
-        {
-            productos,
-            coleccion
-        })
-    },
-    mujer : (req,res) => {
-        return res.render('mujer',
-        {
-            productos,
-            mujer
-        })
-    },
-    infantil : (req,res) => {
-        return res.render('infantil',
-        {
-            productos,
-            infantil
-        })
-    },
-    hombre : (req,res) => {
-        return res.render('hombre',
-        {
-            productos,
-            hombre
-        })
-    }*/
+    }
 }

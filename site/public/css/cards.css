@@ -1,4 +1,12 @@
-.ofertas {
+main .cardProduct{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, max(3, 1fr));
+    margin: 20px;
+    grid-gap: 20px;
+    justify-content: space-around;
+    justify-items: center
+}
+main .ofertas {
     position: relative;
     width: 300px;
     height: auto;
@@ -6,7 +14,7 @@
     border-radius: 20px;
     overflow: hidden;
 }
-.ofertas::before {
+main .ofertas::before {
     content: "";
     position: absolute;
     top: -50%;
@@ -16,20 +24,20 @@
     transform: skewY(345deg);
     transition: 0.5s;
 }
-.ofertas:hover::before {
+main .ofertas:hover::before {
     top: -70%;
     transform: skewY(390deg);
 }
-.ofertas::after {
-    content: "COLECCION";
+main .ofertas::after {
+    content: "TIENDA ARGENTA";
     position: absolute;
     bottom: 0;
     left: 0;
     font-weight: 600;
-    font-size: 3em;
+    font-size: 1.99em;
     color: #010a261a;
 }
-.ofertas .imgBox {
+main .ofertas .imgBox {
     position: relative;
     width: 100%;
     display: flex;
@@ -38,7 +46,7 @@
     padding-top: 20px;
     z-index: 1;
 }
-.ofertas .DatosBox {
+main .ofertas .DatosBox {
     position: relative;
     padding: 20px;
     display: flex;
@@ -47,7 +55,7 @@
     flex-direction: column;
     z-index: 2;
 }
-.ofertas .DatosBox h4 {
+main .ofertas .DatosBox h4 {
     font-size: 14px;
     color: white;
     font-weight: 500;
@@ -61,7 +69,7 @@
     letter-spacing: 1px;
     text-align: center;
 }
-.ofertas .DatosBox .comprar {
+main .ofertas .DatosBox .comprar {
     position: relative;
     top: 100px;
     opacity: 0;
@@ -74,19 +82,19 @@
     letter-spacing: 1px;
     transition: 0.5s;
 }
-.ofertas:hover .DatosBox .comprar {
+main .ofertas:hover .DatosBox .comprar {
     top: 0;
     opacity: 1;
 }
-.imgBox img.itemOferta {
+main .imgBox img.itemOferta {
     width: 100%;
 }
 @media(min-width:425px){
-    .ofertas section article{
+    main section article .ofertas {
         width: 49%;
         display: inline-block;
     }
-    .ofertas p{
+    main p .ofertas{
         width: 40%;
         margin: 40px;
         font-size: 20px;
@@ -95,7 +103,7 @@
         background-color: rgba(255, 255, 255, 0.7);
     }
 @media (min-width:700px) {
-    .nuevos{
+    main .cardProduct{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         margin: 20px;
@@ -106,7 +114,7 @@
 
 }
 @media (min-width:1024px){
-    .nuevos{
+    main .cardProduct{
         display: grid;
         grid-template-columns: repeat(4, 120px);
         margin: 20px;
@@ -116,7 +124,7 @@
         justify-items: center;
     }
     
-    .ofertas {
+    main .ofertas {
         position: relative;
         width: 230px;
         height: auto;
@@ -124,16 +132,16 @@
         border-radius: 20px;
         overflow: hidden;
     }
-    .ofertas::after {
-        content: "COLECCION";
+    main .ofertas::after {
+        content: "TIENDA ARGENTA";
         position: absolute;
         bottom: 0;
         left: 0;
         font-weight: 600;
-        font-size: 36.5px;
+        font-size: 24px;
         color: #010a261a;
     }
-    .ofertas .DatosBox h4 {
+    main .ofertas .DatosBox h4 {
         font-size: 14px;
         color: white;
         text-align: center;
@@ -141,7 +149,7 @@
         text-transform: uppercase;
         letter-spacing: 1px;
     }
-    .nombre h2{
+    main .nombre h2{
         color: #fff;
         font-size:20px;
         text-align: center;

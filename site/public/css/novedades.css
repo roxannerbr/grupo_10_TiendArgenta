@@ -36,12 +36,12 @@
     transform: skewY(390deg);
 }
 .novedades main .ofertas::after {
-    content: "ORIGINAL";
+    content: "NUEVOS";
     position: absolute;
     bottom: 0;
     left: 0;
     font-weight: 600;
-    font-size: 3.6em;
+    font-size: 4.2em;
     color: #010a261a;
 }
 .novedades main .ofertas .imgBox {

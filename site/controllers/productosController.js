@@ -22,10 +22,11 @@ module.exports = {
     },
     categoria : (req,res) => {
         let categoriaSeleccionada = req.params.categoria
-        let categoria = ['Cotillon', 'Coleccionables', 'Ind-Mujer', 'Ind-Hombre', 'Ind-Infantil']
+        let categoria = ['Cotillon', 'Coleccionables', 'Mujer', 'Hombre', 'Infantil']
         
-        productoPorCategoria = productos.filter(producto => producto.categoria === categoriaSeleccionada)
-        
+        productoPorCategoria = productos.filter(producto =>{
+            return producto.categoria.toLowerCase() === categoriaSeleccionada.toLowerCase()
+        })
         return res.render('productos',{
             productos,
             productoPorCategoria,
