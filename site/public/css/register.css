@@ -72,6 +72,19 @@
     color: white;
     
 }
+.register main .boton-img{
+    width: 100%;
+    background: var(--dorado);
+    border: none;
+    padding: 5px;
+    margin: 7px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--azulPetroleo);
+    font-size: 13px;
+    align-content: center;
+}
+
 .register main hr.linea{
     color: var(--azulPetroleo);
 }

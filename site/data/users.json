@@ -10,8 +10,8 @@
         "address": "Av. Siempreviva 742",
         "image": "profile1",
         "category": "admin"
-      },
-      {
+    },
+    {
         "id": 2,
         "name": "Patricio",
         "lastName": "Cristaldo",
@@ -22,8 +22,8 @@
         "address": "Los lagos 1523",
         "image": "profile2",
         "category": "admin"
-      },
-      {
+    },
+    {
         "id": 3,
         "name": "Roxana",
         "lastName": "Romaniello",
@@ -34,8 +34,8 @@
         "address": "Av. Del Campo 10",
         "image": "profile3",
         "category": "admin"
-      },
-      {
+    },
+    {
         "id": 4,
         "name": "Mariana",
         "lastName": "Blanez",
@@ -46,8 +46,8 @@
         "address": "Calle Falsa 123",
         "image": "profile4",
         "category": "admin"
-      },
-      {
+    },
+    {
         "id": 5,
         "name": "Cristian",
         "lastName": "Elias",
@@ -58,8 +58,8 @@
         "address": "Mendoza 599",
         "image": "profile5",
         "category": "user"
-      },
-      {
+    },
+    {
         "id": 6,
         "name": "Jeanette",
         "lastName": "Garcia Barrera",
@@ -70,5 +70,17 @@
         "address": "Cerrito 303",
         "image": "profile5",
         "category": "user"
-      }
+    },
+    {
+        "id": 7,
+        "image": "login.png"
+    },
+    {
+        "id": 8,
+        "image": "login.png"
+    },
+    {
+        "id": 9,
+        "image": "login.png"
+    }
 ]

@@ -53,14 +53,14 @@ module.exports = {
 
         res.redirect('/admin/listar')
     }else{
-        
+        /* id= +req.params.id
         let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'productos', dato))
-        
+        let producto =productos.find(product => product.id === id)
 
-        /* req.files.forEach(imagen => { */
-      if (ruta(imagen) && (imagen !== 'default-image.png')) {
-         fs.unlinkSync(path.join(__dirname, '..', 'public', 'images', 'productos', imagen))
-     }
+    //req.files.forEach(imagen => 
+      if (ruta(producto.imagen) && (producto.imagen !== 'default-image.png')) {
+         fs.unlinkSync(path.join(__dirname, '..', 'public', 'images', 'productos', producto.imagen))
+     } */
      //})
      /*  return res.send(errors.mapped()) */
       return res.render('admin/crear', {
@@ -158,12 +158,12 @@ module.exports = {
         id= +req.params.id
 
         let producto = historial.find(product => product.id === id)
-        //res.send(fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'productos', producto.imagen)))
+        /* res.send(fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'productos', producto.imagen))) */
         let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'productos', dato))
         
         //producto.imagen.forEach(imagen => {
-            if (ruta(producto.imagen) && (producto.imagen !== "default-image.png")) {
-                fs.unlinkSync(path.join(__dirname, '..','public', 'images', 'productos', producto.imagen))
+            if (ruta(producto.image) && (producto.image !== "default-image.png")) {
+                fs.unlinkSync(path.join(__dirname, '..','public', 'images', 'productos', producto.image))
             }
         //})
 

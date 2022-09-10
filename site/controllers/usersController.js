@@ -8,12 +8,7 @@ const guardar = (dato) => fs.writeFileSync(path.join(__dirname, '../data/users.j
     , JSON.stringify(dato, null, 4), 'utf-8')
 
 module.exports = {
-    login : (req,res) => {
-        return res.render('login')
-    },
-    processLogin: (req,res)=>{
-        return res.send(req.body)
-    },
+    
     register : (req,res) => {
         return res.render('register')
     },
@@ -38,7 +33,7 @@ module.exports = {
                 password,
                 address,
                 category,
-                image: req.file.size > 1 ? req.file.filename : "login.jpg"
+                image: req.file? req.file.filename : "login.png"
             }
             usuarios.push(usuarioNuevo)
             guardar(usuarios)
@@ -48,7 +43,7 @@ module.exports = {
 
             let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'users', dato))
             if (ruta(req.file.filename) && (req.file.filename !== "default-image.png")) {
-                fs.unlinkSync(path.join(__dirname, '..', 'public', 'images', 'users', req.file.filename))
+            fs.unlinkSync(path.join(__dirname, '..', 'public', 'images', 'users', req.file.filename))
             }
             
             /* return res.send(errors.mapped()) */
@@ -57,6 +52,21 @@ module.exports = {
                 old: req.body
             })
         }
+    },
+
+    login : (req,res) => {
+        return res.render('login')
+    },
+    processLogin: (req,res)=>{
+        let errors= validationResult(req)
+        if (errors.isEmpty()){
+            //return res.send(req.body)
+        }else{
+            return res.render('login',{
+                errors: errors.mapped(),
+                old:req.body
+            })
+        }            
     },
 
     usuarios : (req,res) => {
