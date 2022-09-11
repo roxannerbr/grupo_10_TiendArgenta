@@ -15,20 +15,20 @@
 
                 <div>
                     <input class="ingreso" type="text" name="Nombres" id="Nombres" value="<%= locals.old && old.nombres ? old.nombres: null %>" placeholder="Ingrese su nombre" >
-                    <% if (locals.errors && errors.nombres) { %>
-                        <small><%= errors.nombres.msg %> </small>
+                    <% if (locals.errors && errors.Nombres) { %>
+                        <small><%= errors.Nombres.msg %> </small>
                     <% } %>                    
                 </div>
                 <div>
                     <input class="ingreso" type="text" name="Apellidos" id="Apellidos" value="<%= locals.old && old.apellidos ? old.apellidos: null %>" placeholder="Ingrese su apellido" >
-                    <% if (locals.errors && errors.apellidos) { %>
-                        <small><%= errors.apellidos.msg %> </small>
+                    <% if (locals.errors && errors.Apellidos) { %>
+                        <small><%= errors.Apellidos.msg %> </small>
                     <% } %>  
                 </div>
                 <div>
                     <input class="ingreso" type="email" name="Correo" id="Correo" value="<%= locals.old && old.correo ? old.correo: null %>" placeholder="Ingrese su correo electr&oacute;nico" >
-                    <% if (locals.errors && errors.correo) { %>
-                        <small><%= errors.correo.msg %> </small>
+                    <% if (locals.errors && errors.Correo) { %>
+                        <small><%= errors.Correo.msg %> </small>
                     <% } %>  
                 </div>
                 <div>
@@ -45,8 +45,8 @@
                 </div>
                 <div class="aceptoTerm">
                     <label><input type="checkbox" name="Terminos">&nbsp;Acepto los&nbsp;<a href="">Términos y Condiciones.</a></label>
-                    <% if (locals.errors && errors.terminos) { %>
-                        <small><%= errors.terminos.msg %> </small>
+                    <% if (locals.errors && errors.Terminos) { %>
+                        <small><%= errors.Terminos.msg %> </small>
                     <% } %>  
                 </div>
                 <div> 

@@ -41,13 +41,13 @@ module.exports = {
             return res.redirect('/')
         } else {
 
-            let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'users', dato))
+            /* let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'users', dato))
             if (ruta(req.file.filename) && (req.file.filename !== "default-image.png")) {
             fs.unlinkSync(path.join(__dirname, '..', 'public', 'images', 'users', req.file.filename))
-            }
+            } */
             
             /* return res.send(errors.mapped()) */
-            return res.render('users/register', {
+            return res.render('register', {
                 errors: errors.mapped(),
                 old: req.body
             })
@@ -60,7 +60,7 @@ module.exports = {
     processLogin: (req,res)=>{
         let errors= validationResult(req)
         if (errors.isEmpty()){
-            //return res.send(req.body)
+            return res.send(req.body)
         }else{
             return res.render('login',{
                 errors: errors.mapped(),
