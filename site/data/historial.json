@@ -9,27 +9,6 @@
         "imagen": "default-image.png"
     },
     {
-        "id": 39,
-        "titulo": "suerte",
-        "categoria": "Ind-Infantil",
-        "precio": "255",
-        "descuento": "15",
-        "stock": "654",
-        "imagen": [
-            "diego.PNG"
-        ]
-    },
-    {
-        "id": 6,
-        "titulo": "Combo Gorros x6",
-        "categoria": "cotillon",
-        "precio": 6500,
-        "descuento": 15,
-        "stock": 13,
-        "descripcion": "lorem ipsum",
-        "imagen": "Combo-Gorros.png"
-        },
-        {
         "id": 40,
         "titulo": "Prueba 2",
         "categoria": "Ind-Hombre",

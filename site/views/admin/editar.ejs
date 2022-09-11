@@ -17,12 +17,6 @@
                         <% categorias.forEach(categoria => { %>
                             <option value="<%= categoria %>" <%= producto.categoria.toLowerCase() === categoria.toLowerCase() ? 'selected' : null %> ><%= categoria %></option>
                           <% }) %>
-                        
-                            <option value="Cotillon">Cotillon</option>
-                            <option value="Coleccionables">Coleccionables</option>
-                            <option value="Ind-Hombre">Ind-Hombre</option>
-                            <option value="Ind-Mujer">Ind-Mujer</option>
-                            <option value="Ind-Infantil">Ind-Infantil</option>
         
                     </select>
                     
@@ -45,8 +39,7 @@
                     <small>Obligatorio</small>
                 </div>
                 <div class="form-floating">
-                    <textarea name="descripcion" id="description" cols="300" rows="300" class="form-control" placeholder="Leave a comment here" style="resize: none;"><%= producto.descripcion %></textarea>
-                                    
+                    <input type="text" class="form-control" id="description" placeholder="Descripción" name="descripcion" value="<%= producto.descripcion %> ">
                     <label for="floatingTextarea">Descripcion</label>
                     <small>Obligatorio</small>
                 </div>

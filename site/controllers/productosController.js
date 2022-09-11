@@ -20,8 +20,18 @@ module.exports = {
             return itemId === item ? total += 1 : total;
         }, 0);
     },
-    productos : (req,res) => {
-        return res.render('productos')
-    },
-
+    categoria : (req,res) => {
+        let categoriaSeleccionada = req.params.categoria
+        let categoria = ['Cotillon', 'Coleccionables', 'Mujer', 'Hombre', 'Infantil']
+        
+        productoPorCategoria = productos.filter(producto =>{
+            return producto.categoria.toLowerCase() === categoriaSeleccionada.toLowerCase()
+        })
+        return res.render('productos',{
+            productos,
+            productoPorCategoria,
+            categoria,
+            categoriaSeleccionada
+        })
+    }
 }

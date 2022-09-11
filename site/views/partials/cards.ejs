@@ -1,0 +1,18 @@
+    <article class="ofertas">
+      <a href="/productos/detalles/<%= id %>">
+        <div class="imgBox">
+          <img src="/images/productos/<%= imagen %>" alt="<%= titulo %>" class="itemOferta">
+        </div>
+        <div class="DatosBox">
+          <h4><%= titulo.slice(0,50) %></h4>
+          <% if (descuento !== 0) { %>
+          <div class="descard">
+            <small >$<%= precio %></small>
+            <h4><%= descuento %>%</h4>
+          </div>
+          <% } %>
+          <h2 class="price">$<%= precio - (precio * descuento / 100)%><small>,00</small></h2>
+          <a href="/productos/carrito" class="comprar">Comprar</a>
+        </div>
+        </a>
+    </article>

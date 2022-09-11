@@ -1,0 +1,28 @@
+.error main h3{
+    width: 100%;
+    background: var(--azulPetroleo);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0;
+}
+.error main section.error404{
+    width:100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.error main section img{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+}
+.error main h4{
+    width: 100%;
+    background: var(--azulPetroleo);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin:0;
+}

@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
-
-    <%- include('./partials/head',{title: 'TiendArgenta'}) %> 
-
-<body class="home">
-    <%- include('./partials/header') %> 
+  <%- include('./partials/head',{title: 'Tienda Argenta'}) %>
+<body class="productos">
+  <%- include('./partials/header') %>
     <main>
-        <!-- Categoria -->
-
-        <h1><%= categoria.nombre %> </h1>
+        <h1><%= categoriaSeleccionada %></h1>
+        <section class="cardProduct">
+          <% productoPorCategoria.forEach(producto => { %>
+              <%- include('./partials/cards',{
+                  id: producto.id,
+                  imagen: producto.imagen,
+                  titulo: producto.titulo,
+                  descuento: producto.descuento,
+                  precio: producto.precio
+              }) %> 
+          <% }) %>
+        </section>
     </main>
-    <%- include('./partials/footer') %> 
+    <%- include('./partials/footer') %>
 </body>
-</html> 
+</html>
