@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include('./partials/head',{title: 'Usuario'}) %>
+  <%- include('./partials/head',{title: locals.userLogin.name ) %>
   <body class="usuario">
       <%- include('./partials/header') %>
     <main>
+
+      <img src="/images/usuario/<%= locals.userLogin.image %>" alt="">
+
+      <h1>Hola <%=´${locals.userLogin.category} ${locals.userLogin.name}´%></h1>
+
+      <form action="/usuario/logout?_method=DELETE" method="post">
+        <button type="submit">cerrar sesión</button>
+      </form>
       
-      <div class="foto">
+      <!-- <div class="foto">
         <img src="/images/usuario/profile.jpg" alt="">
         <h2>Usuario Anonimo</h2>
       </div>
@@ -94,7 +102,7 @@
               <a href="/productos/carrito"><h3>Carrito</h3></a> </div>
         </div>
       </div>
-
+ -->
  
         </main>
         

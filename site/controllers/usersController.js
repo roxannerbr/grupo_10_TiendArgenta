@@ -1,8 +1,8 @@
-const fs = require('fs')
-const path = require('path')
-const { validationResult } = require('express-validator')
-/* const bcrypt = require('bcryptjs') */
-const usuarios = require('../data/users.json')
+const fs = require('fs');
+const path = require('path');
+const { validationResult } = require('express-validator');
+const bcrypt = require('bcryptjs');
+const usuarios = require('../data/users.json');
 /* const { emitWarning } = require('process') */
 const guardar = (dato) => fs.writeFileSync(path.join(__dirname, '../data/users.json')
     , JSON.stringify(dato, null, 4), 'utf-8')
@@ -22,18 +22,18 @@ module.exports = {
             errors.errors.push(imagen)
         }
         if (errors.isEmpty()) {
-            let {name, lastName, birth, gender, email,password, address, category} = req.body
+            let {Nombres, Apellidos, birth, gender, Correo, pass, address, category} = req.body
             let usuarioNuevo = {
                 id:usuarios[usuarios.length - 1].id + 1,
-                name,
-                lastName,
-                birth,
-                gender,
-                email,
-                password,
-                address,
-                category,
-                image: req.file? req.file.filename : "login.png"
+                Nombres: Nombres,
+                Apellidos: Apellidos,
+                birth: birth,
+                gender: gender,
+                Correo: Correo,
+                pass:bcrypt.hashSync(pass,10),
+                address: address,
+                category: 'user',
+                imagen: req.file ? req.file.filename : "login.png"
             }
             usuarios.push(usuarioNuevo)
             guardar(usuarios)
@@ -60,16 +60,37 @@ module.exports = {
     processLogin: (req,res)=>{
         let errors= validationResult(req)
         if (errors.isEmpty()){
-            return res.send(req.body)
-        }else{
-            return res.render('login',{
+            //codigo de carpeta playground
+
+            const {Correo,recordarme} = req.body
+            let usuario = usuarios.find(user => user.Correo === Correo)
+
+            req.session.userLogin = {
+                id : usuario.id,
+                name : usuario.name,
+                image : usuario.image,
+                category : usuario.category
+            }
+            if(recordarme){
+                res.cookie('TiendAr',req.session.userLogin,{maxAge: 1000 * 60 * 60 * 24})
+            }
+
+            return res.redirect('/usuarios')
+            /* return res.send(req.body) */
+        } else {
+            //return res.send(req.body)
+            return res.render('login', {
                 errors: errors.mapped(),
-                old:req.body
+                old: req.body
             })
-        }            
+        }
     },
 
     usuarios : (req,res) => {
         return res.render('usuarios')
+    },
+    logout: (req,res)=>{
+        req.session.destroy();
+        return res.redirect('/')
     }
 }

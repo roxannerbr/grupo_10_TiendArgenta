@@ -73,14 +73,11 @@
     },
     {
         "id": 7,
-        "image": "login.png"
-    },
-    {
-        "id": 8,
-        "image": "login.png"
-    },
-    {
-        "id": 9,
-        "image": "login.png"
+        "Nombres": "roxana",
+        "Apellidos": "roman",
+        "Correo": "holahola@gmail.com",
+        "pass": "$2a$10$iT12JHOFqerrfzaqkZSGDeS1/tTZTWpkH8zHMqjOoJf3yeMSwVj0K",
+        "category": "user",
+        "imagen": "login.png"
     }
 ]

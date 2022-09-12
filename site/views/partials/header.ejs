@@ -10,9 +10,15 @@
           <form action="/busqueda" method="get">
             <input type="search" name="search" placeholder="Buscar"/>
           </form>
-          <a class href="/usuario/login">
-            <img src="/images/home/header/Login.png" alt="imagen de login con gorrito" />
-          </a>
+
+          <% if(locals.userLogin){ %> 
+            <a class href="/">
+              Bienvenido <%= locals.userLogin.name %>
+            </a>
+            <% }else{ %>
+          <a href="/usuario/login"><img src="/images/home/header/Login.png" alt="imagen de login con gorrito"/></a>
+          <% } %>
+
           <a class href="/productos/carrito">
             <img src="/images/home/header/carrito_png.png" alt="carrito de compras con bandera argentina"/>
           </a>
@@ -39,7 +45,9 @@
                 </li>
                 <li><a href="/novedades">Novedades</a></li>
                 <li><a href="/contacto">Contacto</a></li>
+                <% if (locals.userLogin && locals.userLogin.category === "admin") { %>
                 <li><a href="/admin/listar">Admin</a></li>
+                <% } %>
                 <li><a href="/usuario/usuario">Usuario</a></li>
             </ul>
         </nav>

@@ -8,10 +8,10 @@
             <h1>Crear cuenta</h1>
             <p class="textcrear">Complete este formulario para poder crear una cuenta.</p>
             <form  action="" method="post">
-                <div class="boton-img">
+                <!-- <div class="boton-img">
                     <label for="imagen"></label>
                     <input type="file" name="imagen" id="imagen">
-                </div>
+                </div> -->
 
                 <div>
                     <input class="ingreso" type="text" name="Nombres" id="Nombres" value="<%= locals.old && old.nombres ? old.nombres: null %>" placeholder="Ingrese su nombre" >
@@ -43,6 +43,15 @@
                         <small><%= errors.pass2.msg %> </small>
                     <% } %>  
                 </div>
+
+                <div class="mb-3">
+                    <label for="formFileMultiple" class="form-label">Subir imágen</label>
+                    <input class="form-control" type="file" name="imagen" id="formFileMultiple" value="<%= locals.old && old.imagen ? old.nombre: null %>" >
+                    <% if (locals.errors && errors.imagen) { %>
+                        <small><%= errors.imagen.msg %> </small>
+                    <% } %>
+                </div>
+
                 <div class="aceptoTerm">
                     <label><input type="checkbox" name="Terminos">&nbsp;Acepto los&nbsp;<a href="">Términos y Condiciones.</a></label>
                     <% if (locals.errors && errors.Terminos) { %>

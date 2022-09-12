@@ -11,6 +11,9 @@ const path = require('path');
 const methodOverride=require('method-override');
 const session= require ('express-session');
 
+/* implementamos locals dentro la app */
+const userLogin= require('./middlewares/userLoginCheck');
+
 /*Requerir Rutas */
 const indexRouter = require('./routes/index')
 const adminRouter = require('./routes/admin')
@@ -32,6 +35,8 @@ app.use(methodOverride('_method'));
 app.use(session({
   secret:"TiendArgenta"}));
 
+app.use(userLogin);
+
 //View Engine
 app.set('views', path.join(__dirname,'views'));
 app.set('view engine','ejs')
@@ -40,14 +45,11 @@ app.set('view engine','ejs')
 app.use(express.json()); //si se usa JSON CLASE54
 app.use(express.static(path.resolve(__dirname,'public')));
 
-
-
 //Rutas
 app.use("/", indexRouter);
 app.use("/usuario", usuariosRouter);
 app.use("/productos", productosRouter);
 app.use("/admin", adminRouter);
-
 
 /* Levantamos el servidor con app listen */
 app.listen(port,function(){
