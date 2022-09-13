@@ -146,6 +146,10 @@ module.exports = {
             return elemento.id == id
         })
 
+        //para que no se duplique el id de producto
+        let lastId= productos[productos.length-1].id + 1
+        productoParaRestaurar.id = lastId
+
         productos.push(productoParaRestaurar)
         guardar(productos)
 

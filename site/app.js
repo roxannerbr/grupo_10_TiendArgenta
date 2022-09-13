@@ -8,6 +8,7 @@ const app = express();
 const port = 3012;
 const connectLivereload = require('connect-livereload');
 const path = require('path');
+const cookieParser = require('cookie-parser');
 const methodOverride=require('method-override');
 const session= require ('express-session');
 
@@ -36,6 +37,8 @@ app.use(session({
   secret:"TiendArgenta"}));
 
 app.use(userLogin);
+
+app.use(cookieParser());
 
 //View Engine
 app.set('views', path.join(__dirname,'views'));

@@ -7,7 +7,7 @@ const loginValidation = require('../validations/loginValidation');
 const upload= require('../middlewares/multerUsuarios')
 
 router.get('/register', register)
-router.post('/register',upload.single('image'), registerValidation, processRegister);
+router.post('/register',upload.single('imagen'), registerValidation, processRegister);
 
 router.get('/login', login);
 router.post('/login', loginValidation, processLogin);
@@ -15,14 +15,14 @@ router.post('/login', loginValidation, processLogin);
 
 //usuario logueado
 router.get('/check', function(req, res){
-    if(req.session.usuarioLogueado == undefined){
+    if(req.session.userLogin == undefined){
         res.send('No estas logueado')
     }else{
-        res.send('El usuario logueado es' + req.session.usuarioLogueado)
+        res.send('El usuario logueado es' + req.session.userLogin)
     }
 })
 
-router.get('/usuario', usuarios)
+router.get('/perfil',usuarios)
 router.delete('/usuario', logout)
 
 module.exports = router;

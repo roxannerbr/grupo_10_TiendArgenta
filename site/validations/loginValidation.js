@@ -10,7 +10,7 @@ module.exports=[
     /* body */
     body('Correo')
     .custom((value,{req}) =>{
-        let usuario = usuarios.find(user => user.Correo === value && bcryptjs.compareSync(req.body.password, user.password))
+        let usuario = usuarios.find(user => user.Correo === value && bcryptjs.compareSync(req.body.pass, user.pass))
 
         if (usuario) {
             return true

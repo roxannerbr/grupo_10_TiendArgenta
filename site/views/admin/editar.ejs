@@ -8,9 +8,11 @@
         <form action="/admin/editar/<%= producto.id %>?_method=PUT" method="POST">
             <section class="agregar">
                 <div class="form-floating">
-                    <input type="text" name="Titulo" class="form-control" id="Titulo" placeholder="Titulo" value="<%= producto.titulo %> ">
+                    <input type="text" name="Titulo" class="form-control" id="Titulo" value="<%=locals.old && old.titulo ?old.nombre: null %>" placeholder="Titulo">
                     <label for="Titulo">Titulo</label>
-                    <small>Obligatorio</small>
+                    <% if (locals.errors && errors.titulo) { %>
+                        <small><%= errors.titulo.msg %> </small>
+                    <% } %>
                 </div>
                 <div class="form-floating">
                     <select class="form-select" name="Categoria" id="floatingSelect" aria-label="Floating label select example">
@@ -21,33 +23,45 @@
                     </select>
                     
                     <label for="floatingSelect">Producto</label>
-                    <small>Obligatorio</small>
+                    <% if (locals.errors && errors.producto) { %>
+                        <small><%= errors.producto.msg %> </small>
+                    <% } %>
                   </div>
                 <div class="form-floating">
-                    <input type="number" name="Precio" class="form-control" id="Precio" placeholder="Precio" value="<%=producto.precio%>">
+                    <input type="number" name="Precio" class="form-control" id="Precio" value="<%=locals.old && old.precio ?old.nombre: null%>" placeholder="Precio">
                     <label for="Precio">Precio</label>
-                    <small>Obligatorio</small>
+                    <% if (locals.errors && errors.precio) { %>
+                        <small><%= errors.precio.msg %> </small>
+                    <% } %>
                 </div>
                 <div class="form-floating">
-                    <input type="number" name="Descuento" class="form-control" id="Descuento" placeholder="Descuento" value="<%=producto.descuento%>">
+                    <input type="number" name="Descuento" class="form-control" id="Descuento" value="<%=locals.old && old.descuento ? old.nombre: null%>" placeholder="Descuento">
                     <label for="Descuento">Descuento</label>
-                    <small>De no aplicar descuento inserte 0 (Cero)</small>
+                    <% if (locals.errors && errors.descuento) { %>
+                        <small><%= errors.descuento.msg %> </small>
+                    <% } %>
                 </div>
                 <div class="form-floating">
-                    <input type="number" name="Stock" class="form-control" id="Stock" placeholder="Stock" value="<%=producto.stock%>">
+                    <input type="number" name="Stock" class="form-control" id="Stock" value="<%=locals.old && old.stock ?old.nombre: null %>" placeholder="Stock">
                     <label for="Stock" value="1">Stock</label>
-                    <small>Obligatorio</small>
+                    <% if (locals.errors && errors.stock) { %>
+                        <small><%= errors.stock.msg %> </small>
+                    <% } %>
                 </div>
                 <div class="form-floating">
                     <input type="text" class="form-control" id="description" placeholder="Descripción" name="descripcion" value="<%= producto.descripcion %> ">
                     <label for="floatingTextarea">Descripcion</label>
-                    <small>Obligatorio</small>
+                    <% if (locals.errors && errors.descripcion) { %>
+                        <small><%= errors.descripcion.msg %> </small>
+                    <% } %>
                 </div>
 
                 <div class="mb-3">
                     <label for="formFileMultiple" class="form-label">Subir imagenes del producto</label>
-                    <input class="form-control" type="file" name="imagen" id="formFileMultiple" accept="image/png, .PNG">
-                    <small>Obligatorio</small>
+                    <input class="form-control" type="file" name="imagen" id="formFileMultiple" accept="image/png, .PNG" value="<%= locals.old && old.imagen ? old.nombre: null %>" >>
+                    <% if (locals.errors && errors.imagen) { %>
+                        <small><%= errors.imagen.msg %> </small>
+                    <% } %>
                 </div>
                 
                 <div class="button d-flex justify-content-center">

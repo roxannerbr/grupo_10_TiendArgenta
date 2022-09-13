@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include('./partials/head',{title: locals.userLogin.name ) %>
+  <%- include('./partials/head',{title:'bienvenido'}) %>
   <body class="usuario">
       <%- include('./partials/header') %>
     <main>
 
-      <img src="/images/usuario/<%= locals.userLogin.image %>" alt="">
+      <img src="/images/usuario/<%= locals.userLogin.imagen %>" alt="">
 
-      <h1>Hola <%=´${locals.userLogin.category} ${locals.userLogin.name}´%></h1>
+      <h1>Hola <%= locals.userLogin.name %></h1>
 
       <form action="/usuario/logout?_method=DELETE" method="post">
         <button type="submit">cerrar sesión</button>

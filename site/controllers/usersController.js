@@ -32,7 +32,7 @@ module.exports = {
                 Correo: Correo,
                 pass:bcrypt.hashSync(pass,10),
                 address: address,
-                category: 'user',
+                category: category,
                 imagen: req.file ? req.file.filename : "login.png"
             }
             usuarios.push(usuarioNuevo)
@@ -41,10 +41,11 @@ module.exports = {
             return res.redirect('/')
         } else {
 
-            /* let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'users', dato))
+            //este codigo estaba comentado---eliminamos imagen
+            let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', '..', 'public', 'images', 'usuario', dato))
             if (ruta(req.file.filename) && (req.file.filename !== "default-image.png")) {
-            fs.unlinkSync(path.join(__dirname, '..', 'public', 'images', 'users', req.file.filename))
-            } */
+                fs.unlinkSync(path.join(__dirname, '..', '..', 'public', 'images', 'usuario', req.file.filename))
+            }
             
             /* return res.send(errors.mapped()) */
             return res.render('register', {
@@ -59,6 +60,7 @@ module.exports = {
     },
     processLogin: (req,res)=>{
         let errors= validationResult(req)
+        /* return res.send(errors); */
         if (errors.isEmpty()){
             //codigo de carpeta playground
 
@@ -67,15 +69,15 @@ module.exports = {
 
             req.session.userLogin = {
                 id : usuario.id,
-                name : usuario.name,
-                image : usuario.image,
+                name : usuario.Nombres,
+                image : usuario.imagen,
                 category : usuario.category
             }
             if(recordarme){
                 res.cookie('TiendAr',req.session.userLogin,{maxAge: 1000 * 60 * 60 * 24})
             }
-
-            return res.redirect('/usuarios')
+/* console.log(req.session.userLogin); */
+            return res.redirect('/usuario/perfil')
             /* return res.send(req.body) */
         } else {
             //return res.send(req.body)
@@ -87,7 +89,7 @@ module.exports = {
     },
 
     usuarios : (req,res) => {
-        return res.render('usuarios')
+        return res.render('usuario')
     },
     logout: (req,res)=>{
         req.session.destroy();
