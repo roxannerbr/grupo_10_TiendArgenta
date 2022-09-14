@@ -32,7 +32,7 @@ module.exports = {
                 Correo: Correo,
                 pass:bcrypt.hashSync(pass,10),
                 address: address,
-                category: category,
+                category: "user",
                 imagen: req.file ? req.file.filename : "login.png"
             }
             usuarios.push(usuarioNuevo)
@@ -70,6 +70,8 @@ module.exports = {
             req.session.userLogin = {
                 id : usuario.id,
                 name : usuario.Nombres,
+                lastName : usuario.Apellidos,
+                email : usuario.Correo,
                 image : usuario.imagen,
                 category : usuario.category
             }

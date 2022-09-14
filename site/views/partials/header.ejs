@@ -13,7 +13,7 @@
 
           <% if(locals.userLogin){ %> 
             <a class href="/">
-              Bienvenido <%= locals.userLogin.nombres %>
+              Bienvenido <%= locals.userLogin.name %>
             </a>
             <% }else{ %>
           <a href="/usuario/login"><img src="/images/home/header/Login.png" alt="imagen de login con gorrito"/></a>
@@ -46,9 +46,12 @@
                 <li><a href="/novedades">Novedades</a></li>
                 <li><a href="/contacto">Contacto</a></li>
                 <% if (locals.userLogin && locals.userLogin.category === "admin") { %>
+                  <li><a href="/usuario/perfil">Usuario</a></li>
                 <li><a href="/admin/listar">Admin</a></li>
                 <% } %>
-                <li><a href="/usuario/usuario">Usuario</a></li>
+                <% if (locals.userLogin && locals.userLogin.category === "user") { %>
+                  <li><a href="/usuario/perfil">Usuario</a></li>    
+                  <% } %>
             </ul>
         </nav>
       </div>
