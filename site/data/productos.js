@@ -4,7 +4,7 @@ const productos=require('./productos.json')
 /*let ultimoId=productos[productos.length-1].id+1
 console.log(ultimoId);*/
 
-let nuevoProducto=[
+/* let nuevoProducto=[
     {        
         "id": 38,
         "titulo": "Camiseta Alternativa Hombre",
@@ -15,11 +15,11 @@ let nuevoProducto=[
         "descripcion": "UNA CAMISETA DE VISITANTE DE ARGENTINA INSPIRADA EN LOS PAISAJES DEL PAIS AUSTRAL",
         "imagen": "H-Alter.png"
     },
-]
+] */
 
 
 /* Editar producto */
-let ProduEdit = productos.map((element,index) => {
+/* let ProduEdit = productos.map((element,index) => {
     if (element.id === 1) {
         element.titulo = "Maquillaje clasico"
         element.precio = 750
@@ -27,7 +27,7 @@ let ProduEdit = productos.map((element,index) => {
         element.stock = 15
     }
     return element
-})
+}) */
 
 /* Eliminar un producto */
 let eliminarProducto = productos.filter(element => element.id !== 4)

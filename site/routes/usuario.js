@@ -23,6 +23,6 @@ router.get('/check', function(req, res){
 })
 
 router.get('/perfil',usuarios)
-router.delete('/usuario', logout)
+router.delete('/usuarios', logout)
 
 module.exports = router;

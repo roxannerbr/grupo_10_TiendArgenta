@@ -31,7 +31,7 @@ module.exports = {
         }
 
         if (errors.isEmpty()) {
-            let img = req.file.map(imagen => {
+            let imagen = req.file.map(imagen => {
                 return imagen.filename
             })
 
@@ -51,14 +51,14 @@ module.exports = {
         productos.push(productoNuevo);
         guardar(productos);
 
-        res.redirect('/admin/listar')
+        return res.redirect('/admin/listar')
     }else{
         /* id= +req.params.id
-        let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'productos', dato))
-        let producto =productos.find(product => product.id === id)
+        let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', '..', 'public', 'images', 'productos', dato))
+        let producto =productos.find(product => product.id === id) */
 
-    //req.files.forEach(imagen => 
-      if (ruta(producto.imagen) && (producto.imagen !== 'default-image.png')) {
+     // req.files.forEach(imagen =>{ 
+      /* if (ruta(producto.imagen) && (producto.imagen !== 'default-image.png')) {
          fs.unlinkSync(path.join(__dirname, '..', 'public', 'images', 'productos', producto.imagen))
      } */
      //})
@@ -70,18 +70,20 @@ module.exports = {
     }
      },
 
-    editar: (req, res) => {
+    editar: (req, res) => {        
         let categorias = ['Cotillon', 'Coleccionables', 'Ind-Mujer', 'Ind-Hombre', 'Ind-Infantil']
         let id = +req.params.id
         let producto = productos.find((elemento) => {
             return elemento.id == id
         })
+        
         /* return res.send(producto) Comprobar que esta llegando bien el elemento*/
         return res.render('admin/editar', {
             producto,
             categorias
         })
     },
+    
     update: (req, res) => {
         let id = +req.params.id
         let {Titulo,Categoria,Precio,Descuento,Stock,Descripcion} = req.body

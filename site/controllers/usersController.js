@@ -32,7 +32,7 @@ module.exports = {
                 Correo: Correo,
                 pass:bcrypt.hashSync(pass,10),
                 address: address,
-                category: category,
+                category,
                 imagen: req.file ? req.file.filename : "login.png"
             }
             usuarios.push(usuarioNuevo)
@@ -93,6 +93,9 @@ module.exports = {
     },
     logout: (req,res)=>{
         req.session.destroy();
+        if(req.cookies.TiendAr){
+            res.cookie('TiendAr', '',{maxAge: -1})
+        }
         return res.redirect('/')
     }
 }

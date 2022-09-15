@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+/* const adminCheck= require('../middlewares/adminCheck') */
 const {listar,crear,editar,store,update,destroy,historial,restore,crash} = require('../controllers/adminController');
 const productsValidation=require('../validations/productsValidation');
 
@@ -8,15 +9,15 @@ const upload = require('../middlewares/multerProductos')
 
 
 /* get home page */
-router.get('/listar',listar);
-router.get('/historial',historial);
+router.get('/listar',/* adminCheck */ listar);
+router.get('/historial',/* adminCheck */ historial);
 
 /* Añadir un producto */
-router.get('/crear',crear);
+router.get('/crear',/* adminCheck */ crear);
 router.post('/crear',upload.single('imagen'),productsValidation,store)
 
 //editar un producto
-router.get('/editar/:id',editar);
+router.get('/editar/:id',/* adminCheck */ editar);
 router.put('/editar/:id',upload.single('imagen'),productsValidation, update);
 
 //eliminar un producto
