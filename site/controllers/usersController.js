@@ -32,7 +32,7 @@ module.exports = {
                 Correo: Correo,
                 pass:bcrypt.hashSync(pass,10),
                 address: address,
-                category,
+                category: "user",
                 imagen: req.file ? req.file.filename : "login.png"
             }
             usuarios.push(usuarioNuevo)
@@ -62,14 +62,15 @@ module.exports = {
         let errors= validationResult(req)
         /* return res.send(errors); */
         if (errors.isEmpty()){
-            //codigo de carpeta playground
-
+            
             const {Correo,recordarme} = req.body
             let usuario = usuarios.find(user => user.Correo === Correo)
 
             req.session.userLogin = {
                 id : usuario.id,
                 name : usuario.Nombres,
+                lastName : usuario.Apellidos,
+                email : usuario.Correo,
                 image : usuario.imagen,
                 category : usuario.category
             }
@@ -93,8 +94,8 @@ module.exports = {
     },
     logout: (req,res)=>{
         req.session.destroy();
-        if(req.cookies.TiendAr){
-            res.cookie('TiendAr', '',{maxAge: -1})
+        if(req.cookies.TiendArgenta){
+            res.cookie('TiendArgenta', '',{maxAge: -1})
         }
         return res.redirect('/')
     }

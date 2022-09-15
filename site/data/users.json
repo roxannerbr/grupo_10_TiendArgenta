@@ -78,6 +78,15 @@
         "Correo": "romaniello@gmail.com",
         "pass": "$2a$10$F0tPvJyEredWP1/94GN0xepXC.pHfJAWZbEuX2VXvPau6mEh5yawO",
         "category": "admin",
+        "imagen": "login.jpg"
+    },
+    {
+        "id": 8,
+        "Nombres": "Patricio",
+        "Apellidos": "Cristaldo",
+        "Correo": "patricio_cristaldo@outlook.com",
+        "pass": "$2a$10$qmRRpAdEFcBhdVde3lUyeef9uAkqLWKIuM55X30xLaBEXnNK4hCQi",
+        "category": "admin",
         "imagen": "login.png"
     }
 ]

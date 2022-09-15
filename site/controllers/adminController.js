@@ -29,21 +29,19 @@ module.exports = {
             }
             errors.errors.push(imagen)
         }
-
+        /* console.log(req.body);
+  return res.send(errors.mapped()) */
         if (errors.isEmpty()) {
-            let imagen = req.file.map(imagen => {
-                return imagen.filename
-            })
 
         let {Titulo,Categoria,Precio,Descuento,Stock,Descripcion} = req.body
 
         let productoNuevo = {
-            id: productos[productos.length - 1].id + 1,
+            id: productos[productos.length-1].id+1,
             titulo: Titulo,
             categoria: Categoria,
-            precio: Precio,
-            descuento: Descuento,
-            stock: Stock,
+            precio: +Precio,
+            descuento: +Descuento,
+            stock: +Stock,
             descripcion: Descripcion,
             imagen: req.file ? req.file.filename : 'default-image.png'
         }
@@ -53,15 +51,10 @@ module.exports = {
 
         return res.redirect('/admin/listar')
     }else{
-        /* id= +req.params.id
+        id= +req.params.id
         let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', '..', 'public', 'images', 'productos', dato))
-        let producto =productos.find(product => product.id === id) */
+        let producto =productos.find(product => product.id === id)
 
-     // req.files.forEach(imagen =>{ 
-      /* if (ruta(producto.imagen) && (producto.imagen !== 'default-image.png')) {
-         fs.unlinkSync(path.join(__dirname, '..', 'public', 'images', 'productos', producto.imagen))
-     } */
-     //})
      /*  return res.send(errors.mapped()) */
       return res.render('admin/crear', {
           errors: errors.mapped(),
@@ -88,6 +81,8 @@ module.exports = {
         let id = +req.params.id
         let {Titulo,Categoria,Precio,Descuento,Stock,Descripcion} = req.body
 
+
+        
         let errors = validationResult(req)
         if (req.fileValidationError) {
             let imagen = {
@@ -96,10 +91,11 @@ module.exports = {
             }
             errors.errors.push(imagen)
         }
+        /* console.log(req.boy);
+        return res.send(errors.mapped()) */
         if (errors.isEmpty()) {
             productos.forEach(producto => {
                 if (producto.id === id) {
-                    producto.marca = Marca
                     producto.titulo = Titulo
                     producto.categoria = Categoria
                     producto.precio = +Precio
@@ -111,7 +107,6 @@ module.exports = {
             guardar(productos)
             return res.redirect('/admin/listar')
         } else {
-            /* return res.send(errors.mapped()) */
             return res.render('admin/crear', {
                 errors: errors.mapped(),
                 old: req.body
@@ -132,7 +127,7 @@ module.exports = {
         let productosModificados = productos.filter(producto => producto.id !== id)
         guardar(productosModificados)
 
-        return res.redirect('/admin/listar')
+        return res.redirect('/admin/historial')
     },
     historial: (req, res) => {
 
@@ -164,15 +159,13 @@ module.exports = {
         id= +req.params.id
 
         let producto = historial.find(product => product.id === id)
-        /* res.send(fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'productos', producto.imagen))) */
+        
         let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'productos', dato))
         
-        //producto.imagen.forEach(imagen => {
             if (ruta(producto.image) && (producto.image !== "default-image.png")) {
                 fs.unlinkSync(path.join(__dirname, '..','public', 'images', 'productos', producto.image))
             }
-        //})
-
+     
         let historialModificado = historial.filter(producto => producto.id !== id)
         guardarHistorial(historialModificado)
 
