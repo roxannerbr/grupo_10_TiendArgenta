@@ -6,6 +6,7 @@
     background-color: white;
     border-radius: 10px;
     margin-bottom: 5%;
+    align-items: center;
 }
 .usuario main .foto img{
     border-radius: 50% ;
@@ -23,6 +24,12 @@
     text-transform: uppercase;
     margin-left: 10%;
     text-decoration: underline;
+}
+.usuario .foto .btn{
+    margin-right: 10%;
+    background-color: var(--dorado);
+    color: white;
+    border-color: var(--dorado);
 }
 .usuario main .accordion-item{
     margin: 10px;

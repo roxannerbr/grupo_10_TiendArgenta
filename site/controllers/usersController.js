@@ -88,6 +88,19 @@ module.exports = {
             })
         }
     },
+    editar: (req, res) => {        
+        let categorias = ['Cotillon', 'Coleccionables', 'Ind-Mujer', 'Ind-Hombre', 'Ind-Infantil']
+        let id = +req.params.id
+        let producto = productos.find((elemento) => {
+            return elemento.id == id
+        })
+        
+        /* return res.send(producto) Comprobar que esta llegando bien el elemento*/
+        return res.render('editarUsuario', {
+            producto,
+            categorias
+        })
+    },
 
     usuarios : (req,res) => {
         return res.render('usuario')
