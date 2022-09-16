@@ -8,13 +8,13 @@ const upload= require('../middlewares/multerUsuarios');
 const { Router } = require('express');
 const usersController = require('../controllers/usersController');
 
+//registro de usuario
 router.get('/register', register)
 router.post('/register',upload.single('imagen'), registerValidation, processRegister);
 
 /* router.get('/login', login); */
 router.get('/login', login)
 router.post('/login', loginValidation, processLogin);
-
 
 //usuario logueado
 router.get('/check', function(req, res){
@@ -24,6 +24,8 @@ router.get('/check', function(req, res){
         res.send('El usuario logueado es:' + req.session.userLogin)
     }
 })
+
+router.get("/editarUsuario")
 
 router.get('/perfil',usuarios)
 router.delete('/logout', logout)
