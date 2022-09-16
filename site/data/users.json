@@ -10,15 +10,6 @@
     },
     {
         "id": 2,
-        "Nombres": "Patricio",
-        "Apellidos": "Cristaldo",
-        "Correo": "patricio_cristaldo@outlook.com",
-        "pass": "$2a$10$qmRRpAdEFcBhdVde3lUyeef9uAkqLWKIuM55X30xLaBEXnNK4hCQi",
-        "category": "admin",
-        "imagen": "profile2.jpg"
-    },
-    {
-        "id": 3,
         "Nombres": "Mariana Soledad",
         "Apellidos": "Blanez",
         "Correo": "Marianablanez@gmail.com",
@@ -27,7 +18,7 @@
         "imagen": "profile4.jpg"
     },
     {
-        "id": 4,
+        "id": 3,
         "Nombres": "Cristian",
         "Apellidos": "Ramirez",
         "Correo": "CristianRamirez@gmail.com",
@@ -36,7 +27,7 @@
         "imagen": "profile1.jpg"
     },
     {
-        "id": 5,
+        "id": 4,
         "Nombres": "Cristian",
         "Apellidos": "Elias",
         "Correo": "comision17@hotmail.com",
@@ -45,12 +36,21 @@
         "imagen": "profile5.jpg"
     },
     {
-        "id": 6,
+        "id": 5,
         "Nombres": "Jeanette",
         "Apellidos": "Garcia Barrera",
         "Correo": "comision17@gmail.com",
         "pass": "$2a$10$NYe9Jm2.02Rz.C4IB.YUx.BMzJtqXRJoPWFbOurn0InkHhRTwhRru",
         "category": "user",
         "imagen": "profile6.jpg"
+    },
+    {
+        "id": 6,
+        "Nombres": "Patricio",
+        "Apellidos": "Cristaldo",
+        "Correo": "patricio_cristaldo@outlook.com",
+        "pass": "$2a$10$BQnXy3ymeRNpFTlS1l09GOikYjDmDH9UGIfZavGHzwSmvYLZeSB8C",
+        "category": "admin",
+        "imagen": "profile2.jpg"
     }
 ]

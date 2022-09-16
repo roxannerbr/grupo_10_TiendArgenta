@@ -13,6 +13,8 @@ module.exports = {
         return res.render('register')
     },
     processRegister: (req,res)=>{
+/* return res.send(req.file) */
+
         let errors = validationResult(req)
         if (req.fileValidationError) {
             let imagen = {

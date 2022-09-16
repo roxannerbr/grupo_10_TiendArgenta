@@ -7,7 +7,7 @@
         <section class="form-reglog">
             <h1>Crear cuenta</h1>
             <p class="textcrear">Complete este formulario para poder crear una cuenta.</p>
-            <form  action="" method="post">
+            <form  action="" method="post" enctype="multipart/form-data">
 
                 <div>
                     <input class="ingreso" type="text" name="Nombres" id="Nombres" value="<%= locals.old && old.nombres ? old.nombres: null %>" placeholder="Ingrese su nombre" >

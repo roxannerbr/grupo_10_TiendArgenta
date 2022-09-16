@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {login, register,  processLogin, processRegister,  usuarios, logout} = require('../controllers/usersController');
-
+const userCheck= require('../middlewares/userCheck')
 const registerValidation = require('../validations/registerValidation');
 const loginValidation = require('../validations/loginValidation');
 const upload= require('../middlewares/multerUsuarios');
@@ -26,8 +26,7 @@ router.get('/check', function(req, res){
 })
 
 router.get("/editarUsuario")
-
-router.get('/perfil',usuarios)
+router.get('/perfil',userCheck,usuarios)
 router.delete('/logout', logout)
 
 module.exports = router;
