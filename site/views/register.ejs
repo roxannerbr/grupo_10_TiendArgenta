@@ -39,14 +39,6 @@
                         <small><%= errors.pass2.msg %> </small>
                     <% } %>  
                 </div>
-
-                <div>
-                    <input class="ingreso" type="text" name="category" id="category" value="<%= locals.old && old.category ? old.category: null %>" placeholder="usuario" >
-                    <% if (locals.errors && errors.category) { %>
-                        <small><%= errors.category.msg %> </small>
-                    <% } %>  
-                </div>
-
                 <div class="mb-3">
                     <label for="formFileMultiple" class="form-label">Subir imágen</label>
                     <input class="form-control" type="file" name="imagen" id="formFileMultiple" value="<%= locals.old && old.imagen ? old.nombre: null %>" >

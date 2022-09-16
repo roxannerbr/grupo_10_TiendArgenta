@@ -5,24 +5,42 @@
     display: flex;
     background-color: white;
     border-radius: 10px;
-    margin-bottom: 5%;
+    margin: 10px;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
 }
 .usuario main .foto img{
     border-radius: 50% ;
     display: inline-block;
-    width: 10%;
-    border-top: 1px solid var(--dorado);
-    margin-left: 5%;
-    
-}
-.usuario .foto h2{
+    max-width: 25%;
+    border: 2px solid var(--dorado);
+} 
+.usuario .foto h3{
     width: 100%;
     display: flex;
-    align-items: center;
+    text-align: center;
     color: var(--dorado);
     text-transform: uppercase;
-    margin-left: 10%;
-    text-decoration: underline;
+    justify-content: center;
+    margin: 5px 0px;
+}
+
+.usuario main .foto .cSession{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: var(--celeste);
+    color: white;
+    padding: 5px;
+    margin: 0;
+}
+.usuario main .foto .cSession:hover {
+    background-color: var(--dorado);
+    color: white;
+}
+.usuario main .foto .cSession a {
+    color: white;
+    font-weight: 400;
 }
 .usuario main .accordion-item{
     margin: 10px;
@@ -54,10 +72,54 @@
     color: var(--dorado);
 }
 .usuario main .accordion-body input{
-display: flex;
+    display: flex;
 }
 .usuario main .accordion-body a{
     border-radius: 10px;
     color: var(--cyan);
     background-color: white;
+}
+
+@media (min-width:768px){
+    .usuario main .foto{
+        display: flex;
+        background-color: white;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 10px;
+        flex-direction: row;
+        align-items: center;
+    }
+    .usuario main .foto img{
+        border-radius: 50% ;
+        display: inline-block;
+        width: 10%;
+        border-top: 1px solid var(--dorado);
+        
+    }
+    .usuario .foto h3{
+        width: 100%;
+        display: flex;
+        text-align: center;
+        color: var(--dorado);
+        text-transform: uppercase;
+        justify-content: center;
+        margin: 0;
+    }
+    
+    .usuario main .foto .cSession{
+        border-radius: 5px;
+        background-color: var(--celeste);
+        color: white;
+        padding: 5px;
+        margin: 0;
+    }
+    .usuario main .foto .cSession:hover {
+        background-color: var(--dorado);
+        color: white;
+    }
+    .usuario main .foto .cSession a {
+        color: white;
+        font-weight: 400;
+    }
 }

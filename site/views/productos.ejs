@@ -4,7 +4,7 @@
 <body class="productos">
   <%- include('./partials/header') %>
     <main>
-        <h1><%= categoriaSeleccionada %></h1>
+        <h1 class="productsPage"><%= categoriaSeleccionada %></h1>
         <section class="cardProduct">
           <% productoPorCategoria.forEach(producto => { %>
               <%- include('./partials/cards',{

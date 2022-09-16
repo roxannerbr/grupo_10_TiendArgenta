@@ -1,14 +1,5 @@
 [
     {
-        "id": 40,
-        "titulo": "Prueba 2",
-        "categoria": "Ind-Hombre",
-        "precio": "17000",
-        "descuento": "30",
-        "stock": "13",
-        "imagen": "default-image.png"
-    },
-    {
         "id": 39,
         "titulo": "Prueba 1",
         "categoria": "Ind-Hombre",
@@ -19,12 +10,11 @@
     },
     {
         "id": 40,
-        "titulo": "prueba",
-        "categoria": "Coleccionables",
-        "precio": 1,
-        "descuento": 11,
-        "stock": 1,
-        "descripcion": "BLABLA",
-        "imagen": "img-1663269512797.png"
+        "titulo": "Prueba 2",
+        "categoria": "Ind-Hombre",
+        "precio": "17000",
+        "descuento": "30",
+        "stock": "13",
+        "imagen": "default-image.png"
     }
 ]

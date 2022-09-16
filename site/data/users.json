@@ -1,92 +1,56 @@
 [
     {
         "id": 1,
-        "Nombres": "Cristian",
-        "Apellidos": "Ramirez",
-        "birth": "xx/xx/xxxx",
-        "gender": "Masculino",
-        "Correo": "xxxx@gmail.com",
-        "pass": "comision17",
-        "address": "Av. Siempreviva 742",
-        "image": "profile1",
-        "category": "admin"
-    },
-    {
-        "id": 2,
-        "Nombres": "Patricio",
-        "Apellidos": "Cristaldo",
-        "birth": "xx/xx/xxxx",
-        "gender": "Masculino",
-        "Correo": "xxxx@gmail.com",
-        "pass": "comision17",
-        "address": "Los lagos 1523",
-        "image": "profile2",
-        "category": "admin"
-    },
-    {
-        "id": 3,
-        "Nombres": "Roxana",
-        "Apellidos": "Romaniello",
-        "birth": "xx/xx/xxxx",
-        "gender": "Femenino",
-        "Correo": "xxxx@gmail.com",
-        "pass": "comision17",
-        "address": "Av. Del Campo 10",
-        "image": "profile3",
-        "category": "admin"
-    },
-    {
-        "id": 4,
-        "Nombres": "Mariana",
-        "Apellidos": "Blanez",
-        "birth": "xx/xx/xxxx",
-        "gender": "Femenino",
-        "Correo": "MarianaBlanez@gmail.com",
-        "pass": "comision17",
-        "address": "Calle Falsa 123",
-        "image": "profile4",
-        "category": "admin"
-    },
-    {
-        "id": 5,
-        "Nombres": "Cristian",
-        "Apellidos": "Elias",
-        "birth": "xx/xx/xxxx",
-        "gender": "Masculino",
-        "Correo": "Comision17@gmail.com",
-        "pass": "comision17",
-        "address": "Mendoza 599",
-        "image": "profile5",
-        "category": "user"
-    },
-    {
-        "id": 6,
-        "Nombres": "Jeanette",
-        "Apellidos": "Garcia Barrera",
-        "birth": "xx/xx/xxxx",
-        "gender": "Femenino",
-        "Correo": "comision17@hotmail.com",
-        "pass": "comision17",
-        "address": "Cerrito 303",
-        "image": "profile5",
-        "category": "user"
-    },
-    {
-        "id": 7,
         "Nombres": "roxana",
         "Apellidos": "roman",
         "Correo": "romaniello@gmail.com",
         "pass": "$2a$10$F0tPvJyEredWP1/94GN0xepXC.pHfJAWZbEuX2VXvPau6mEh5yawO",
         "category": "admin",
-        "imagen": "login.jpg"
+        "imagen": "profile3.jpg"
     },
     {
-        "id": 8,
+        "id": 2,
         "Nombres": "Patricio",
         "Apellidos": "Cristaldo",
         "Correo": "patricio_cristaldo@outlook.com",
         "pass": "$2a$10$qmRRpAdEFcBhdVde3lUyeef9uAkqLWKIuM55X30xLaBEXnNK4hCQi",
         "category": "admin",
-        "imagen": "login.png"
+        "imagen": "profile2.jpg"
+    },
+    {
+        "id": 3,
+        "Nombres": "Mariana Soledad",
+        "Apellidos": "Blanez",
+        "Correo": "Marianablanez@gmail.com",
+        "pass": "$2a$10$qq1bHOscBbYrK.dpBYIAn.NN0SfPCUcilX5srz6DdSbYaKoB0cM7.",
+        "category": "admin",
+        "imagen": "profile4.jpg"
+    },
+    {
+        "id": 4,
+        "Nombres": "Cristian",
+        "Apellidos": "Ramirez",
+        "Correo": "CristianRamirez@gmail.com",
+        "pass": "$2a$10$2Z601Z3tdhsHEBJsy282X.VLhBCN6MyK86QHZNdw6oO2c3Rpg7ib6",
+        "category": "admin",
+        "imagen": "profile1.jpg"
+    },
+    {
+        "id": 5,
+        "Nombres": "Cristian",
+        "Apellidos": "Elias",
+        "Correo": "comision17@hotmail.com",
+        "pass": "$2a$10$BqJD/fPxEOKSgnCBNe2ua.q.uiJ4IzxVKOcu72jEs08gktMxWdjbG",
+        "category": "user",
+        "imagen": "profile5.jpg"
+    },
+    {
+        "id": 6,
+        "Nombres": "Jeanette",
+        "Apellidos": "Garcia Barrera",
+        "Correo": "comision17@gmail.com",
+        "pass": "$2a$10$NYe9Jm2.02Rz.C4IB.YUx.BMzJtqXRJoPWFbOurn0InkHhRTwhRru",
+        "category": "user",
+        "imagen": "profile6.jpg"
     }
 ]

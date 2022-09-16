@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include('./partials/head',{title:'Perfil de usuario'}) %>
+  <%- include('./partials/head',{title:'Mi Perfil'}) %>
   <body class="usuario">
       <%- include('./partials/header') %>
     <main>
       
       <div class="foto">
         <img src="/images/usuario/<%= locals.userLogin.image %>" alt="">
-        <h2><%= locals.userLogin.name %> <%= locals.userLogin.lastName %></h2>
+        <h3><%= locals.userLogin.name %> <%= locals.userLogin.lastName %></h3>
+        <form action="/usuario/logout?_method=DELETE" method="post">
+          <button class="cSession" type="submit">CERRAR SESIÓN</button>
+        </form>
       </div>
       <div class="accordion" id="accordionExample">
         <div class="accordion-item">
@@ -94,11 +97,6 @@
                 <a href="/productos/carrito"><h3>Carrito</h3></a> </div>
               </div>
             </div>
-         
-          
-          <form action="/usuario/logout?_method=DELETE" method="post">
-            <button type="submit">cerrar sesión</button>
-          </form>
         </main>
         
         <%- include('./partials/footer') %>
