@@ -178,17 +178,10 @@ margin-right: 50px;
 .detalles main .btnComprar a{
     color: white;
 }
-
-.detalles main .relacionados{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, max(3, 1fr));
-    margin: 20px;
-    grid-gap: 20px;
-    justify-content: space-around;
-    justify-items: center
+.detalles .carrouselProductos{
+    width: 73%;
+    margin: 0 auto;
 }
-
-
 
 /*MEDIA MOBILE*/
 @media(min-width:425px){

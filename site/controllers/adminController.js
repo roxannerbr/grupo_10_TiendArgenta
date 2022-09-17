@@ -69,7 +69,6 @@ module.exports = {
         let producto = productos.find((elemento) => {
             return elemento.id == id
         })
-        
         /* return res.send(producto) Comprobar que esta llegando bien el elemento*/
         return res.render('admin/editar', {
             producto,
@@ -161,10 +160,9 @@ module.exports = {
         let producto = historial.find(product => product.id === id)
         
         let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'productos', dato))
-        
-            if (ruta(producto.image) && (producto.image !== "default-image.png")) {
-                fs.unlinkSync(path.join(__dirname, '..','public', 'images', 'productos', producto.image))
-            }
+        if (ruta(producto.image) && (producto.image !== "default-image.png")) {
+            fs.unlinkSync(path.join(__dirname, '..','public', 'images', 'productos', producto.image))
+        }
      
         let historialModificado = historial.filter(producto => producto.id !== id)
         guardarHistorial(historialModificado)

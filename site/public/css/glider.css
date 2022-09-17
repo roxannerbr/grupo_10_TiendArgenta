@@ -19,6 +19,9 @@
     display: flex;
     z-index: 1;
   }
+  .glider article{
+    margin: 10px;
+  }
   .glider.draggable {
     user-select: none;
     cursor: -webkit-grab;
@@ -54,11 +57,9 @@
     z-index: 2;
     font-size: 40px;
     text-decoration: none;
-    left: 15px;
     border: 0;
-    top: 30%;
     cursor: pointer;
-    color: #666;
+    color: var(--azulPetroleo);
     opacity: 1;
     line-height: 1;
     transition: opacity .5s cubic-bezier(.17,.67,.83,.67),
@@ -68,16 +69,22 @@
   .glider-next:hover,
   .glider-prev:focus,
   .glider-next:focus {
-    color: #a89cc8;
+    color: var(--dorado);
+  }
+  .glider-prev {
+    left: 20px;
+    top: 213px;
+    right: auto;
   }
   .glider-next {
     right: 20px;
+    top: 213px;
     left: auto;
   }
   .glider-next.disabled,
   .glider-prev.disabled {
     opacity: .25;
-    color: #666;
+    color: var(--azulPetroleo);
     cursor: default;
   }
   .glider-slide {
@@ -101,9 +108,9 @@
     outline: none;
     display: block;
     cursor: pointer;
-    color: #ccc;
+    color: var(--cyan);
     border-radius: 999px;
-    background: #ccc;
+    background: var(--azulPetroleo);
     width: 12px;
     height: 12px;
     margin: 7px;
@@ -111,7 +118,7 @@
   .glider-dot:hover,
   .glider-dot:focus,
   .glider-dot.active {
-    background: #a89cc8;
+    background: var(--dorado);
   }
   @media(max-width: 36em){
     .glider::-webkit-scrollbar {

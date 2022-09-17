@@ -134,7 +134,6 @@ main .imgBox img.itemOferta {
         justify-content: space-around;
         justify-items: center
     }
-
 }
 @media (min-width:1024px){
     main .cardProduct{

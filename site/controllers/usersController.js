@@ -43,7 +43,7 @@ module.exports = {
 
             //este codigo estaba comentado---eliminamos imagen
             let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', '..', 'public', 'images', 'usuario', dato))
-            if (ruta(req.file.filename) && (req.file.filename !== "default-image.png")) {
+            if (ruta(req.file.filename) && (req.file.filename !== "login.png")) {
                 fs.unlinkSync(path.join(__dirname, '..', '..', 'public', 'images', 'usuario', req.file.filename))
             }
             
