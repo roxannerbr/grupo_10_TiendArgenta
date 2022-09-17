@@ -3,7 +3,6 @@ new Glider(document.querySelector('.glider'), {
     slidesToShow: 1,
     slidesToScroll: 1,
     scrollLock: true,
-    dots: '.dots',
     draggable : false,
     arrows: {
       prev: '.glider-prev',
@@ -12,7 +11,7 @@ new Glider(document.querySelector('.glider'), {
     responsive: [
       {
         // screens greater than >= 775px
-        breakpoint: 460,
+        breakpoint: 425,
         settings: {
           // Set to `auto` and provide item width to adjust to viewport
           slidesToShow: 1,
@@ -23,10 +22,31 @@ new Glider(document.querySelector('.glider'), {
       },
       {
         // screens greater than >= 775px
-        breakpoint: 769,
+        breakpoint: 600,
         settings: {
           // Set to `auto` and provide item width to adjust to viewport
           slidesToShow: 2,
+          slidesToScroll: 1,
+          itemWidth: 150,
+          duration: 0.25
+        }
+      },
+      {
+        // screens greater than >= 775px
+        breakpoint: 768,
+        settings: {
+          // Set to `auto` and provide item width to adjust to viewport
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          itemWidth: 150,
+          duration: 0.25
+        }
+      },
+      {
+        // screens greater than >= 1024px
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
           slidesToScroll: 2,
           itemWidth: 150,
           duration: 0.25
@@ -34,10 +54,10 @@ new Glider(document.querySelector('.glider'), {
       },
       {
         // screens greater than >= 1024px
-        breakpoint: 1265,
+        breakpoint: 1300,
         settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4,
+          slidesToShow: 5,
+          slidesToScroll: 2,
           itemWidth: 150,
           duration: 0.25
         }

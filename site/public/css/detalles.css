@@ -314,6 +314,10 @@ margin-right: 50px;
         cursor: pointer;
         transition: 1s all;
     }
+    .detalles .carrouselProductos{
+        width: 100%;
+        margin: 0 auto;
+    }
 }
 /*MEDIA DESKTOP*/
 @media(min-width:1024px){ 
@@ -334,5 +338,9 @@ margin-right: 50px;
         font-size:20px;
         text-align: center;
         margin: 10px;
+    }
+    .detalles .carrouselProductos{
+        width: 100%;
+        margin: 0 auto;
     }
 }
