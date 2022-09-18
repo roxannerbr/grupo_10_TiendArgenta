@@ -33,15 +33,17 @@ module.exports = {
   return res.send(errors.mapped()) */
         if (errors.isEmpty()) {
 
-        let {Titulo,Categoria,Precio,Descuento,Stock,Descripcion} = req.body
+        let {Titulo,Categoria, subCategoria,Precio,Descuento,Stock, Talles,Descripcion} = req.body
 
         let productoNuevo = {
             id: productos[productos.length-1].id+1,
             titulo: Titulo,
             categoria: Categoria,
+            subcategoria: subCategoria,
             precio: +Precio,
             descuento: +Descuento,
             stock: +Stock,
+            talles: Talles,
             descripcion: Descripcion,
             imagen: req.file ? req.file.filename : 'default-image.png'
         }
@@ -64,7 +66,8 @@ module.exports = {
      },
 
     editar: (req, res) => {        
-        let categorias = ['Cotillon', 'Coleccionables', 'Ind-Mujer', 'Ind-Hombre', 'Ind-Infantil']
+        let categorias = ['Cotillon', 'Coleccionables', 'Mujer', 'Hombre', 'Infantil']
+        let subcategorias = ['Camisetas', 'Pantalones', 'Accesorios']
         let id = +req.params.id
         let producto = productos.find((elemento) => {
             return elemento.id == id
@@ -72,13 +75,14 @@ module.exports = {
         /* return res.send(producto) Comprobar que esta llegando bien el elemento*/
         return res.render('admin/editar', {
             producto,
-            categorias
+            categorias,
+            subcategorias
         })
     },
     
     update: (req, res) => {
         let id = +req.params.id
-        let {Titulo,Categoria,Precio,Descuento,Stock,Descripcion} = req.body
+        let {Titulo,Categoria, subCategoria,Precio,Descuento,Stock,Talles,Descripcion} = req.body
 
 
         
@@ -97,9 +101,11 @@ module.exports = {
                 if (producto.id === id) {
                     producto.titulo = Titulo
                     producto.categoria = Categoria
+                    producto.subcategoria = subCategoria
                     producto.precio = +Precio
                     producto.descuento = +Descuento
                     producto.stock = +Stock
+                    producto.talles = Talles
                     producto.descripcion = Descripcion
                 }
             })
@@ -161,7 +167,7 @@ module.exports = {
         
         let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'productos', dato))
         if (ruta(producto.image) && (producto.image !== "default-image.png")) {
-            fs.unlinkSync(path.join(__dirname, '..','public', 'images', 'productos', producto.image))
+            fs.unlinkSync(path.join(__dirname, '..','public', 'images', 'productos', producto.image))//supuestamente esto eliminaria la imagen
         }
      
         let historialModificado = historial.filter(producto => producto.id !== id)

@@ -375,6 +375,19 @@
         "precio": "17000",
         "descuento": "30",
         "stock": "13",
+        "descripcion": "Para que no tengas frio en invierno",
         "imagen": "H-Alter.png"
+    },
+    {
+        "id": 41,
+        "titulo": "Camiseta Amarilla",
+        "categoria": "Hombre",
+        "subcategoria": "Camiseta",
+        "precio": "17000",
+        "descuento": "30",
+        "stock": "13",
+        "talles":["xs", "m"],
+        "descripcion": "Para que no tengas frio en invierno",
+        "imagen": "default-image.png"
     }
 ]
