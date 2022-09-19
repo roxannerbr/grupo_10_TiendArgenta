@@ -8,11 +8,11 @@
       <div class="foto">
         <img src="/images/usuario/<%= locals.userLogin.image %>" alt="">
         <h3><%= locals.userLogin.name %> <%= locals.userLogin.lastName %></h3>
-        <form action="/usuario/logout?_method=DELETE" method="post">
+        <form action="/usuario/logout?_method=DELETE" method="post" style="margin-right: 10%;">
           <button class="cSession" type="submit">CERRAR SESIÓN</button>
         </form>
-        <a href="/editarUsuario" style="margin-right: 10%;">
-        <button type="edit" class="btn btn-success"><i class="fa-solid fa-user-gear" ></i></button>
+        <a href="/usuario/editarUsuario" style="margin-right: 10%;">
+        <button class="btn btn-success"><i class="fa-solid fa-user-gear" ></i></button>
       </a>
       </div>
       <div class="accordion" id="accordionExample">
@@ -28,9 +28,9 @@
               <ul>
                 <li><span>Email</span><small><%= locals.userLogin.email %></small></li>
                 <li>
-                  <span>DNI</span><small>50.123.456</small>
+                  <span>DNI</span><small><%= locals.userLogin.dni %></small>
                 </li>
-                <li><span>Teléfono</span> <small>1122334455</small></li>
+                <li><span>Teléfono</span> <small><%= locals.userLogin.telefono %></small></li>
               </ul></div>
             </div>
           </div>
@@ -43,15 +43,7 @@
             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
               <div class="accordion-body">
                 <ul>
-                  <li ><span>Contraseña</span
-                    ><input
-                    class="ingreso"
-                    type="password"
-                    name="pass"
-                    id="pass"
-                    placeholder="**********"
-                    />
-                    <a href=""><small>Cambiar constraseña</small></a></li>
+                    <a href="/usuario/editarUsuario">Cambiar contraseña</a>
                   </ul></div>
                 </div>
               </div>
@@ -64,10 +56,7 @@
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
                     <ul>
-                      <li>
-                        <span>Tarjeta Visa</span><small>Terminada en 0000</small><small>Vencimiento: 11/2077</small>
-                      </li>
-                      <li><span>Tarjeta Mastercard</span><small>Terminada en 1111</small><small>Vencimiento: 11/2099</small></li>
+                      <a href="/usuario/editarUsuario">Agregar medio de pago</a>
                     </ul></div>
                   </div>
                 </div>
@@ -80,12 +69,12 @@
                   <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
               <ul>
-                <li><span>Dirección</span><small>Mi casa</small></li>
+                <li><span>Dirección</span><small><%= locals.userLogin.direccion %></small></li>
                 <li>
-                  <span>Provincia</span><small>Buenos Aires</small>
+                  <span>Provincia</span><small><%= locals.userLogin.provincia %></small>
                 </li>
-                <li><span>Localidad</span> <small>Mar de las Pompas</small></li>
-                <li><span>Código postal</span> <small>1663</small></li>
+                <li><span>Localidad</span> <small><%= locals.userLogin.localidad %></small></li>
+                <li><span>Código postal</span> <small><%= locals.userLogin.codPost %></small></li>
               </ul></div>
             </div>
           </div>

@@ -25,7 +25,12 @@
     justify-content: center;
     margin: 5px 0px;
 }
-
+.usuario .foto .btn{
+    margin-right: 10%;
+    background-color: var(--dorado);
+    color: white;
+    border-color: var(--azulPetroleo);
+}
 .usuario main .foto .cSession{
     margin-bottom: 10px;
     border-radius: 5px;

@@ -16,7 +16,7 @@
             <section class="agregar">
                 <div class="form-floating">
                     <input type="text" name="Titulo" class="form-control" id="Titulo" value="<%=locals.old && old.titulo ?old.nombre: null %><%= producto.titulo %>" placeholder="Titulo">
-                    <label for="Titulo">Titulo</label>
+                    <label for="Titulo">Editar nombre</label>
                     <% if (locals.errors && errors.titulo) { %>
                         <small><%= errors.titulo.msg %> </small>
                     <% } %>
