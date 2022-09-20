@@ -401,24 +401,14 @@
         "imagen": "H-Alter.png"
     },
     {
-        "id": 41,
-        "titulo": "Camiseta Amarilla Prueba",
-        "categoria": "Hombre",
+        "id": 39,
+        "titulo": "Maraca",
+        "categoria": "Coleccionables",
         "subcategoria": "Camisetas",
-        "precio": "17000",
-        "descuento": "30",
-        "stock": "13",
-        "variable": [
-                {
-                    "talle": "xs",
-                    "cantidad": 10
-                },
-                {
-                    "talle": "m",
-                    "cantidad": 3
-                }
-            ],
-        "descripcion": "Para que no tengas frio en invierno",
+        "precio": 44,
+        "descuento": 4,
+        "stock": 444,
+        "descripcion": "Para que no tengas",
         "imagen": "default-image.png"
     }
 ]

@@ -35,7 +35,7 @@ module.exports = {
         if (errors.isEmpty()) {
 
         let {Titulo,Categoria, subCategoria,Precio,Descuento,Stock,Descripcion} = req.body
-        //let variable = productos[7][variable]
+        
 
         let productoNuevo = {
             id: productos[productos.length-1].id+1,
@@ -45,7 +45,6 @@ module.exports = {
             precio: +Precio,
             descuento: +Descuento,
             stock: +Stock,
-            //variable: Variable,
             descripcion: Descripcion,
             imagen: req.file ? req.file.filename : 'default-image.png'
         }
@@ -84,7 +83,7 @@ module.exports = {
     
     update: (req, res) => {
         let id = +req.params.id
-        let {Titulo,Categoria, subCategoria,Precio,Descuento,Stock,variable,Descripcion} = req.body
+        let {Titulo,Categoria, subCategoria,Precio,Descuento,Stock,Descripcion} = req.body
 
 
         
@@ -107,7 +106,6 @@ module.exports = {
                     producto.precio = +Precio
                     producto.descuento = +Descuento
                     producto.stock = +Stock
-                    //producto.variable = variable
                     producto.descripcion = Descripcion
                 }
             })
