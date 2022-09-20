@@ -7,6 +7,9 @@ module.exports=[
     /* categoria */
     check('Categoria').trim().notEmpty().withMessage('Debe seleccionar una categoría').bail(),
 
+    /* Sub-categoria */
+    check('subCategoria').trim().notEmpty().withMessage('Debe seleccionar un tipo de producto').bail(),
+
     /* precio */
     check('Precio').trim().notEmpty().isInt().bail(),
 

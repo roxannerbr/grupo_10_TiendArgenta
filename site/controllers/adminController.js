@@ -20,6 +20,7 @@ module.exports = {
         return res.render('admin/crear')
     },
     store:(req,res) => {
+        //return res.send(req.body)
         //return res.send(req.file)
         let errors = validationResult(req)
         if (req.fileValidationError) {
@@ -33,7 +34,8 @@ module.exports = {
   return res.send(errors.mapped()) */
         if (errors.isEmpty()) {
 
-        let {Titulo,Categoria, subCategoria,Precio,Descuento,Stock, Talles,Descripcion} = req.body
+        let {Titulo,Categoria, subCategoria,Precio,Descuento,Stock,Descripcion} = req.body
+        //let variable = productos[7][variable]
 
         let productoNuevo = {
             id: productos[productos.length-1].id+1,
@@ -43,7 +45,7 @@ module.exports = {
             precio: +Precio,
             descuento: +Descuento,
             stock: +Stock,
-            talles: Talles,
+            //variable: Variable,
             descripcion: Descripcion,
             imagen: req.file ? req.file.filename : 'default-image.png'
         }
@@ -57,7 +59,7 @@ module.exports = {
         let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', '..', 'public', 'images', 'productos', dato))
         let producto =productos.find(product => product.id === id)
 
-     /*  return res.send(errors.mapped()) */
+     return res.send(req.body)
       return res.render('admin/crear', {
           errors: errors.mapped(),
           old: req.body
@@ -82,7 +84,7 @@ module.exports = {
     
     update: (req, res) => {
         let id = +req.params.id
-        let {Titulo,Categoria, subCategoria,Precio,Descuento,Stock,Talles,Descripcion} = req.body
+        let {Titulo,Categoria, subCategoria,Precio,Descuento,Stock,variable,Descripcion} = req.body
 
 
         
@@ -105,7 +107,7 @@ module.exports = {
                     producto.precio = +Precio
                     producto.descuento = +Descuento
                     producto.stock = +Stock
-                    producto.talles = Talles
+                    //producto.variable = variable
                     producto.descripcion = Descripcion
                 }
             })

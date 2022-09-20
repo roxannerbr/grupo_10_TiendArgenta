@@ -168,8 +168,18 @@ header .contenedor-header form{
     justify-content: center;
     color: var(--dorado);
 }
-
-
+header .nav-desktop ul li form button.cSession{
+    background-color: var(--cyan);
+    color: white;
+    border: none;
+    padding: 5px;
+}
+header .nav-desktop ul li form button.cSession:hover{
+    background-color: var(--dorado);
+    color: white;
+    border: none;
+    padding: 5px;
+}
 /*MEDIA*/
 @media(min-width:769px){
     header .contenedor-header{

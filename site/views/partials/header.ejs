@@ -50,15 +50,17 @@
                 <li><a href="/admin/listar">Admin</a></li>
                 <li>
                   <form class="cSession" action="/usuario/logout?_method=DELETE" method="post">
-                      <a href="/">Cerrar sesión</a>
+                    <button class="cSession" type="submit">Cerrar sesión</button>
                   </form>
                 </li>
                 <% } %>
                 <% if (locals.userLogin && locals.userLogin.category === "user") { %>
                   <li><a href="/usuario/perfil">Mi perfil</a></li>
-                  <form action="/usuario/logout?_method=DELETE" method="post">
-                    <li><a href="/">Cerrar sesión</a></li>  
-                  </form>
+                  <li>
+                    <form class="cSession" action="/usuario/logout?_method=DELETE" method="post">
+                      <button class="cSession" type="submit">Cerrar sesión</button>
+                    </form>
+                  </li>
                     
                   <% } %>
             </ul>
