@@ -11,7 +11,7 @@
         <form action="/usuario/logout?_method=DELETE" method="post" style="margin-right: 10%;">
           <button class="cSession" type="submit">CERRAR SESIÓN</button>
         </form>
-        <a href="/usuario/editarUsuario" style="margin-right: 10%;">
+        <a href="/usuario/editarUsuario/<%= locals.userLogin.id %>" style="margin-right: 10%;">
         <button class="btn btn-success"><i class="fa-solid fa-user-gear" ></i></button>
       </a>
       </div>
@@ -43,7 +43,7 @@
             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
               <div class="accordion-body">
                 <ul>
-                    <a href="/usuario/editarUsuario">Cambiar contraseña</a>
+                    <a href="/usuario/editarUsuario/<%= locals.userLogin.id %>">Cambiar contraseña</a>
                   </ul></div>
                 </div>
               </div>
@@ -56,7 +56,7 @@
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
                     <ul>
-                      <a href="/usuario/editarUsuario">Agregar medio de pago</a>
+                      <a href="/usuario/editarUsuario/<%= locals.userLogin.id %>">Agregar medio de pago</a>
                     </ul></div>
                   </div>
                 </div>

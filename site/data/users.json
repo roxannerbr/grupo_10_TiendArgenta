@@ -46,11 +46,15 @@
     },
     {
         "id": 6,
-        "Nombres": "Patricio",
-        "Apellidos": "Cristaldo",
+        "Nombres": "Paio",
+        "Apellidos": "Crialdo",
+        "dni": 10472576,
         "Correo": "patricio_cristaldo@outlook.com",
-        "pass": "$2a$10$BQnXy3ymeRNpFTlS1l09GOikYjDmDH9UGIfZavGHzwSmvYLZeSB8C",
-        "category": "admin",
-        "imagen": "profile2.jpg"
+        "pass": "$2a$10$8jzunmBWDZvfOcWCxs9SruiYpXq7IM1CIJtME5s1CnqC6/CekQTzO",
+        "provincia": "",
+        "localidad": "",
+        "category": "user",
+        "imagen": "avatar-1663684942005.jpg",
+        "telefono": 1173686874
     }
 ]

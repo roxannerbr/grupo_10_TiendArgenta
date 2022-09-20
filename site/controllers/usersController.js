@@ -24,16 +24,18 @@ module.exports = {
             errors.errors.push(imagen)
         }
         if (errors.isEmpty()) {
-            let {Nombres, Apellidos, birth, gender, Correo, pass, address, category} = req.body
+            let {Nombres, Apellidos, Correo, pass, address, category} = req.body
             let usuarioNuevo = {
                 id:usuarios[usuarios.length - 1].id + 1,
                 Nombres: Nombres,
                 Apellidos: Apellidos,
-                birth: birth,
-                gender: gender,
+                dni: "",
+                gender: "",
                 Correo: Correo,
                 pass:bcrypt.hashSync(pass,10),
-                address: address,
+                address: "",
+                provincia: "",
+                localidad: "",
                 category: "user",
                 imagen: req.file ? req.file.filename : "login.png"
             }
@@ -74,7 +76,9 @@ module.exports = {
                 lastName : usuario.Apellidos,
                 email : usuario.Correo,
                 image : usuario.imagen,
-                category : usuario.category
+                category : usuario.category,
+                dni: usuario.dni,
+                telefono: usuario.telefono
             }
             if(recordarme){
                 res.cookie('TiendAr',req.session.userLogin,{maxAge: 1000 * 60 * 60 * 24})
@@ -91,14 +95,54 @@ module.exports = {
         }
     },
     editarUsuario: (req, res) => {        
-        /* let categorias = ['Cotillon', 'Coleccionables', 'Ind-Mujer', 'Ind-Hombre', 'Ind-Infantil']
-        let id = +req.params.id
-        let producto = productos.find((elemento) => {
-            return elemento.id == id
-        })
-         */
-        /* return res.send(producto) Comprobar que esta llegando bien el elemento*/
         return res.render('editarUsuario')
+    },
+    edit: (req, res) => { 
+        
+        /*  if (errors.isEmpty()) {
+             let usuarioModificado = {
+                 dni: dni,
+                 telefono: telefono,
+                 gender: gender,
+                 address: address,
+                 imagen: req.file ? req.file.filename : "login.png"
+             } 
+             guardar(usuarioModificado)
+ 
+             return res.redirect('/')}
+       console.log(usuarios); 
+     return res.send(usuarioModificado)  */ 
+        let id = +req.params.id
+        let {Nombres, Apellidos, dni, telefono, gender, Correo, pass, address, category} = req.body
+         let errors = validationResult(req)
+        if (req.fileValidationError) {
+            let imagen = {
+                param: 'imagen',
+                msg: req.fileValidationError,
+            }
+            errors.errors.push(imagen)}
+        if (errors.isEmpty()) {
+            usuarios.forEach(usuario => {
+                if (usuario.id === id) {
+                    usuario.Nombres = Nombres
+                    usuario.Apellidos = Apellidos
+                    usuario.dni = +dni
+                    usuario.telefono = +telefono
+                    usuario.gender = gender
+                    usuario.pass = usuario.pass
+                    usuario.Correo = usuario.Correo
+                    usuario.address = address
+                    imagen = req.file ? req.file.filename : usuario.imagen
+             
+                }})
+                guardar(usuarios)
+            return res.redirect('/')
+        } else {
+            return res.render('editarUsuario', {
+                errors: errors.mapped(),
+                old: req.body
+            })}
+
     },
 
     usuarios : (req,res) => {
