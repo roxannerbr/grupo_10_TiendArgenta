@@ -58,7 +58,7 @@ module.exports = {
         let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', '..', 'public', 'images', 'productos', dato))
         let producto =productos.find(product => product.id === id)
 
-     return res.send(req.body)
+     /* return res.send(req.body) */
       return res.render('admin/crear', {
           errors: errors.mapped(),
           old: req.body
