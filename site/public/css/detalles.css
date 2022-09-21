@@ -1,0 +1,346 @@
+.detalles main h1{
+    width: 100%;
+    background: var(--dorado);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+.detalles main .desk{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+.detalles main h3,h4{
+    color:var(--celeste);
+}
+.detalles main .imagenes .img_principal{
+    width: 90%;
+    background-color: white;
+    border: solid 1px var(--azulPetroleo);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,18);
+}
+.detalles main .imagenes {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: 10px;
+}
+.detalles main .imagenes img {
+    width: 100%;
+}
+/*.detalles main .imagenes .miniaturas img{
+    width: 24%;
+}
+.detalles main .relacionados img{
+    width: 25%;
+}*/
+.detalles main .descripcion{
+    width: 90%;
+    background-color: white;
+    padding: 10px;
+    border: solid 1px var(--azulPetroleo);
+    border-radius: 15px;
+}   
+.detalles main .descripcion .desc{
+    background-color: var(--celesteClaro);
+    margin: 4px;
+    border-radius: 15px;
+}    
+.detalles main .descripcion .desc h4{
+    text-decoration: underline;
+    padding: 3px;
+}
+.detalles main .descripcion .desc p{
+    padding: 2px 9px;
+    font-size: 12px;
+}
+.detalles main .descripcion h4 {
+    width: auto;
+    margin-right: 10px;
+}
+.detalles main .descripcion .talles{
+    display: flex;
+    color: var(--celeste);
+    margin: 8px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.detalles main .descripcion .talles select{
+margin-right: 50px;
+}
+.detalles main .descripcion .agregarCarrito {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.detalles main .descripcion .agregarCarrito .agregarCarrito__input {
+    border-left: 0;
+    border-right: 0;
+    width: 50px;
+    text-align: center;
+    }
+.detalles main .descripcion .agregarCarrito .button {
+    cursor: pointer;
+    padding: 5px 10px;
+    color: #FFFFFF;
+    background-color: var(--celeste);
+    font-weight: 600;
+    border: 1px solid var(--azulPetroleo);
+    border-radius: 4px;
+}
+.detalles main .descripcion .agregarCarrito .button--addOnLeft {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.detalles main .descripcion .agregarCarrito .button--addOnRight {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.detalles main .descripcion .agregarCarrito .input {
+    border: 1px solid #D7DBDD;
+    padding: 0 10px;
+    border-radius: 0;
+    box-shadow: none;
+}
+.detalles main .linea{
+    border-top: solid 1px var(--cyan);
+    height: 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.detalles main .descripcion .envio{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+.detalles main .descripcion .envio i{
+    color: var(--celeste);
+    margin: 5px;
+}
+.detalles main .descripcion .envio a{
+    padding-left: 10px;
+}
+.detalles main .precio{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-content: center;
+}
+.detalles main .descripcion .contPrice{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.detalles main .descripcion .precioViejo{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: baseline;
+}
+.detalles main .descripcion .precioViejo small{
+    text-decoration: line-through;
+    font-size: 16px;
+}
+.detalles main .descripcion .precioViejo h4{
+    background-color: green;
+    padding: 3px;
+    color: white;
+}
+.detalles main .totalFinal{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.detalles main .btnComprar{
+    display: flex;
+    justify-content: space-evenly
+}
+.detalles main .btnComprar button {
+    background-color: var(--celeste);
+    color: white;
+    padding: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 1s hall;
+}
+.detalles main .btnComprar button:hover{
+    background-color: var(--dorado);
+    color: white;
+}
+.detalles main .btnComprar a{
+    color: white;
+}
+.detalles .carrouselProductos{
+    width: 73%;
+    margin: 0 auto;
+}
+
+/*MEDIA MOBILE*/
+@media(min-width:425px){
+    .detalles main .linea {
+        display: block
+    }
+    .detalles main section .relacionados article{
+        width: 49%;
+        display: inline-block;
+    }
+    .detalles main .relacionados p{
+        width: 40%;
+        margin: 40px;
+        font-size: 20px;
+        border: 3px solid var(--azulPetroleo);
+        border-radius: 13px;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+}
+
+/*MEDIA TABLET*/
+@media(min-width:768px){
+    .detalles main .desk{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        height: auto;
+        width: 100%;
+    } 
+    .detalles main .descripcion{
+        padding: 10px;
+        border: solid 1px var(--azulPetroleo);
+        border-radius: 15px;
+        width: 70%;
+        background-color: white;
+    }
+    .detalles main .descripcion h2{
+        margin-bottom: 10px;
+    }
+    .detalles main .descripcion .desc{
+        background-color: var(--celesteClaro);
+        margin: 4px;
+        margin-bottom: 20px;
+    }
+    .detalles main .descripcion .talles{
+        display: flex;
+        color: var(--celeste);
+        margin: 8px 0px;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: baseline;
+    }
+    .detalles main .descripcion .talles h4, .agregarCarrito h4{
+        font-size: 18px;
+    }
+    .detalles main .descripcion .talles select{
+        margin-right: 50px;
+        width: 50px;
+        height: 25px;
+    }
+    .detalles main .descripcion .agregarCarrito {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: baseline;
+    }
+    .detalles main .descripcion .agregarCarrito .input {
+        border: 1px solid #D7DBDD;
+        padding: 0 10px;
+        border-radius: 0;
+        box-shadow: none;
+        height: 28px;
+    }
+    .detalles main .descripcion .envio {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        align-content: center;
+    }
+    .detalles main .descripcion .envio h3{
+        font-size: 16px;
+    }
+    .detalles main .descripcion .envio a{
+        color: var(--dorado);
+        font-size: 14px;
+    }
+    .detalles main .descripcion .envio a:hover{
+        color: var(--celeste);
+        font-size: 14px;
+    }
+    .detalles main .descripcion .contPrice h4{
+        font-size: 16px;
+        text-align: center;
+        margin-right: 0;
+    }
+    .detalles main .descripcion .contPrice h5{
+        font-size: 16px;
+    }
+    .detalles main .descripcion .precioViejo h4 {
+        background-color: green;
+        padding: 3px;
+        color: white;
+        font-size: 16px;
+        text-align: center;
+    }
+    .detalles main .precio{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        align-content: center;
+    }
+    .detalles main .descripcion .contPrice{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .detalles main .descripcion .precioViejo{
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        align-items: baseline;
+        justify-content: space-evenly;
+    }
+    .detalles main .btnComprar button {
+        background-color: var(--celeste);
+        color: white;
+        padding: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 1s all;
+    }
+    .detalles .carrouselProductos{
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+/*MEDIA DESKTOP*/
+@media(min-width:1024px){ 
+    .detalles main .descripcion{
+        padding: 10px;
+        border: solid 1px var(--azulPetroleo);
+        border-radius: 15px;
+        width: 70%;
+        margin: 4px;
+        background-color: white;
+    }
+    .detalles main .descripcion .envio h3 {
+        font-size: 24px;
+    }
+   
+    .detalles main .nombre h2{
+        color: #fff;
+        font-size:20px;
+        text-align: center;
+        margin: 10px;
+    }
+    .detalles .carrouselProductos{
+        width: 100%;
+        margin: 0 auto;
+    }
+}

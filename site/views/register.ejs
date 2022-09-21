@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('./partials/head',{title: 'Registro'}) %>
+<body class="register">
+  <%- include('./partials/header') %>
+    <main>
+        <section class="form-reglog">
+            <h1>Crear cuenta</h1>
+            <p class="textcrear">Complete este formulario para poder crear una cuenta.</p>
+            <form  action="" method="post" enctype="multipart/form-data"><!--ENCTYPE FUNDAMENTAL PARA SUBIR IMG CON MULTER-->
+
+                <div>
+                    <input class="ingreso" type="text" name="Nombres" id="Nombres" value="<%= locals.old && old.nombres ? old.nombres: null %>" placeholder="Ingrese su nombre" >
+                    <% if (locals.errors && errors.Nombres) { %>
+                        <small><%= errors.Nombres.msg %> </small>
+                    <% } %>                    
+                </div>
+                <div>
+                    <input class="ingreso" type="text" name="Apellidos" id="Apellidos" value="<%= locals.old && old.apellidos ? old.apellidos: null %>" placeholder="Ingrese su apellido" >
+                    <% if (locals.errors && errors.Apellidos) { %>
+                        <small><%= errors.Apellidos.msg %> </small>
+                    <% } %>  
+                </div>
+                <div>
+                    <input class="ingreso" type="email" name="Correo" id="Correo" value="<%= locals.old && old.correo ? old.correo: null %>" placeholder="Ingrese su correo electr&oacute;nico" >
+                    <% if (locals.errors && errors.Correo) { %>
+                        <small><%= errors.Correo.msg %> </small>
+                    <% } %>  
+                </div>
+                <div>
+                    <input class="ingreso" type="password" name="pass" id="pass" value="<%= locals.old && old.pass ? old.pass: null %>" placeholder="Ingrese su contraseña" >
+                    <% if (locals.errors && errors.pass) { %>
+                        <small><%= errors.pass.msg %> </small>
+                    <% } %>  
+                </div>
+                <div>
+                    <input class="ingreso" type="password" name="pass2" id="pass2" value="<%= locals.old && old.pass2 ? old.pass2: null %>" placeholder="Confirme su contraseña" >
+                    <% if (locals.errors && errors.pass2) { %>
+                        <small><%= errors.pass2.msg %> </small>
+                    <% } %>  
+                </div>
+                <div class="mb-3">
+                    <label for="formFileMultiple" class="form-label">Subir imágen</label>
+                    <input class="form-control" type="file" name="imagen" id="formFileMultiple" value="<%= locals.old && old.imagen ? old.nombre: null %>" >
+                    <% if (locals.errors && errors.imagen) { %>
+                        <small><%= errors.imagen.msg %> </small>
+                    <% } %>
+                </div>
+
+                <div class="aceptoTerm">
+                    <label><input type="checkbox" name="Terminos">&nbsp;Acepto los&nbsp;<a href="">Términos y Condiciones.</a></label>
+                    <% if (locals.errors && errors.Terminos) { %>
+                        <small><%= errors.Terminos.msg %> </small>
+                    <% } %>  
+                </div>
+                <div> 
+                    <button type="submit"class="boton">Registrarme</button>
+                </div>
+                <div class="linea"></div>
+                <p>¿Ya tienes cuenta?<a href="/usuario/login"> Iniciar sesión</a></p>
+            </form>
+        </section>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>

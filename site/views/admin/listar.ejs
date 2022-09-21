@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('../partials/head',{title:'ADMIN | Lista de Productos'}) %>
+<body class="listar">
+  <%- include('../partials/header') %>
+  <main>
+    <h1>Administracion</h1>
+    <div class="btnHeader">
+      <div class="btncrear">
+        <a href="/admin/crear">
+            <button type="button" class="btn crear">Crear Producto</button>
+        </a>
+      </div>
+      <div class="btncrear">
+        <a href="/admin/<%= redirection %>">
+          <button type="button" class="btn crear"><%= redirection==="historial"?"Historial Productos":"Listar" %> </button>
+        </a>
+      </div>
+    </div>
+    <div class="table-responsive tabla-mob">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Desc</th>
+            <th scope="col">Acción</th>
+          </tr>
+        </thead>
+        <tbody> 
+          <% productos.forEach(producto => { %>
+            <tr>
+              <th scope="row"><a href="/admin/editar/<%= producto.id %>"><%= producto.id %> </a></th>
+              <td><a href="/admin/editar/<%= producto.id %>"><%= producto.titulo %></a></td>
+              <td><a href="/products/detail/<%= producto.id %>"><%= producto.categoria %></a></td>
+              <td><a href="/admin/editar/<%= producto.id %> "><%= producto.stock %></a></td>
+              <td><a href="/admin/editar/<%= producto.id %> ">$<%= producto.precio %></a></td>
+              <td><a href="/admin/editar/<%= producto.id %> "><%= producto.descuento %>%</a></td>
+              <td class="btnMod">                
+                
+                  <% if (redirection !== "listar") { %>
+                    <a href="/admin/editar/<%= producto.id%>">
+                      <button type="edit" class="btn btn-success"><i class="fas fa-edit"></i></button>
+                  </a>
+                  <% }else{ %>
+                    <form action="/admin/restore/<%= producto.id%>?_method=DELETE" method="post">
+                      <button type="submit" class="btn btn-success"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+                    </form>
+                  <% } %>
+                  <% if (redirection !== "listar") { %>
+                    <form action="/admin/destroy/<%= producto.id%>?_method=DELETE" method="post">
+                      <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                    </form>
+                  <% }else{ %>
+                    <form action="/admin/crash/<%= producto.id%>?_method=DELETE" method="post">
+                      <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                    </form>
+                  <% } %>
+                </div>
+              </td>
+            </tr>
+                <% }) %> 
+        </tbody>        
+      </table>
+    </div>
+</main>
+<%- include('../partials/footer') %>
+</body>
+</html>

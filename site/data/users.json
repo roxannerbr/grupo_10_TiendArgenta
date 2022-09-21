@@ -1,0 +1,60 @@
+[
+    {
+        "id": 1,
+        "Nombres": "roxana",
+        "Apellidos": "roman",
+        "Correo": "romaniello@gmail.com",
+        "pass": "$2a$10$F0tPvJyEredWP1/94GN0xepXC.pHfJAWZbEuX2VXvPau6mEh5yawO",
+        "category": "admin",
+        "imagen": "profile3.jpg"
+    },
+    {
+        "id": 2,
+        "Nombres": "Mariana Soledad",
+        "Apellidos": "Blanez",
+        "Correo": "Marianablanez@gmail.com",
+        "pass": "$2a$10$qq1bHOscBbYrK.dpBYIAn.NN0SfPCUcilX5srz6DdSbYaKoB0cM7.",
+        "category": "admin",
+        "imagen": "profile4.jpg"
+    },
+    {
+        "id": 3,
+        "Nombres": "Cristian",
+        "Apellidos": "Ramirez",
+        "Correo": "CristianRamirez@gmail.com",
+        "pass": "$2a$10$2Z601Z3tdhsHEBJsy282X.VLhBCN6MyK86QHZNdw6oO2c3Rpg7ib6",
+        "category": "admin",
+        "imagen": "profile1.jpg"
+    },
+    {
+        "id": 4,
+        "Nombres": "Cristian",
+        "Apellidos": "Elias",
+        "Correo": "comision17@hotmail.com",
+        "pass": "$2a$10$BqJD/fPxEOKSgnCBNe2ua.q.uiJ4IzxVKOcu72jEs08gktMxWdjbG",
+        "category": "user",
+        "imagen": "profile5.jpg"
+    },
+    {
+        "id": 5,
+        "Nombres": "Jeanette",
+        "Apellidos": "Garcia Barrera",
+        "Correo": "comision17@gmail.com",
+        "pass": "$2a$10$NYe9Jm2.02Rz.C4IB.YUx.BMzJtqXRJoPWFbOurn0InkHhRTwhRru",
+        "category": "user",
+        "imagen": "profile6.jpg"
+    },
+    {
+        "id": 6,
+        "Nombres": "Patricio",
+        "Apellidos": "Cristaldo",
+        "dni": 10472576,
+        "Correo": "patricio_cristaldo@outlook.com",
+        "pass": "$2a$10$8jzunmBWDZvfOcWCxs9SruiYpXq7IM1CIJtME5s1CnqC6/CekQTzO",
+        "provincia": "",
+        "localidad": "",
+        "category": "admin",
+        "imagen": "profile2.jpg",
+        "telefono": 1173686874
+    }
+]

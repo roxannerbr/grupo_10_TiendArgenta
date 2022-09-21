@@ -1,0 +1,130 @@
+.usuario main{
+    margin: 10px;
+}
+.usuario main .foto{
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+.usuario main .foto img{
+    border-radius: 50% ;
+    display: inline-block;
+    max-width: 25%;
+    border: 2px solid var(--dorado);
+} 
+.usuario .foto h3{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    color: var(--dorado);
+    text-transform: uppercase;
+    justify-content: center;
+    margin: 5px 0px;
+}
+.usuario .foto .btn{
+    margin-right: 10%;
+    background-color: var(--dorado);
+    color: white;
+    border-color: var(--azulPetroleo);
+}
+.usuario main .foto .cSession{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: var(--celeste);
+    color: white;
+    padding: 5px;
+    margin: 0;
+}
+.usuario main .foto .cSession:hover {
+    background-color: var(--dorado);
+    color: white;
+}
+.usuario main .foto .cSession a {
+    color: white;
+    font-weight: 400;
+}
+.usuario main .accordion-item{
+    margin: 10px;
+    border-radius: 10px;
+    padding: 2%;
+}
+.usuario main .accordion-button {
+    font-size: 80%;
+    border-radius: 10px;
+    color: var(--cyan);
+}
+.usuario main .accordion-body{
+    border-radius: 10px;
+    color: var(--cyan);
+    list-style: none;
+    text-decoration: none;
+    background-color: white;
+    margin-bottom:20px;
+    padding: 10px;
+}
+.usuario main .accordion-body small{
+    color:var(--azulPetroleo);
+    display: flex;
+}
+.usuario main .accordion-body h3{
+    display: contents;
+}
+.usuario main .accordion-body h3:hover{
+    color: var(--dorado);
+}
+.usuario main .accordion-body input{
+    display: flex;
+}
+.usuario main .accordion-body a{
+    border-radius: 10px;
+    color: var(--cyan);
+    background-color: white;
+}
+
+@media (min-width:768px){
+    .usuario main .foto{
+        display: flex;
+        background-color: white;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 10px;
+        flex-direction: row;
+        align-items: center;
+    }
+    .usuario main .foto img{
+        border-radius: 50% ;
+        display: inline-block;
+        width: 10%;
+        border-top: 1px solid var(--dorado);
+        
+    }
+    .usuario .foto h3{
+        width: 100%;
+        display: flex;
+        text-align: center;
+        color: var(--dorado);
+        text-transform: uppercase;
+        justify-content: center;
+        margin: 0;
+    }
+    
+    .usuario main .foto .cSession{
+        border-radius: 5px;
+        background-color: var(--celeste);
+        color: white;
+        padding: 5px;
+        margin: 0;
+    }
+    .usuario main .foto .cSession:hover {
+        background-color: var(--dorado);
+        color: white;
+    }
+    .usuario main .foto .cSession a {
+        color: white;
+        font-weight: 400;
+    }
+}

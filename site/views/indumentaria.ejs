@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('./partials/head',{title: 'Indumentaria'}) %>
+<body class="indumentaria">
+  <%- include('./partials/header') %>
+    <main>
+      <h1>INDUMENTARIA</h1>
+      <section class="cards">
+        <article class="card card1">
+          <div class="contenedor">
+            <a href="/productos/hombre"><img src="/images/productos/H-Alter.png" alt="camiseta niño"/></a>
+          </div>
+          <div class="nombre">
+            <h2>HOMBRE</h2>
+          </div>
+        </article>
+        <article class="card card2">
+          <div class="contenedor">
+            <a href="/productos/mujer"><img src="/images/productos/M-titular.png" alt="promos"/></a></div>
+          <div class="nombre">
+            <h2>MUJER</h2>
+          </div>
+        </article>
+        <article class="card card3">
+          <div class="contenedor">
+            <a href="/productos/infantil"><img src="/images/productos/Inf-messi.png" alt="novedades"/></a>
+          </div>
+          <div class="nombre">
+            <h2>INFANTIL</h2>
+          </div>
+        </article>
+      </section>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>

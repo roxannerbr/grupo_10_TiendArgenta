@@ -1,0 +1,43 @@
+.preg-Frec main .accordion-header h2{
+    width: 100%;
+    background: var(--dorado);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.preg-Frec main .accordion{
+    margin: 0 20px 20px;
+}
+
+.preg-Frec main .accordion{
+    background: var(--cyan);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.preg-Frec main form .form-floating{
+    padding: 8px 0 ;
+}
+
+.preg-Frec main form .form-floating small{
+    color: white;
+}
+.preg-Frec main form .btn{
+    width: 400px;
+    color: white;
+    background: var(--dorado)
+}
+.preg-Frec main form .btn:hover{
+    color: white;
+}
+@media (min-width:768px){
+    .preg-Frec main form {
+        margin: 0 90px 20px;
+    }
+}
+@media (min-width:1024px){
+    .preg-Frec main form {
+        margin: 0 100px 20px;
+    }
+}

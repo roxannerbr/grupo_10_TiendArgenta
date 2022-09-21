@@ -1,0 +1,20 @@
+[
+    {
+        "id": 39,
+        "titulo": "Prueba 1",
+        "categoria": "Ind-Hombre",
+        "precio": "17000",
+        "descuento": "30",
+        "stock": "13",
+        "imagen": "default-image.png"
+    },
+    {
+        "id": 40,
+        "titulo": "Prueba 2",
+        "categoria": "Ind-Hombre",
+        "precio": "17000",
+        "descuento": "30",
+        "stock": "13",
+        "imagen": "default-image.png"
+    }
+]

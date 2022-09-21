@@ -1,0 +1,70 @@
+<header>
+  <marquee loop="infinite" behavior="scroll">ENVIOS GRATIS A PARTIR DE $5.000</marquee>
+    <div class="contenedor-header">
+      <div class="logo">
+      <a href="/">
+      <img src="/images/home/header/logofinalizado.png" alt="logo de Tienda Argenta" />
+      </a>
+      </div>
+      <div class="icons">
+          <form action="/busqueda" method="get">
+            <input type="search" name="search" placeholder="Buscar"/>
+          </form>
+
+          <% if(locals.userLogin){ %> 
+            <a class href="/usuario/perfil">
+              Hola <%= locals.userLogin.name %>!
+            </a>
+            <% }else{ %>
+          <a href="/usuario/login"><img src="/images/home/header/Login.png" alt="imagen de login con gorrito"/></a>
+          <% } %>
+
+          <a class href="/productos/carrito">
+            <img src="/images/home/header/carrito_png.png" alt="carrito de compras con bandera argentina"/>
+          </a>
+      </div>
+      <div class="burger">
+        <input type="checkbox" name="burger" id="burger" checked>
+        <label for="burger"><i class="fas fa-bars"></i></label>
+      
+        <nav class="nav-desktop">
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a>Productos&nbsp;<i class="fas fa-angle-down"></i></a>
+                  <ul>
+                    <li><a href="/productos/cotillon">Cotillon</a></li>
+                    <li><a href="/productos/coleccionables">Coleccionables</a></li>
+                    <li><a href="/indumentaria">Indumentaria&nbsp;<i class="fas fa-angle-down"></i></a>
+                      <ul>
+                        <li><a href="/productos/hombre">Hombre</a></li>
+                        <li><a href="/productos/mujer">Mujer</a></li>
+                        <li><a href="/productos/infantil">Infantil</a></li>
+                      </ul>
+                  </li>
+                  </ul>
+                </li>
+                <li><a href="/novedades">Novedades</a></li>
+                <li><a href="/contacto">Contacto</a></li>
+                <% if (locals.userLogin && locals.userLogin.category === "admin") { %>
+                  <li><a href="/usuario/perfil">Mi Perfil</a></li>
+                <li><a href="/admin/listar">Admin</a></li>
+                <li>
+                  <form class="cSession" action="/usuario/logout?_method=DELETE" method="post">
+                    <button class="cSession" type="submit">Cerrar sesión</button>
+                  </form>
+                </li>
+                <% } %>
+                <% if (locals.userLogin && locals.userLogin.category === "user") { %>
+                  <li><a href="/usuario/perfil">Mi perfil</a></li>
+                  <li>
+                    <form class="cSession" action="/usuario/logout?_method=DELETE" method="post">
+                      <button class="cSession" type="submit">Cerrar sesión</button>
+                    </form>
+                  </li>
+                    
+                  <% } %>
+            </ul>
+        </nav>
+      </div>
+    </div>
+</header>

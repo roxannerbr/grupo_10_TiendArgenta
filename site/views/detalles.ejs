@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+  <html lang="es">
+    <%- include('./partials/head',{title: 'TiendArgenta'}) %>
+
+<body class="detalles">
+  <%- include('./partials/header') %>
+
+    <main>
+        <h1><%= producto.titulo %></h1>
+        <div class="desk">
+          <!--IMAGEN DEL PRODUCTO-->
+          <section class="imagenes">
+            <div class="img_principal">
+              <img src="/images/productos/<%= producto.imagen %>" alt="" />
+            </div>
+          </section>
+          <!--DATOS DEL PRODUCTO-->
+          <section class="descripcion">
+            <div class="contDescripcion">
+            <div class="desc">
+              <h4>Descripcion del producto</h4>
+              <p>
+                <%= producto.descripcion %>
+              </p>
+            </div>
+            <div class="talles">
+              <h4>Talles</h4>
+              <label for="select">
+                <select name="talles" id="talles">
+                  <option value="">S</option>
+                  <option value="">M</option>
+                  <option value="">L</option>
+                  <option value="">XL</option>
+                  <option value="">XXL</option>
+                  <option value="">XXXL</option>
+                </select>
+              </label>
+              <h4>Stock:<%= producto.stock %></h4>
+            </div>
+            <div class="agregarCarrito">
+              <h4>Cantidad</h4>
+                <button class="button button--addOnLeft">-</button>
+                <input type="text" placeholder="Stock" value="1" class="input agregarCarrito__input"/>
+                <button class="button button--addOnRight">+</button>
+            </div>
+              <div class="linea"></div>
+            <div class="envio">
+              <h3><i class="fa fa-truck"></i>Envíos a todo el país</h3>
+              <a href="https://www.correoargentino.com.ar/" target="_blank">Ver costo de envío</a>
+            </div>
+            <div class="linea"></div>
+            <div class="precio">
+              <div class="contPrice">
+                <h4>Precio</h4>
+                <div class="precioViejo">
+                  <small>$<%= producto.precio%></small>
+                  <h4><%= producto.descuento%>%</h4>
+                </div>
+              </div>
+              <div class="contPrice">
+                <h4>Descuento</h4>
+                <h5>$<%=(producto.precio * producto.descuento / 100)%></h5>
+              </div>
+            </div>
+            <div class="linea"></div>
+            <div class="totalFinal">
+              <h4>Total</h4>
+              <h4>$<%= producto.precio - (producto.precio * producto.descuento / 100)%></h4>
+            </div>
+            <div class="btnComprar">
+              <button type="submit"><a href="/productos/carrito">AÑADIR AL CARRITO</a></button>
+            </div>
+            </section>
+          </div>
+
+        <h1>Productos relacionados</h1>
+        <section class="carrouselProductos">
+          <div class="glider-contain">
+              <div class="glider">
+                <% productoPorCategoria.forEach(producto => { %>
+                <%- include('./partials/cards',{
+                    id: producto.id,
+                    imagen: producto.imagen,
+                    titulo: producto.titulo,
+                    descuento: producto.descuento,
+                    precio: producto.precio
+                }) %> 
+            <% }) %>
+              </div>
+            
+              <button aria-label="Previous" class="glider-prev"><i class="fas fa-chevron-left"></i></button>
+              <button aria-label="Next" class="glider-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+      </section>       
+    </main>
+    
+    <%- include('./partials/footer') %>
+    
+  </body>
+</html>
