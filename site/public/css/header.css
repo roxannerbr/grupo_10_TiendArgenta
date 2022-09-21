@@ -37,7 +37,10 @@ header .contenedor-header .logo img{
 header .contenedor-header form{
     display: flex;
     margin-right: 10px;
+    justify-content: center;
+    color: var(--dorado);
 }
+
 header .contenedor-header input[type="search"]{
     width: 40px;
     background-color: white;
@@ -48,6 +51,8 @@ header .contenedor-header input[type="search"]{
     padding: 11px 10px 10px 25px;
     font-size: 12px;
     border-radius: 50px;
+    border-color: var(--dorado);
+    border-style: solid;
     transition: .5s; 
     outline: none; 
 }
@@ -61,8 +66,14 @@ header .contenedor-header .icons{
     display: flex;
     justify-content: flex-end;
     width: 70%;
+    align-items: center;
 }
-
+a:link, a:visited, a:active {
+    color: var(--azulPetroleo);
+    font-weight: 500;
+    text-decoration:none;
+    text-transform: capitalize;
+}
 header .contenedor-header .icons img{
     display: flex;
     margin: 2px;
@@ -94,16 +105,19 @@ header .contenedor-header .burger label{
 header .contenedor-header .burger nav{
     width: 100%;
     display: block;
-    margin-top: 10px;
+    margin: 10px 0;
     text-align: center;
     color: var(--cyan);
 }
-
+header ul{
+    margin: 0;
+    padding: 0;
+}
 header .contenedor-header .burger nav ul li{
     display: flex;
     flex-direction: column;
     list-style: none;
-    line-height: 40px;
+    line-height: 1;
     color: var(--cyan);
 }
 header .contenedor-header .burger nav ul li a{
@@ -115,6 +129,7 @@ header .contenedor-header .burger nav ul li a{
     align-items: center;
     justify-content: center;
     padding: 5px 5px;
+    font-weight: 500;
 }
 header .contenedor-header .burger ul li:hover{
         background-color: var(--dorado);
@@ -130,17 +145,16 @@ header .contenedor-header .burger ul ul {
     display:none;
     top:100%;
     left:0;
-    background-color: var(--cyan);    
+    background-color: var(--cyan);
 }
 /*ITEMS DESPLEGABLE*/
 header .contenedor-header .burger ul ul li {
     width: 100%;
     color: var(--dorado);
-    
 }
 /*ENLACE DESPLEGABLE*/
 header .contenedor-header .burgerul ul ul li a {
-    line-height: 120%;
+    line-height: 100%;
     padding: 10px 15px;
 }
 /*DESPLEGABLE HOVER*/
@@ -148,8 +162,26 @@ header .contenedor-header .burger ul li:hover > ul {
     display:block;
 }
 
+header .contenedor-header form{
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    color: var(--dorado);
+}
+header .nav-desktop ul li form button.cSession{
+    background-color: var(--cyan);
+    color: white;
+    border: none;
+    padding: 5px;
+}
+header .nav-desktop ul li form button.cSession:hover{
+    background-color: var(--dorado);
+    color: white;
+    border: none;
+    padding: 5px;
+}
 /*MEDIA*/
-@media(min-width:768px){
+@media(min-width:769px){
     header .contenedor-header{
     display: flex;
     flex-direction: row;
@@ -169,11 +201,7 @@ header .contenedor-header .burger ul li:hover > ul {
         display: flex;
         justify-content: space-evenly;
     }
-    a:link, a:visited, a:active {
-        color: var(--azulPetroleo);
-        font-weight: 500;
-        text-decoration:none;
-    }
+    
     header .contenedor-header .burger ul{
         display: flex;
         justify-content: space-evenly;
@@ -181,8 +209,13 @@ header .contenedor-header .burger ul li:hover > ul {
         align-items: center;
         list-style: none;
     }
+    header .contenedor-header .burger nav li{
+        position: relative;
+    }
+    header .contenedor-header .burger nav li ul{
+        position: absolute;
+    }
     header .contenedor-header .burger ul li {
-        width: 100%;
         text-align: center;
         margin: 0 5px;
     }
@@ -203,11 +236,44 @@ header .contenedor-header .burger ul li:hover > ul {
     }
     /*ENLACE DESPLEGABLE*/
     header .contenedor-header .burger nav ul ul li a {
-        line-height: 100%;
-
+        line-height: 1;
+    }
+    header .contenedor-header .burger nav ul li a{
+        color: var(--cyan);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 15px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 5px;
+        font-weight: 500;
     }
     /*DESPLEGABLE HOVER*/
     header .contenedor-header .burger nav ul li:hover > ul {
         display:block;
+    }
+    header .contenedor-header form.cSession{
+        display: flex;
+        justify-content: center;
+        line-height: 1;
+    }
+}
+
+@media(min-width:1024px){
+    header .contenedor-header .burger nav ul li a{
+        color: var(--cyan);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 16px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 5px;
+        font-weight: 500;
+    }
+    header .contenedor-header form.cSession{
+        display: flex;
+        justify-content: center;
     }
 }

@@ -1,13 +1,47 @@
-.crear-editar main h1{
+.crear-editar main .adminTop{
+    display: flex;
     width: 100%;
     background: var(--dorado);
+    align-items: center;
+    margin-bottom: 10px;
+}
+.crear-editar main .adminTop h1{
     color: white;
     text-align: center;
-    padding: 10px 0;
+    width: 90%;
+}
+.crear-editar main .adminTop .btncrear{
+    width: 10%;
+    display: flex;
+    justify-content:center;
 }
 
+.crear-editar main a .adminTop .crear{
+    width: 150px;
+}
+.crear-editar main a .btn{
+    color: white;
+    background: var(--cyan);
+    font-weight: 600;
+}
+.crear-editar main button.btn .fas i{
+    color: white;
+}
+.crear-editar main a .adminTop .btn:hover{
+    background-color: var(--cyan);
+}
 .crear-editar main form {
     margin: 0 20px 20px;
+}
+
+.crear-editar main form .contenedor-checks{
+    display: flex;
+    background-color: white;
+    color: var(--azulPetroleo);
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 5px;
+    padding: 16px 12px;
 }
 
 .crear-editar main form .agregar{

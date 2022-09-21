@@ -12,8 +12,8 @@
           </form>
 
           <% if(locals.userLogin){ %> 
-            <a class href="/">
-              Bienvenido <%= locals.userLogin.name %>
+            <a class href="/usuario/perfil">
+              Hola <%= locals.userLogin.name %>!
             </a>
             <% }else{ %>
           <a href="/usuario/login"><img src="/images/home/header/Login.png" alt="imagen de login con gorrito"/></a>
@@ -30,7 +30,7 @@
         <nav class="nav-desktop">
             <ul>
                 <li><a href="/">Inicio</a></li>
-                <li><a href="/#">Productos&nbsp;<i class="fas fa-angle-down"></i></a>
+                <li><a>Productos&nbsp;<i class="fas fa-angle-down"></i></a>
                   <ul>
                     <li><a href="/productos/cotillon">Cotillon</a></li>
                     <li><a href="/productos/coleccionables">Coleccionables</a></li>
@@ -46,11 +46,22 @@
                 <li><a href="/novedades">Novedades</a></li>
                 <li><a href="/contacto">Contacto</a></li>
                 <% if (locals.userLogin && locals.userLogin.category === "admin") { %>
-                  <li><a href="/usuario/perfil">Usuario</a></li>
+                  <li><a href="/usuario/perfil">Mi Perfil</a></li>
                 <li><a href="/admin/listar">Admin</a></li>
+                <li>
+                  <form class="cSession" action="/usuario/logout?_method=DELETE" method="post">
+                    <button class="cSession" type="submit">Cerrar sesión</button>
+                  </form>
+                </li>
                 <% } %>
                 <% if (locals.userLogin && locals.userLogin.category === "user") { %>
-                  <li><a href="/usuario/perfil">Usuario</a></li>    
+                  <li><a href="/usuario/perfil">Mi perfil</a></li>
+                  <li>
+                    <form class="cSession" action="/usuario/logout?_method=DELETE" method="post">
+                      <button class="cSession" type="submit">Cerrar sesión</button>
+                    </form>
+                  </li>
+                    
                   <% } %>
             </ul>
         </nav>

@@ -28,3 +28,12 @@ body::-webkit-scrollbar-thumb{
 body::-webkit-scrollbar-track{
     background: #fff;
 }
+/*TITULOS DE PAGINAS*/
+main h1.productsPage{
+    width: 100%;
+    background: var(--dorado);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    text-transform: uppercase;
+}

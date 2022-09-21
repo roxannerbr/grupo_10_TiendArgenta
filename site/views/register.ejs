@@ -7,7 +7,7 @@
         <section class="form-reglog">
             <h1>Crear cuenta</h1>
             <p class="textcrear">Complete este formulario para poder crear una cuenta.</p>
-            <form  action="" method="post">
+            <form  action="" method="post" enctype="multipart/form-data"><!--ENCTYPE FUNDAMENTAL PARA SUBIR IMG CON MULTER-->
 
                 <div>
                     <input class="ingreso" type="text" name="Nombres" id="Nombres" value="<%= locals.old && old.nombres ? old.nombres: null %>" placeholder="Ingrese su nombre" >
@@ -39,14 +39,6 @@
                         <small><%= errors.pass2.msg %> </small>
                     <% } %>  
                 </div>
-
-                <div>
-                    <input class="ingreso" type="text" name="category" id="category" value="<%= locals.old && old.category ? old.category: null %>" placeholder="usuario" >
-                    <% if (locals.errors && errors.category) { %>
-                        <small><%= errors.category.msg %> </small>
-                    <% } %>  
-                </div>
-
                 <div class="mb-3">
                     <label for="formFileMultiple" class="form-label">Subir imágen</label>
                     <input class="form-control" type="file" name="imagen" id="formFileMultiple" value="<%= locals.old && old.imagen ? old.nombre: null %>" >
