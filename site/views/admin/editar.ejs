@@ -30,8 +30,8 @@
                     </select>
                     
                     <label for="floatingSelect">Categoria de Producto</label>
-                    <% if (locals.errors && errors.producto) { %>
-                        <small><%= errors.producto.msg %> </small>
+                    <% if (locals.errors && errors.categoria) { %>
+                        <small><%= errors.categoria.msg %> </small>
                     <% } %>
                 </div>
     <!--SUBCATEGORIAS PARA INDUMENTARIA-->
@@ -43,8 +43,8 @@
                     </select>
                     
                     <label for="floatingSelect">Tipo de Producto</label>
-                    <% if (locals.errors && errors.producto) { %>
-                        <small><%= errors.producto.msg %> </small>
+                    <% if (locals.errors && errors.subcategoria) { %>
+                        <small><%= errors.subcategoria.msg %> </small>
                     <% } %>
                 </div>
         <!--PRECIO-->

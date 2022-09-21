@@ -15,12 +15,7 @@
             <input class="form-control" type="file" name="imagen" id="formFileMultiple" value="<%= locals.old && old.imagen ? old.nombre: null %>" >
         </div>
         <h3><%= locals.userLogin.name %> <%= locals.userLogin.lastName %></h3>
-        <div class="form-floating">
-          <label for="Titulo">Editar nombre</label>
-          <input type="text" name="Nombres" class="form-control" id="Nombres" value="<%=locals.old && old.nombres ?old.nombres: null %><%= locals.userLogin.name %>" placeholder="Nombres">
-          <label for="Titulo">Editar apellido</label>
-          <input type="text" name="Apellidos" class="form-control" id="Apellidos" value="<%=locals.old && old.lastName ?old.lastName: null %><%= locals.userLogin.lastName %>" placeholder="Apellidos">
-        </div>
+        
         </div>
         <div class="accordion" id="accordionExample">
         <div class="accordion-item">
@@ -33,6 +28,12 @@
           <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div class="accordion-body">
               <ul>
+                <li><span>Editar Nombres</span>
+                  <input type="text" name="Nombres" class="form-control" id="Nombres" value="<%=locals.old && old.nombres ?old.nombres: null %><%= locals.userLogin.name %>" placeholder="Nombres">
+           </li>
+                <li><span>Editar Apellidos</span>
+                  <input type="text" name="Apellidos" class="form-control" id="Apellidos" value="<%=locals.old && old.lastName ?old.lastName: null %><%= locals.userLogin.lastName %>" placeholder="Apellidos">
+                </li>
                 <li><span>Email</span>
                   <input type="email" class="form-control" id="email" placeholder="email" name="email" value="<%= locals.userLogin.email %> ">
                 </li>

@@ -46,10 +46,10 @@ module.exports = {
         } else {
 
             //este codigo estaba comentado---eliminamos imagen
-            let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', '..', 'public', 'images', 'usuario', dato))
+            /* let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', '..', 'public', 'images', 'usuario', dato))
             if (ruta(req.file.filename) && (req.file.filename !== "login.png")) {
                 fs.unlinkSync(path.join(__dirname, '..', '..', 'public', 'images', 'usuario', req.file.filename))//supuestamente esto eliminaria la imagen
-            }
+            } */
             
             /* return res.send(errors.mapped()) */
             return res.render('register', {
@@ -98,7 +98,7 @@ module.exports = {
         return res.render('editarUsuario')
     },
     edit: (req, res) => { 
-        
+        return res.send(imagen)
         /*  if (errors.isEmpty()) {
              let usuarioModificado = {
                  dni: dni,
@@ -113,7 +113,7 @@ module.exports = {
        console.log(usuarios); 
      return res.send(usuarioModificado)  */ 
         let id = +req.params.id
-        let {Nombres, Apellidos, dni, telefono, gender, Correo, pass, address, category} = req.body
+        let {Nombres, Apellidos, dni, telefono, gender, imagen, pass, address, category} = req.body
          let errors = validationResult(req)
         if (req.fileValidationError) {
             let imagen = {
@@ -132,8 +132,7 @@ module.exports = {
                     usuario.pass = usuario.pass
                     usuario.Correo = usuario.Correo
                     usuario.address = address
-                    imagen = req.file ? req.file.filename : usuario.imagen
-             
+                    usuario.imagen = req.file ? req.file.filename : imagen
                 }})
                 guardar(usuarios)
             return res.redirect('/')
