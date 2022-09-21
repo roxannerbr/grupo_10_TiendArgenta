@@ -83,10 +83,7 @@ module.exports = {
     
     update: (req, res) => {
         let id = +req.params.id
-        let {Titulo,Categoria, subCategoria,Precio,Descuento,Stock,Descripcion} = req.body
-
-
-        
+        let {Titulo,Categoria, subCategoria,Precio,Descuento,Stock,Descripcion,imagen} = req.body
         let errors = validationResult(req)
         if (req.fileValidationError) {
             let imagen = {
@@ -107,6 +104,7 @@ module.exports = {
                     producto.descuento = +Descuento
                     producto.stock = +Stock
                     producto.descripcion = Descripcion
+                    producto.imagen = req.file ? req.file.filename : imagen
                 }
             })
             guardar(productos)

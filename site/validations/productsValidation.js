@@ -2,23 +2,23 @@ const {check}= require('express-validator');
 
 module.exports=[
     /* titulo */
-    check('Titulo').trim().notEmpty().withMessage('Este campo es obligatorio').bail(),    
+    check('titulo').trim().notEmpty().withMessage('Este campo es obligatorio').bail(),    
 
     /* categoria */
-    check('Categoria').trim().notEmpty().withMessage('Debe seleccionar una categoría').bail(),
+    check('categoria').trim().notEmpty().withMessage('Debe seleccionar una categoría').bail(),
 
     /* Sub-categoria */
-    check('subCategoria').trim().notEmpty().withMessage('Debe seleccionar un tipo de producto').bail(),
+    check('subcategoria').trim().notEmpty().withMessage('Debe seleccionar un tipo de producto').bail(),
 
     /* precio */
-    check('Precio').trim().notEmpty().isInt().bail(),
+    check('precio').trim().notEmpty().isInt().bail(),
 
     /* desc */
-    check('Descuento').trim().isInt().withMessage('De no aplicar descuento inserte 0 (Cero)').bail(),
+    check('descuento').trim().isInt().withMessage('De no aplicar descuento inserte 0 (Cero)').bail(),
 
     /* stock */
-    check('Stock').trim().notEmpty().isInt().withMessage('Campo obligatorio').bail(),
+    check('stock').trim().notEmpty().isInt().withMessage('Campo obligatorio').bail(),
 
     /* descripcion */
-    check('Descripcion').trim().notEmpty().withMessage('Por favor inserte la descripción del producto').bail()
+    check('descripcion').trim().notEmpty().withMessage('Por favor inserte la descripción del producto').bail()
 ]

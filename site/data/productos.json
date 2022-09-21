@@ -399,16 +399,5 @@
         "stock": "13",
         "descripcion": "Para que no tengas frio en invierno",
         "imagen": "H-Alter.png"
-    },
-    {
-        "id": 39,
-        "titulo": "Maraca",
-        "categoria": "Coleccionables",
-        "subcategoria": "Camisetas",
-        "precio": 44,
-        "descuento": 4,
-        "stock": 444,
-        "descripcion": "Para que no tengas",
-        "imagen": "default-image.png"
     }
 ]
