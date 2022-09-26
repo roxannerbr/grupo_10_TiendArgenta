@@ -20,4 +20,4 @@
 - Atrasarse con Playground y Trabajos Practicos.
 
  ___
-![STARFISH SPRINT5](https://github.com/roxannerbr/grupo_10_TiendArgenta/blob/develop/Extras/Retro/StarfishRetro5.jpg)
+![STARFISH SPRINT5](https://github.com/roxannerbr/grupo_10_TiendArgenta/blob/master/Extras/Retro/StarfishRetro5.jpg)
