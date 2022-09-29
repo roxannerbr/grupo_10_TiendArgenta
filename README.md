@@ -6,10 +6,10 @@ Es un e-commerce enfocada en el público futbolero argento. Comercializando prod
 ___
 
 ## INTEGRANTES:                              
-- Patricio Cristaldo 21 años, estudiante de Desarrollo Web Full Stack con Digital House y Fundación Formar.// https://github.com/PatricioCristaldo
-- Cristian Ramirez 31 años, estudiante de Programación con Digital House y Fundación Formar, y DT "Deportivo La Solis".// https://github.com/CristianR9090
-- Roxana Romaniello 34 años, estudiante de Desarrollo Web Full Stack con Digital House y Fundación Formar.
-- Mariana Blanez 27 años, estudiante de Desarrollo Web FullStack con Digital House y Fundación Formar. Tambien CM, fotógrafa, y autodidacta en Diseño Gráfico. // https://github.com/MeridaBZ
+- Patricio Cristaldo 21 años, estudiante de Desarrollo Web Full Stack con Digital House y Fundación Formar.// [GITHUB](https://github.com/PatricioCristaldo)
+- Cristian Ramirez 31 años, estudiante de Programación con Digital House y Fundación Formar, y DT "Deportivo La Solis".// [GITHUB](https://github.com/CristianR9090)
+- Roxana Romaniello 34 años, estudiante de Desarrollo Web Full Stack con Digital House y Fundación Formar. // [GITHUB](https://github.com/roxannerbr)
+- Mariana Blanez 27 años, estudiante de Desarrollo Web FullStack con Digital House y Fundación Formar. Tambien CM, fotógrafa, y autodidacta en Diseño Gráfico. // [GITHUB](https://github.com/MeridaBZ)
 ___
 ## Paginas Referencia:
 [AFA](http://www.afashop.com.ar/): Nos gusta como esta aplicado el fondo de la página, que sería el diseño de la tela de la camiseta de la selección, el carrusel.
@@ -26,4 +26,7 @@ ___
 [TABLERO DE TRABAJO](https://trello.com/b/go3IV3hT/grupo10)
 
 ### RETRO:
-[CARPETA DE RETRO](https://github.com/roxannerbr/grupo_10_TiendArgenta/tree/develop/Extras/Retro)
+[CARPETA DE RETRO](https://github.com/roxannerbr/grupo_10_TiendArgenta/tree/master/Extras/Retro)
+
+### DAILY:
+[CARPETA DE DAILY](https://github.com/roxannerbr/grupo_10_TiendArgenta/tree/master/Extras/dayli.md)
