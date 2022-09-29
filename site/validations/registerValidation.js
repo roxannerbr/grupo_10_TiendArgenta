@@ -12,7 +12,7 @@ module.exports=[
     check('Apellidos').trim().notEmpty().withMessage('Campo obligatorio').bail(),
     
     /* email */
-    check('Correo').trim().notEmpty().isEmail().withMessage('Debes agregar un email válido').bail(),
+    check('Correo').trim().notEmpty().withMessage('Debes agregar un email ').isEmail().withMessage('Debes agregar un email válido').bail(),
     
     /* password */
     check('pass').trim().isLength({min:6}).withMessage('Debe contener al menos 6 caracteres').bail(),
