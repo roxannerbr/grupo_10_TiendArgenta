@@ -34,9 +34,7 @@
                 <li><span>Editar Apellidos</span>
                   <input type="text" name="Apellidos" class="form-control" id="Apellidos" value="<%=locals.old && old.lastName ?old.lastName: null %><%= locals.userLogin.lastName %>" placeholder="Apellidos">
                 </li>
-                <li><span>Email</span>
-                  <input type="email" class="form-control" id="email" placeholder="email" name="email" value="<%= locals.userLogin.email %> ">
-                </li>
+                
                 <li>
                   <span>DNI</span>
                   <input class="form-control" type="number" name="dni" id="dni" value="<%= locals.old && old.dni ? old.dni: null %><%= locals.userLogin.dni %>" placeholder="Ingrese su DNI" >
@@ -55,6 +53,13 @@
               <div class="accordion-body">
                 <ul>
                   <span>Cambiar contraseña</span>
+                  <div>
+                    <input class="form-control" type="password" name="pass" id="pass" placeholder="Ingrese su actual contraseña">
+                    <% if (locals.errors && errors.pass) { %>
+                        <small><%= errors.pass.msg %> </small>
+                    <% } %> 
+                </div>
+                <br>
                   <div>
                     <input class="form-control" type="password" name="pass" id="pass" value="<%= locals.userLogin.old && old.pass ? old.pass: null %>" placeholder="Ingrese su nueva contraseña" >
                     <% if (locals.errors && errors.pass) { %>
