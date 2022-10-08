@@ -1,3 +1,6 @@
+/* Dotenv */
+require('dotenv').config()
+
 /* Livereload */
 const livereload = require('livereload');
 const liveReloadServer = livereload.createServer();
