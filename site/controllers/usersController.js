@@ -98,7 +98,7 @@ module.exports = {
         return res.render('editarUsuario')
     },
     edit: (req, res) => { 
-        return res.send(imagen)
+        return res.send(imagen);
         /*  if (errors.isEmpty()) {
              let usuarioModificado = {
                  dni: dni,
