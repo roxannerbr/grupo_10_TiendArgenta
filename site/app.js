@@ -17,6 +17,7 @@ const session= require ('express-session');
 
 /* implementamos locals dentro la app */
 const userLogin= require('./middlewares/userLoginCheck');
+const dbConnectionTest = require('./middlewares/dbConnectionTest')
 
 /*Requerir Rutas */
 const indexRouter = require('./routes/index')
@@ -27,6 +28,8 @@ const usuariosRouter = require('./routes/usuario')
 /* Archivos estaticos monitoreados */
 liveReloadServer.watch(path.join(__dirname, 'public'));
 app.use(connectLivereload());
+
+dbConnectionTest()
 
 /* Trabajar con metodos HTTP (post) */
 app.use(express.json());
