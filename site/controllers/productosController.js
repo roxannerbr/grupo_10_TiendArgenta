@@ -6,9 +6,21 @@ module.exports = {
     detalles : (req,res) => {
         let id = +req.params.id
         let productoEnDetalle = productos.find((producto) => producto.id === id)
+        
+        /*let categoriaSeleccionada = req.params.categoria
+        let categoria = ['Cotillon', 'Coleccionables', 'Mujer', 'Hombre', 'Infantil']
+        
+        productoPorCategoria = productos.filter(producto =>{
+            return producto.categoria === categoriaSeleccionada
+        })
+        return res.send(productoPorCategoria)*/
         return res.render('detalles',{
             producto : productoEnDetalle,
-            detalles
+            detalles/*,
+            categoria,
+            categoriaSeleccionada,
+            productos,
+            productoPorCategoria*/
         })
     },
     carrito : (req,res) => {
