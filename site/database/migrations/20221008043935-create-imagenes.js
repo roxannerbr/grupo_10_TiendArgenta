@@ -13,7 +13,15 @@ module.exports = {
         type: Sequelize.STRING
       },
       productosId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        onDelete: 'CASCADE',
+        references: {
+          model: {
+            tableName: 'Productos'
+          },
+          key: 'id'
+        },
       },
       createdAt: {
         allowNull: false,

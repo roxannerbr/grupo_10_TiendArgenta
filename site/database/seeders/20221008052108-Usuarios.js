@@ -11,13 +11,13 @@ let usuarios = listado.map(usuario => {
     email: usuario.Correo,
     password: usuario.pass,
     imagen: usuario.imagen,
-    rolId: usuario.category === 'admin' ? 'admin' : 'usuario',
+    rolId: usuario.category === 'admin' ? '1' : '2',
     createdAt:new Date,
     updatedAt:new Date
   }
   return elemento
 })
-console.log(usuarios)
+//console.log(usuarios)
 
 module.exports = {
   async up (queryInterface, Sequelize) {

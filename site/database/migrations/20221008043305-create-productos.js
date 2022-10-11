@@ -25,10 +25,24 @@ module.exports = {
         type: Sequelize.STRING
       },
       categoriasId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: {
+            tableName: 'Categorias'
+          },
+          key: 'id'
+        }, 
       },
       subCategoriasId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: {
+            tableName: 'subCategorias'
+          },
+          key: 'id'
+        },
       },
       createdAt: {
         allowNull: false,

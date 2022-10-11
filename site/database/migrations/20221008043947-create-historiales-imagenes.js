@@ -12,8 +12,16 @@ module.exports = {
       nombre: {
         type: Sequelize.STRING
       },
-      productosId: {
-        type: Sequelize.INTEGER
+      historialId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        onDelete: 'CASCADE',
+        references: {
+          model: {
+            tableName: 'Historiales'
+          },
+          key: 'id'
+        },
       },
       createdAt: {
         allowNull: false,
