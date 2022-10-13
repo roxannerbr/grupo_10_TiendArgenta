@@ -10,9 +10,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       nombre: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       apellido: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       dni: {
@@ -22,9 +24,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       email: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       password: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       imagen: {

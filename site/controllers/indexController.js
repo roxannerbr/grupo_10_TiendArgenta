@@ -1,4 +1,8 @@
 let productos = require('../data/productos.json')
+
+//let db = require('../database/models')
+//const { Op } = require("sequelize");
+
 //HOME NEW PRODUCTS
 let nuevosProductos = productos.slice(productos.length-4)
 
@@ -12,7 +16,15 @@ module.exports = {
     },
     search : (req,res) => {
         let elemento = req.query.search
-
+        //SE IMPLEMENTA BASE DE DATOS
+        /*db.Productos.findAll({
+            where : {
+                [Op.or] : [
+                    {nombre : {[Op.substring] : elemento}},
+                    {descripcion : {[Op.substring] : elemento}}
+                ]
+            }
+        })*/
         let resultados = productos.filter(producto => {
             return producto.titulo.toLowerCase().indexOf(elemento.toLowerCase()) != -1
         })

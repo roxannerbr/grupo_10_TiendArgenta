@@ -16,27 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `carritos`
---
-
-DROP TABLE IF EXISTS `carritos`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `carritos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `usuariosId` int(11) NOT NULL,
-  `productosId` int(11) NOT NULL,
-  `createdAt` datetime NOT NULL,
-  `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `usuariosId` (`usuariosId`),
-  KEY `productosId` (`productosId`),
-  CONSTRAINT `carritos_ibfk_1` FOREIGN KEY (`usuariosId`) REFERENCES `usuarios` (`id`),
-  CONSTRAINT `carritos_ibfk_2` FOREIGN KEY (`productosId`) REFERENCES `productos` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `carritos`
 --
 
@@ -44,22 +23,6 @@ LOCK TABLES `carritos` WRITE;
 /*!40000 ALTER TABLE `carritos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `carritos` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `categorias`
---
-
-DROP TABLE IF EXISTS `categorias`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `categorias` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(255) NOT NULL,
-  `createdAt` datetime NOT NULL,
-  `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `categorias`
@@ -72,31 +35,6 @@ INSERT INTO `categorias` VALUES (1,'Cotillon','2022-10-11 20:52:40','2022-10-11 
 UNLOCK TABLES;
 
 --
--- Table structure for table `historiales`
---
-
-DROP TABLE IF EXISTS `historiales`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `historiales` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(255) NOT NULL,
-  `stock` int(11) NOT NULL,
-  `precio` int(11) NOT NULL,
-  `descripcion` varchar(255) NOT NULL,
-  `categoriasId` int(11) NOT NULL,
-  `subCategoriasId` int(11) NOT NULL,
-  `createdAt` datetime NOT NULL,
-  `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `categoriasId` (`categoriasId`),
-  KEY `subCategoriasId` (`subCategoriasId`),
-  CONSTRAINT `historiales_ibfk_1` FOREIGN KEY (`categoriasId`) REFERENCES `categorias` (`id`),
-  CONSTRAINT `historiales_ibfk_2` FOREIGN KEY (`subCategoriasId`) REFERENCES `subcategorias` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `historiales`
 --
 
@@ -106,25 +44,6 @@ LOCK TABLES `historiales` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `historialesimagenes`
---
-
-DROP TABLE IF EXISTS `historialesimagenes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `historialesimagenes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(255) NOT NULL,
-  `historialId` int(11) NOT NULL,
-  `createdAt` datetime NOT NULL,
-  `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `historialId` (`historialId`),
-  CONSTRAINT `historialesimagenes_ibfk_1` FOREIGN KEY (`historialId`) REFERENCES `historiales` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `historialesimagenes`
 --
 
@@ -132,25 +51,6 @@ LOCK TABLES `historialesimagenes` WRITE;
 /*!40000 ALTER TABLE `historialesimagenes` DISABLE KEYS */;
 /*!40000 ALTER TABLE `historialesimagenes` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `imagenes`
---
-
-DROP TABLE IF EXISTS `imagenes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `imagenes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(255) NOT NULL,
-  `productosId` int(11) NOT NULL,
-  `createdAt` datetime NOT NULL,
-  `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `productosId` (`productosId`),
-  CONSTRAINT `imagenes_ibfk_1` FOREIGN KEY (`productosId`) REFERENCES `productos` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `imagenes`
@@ -163,27 +63,6 @@ INSERT INTO `imagenes` VALUES (1,'Kit-Clasico.png',1,'2022-10-11 20:52:42','2022
 UNLOCK TABLES;
 
 --
--- Table structure for table `ordenes`
---
-
-DROP TABLE IF EXISTS `ordenes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `ordenes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `usuariosId` int(11) NOT NULL,
-  `carritosId` int(11) NOT NULL,
-  `createdAt` datetime NOT NULL,
-  `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `usuariosId` (`usuariosId`),
-  KEY `carritosId` (`carritosId`),
-  CONSTRAINT `ordenes_ibfk_1` FOREIGN KEY (`usuariosId`) REFERENCES `usuarios` (`id`),
-  CONSTRAINT `ordenes_ibfk_2` FOREIGN KEY (`carritosId`) REFERENCES `carritos` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `ordenes`
 --
 
@@ -191,32 +70,6 @@ LOCK TABLES `ordenes` WRITE;
 /*!40000 ALTER TABLE `ordenes` DISABLE KEYS */;
 /*!40000 ALTER TABLE `ordenes` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `productos`
---
-
-DROP TABLE IF EXISTS `productos`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `productos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(255) NOT NULL,
-  `stock` int(11) NOT NULL,
-  `precio` int(11) NOT NULL,
-  `descuento` int(11) NOT NULL,
-  `descripcion` varchar(255) NOT NULL,
-  `categoriasId` int(11) NOT NULL,
-  `subCategoriasId` int(11) NOT NULL,
-  `createdAt` datetime NOT NULL,
-  `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `categoriasId` (`categoriasId`),
-  KEY `subCategoriasId` (`subCategoriasId`),
-  CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`categoriasId`) REFERENCES `categorias` (`id`),
-  CONSTRAINT `productos_ibfk_2` FOREIGN KEY (`subCategoriasId`) REFERENCES `subcategorias` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `productos`
@@ -229,22 +82,6 @@ INSERT INTO `productos` VALUES (1,'Maquillaje clasico ',15,750,5,'lorem ipsum',1
 UNLOCK TABLES;
 
 --
--- Table structure for table `roles`
---
-
-DROP TABLE IF EXISTS `roles`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `roles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(255) DEFAULT NULL,
-  `createdAt` datetime NOT NULL,
-  `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `roles`
 --
 
@@ -253,20 +90,6 @@ LOCK TABLES `roles` WRITE;
 INSERT INTO `roles` VALUES (1,'Admin','2022-10-11 20:52:41','2022-10-11 20:52:41'),(2,'Usuario','2022-10-11 20:52:41','2022-10-11 20:52:41');
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `sequelizemeta`
---
-
-DROP TABLE IF EXISTS `sequelizemeta`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `sequelizemeta` (
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`name`),
-  UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `sequelizemeta`
@@ -279,22 +102,6 @@ INSERT INTO `sequelizemeta` VALUES ('20221008041627-create-categorias.js'),('202
 UNLOCK TABLES;
 
 --
--- Table structure for table `subcategorias`
---
-
-DROP TABLE IF EXISTS `subcategorias`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `subcategorias` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(255) DEFAULT NULL,
-  `createdAt` datetime NOT NULL,
-  `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `subcategorias`
 --
 
@@ -303,31 +110,6 @@ LOCK TABLES `subcategorias` WRITE;
 INSERT INTO `subcategorias` VALUES (1,'Camisetas','2022-10-11 20:52:41','2022-10-11 20:52:41'),(2,'Pantalones','2022-10-11 20:52:41','2022-10-11 20:52:41'),(3,'Accesorios','2022-10-11 20:52:41','2022-10-11 20:52:41'),(4,NULL,'2022-10-11 20:52:41','2022-10-11 20:52:41');
 /*!40000 ALTER TABLE `subcategorias` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `usuarios`
---
-
-DROP TABLE IF EXISTS `usuarios`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(255) NOT NULL,
-  `apellido` varchar(255) NOT NULL,
-  `dni` int(11) DEFAULT NULL,
-  `telefono` int(11) DEFAULT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `imagen` varchar(255) DEFAULT NULL,
-  `rolId` int(11) NOT NULL,
-  `createdAt` datetime NOT NULL,
-  `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `rolId` (`rolId`),
-  CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`rolId`) REFERENCES `roles` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `usuarios`
@@ -348,4 +130,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-12 21:40:13
+-- Dump completed on 2022-10-12 21:39:02

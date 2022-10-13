@@ -10,18 +10,23 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       titulo: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       stock: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       precio: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       descuento: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       descripcion: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       categoriasId: {
