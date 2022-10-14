@@ -23,6 +23,18 @@ module.exports = {
       telefono: {
         type: Sequelize.INTEGER
       },
+      direccion: {
+        type: Sequelize.STRING
+      },
+      localidad: {
+        type: Sequelize.STRING
+      },
+      provincia: {
+        type: Sequelize.STRING
+      },
+      codPost: {
+        type: Sequelize.INTEGER
+      },
       email: {
         allowNull: false,
         type: Sequelize.STRING

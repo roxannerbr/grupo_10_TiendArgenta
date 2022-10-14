@@ -22,9 +22,9 @@
                     <% } %>  
                 </div>
                 <div>
-                    <input class="ingreso" type="email" name="Correo" id="Correo" value="<%= locals.old && old.correo ? old.correo: null %>" placeholder="Ingrese su correo electr&oacute;nico" >
-                    <% if (locals.errors && errors.Correo) { %>
-                        <small><%= errors.Correo.msg %> </small>
+                    <input class="ingreso" type="email" name="email" id="email" value="<%= locals.old && old.email ? old.email: null %>" placeholder="Ingrese su email electr&oacute;nico" >
+                    <% if (locals.errors && errors.email) { %>
+                        <small><%= errors.email.msg %> </small>
                     <% } %>  
                 </div>
                 <div>
