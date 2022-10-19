@@ -21,6 +21,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER
       },
+      descuento: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+      },
       descripcion: {
         allowNull: false,
         type: Sequelize.STRING

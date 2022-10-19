@@ -11,7 +11,7 @@
         <% resultados.forEach(producto => { %>
             <%- include('./partials/cards',{
               id: producto.id,
-              imagen: producto.imagen,
+              imagen: producto.imagenes[0],
               titulo: producto.titulo,
               descuento: producto.descuento,
               precio: producto.precio 

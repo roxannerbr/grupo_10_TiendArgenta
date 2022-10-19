@@ -13,7 +13,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      historialId: {
+      historialesId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         onDelete: 'CASCADE',

@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'subCategoriasId'
       }),
       Productos.hasMany(models.Imagenes,{
-        as: 'imagen',
+        as: 'imagenes',
         foreignKey: 'productosId',
         onDelete:'cascade'
       })

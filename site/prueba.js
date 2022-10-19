@@ -1,25 +1,52 @@
-
 let listado = require('./data/productos.json')
 
-let image = []
+let listadoCategorias = ['Cotillon', 'Coleccionables', 'Mujer', 'Hombre', 'Infantil']
+let listadoSubCategorias = ['Camisetas', 'Pantalones', 'Accesorios', null]
+
+let productos = []
 
 listado.forEach(producto => {
-  let imagen = {
-    nombre: producto.imagen,
-    productosId: producto.id,
+  let categoria
+  let subcategoria
+
+  listadoCategorias.forEach((categoriaLista,index) => {
+    //console.log(listadoCategorias)
+    //console.log(producto.categoria)
+    if (categoriaLista == producto.categoria) {
+        return categoria = index + 1
+    }
+  });
+  //console.log(categoria)
+
+  listadoSubCategorias.forEach((elemento,index) => {
+    //console.log(listadoSubCategorias)
+    //console.log(producto.subcategoria)
+    if (elemento == producto.subcategoria) {
+        return subcategoria = index + 1
+    }
+  });
+  //console.log(subcategoria)
+
+  let historialProducto = {
+    titulo: producto.titulo,
+    stock: producto.stock,
+    precio: producto.precio,
+    descuento: producto.descuento,
+    descripcion: producto.descripcion,
+    categoriasId: categoria,
+    subCategoriasId: subcategoria,
     createdAt:new Date,
     updatedAt:new Date
   }
-  image.push(imagen)
+  productos.push(historialProducto)
 })
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-     await queryInterface.bulkInsert('Imagenes', image, {});
+     await queryInterface.bulkInsert('Productos', productos, {});
   },
 
   async down (queryInterface, Sequelize) {
-     await queryInterface.bulkDelete('Imagenes', null, {});
+     await queryInterface.bulkDelete('Productos', null, {});
   }
 };
-console.log(image)
