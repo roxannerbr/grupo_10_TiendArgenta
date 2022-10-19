@@ -9,10 +9,9 @@ module.exports = {
           order: [
             ['id', 'DESC']
           ],
-         include:[
-          {all:true}
-        ]
-          
+          include:[
+            {all:true}
+          ]
         })
     
     .then(productos=>
@@ -26,16 +25,22 @@ module.exports = {
     db.Productos.findAll({
         where : {
             [Op.or] : [
-                {nombre : {[Op.substring] : elemento}},
+                {titulo : {[Op.substring] : elemento}},
                 {descripcion : {[Op.substring] : elemento}}
             ]
-        }
+        },
+        include:[
+          {all:true}
+        ]
     })
-    return res.render('busqueda', 
-    {
-        busqueda: elemento,
-        resultados
-    });
+    .then((resultados) => {
+      return res.render('busqueda', 
+      {
+          busqueda: elemento,
+          resultados
+      });
+    })
+    .catch(error => res.send(error))
 },
   contacto: (req, res) => {
     return res.render("contacto");
