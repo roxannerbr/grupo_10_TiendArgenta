@@ -145,59 +145,104 @@ module.exports = {
             })
         }
     },
-    editarUsuario: (req, res) => {        
-        return res.render('editarUsuario')
+    editarUsuario: (req, res) => {  
+        let id = +req.params.id;
+        let usuario = db.Usuarios.findOne({
+            where: {
+                id : id,
+            },
+            include: [{
+                all: true,
+            }]
+        });
+        Promise.all([usuario])
+        .then((usuario) => {
+            return res.render('editarUsuario', {
+                usuario
+            });
+        }).catch((error)=> res.send(error));
     },
     edit: (req, res) => { 
-        return res.send(imagen);
-        /*  if (errors.isEmpty()) {
-             let usuarioModificado = {
-                 dni: dni,
-                 telefono: telefono,
-                 gender: gender,
-                 address: address,
-                 imagen: req.file ? req.file.filename : "login.png"
-             } 
-             guardar(usuarioModificado)
- 
-             return res.redirect('/')}
-       console.log(usuarios); 
-     return res.send(usuarioModificado)  */ 
-        let id = +req.params.id
-        let {Nombres, Apellidos, dni, telefono, gender, imagen, pass, address, category} = req.body
-         let errors = validationResult(req)
+        let errors = validationResult(req)
         if (req.fileValidationError) {
             let imagen = {
                 param: 'imagen',
                 msg: req.fileValidationError,
             }
             errors.errors.push(imagen)}
-        if (errors.isEmpty()) {
-            usuarios.forEach(usuario => {
-                if (usuario.id === id) {
-                    usuario.Nombres = Nombres
-                    usuario.Apellidos = Apellidos
-                    usuario.dni = +dni
-                    usuario.telefono = +telefono
-                    usuario.direccion = direccion
-                    usuario.localidad = localidad 
-                    usuario.provincia = provincia
-                    usuario.codPost = +codPost
-                    usuario.gender = gender
-                    usuario.pass = usuario.pass
-                    usuario.email = usuario.email
-                    usuario.address = address
-                    usuario.imagen = req.file ? req.file.filename : imagen
-                }})
-                guardar(usuarios)
-            return res.redirect('/')
-        } else {
-            return res.render('editarUsuario', {
-                errors: errors.mapped(),
-                old: req.body
-            })}
 
-    },
+        if (errors.isEmpty()) {
+            let id = +req.params.id
+            let {Nombres, Apellidos, dni, telefono, gender, imagen, pass, address} = req.body
+            
+            let usuario = db.Usuarios.findOne({
+                where: {
+                    id: id,
+                }
+            });
+            let updateUser = db.Usuarios.update({
+                    nombre : Nombres,
+                    lastname : Apellidos,
+                    dni : +dni,
+                    telefono : +telefono,
+                    direccion : direccion,
+                    localidad : localidad,
+                    provincia : provincia,
+                    codPost : +codPost,
+                    gender : gender,
+                    pass : pass,
+                    email : email,
+                    address : address,
+                    imagen : req.file ? req.file.filename : imagen,
+                },
+                {where:{
+                        id:id,
+                    },
+                });
+        Promise.all([usuarios, updateUser])
+            .then(([usuario, updateUser]) => {
+                let imagen1;
+        /* imagen 1 */
+        if (usuario.imagenes[0].length !== 0) {
+            /* pregunto si viene la imagen */
+        if (!!req.files.imagen1) {
+            /* se guarda el nombre en una variable para despues borrarla */
+            imagen1 = usuario.imagenes[0].nombre;
+            /* si todo esta ok la reemplazamos en la base de datos */
+            db.imagenes.update({
+                file: req.files.imagen[0].filename,
+                },
+                {where: {
+                    id: usuario.imagenes[0].id,
+                },
+            });
+              /* para borrar la img anterior */
+            if (fs.existsSync(path.join(__dirname, "../../public/images/usuario", imagen1)))
+                fs.existsSync(path.join(__dirname, "../../public/images/usuario", imagen1));
+        }
+        } else {
+        /* si no existe la imagen en la base de datos , la creamos */
+            if (!!req.files.imagen1) {
+        /* creamos la img en la db */
+                db.Imagenes.create({
+                    nombre: req.files.imagen1[0].filename,
+                    Id: usuario.id,
+                });
+            }
+        }
+        Promise.all(promesas)
+                .then(promesas => {
+                    return res.redirect('usuario')
+                })
+            })
+        .catch((error) => res.send(error));
+    }else {
+        return res.render('editarUsuario', {
+            errors: errors.mapped(),
+            old: req.body
+        })
+    } 
+},
 
     usuarios : (req,res) => {
         return res.render('usuario')

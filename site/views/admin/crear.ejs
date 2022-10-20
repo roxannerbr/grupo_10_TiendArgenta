@@ -48,7 +48,7 @@
             <%# if () { %>
                 <div class="form-floating">
                     <select class="form-select" name="subCategoria" id="floatingSelect" aria-label="Floating label select example">
-                        <% if (locals.errors && old.subcategoria) { %>
+                        <% if (locals.errors && old.subCategoria) { %>
                             <option hidden value="">Selecciona una opcion</option>
                             <% subCategorias.forEach(subCategoria => { %>
                                 <% if (subCategoria.id == old.subCategoria) { %>

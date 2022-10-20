@@ -25,7 +25,7 @@
                 <div class="form-floating">
                     <select class="form-select" name="Categoria" id="floatingSelect" aria-label="Floating label select example">
                         <% categorias.forEach(categoria => { %>
-                            <option value="<%= categoria %>" <%= producto.categoria.toLowerCase() === categoria.toLowerCase() ? 'selected' : null %> ><%= categoria %></option>
+                            <option value="<%= categoria.id %>" <%= producto.categoriaId === categoria.id ? 'selected' : null %> ><%= categoria.nombre %></option>
                         <% }) %>
                     </select>
                     
@@ -37,8 +37,8 @@
     <!--SUBCATEGORIAS PARA INDUMENTARIA-->
                 <div class="form-floating">
                     <select class="form-select" name="subCategoria" id="floatingSelect" aria-label="Floating label select example">
-                        <% subcategorias.forEach(subcategoria => { %>
-                            <option value="<%= subcategoria %>" <%= producto.subcategoria === subcategoria ? 'selected' : null %> ><%= subcategoria %></option>
+                        <% subcategoria.forEach(subcategoria => { %>
+                            <option value="<%= subcategoria.id %>" <%= producto.subcategoriaId === subcategoria.id ? 'selected' : null %> ><%= subcategoria.nombre %></option>
                         <% }) %>
                     </select>
                     

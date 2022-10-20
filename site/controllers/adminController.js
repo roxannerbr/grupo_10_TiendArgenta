@@ -119,7 +119,7 @@ store: (req, res) => {
   editar: (req, res) => {
     let idParams = +req.params.id;
     let categorias = db.Categorias.findAll();
-    let subCategorias= db.subCategorias.findAll()
+    let subcategoria = db.subCategorias.findAll()
     let producto = db.Productos.findOne({
       where: {
         id: idParams,
@@ -130,12 +130,12 @@ store: (req, res) => {
         },
       ],
     });
-    Promise.all([categorias, subCategorias, producto])
-      .then(([categorias, subCategorias, producto]) => {
-        return res.render("admin/crear", {
-          producto,
-          subCategorias,
-          categorias,
+    Promise.all([categorias, subcategoria, producto])
+      .then(([categorias, subcategoria, producto]) => {
+        return res.render("admin/editar", {
+            producto,
+            subcategoria,
+            categorias,
         });
       })
       .catch((error) => res.send(error));
@@ -166,105 +166,70 @@ store: (req, res) => {
 
       let producto = db.Productos.findOne({
         where: {
-          id: idParams,
+          id: id,
         } /* ,
                 include:[{
                     all:true
                 }] */,
       });
 
-      let actualizacion = db.Productos.update(
-        {
-          /* id: productos[productos.length-1].id+1, */
-          titulo: Titulo,
-          categoria: Categoria,
-          subcategoria: subCategoria,
-          precio: +Precio,
-          descuento: +Descuento,
-          stock: +Stock,
-          descripcion: Descripcion,
+    let actualizacion = db.Productos.update({
+        titulo: Titulo,
+        precio: +Precio,
+        descuento: +Descuento,
+        stock: +Stock,
+        descripcion: Descripcion,
+        categoriasId: Categoria,
+        subcategoriasId: subCategoria,
+    },
+    {where: {
+        id: id,
         },
-        {
-          where: {
-            id: idParams,
-          },
-        }
-      );
-      Promise.all([producto, actualizacion])
+    });
+    Promise.all([producto, actualizacion])
         .then(([producto, actualizacion]) => {
-          let imagen1;
-
-          /* imagen 1 */
-
-          /* pregunto si existe en la base de datos */
-          if (producto.imagenes[0].length !== 0) {
+        let imagen1;
+        /* imagen 1 */
+        if (producto.imagenes[0].length !== 0) {
             /* pregunto si viene la imagen */
-            if (!!req.files.imagen1) {
-              /* se guarda el nombre en una variable para despues borrarla */
-              imagen1 = producto.imagenes[0].nombre;
-              /* si todo esta ok la reemplazamos en la base de datos */
-              db.imagenes.update(
-                {
-                  file: req.files.imagen[0].filename,
+        if (!!req.files.imagen1) {
+            /* se guarda el nombre en una variable para despues borrarla */
+            imagen1 = producto.imagenes[0].nombre;
+            /* si todo esta ok la reemplazamos en la base de datos */
+            db.imagenes.update({
+                file: req.files.imagen[0].filename,
                 },
-                {
-                  where: {
+                {where: {
                     id: producto.imagenes[0].id,
-                  },
-                }
-              );
+                },
+            });
               /* para borrar la img anterior */
-              if (
-                fs.existsSync(
-                  path.join(__dirname, "../../public/images/productos", imagen1)
-                )
-              )
-                fs.existsSync(
-                  path.join(__dirname, "../../public/images/productos", imagen1)
-                );
-            }
-          } else {
-            /* si no existe la imagen en la base de datos , la creamos */
+            if (fs.existsSync(path.join(__dirname, "../../public/images/productos", imagen1)))
+                fs.existsSync(path.join(__dirname, "../../public/images/productos", imagen1));
+        }
+        } else {
+        /* si no existe la imagen en la base de datos , la creamos */
             if (!!req.files.imagen1) {
-              /* creamos la img en la db */
-              db.Imagenes.create({
-                nombre: req.files.imagen1[0].filename,
-                productosId: producto.id,
-              });
+        /* creamos la img en la db */
+                db.Imagenes.create({
+                    nombre: req.files.imagen1[0].filename,
+                    productosId: producto.id,
+                });
             }
-          }
-          return res.redirect("/admin/listar");
-        })
-        /*  if(req.files){
-                        let img=req.files.map(imagen=>{
-                            let nuevo=
-                                {nombre:imagen.filename,
-                                productosId: productos.id
-                            }
-                            return nuevo
-                        })
-                
-                    db.Imagenes.bulkCreate(img)
-                    .then(imagenes =>{
-                        return res.redirect('/admin/listar')
-                        })
-                  }else{
-                        db.Imagenes.create({
-                            nombre: 'default-image.png',
-                            productosId: productos.id
-                        })
-                        .then(imagenes=>{
-                            return res.redirect('/admin/listar')
-                        })
-                    }*/
+        }
+        Promise.all(promesas)
+                .then(promesas => {
+                    return res.redirect('/admin/listar')
+                })
+            })
         .catch((error) => res.send(error));
-    } else {
-      return res.render("admin/crear", {
-        errors: errors.mapped(),
-        old: req.body,
-      });
-    }
-  },
+    }else {
+        return res.render('admin/crear', {
+            errors: errors.mapped(),
+            old: req.body
+        })
+    } 
+},
   destroy: (req, res) => {
     let id = +req.params.id;
 
