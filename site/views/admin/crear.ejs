@@ -26,45 +26,52 @@
                 <div class="form-floating">
                     <select class="form-select" name="Categoria" id="floatingSelect" aria-label="Floating label select example">
                         <% if (locals.errors && old.categoria) { %>
-                            <option selected hidden>Categoria de Producto</option>
-                            <option <%= old.categoria === "cotillon"?"selected":null %> value="cotillon">Cotillón</option>
-                            <option <%= old.categoria === "coleccionables"?"selected":null %> value="coleccionables">Coleccionables</option>
-                            <option <%= old.categoria === "Hombre"?"selected":null %> value="Hombre">Hombre</option>
-                            <option <%= old.categoria === "Mujer"?"selected":null %> value="Mujer">Mujer</option>
-                            <option <%= old.categoria === "Infantil"?"selected":null %> value="Infantil">Infantil</option>                         
+                            <option hidden value="">Categoria de Producto</option>
+                            <option <%= old.categoria === "1" ? "selected" : null %> value="Cotillon">Cotillón</option>
+                            <option <%= old.categoria === "2" ? "selected" : null %> value="Coleccionables">Coleccionables</option>
+                            <option <%= old.categoria === "3" ? "selected" : null %> value="Hombre">Hombre</option>
+                            <option <%= old.categoria === "4" ? "selected" : null %> value="Mujer">Mujer</option>
+                            <option <%= old.categoria === "5" ? "selected" : null %> value="Infantil">Infantil</option>                         
                         <% } else { %>
-                            <option selected hidden>Seleccione la categoria</option>
-                            <option value="Cotillon">Cotillon</option>
-                            <option value="Coleccionables">Coleccionables</option>
-                            <option value="Hombre">Hombre</option>
-                            <option value="Mujer">Mujer</option>
-                            <option value="Infantil">Infantil</option>
+                            <option selected hidden value="">Seleccione la categoria</option>
+                            <% categorias.forEach(categoria => { %>
+                                <option value="<%= categoria.id %>"><%= categoria.nombre %></option>
+                            <% }) %>
                         <% } %> 
                     </select>
                     <label for="floatingSelect">Categoria de Producto</label>
                     <% if (locals.errors && errors.categoria) { %>
                         <small><%= errors.categoria.msg %> </small>
-                        <% } %>
+                    <% } %>
                 </div>
-    <!--SUBCATEGORIAS PARA INDUMENTARIA-->
+    <!--SUBCATEGORIAsS PARA INDUMENTARIA-->
             <%# if () { %>
                 <div class="form-floating">
                     <select class="form-select" name="subCategoria" id="floatingSelect" aria-label="Floating label select example">
                         <% if (locals.errors && old.subcategoria) { %>
-                            <option selected hidden>Seleccione el tipo de Producto</option>
-                            <option <%= old.subcategoria === "Camisetas"?"selected":null %> value="Camisetas">Camisetas</option>
-                            <option <%= old.subcategoria === "Pantalones"?"selected":null %> value="Pantalones">Pantalones</option>
-                            <option <%= old.subcategoria === "Accesorios"?"selected":null %> value="Accesorios">Accesorios</option>                         
-                        <% } else { %>
-                            <option selected hidden>Tipo de producto</option>
-                            <option value="Camisetas">Camisetas</option>
-                            <option value="Pantalones">Pantalones</option>
-                            <option value="Accesorios">Accesorios</option>
+                            <option hidden value="">Selecciona una opcion</option>
+                            <% subCategorias.forEach(subCategoria => { %>
+                                <% if (subCategoria.id == old.subCategoria) { %>
+                                    <option value="<%= subCategoria.id %>" selected><%= subCategoria.nombre %></option>
+                                <% }else{ %>
+                                    <option value="<%= subCategoria.id %>"><%= subCategoria.nombre %></option>
+                                <% } %>
+                                <option value="<%= subCategoria.id %>"><%= subCategoria.nombre %></option>
+                            <% }) %>
+                        <% }else{ %>
+                            <option selected hidden value="">Selecciona una opcion</option>
+                            <% subCategoria.forEach(subCategoria => { %>
+                                <option value="<%= subCategoria.id %>"><%= subCategoria.nombre %></option>
+                            <% }) %>
                         <% } %> 
                     </select>
+                    <% if (locals.errors && errors.subCategoria) { %>
+                        <p class="span text-danger"><%= errors.subCategoria.msg %></p>
+                    <% } %>
+                    </select>
                     <label for="floatingSelect">Tipo de Producto</label>
-                    <% if (locals.errors && errors.subcategoria) { %>
-                        <small><%= errors.subcategoria.msg %> </small>
+                    <% if (locals.errors && errors.subCategoria) { %>
+                        <small><%= errors.subCategoria.msg %> </small>
                         <% } %>
                 </div>
             <%# } %>
