@@ -50,7 +50,7 @@
                     <select class="form-select" name="subCategoria" id="floatingSelect" aria-label="Floating label select example">
                         <% if (locals.errors && old.subCategoria) { %>
                             <option hidden value="">Selecciona una opcion</option>
-                            <% subCategorias.forEach(subCategoria => { %>
+                            <% subCategoria.forEach(subCategoria => { %>
                                 <% if (subCategoria.id == old.subCategoria) { %>
                                     <option value="<%= subCategoria.id %>" selected><%= subCategoria.nombre %></option>
                                 <% }else{ %>
