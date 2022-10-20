@@ -16,6 +16,11 @@
     max-width: 25%;
     border: 2px solid var(--dorado);
 } 
+.usuario .foto .selImg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .usuario .foto h3{
     width: 100%;
     display: flex;
@@ -122,6 +127,11 @@
         width: 10%;
         border-top: 1px solid var(--dorado);
         
+    }
+    .usuario .foto .selImg{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .usuario .foto h3{
         width: 100%;

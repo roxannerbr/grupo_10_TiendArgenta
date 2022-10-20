@@ -7,10 +7,10 @@
       <form action="/usuario/editarUsuario/<%= usuario.id %>?_method=PUT" method="post" enctype="multipart/form-data"> <!--ENCTYPE FUNDAMENTAL PARA SUBIR IMG CON MULTER-->
         
         <div class="foto">
-          <img src="/images/usuario/<%= usuario.image %>" alt="">
-          <div class="mb-3">
+          <img src="/images/usuario/<%= usuario.imagen %>" alt="">
+          <div class="selImg mb-3">
             <label for="formFileMultiple" class="form-label">Cambiar imagen de perfil</label>
-            <input class="form-control" type="file" name="imagen" id="formFileMultiple" value="<%= locals.old && old.image ? old.nombre: null %>" >
+            <input class="form-control" type="file" name="imagen" id="formFileMultiple" value="<%= locals.old && old.imagen ? old.imagen: null %>" >
         </div>
         <h3><%= usuario.nombre %> <%= usuario.apellido %></h3>
         
@@ -30,7 +30,7 @@
                   <input type="text" name="Nombres" class="form-control" id="Nombres" value="<%=locals.old && old.nombre ? old.Nombres: null %><%= usuario.nombre %>" placeholder="Nombres">
            </li>
                 <li><span>Editar Apellidos</span>
-                  <input type="text" name="Apellidos" class="form-control" id="Apellidos" value="<%=locals.old && old.apellido ? usuario.Apellidos : null %><%= usuario.Apellidos %>" placeholder="Apellidos">
+                  <input type="text" name="Apellidos" class="form-control" id="Apellidos" value="<%=locals.old && old.apellido ? usuario.Apellidos : null %><%= usuario.apellido %>" placeholder="Apellidos">
                 </li>
                 
                 <li>
@@ -50,12 +50,10 @@
             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
               <div class="accordion-body">
                 <ul>
-                  <li><span>Dirección</span><input class="form-control" type="text" name="direccion" id="direccion" value="<%= locals.old && old.direccion ? old.direccion: null %>" placeholder="Ingrese su dirección" ></li>
-                  <li>
-                    <span>Provincia</span><input class="form-control" type="text" name="provincia" id="provincia" value="<%= locals.old && old.provincia ? old.provincia: null %>" placeholder="Ingrese su provincia" >
-                  </li>
-                  <li><span>Localidad</span> <input class="form-control" type="text" name="localidad" id="localidad" value="<%= locals.old && old.localidad ? old.localidad: null %>" placeholder="Ingrese su localidad" ></li>
-                  <li><span>Código postal</span> <input class="form-control" type="text" name="codPost" id="codPost" value="<%= locals.old && old.codPost ? old.codPost: null %>" placeholder="Ingrese su código postal" ></li>
+                  <li><span>Dirección</span><input class="form-control" type="text" name="direccion" id="direccion" value="<%= locals.old && old.direccion ? old.direccion: null %><%= usuario.direccion  %>" placeholder="Ingrese su dirección" ></li>
+                  <li><span>Localidad</span> <input class="form-control" type="text" name="localidad" id="localidad" value="<%= locals.old && old.localidad ? old.localidad: null %><%= usuario.localidad %>" placeholder="Ingrese su localidad" ></li>
+                  <li><span>Provincia</span><input class="form-control" type="text" name="provincia" id="provincia" value="<%= locals.old && old.provincia ? old.provincia: null %><%= usuario.provincia %>" placeholder="Ingrese su provincia" ></li>
+                  <li><span>Código postal</span> <input class="form-control" type="text" name="codPost" id="codPost" value="<%= locals.old && old.codPost ? old.codPost: null %><%= usuario.codPost %>" placeholder="Ingrese su código postal" ></li>
                 </ul>
               </div>
             </div>
