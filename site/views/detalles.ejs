@@ -11,7 +11,7 @@
           <!--IMAGEN DEL PRODUCTO-->
           <section class="imagenes">
             <div class="img_principal">
-              <img src="/images/productos/<%= producto.imagen %>" alt="" />
+              <img src="/images/productos/<%=producto.imagenes[0].nombre %>" alt="" />
             </div>
           </section>
           <!--DATOS DEL PRODUCTO-->
@@ -77,10 +77,10 @@
         <section class="carrouselProductos">
           <div class="glider-contain">
               <div class="glider">
-                <% productoPorCategoria.forEach(producto => { %>
+                <% productos.forEach(producto => { %>
                 <%- include('./partials/cards',{
                     id: producto.id,
-                    imagen: producto.imagen,
+                    imagen: producto.imagenes[0].nombre,
                     titulo: producto.titulo,
                     descuento: producto.descuento,
                     precio: producto.precio

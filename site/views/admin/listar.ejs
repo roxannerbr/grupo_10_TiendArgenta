@@ -35,7 +35,7 @@
             <tr>
               <th scope="row"><a href="/admin/editar/<%= producto.id %>"><%= producto.id %> </a></th>
               <td><a href="/admin/editar/<%= producto.id %>"><%= producto.titulo %></a></td>
-              <td><a href="/products/detail/<%= producto.id %>"><%= producto.categoria %></a></td>
+              <td><a href="/products/detail/<%= producto.id %>"><%= producto.categoria.nombre %></a></td>
               <td><a href="/admin/editar/<%= producto.id %> "><%= producto.stock %></a></td>
               <td><a href="/admin/editar/<%= producto.id %> ">$<%= producto.precio %></a></td>
               <td><a href="/admin/editar/<%= producto.id %> "><%= producto.descuento %>%</a></td>

@@ -1,40 +1,73 @@
-let productos = require('../data/productos.json')
-//HOME NEW PRODUCTS
-let nuevosProductos = productos.slice(productos.length-4)
+let db = require('../database/models')
+const {Op} = require("sequelize");
 
 module.exports = {
-    home : (req,res) => {
-        return res.render('home',
-        {
-            productos,
-            nuevosProductos
+  home: (req, res) => {
+      /* trae los ultimos 4 productos */
+        db.Productos.findAll({             
+          limit: 4,
+          order: [
+            ['id', 'DESC']
+          ],
+          include:[
+            {all:true}
+          ]
         })
-    },
-    search : (req,res) => {
-        let elemento = req.query.search
+    
+    .then(productos=>
+      res.render("home", {productos}))
+        /* return res.send(productos) */
+      .catch(error => res.send(error)); 
+  },
+  search : (req,res) => {
+    let elemento = req.query.search
 
-        let resultados = productos.filter(producto => {
-            return producto.titulo.toLowerCase().indexOf(elemento.toLowerCase()) != -1
-        })
-        return res.render('busqueda',{
-            busqueda: elemento,
-            resultados
-        });
-    },
-    contacto : (req,res) => {
-        return res.render('contacto')
-    },
-    pregFrecuentes : (req,res) => {
-        return res.render('pregFrecuentes')
-    },
-    novedades : (req,res) => {
-        return res.render('novedades',
-        {
-            productos,
-            nuevosProductos
-        })
-    },
-    indumentaria : (req,res) => {
-        return res.render('indumentaria')
-    }
-}
+    db.Productos.findAll({
+        where : {
+            [Op.or] : [
+                {titulo : {[Op.substring] : elemento}},
+                {descripcion : {[Op.substring] : elemento}}
+            ]
+        },
+        include:[
+          {all:true}
+        ]
+    })
+    .then((resultados) => {
+      return res.render('busqueda', 
+      {
+          busqueda: elemento,
+          resultados
+      });
+    })
+    .catch(error => res.send(error))
+},
+  contacto: (req, res) => {
+    return res.render("contacto");
+  },
+  pregFrecuentes: (req, res) => {
+    return res.render("pregFrecuentes");
+  },
+  novedades: (req, res) => {
+    db.Productos.findAll({             
+      limit: 8,
+      order: [
+        ['id', 'DESC']
+      ],
+      include:[
+        {all:true}
+      ]
+      
+    })
+
+    .then(productos=>
+      res.render("novedades", {productos}))
+        /* return res.send(productos) */
+    .catch(error => res.send(error)); 
+
+   
+  },
+  indumentaria: (req, res) => {
+    return res.render("indumentaria");
+  },
+};

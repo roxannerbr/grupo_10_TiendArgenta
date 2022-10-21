@@ -8,9 +8,9 @@
             <h1>Iniciar sesión</h1>
             <form action="" method="post">
                 <div>
-                    <input class="ingreso" type="email" name="Correo" id="Correo" placeholder="Ingrese su correo electr&oacute;nico">
-                    <% if (locals.errors && errors.Correo) { %>
-                        <small><%= errors.Correo.msg %> </small>
+                    <input class="ingreso" type="email" name="email" id="email" placeholder="Ingrese su email electr&oacute;nico">
+                    <% if (locals.errors && errors.email) { %>
+                        <small><%= errors.email.msg %> </small>
                     <% } %> 
                 </div>
                 <div>

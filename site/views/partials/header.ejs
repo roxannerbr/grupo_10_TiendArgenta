@@ -45,7 +45,7 @@
                 </li>
                 <li><a href="/novedades">Novedades</a></li>
                 <li><a href="/contacto">Contacto</a></li>
-                <% if (locals.userLogin && locals.userLogin.category === "admin") { %>
+                <% if (locals.userLogin && locals.userLogin.rol === 1) { %>
                   <li><a href="/usuario/perfil">Mi Perfil</a></li>
                 <li><a href="/admin/listar">Admin</a></li>
                 <li>
@@ -54,7 +54,7 @@
                   </form>
                 </li>
                 <% } %>
-                <% if (locals.userLogin && locals.userLogin.category === "user") { %>
+                <% if (locals.userLogin && locals.userLogin.rol === 2) { %>
                   <li><a href="/usuario/perfil">Mi perfil</a></li>
                   <li>
                     <form class="cSession" action="/usuario/logout?_method=DELETE" method="post">

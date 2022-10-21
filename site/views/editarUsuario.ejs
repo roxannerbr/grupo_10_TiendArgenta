@@ -4,17 +4,15 @@
   <body class="usuario">
       <%- include('./partials/header') %>
     <main>
-      <form action="/usuario/editarUsuario/<%= locals.userLogin.id %>?_method=PUT" method="post" enctype="multipart/form-data"> <!--ENCTYPE FUNDAMENTAL PARA SUBIR IMG CON MULTER-->
-        <div class="button d-flex justify-content-center">
-          <button class="btn btn-success" type="submit">Aceptar cambios</button>
-      </div>
+      <form action="/usuario/editarUsuario/<%= usuario.id %>?_method=PUT" method="post" enctype="multipart/form-data"> <!--ENCTYPE FUNDAMENTAL PARA SUBIR IMG CON MULTER-->
+        
         <div class="foto">
-          <img src="/images/usuario/<%= locals.userLogin.image %>" alt="">
-          <div class="mb-3">
+          <img src="/images/usuario/<%= usuario.imagen %>" alt="">
+          <div class="selImg mb-3">
             <label for="formFileMultiple" class="form-label">Cambiar imagen de perfil</label>
-            <input class="form-control" type="file" name="imagen" id="formFileMultiple" value="<%= locals.old && old.imagen ? old.nombre: null %>" >
+            <input class="form-control" type="file" name="imagen" id="formFileMultiple" value="<%= locals.old && old.imagen ? old.imagen: null %>" >
         </div>
-        <h3><%= locals.userLogin.name %> <%= locals.userLogin.lastName %></h3>
+        <h3><%= usuario.nombre %> <%= usuario.apellido %></h3>
         
         </div>
         <div class="accordion" id="accordionExample">
@@ -29,85 +27,35 @@
             <div class="accordion-body">
               <ul>
                 <li><span>Editar Nombres</span>
-                  <input type="text" name="Nombres" class="form-control" id="Nombres" value="<%=locals.old && old.nombres ?old.nombres: null %><%= locals.userLogin.name %>" placeholder="Nombres">
+                  <input type="text" name="Nombres" class="form-control" id="Nombres" value="<%=locals.old && old.nombre ? old.Nombres: null %><%= usuario.nombre %>" placeholder="Nombres">
            </li>
                 <li><span>Editar Apellidos</span>
-                  <input type="text" name="Apellidos" class="form-control" id="Apellidos" value="<%=locals.old && old.lastName ?old.lastName: null %><%= locals.userLogin.lastName %>" placeholder="Apellidos">
+                  <input type="text" name="Apellidos" class="form-control" id="Apellidos" value="<%=locals.old && old.apellido ? usuario.Apellidos : null %><%= usuario.apellido %>" placeholder="Apellidos">
                 </li>
                 
                 <li>
                   <span>DNI</span>
-                  <input class="form-control" type="number" name="dni" id="dni" value="<%= locals.old && old.dni ? old.dni: null %><%= locals.userLogin.dni %>" placeholder="Ingrese su DNI" >
+                  <input class="form-control" type="number" name="dni" id="dni" value="<%= locals.old && old.dni ? old.dni: null %><%= usuario.dni %>" placeholder="Ingrese su DNI" >
                 </li>
-                <li><span>Teléfono</span><input class="form-control" type="number" name="telefono" id="telefono" value="<%= locals.old && old.telefono ? old.telefono: null %><%= locals.userLogin.telefono %>" placeholder="Ingrese su Teléfono" ></li>
+                <li><span>Teléfono</span><input class="form-control" type="number" name="telefono" id="telefono" value="<%= locals.old && old.telefono ? old.telefono: null %><%= usuario.telefono %>" placeholder="Ingrese su Teléfono" ></li>
               </ul></div>
             </div>
           </div>
           <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Contraseña
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Datos de envío
               </button>
             </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
               <div class="accordion-body">
                 <ul>
-                  <span>Cambiar contraseña</span>
-                  <div>
-                    <input class="form-control" type="password" name="pass" id="pass" placeholder="Ingrese su actual contraseña">
-                    <% if (locals.errors && errors.pass) { %>
-                        <small><%= errors.pass.msg %> </small>
-                    <% } %> 
-                </div>
-                <br>
-                  <div>
-                    <input class="form-control" type="password" name="pass" id="pass" value="<%= locals.userLogin.old && old.pass ? old.pass: null %>" placeholder="Ingrese su nueva contraseña" >
-                    <% if (locals.errors && errors.pass) { %>
-                        <small><%= errors.pass.msg %> </small>
-                    <% } %>  
-                </div>
-                <br>
-                <div>
-                    <input class="form-control" type="password" name="pass2" id="pass2" value="<%= locals.userLogin.old && old.pass2 ? old.pass2: null %>" placeholder="Confirme su contraseña" >
-                    <% if (locals.errors && errors.pass2) { %>
-                        <small><%= errors.pass2.msg %> </small>
-                    <% } %>  
-                </div>
-                  </ul></div>
-                </div>
+                  <li><span>Dirección</span><input class="form-control" type="text" name="direccion" id="direccion" value="<%= locals.old && old.direccion ? old.direccion: null %><%= usuario.direccion  %>" placeholder="Ingrese su dirección" ></li>
+                  <li><span>Localidad</span> <input class="form-control" type="text" name="localidad" id="localidad" value="<%= locals.old && old.localidad ? old.localidad: null %><%= usuario.localidad %>" placeholder="Ingrese su localidad" ></li>
+                  <li><span>Provincia</span><input class="form-control" type="text" name="provincia" id="provincia" value="<%= locals.old && old.provincia ? old.provincia: null %><%= usuario.provincia %>" placeholder="Ingrese su provincia" ></li>
+                  <li><span>Código postal</span> <input class="form-control" type="text" name="codPost" id="codPost" value="<%= locals.old && old.codPost ? old.codPost: null %><%= usuario.codPost %>" placeholder="Ingrese su código postal" ></li>
+                </ul>
               </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Medio de pago
-                  </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <ul>
-                      <span>Agregar medio de pago</span>
-                      <div>
-                        <input class="form-control" type="text" name="pago" id="pago" value="<%= locals.old && old.pago ? old.pago: null %>" placeholder="Ingrese medio de pago" >                   
-                    </div>
-                    </ul></div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingFour">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                      Datos de envío
-                    </button>
-                  </h2>
-                  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-              <ul>
-                <li><span>Dirección</span><input class="form-control" type="text" name="direccion" id="direccion" value="<%= locals.old && old.direccion ? old.direccion: null %>" placeholder="Ingrese su dirección" ></li>
-                <li>
-                  <span>Provincia</span><input class="form-control" type="text" name="provincia" id="provincia" value="<%= locals.old && old.provincia ? old.provincia: null %>" placeholder="Ingrese su provincia" >
-                </li>
-                <li><span>Localidad</span> <input class="form-control" type="text" name="localidad" id="localidad" value="<%= locals.old && old.localidad ? old.localidad: null %>" placeholder="Ingrese su localidad" ></li>
-                <li><span>Código postal</span> <input class="form-control" type="text" name="codPost" id="codPost" value="<%= locals.old && old.codPost ? old.codPost: null %>" placeholder="Ingrese su código postal" ></li>
-              </ul></div>
             </div>
           </div>
           <div class="accordion-item">
@@ -121,7 +69,9 @@
                 <a href="/productos/carrito"><h3>Carrito</h3></a> </div>
               </div>
             </div>
-
+            <div class="button d-flex justify-content-center">
+              <button class="btn btn-success" type="submit">Aceptar cambios</button>
+            </div>
           </form>
 
         </main>
