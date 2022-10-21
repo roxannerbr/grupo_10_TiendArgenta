@@ -64,6 +64,7 @@ CREATE TABLE `historiales` (
   `titulo` varchar(255) NOT NULL,
   `stock` int(11) NOT NULL,
   `precio` int(11) NOT NULL,
+  `descuento` int(11) NOT NULL,
   `descripcion` varchar(255) NOT NULL,
   `categoriasId` int(11) NOT NULL,
   `subCategoriasId` int(11) NOT NULL,
@@ -74,7 +75,7 @@ CREATE TABLE `historiales` (
   KEY `subCategoriasId` (`subCategoriasId`),
   CONSTRAINT `historiales_ibfk_1` FOREIGN KEY (`categoriasId`) REFERENCES `categorias` (`id`),
   CONSTRAINT `historiales_ibfk_2` FOREIGN KEY (`subCategoriasId`) REFERENCES `subcategorias` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,13 +88,13 @@ DROP TABLE IF EXISTS `historialesimagenes`;
 CREATE TABLE `historialesimagenes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) NOT NULL,
-  `historialId` int(11) NOT NULL,
+  `historialesId` int(11) NOT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `historialId` (`historialId`),
-  CONSTRAINT `historialesimagenes_ibfk_1` FOREIGN KEY (`historialId`) REFERENCES `historiales` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  KEY `historialesId` (`historialesId`),
+  CONSTRAINT `historialesimagenes_ibfk_1` FOREIGN KEY (`historialesId`) REFERENCES `historiales` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -112,7 +113,7 @@ CREATE TABLE `imagenes` (
   PRIMARY KEY (`id`),
   KEY `productosId` (`productosId`),
   CONSTRAINT `imagenes_ibfk_1` FOREIGN KEY (`productosId`) REFERENCES `productos` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -159,7 +160,7 @@ CREATE TABLE `productos` (
   KEY `subCategoriasId` (`subCategoriasId`),
   CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`categoriasId`) REFERENCES `categorias` (`id`),
   CONSTRAINT `productos_ibfk_2` FOREIGN KEY (`subCategoriasId`) REFERENCES `subcategorias` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -221,6 +222,10 @@ CREATE TABLE `usuarios` (
   `apellido` varchar(255) NOT NULL,
   `dni` int(11) DEFAULT NULL,
   `telefono` int(11) DEFAULT NULL,
+  `direccion` varchar(255) DEFAULT NULL,
+  `localidad` varchar(255) DEFAULT NULL,
+  `provincia` varchar(255) DEFAULT NULL,
+  `codPost` int(11) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `imagen` varchar(255) DEFAULT NULL,
@@ -242,4 +247,4 @@ CREATE TABLE `usuarios` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-12 21:39:42
+-- Dump completed on 2022-10-21 17:05:36
