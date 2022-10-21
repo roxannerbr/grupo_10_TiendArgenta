@@ -39,6 +39,7 @@ crear: (req, res) => {
 store: (req, res) => {
     //return res.send(req.body)
     //return res.send(req.file)
+    const imagen = req.file
     let errors = validationResult(req);
     if (req.fileValidationError) {
     let imagen = {
@@ -50,18 +51,9 @@ store: (req, res) => {
     /* console.log(req.body);
     return res.send(errors.mapped()) */
     if (errors.isEmpty()) {
-    let {
-      Titulo,
-      Categoria,
-      subCategoria,
-      Precio,
-      Descuento,
-      Stock,
-      Descripcion,
-    } = req.body;
+    let {Titulo,Categoria,subCategoria,Precio,Descuento,Stock,Descripcion,} = req.body;
 
     db.Productos.create({
-      /* id: productos[productos.length-1].id+1, */
       titulo: Titulo,
       precio: +Precio,
       descuento: +Descuento,
@@ -71,23 +63,21 @@ store: (req, res) => {
       subCategoriasId: subCategoria,
     })
       .then((productoNuevo) => {
-        if (req.files) {
-          let img = req.files.map((imagen) => {
-            let nuevo = {
+        if (imagen) {
+          let img = {
               nombre: imagen.filename,
               productosId: productoNuevo.id,
             };
-            return nuevo;
-          });
-
-          db.Imagenes.bulkCreate(img).then((imagenes) => {
-            return res.redirect("/admin/listar");
-          });
-        } else {
+            db.Imagenes.create(img)
+            .then(imagen => {
+              res.redirect('/admin/listar');
+            })
+        }else{
           db.Imagenes.create({
             nombre: "default-image.png",
             productosId: productoNuevo.id,
-          }).then((imagenes) => {
+          })
+          .then((imagen) => {
             return res.redirect("/admin/listar");
           });
         }
@@ -95,18 +85,13 @@ store: (req, res) => {
       .catch((error) => res.send(error));
     } else {
     id = +req.params.id;
-    let ruta = (dato) =>
-      fs.existsSync(
-        path.join(
-          __dirname,
-          "..",
-          "..",
-          "public",
-          "images",
-          "productos",
-          dato
-        )
-      );
+    let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', '..', 'public', 'images', 'productos', dato));
+    
+    if (imagen) {
+      if (ruta(imagen.filename) && (imagen.filename !== "default-img.png")) {
+          fs.unlinkSync(path.join(__dirname, '../../public/img/productos', imagen.filename));
+      }
+    }
     //let producto = productos.find((product) => product.id === id);
     //return res.send(errors.mapped())
     let categorias = db.Categorias.findAll()
@@ -198,7 +183,7 @@ store: (req, res) => {
     .then(([producto, actualizacion]) => {
         let imagen1;
         /* imagen 1 */
-        console.log(req.file);
+        //console.log(req.file);
         if (req.file){
           db.Imagenes.update({
             nombre: req.file.filename,
