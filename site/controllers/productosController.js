@@ -47,13 +47,8 @@ module.exports = {
         }, 0);
     },
     categoria :(req,res)=>{
-        console.log(req.params.categoria);
+        //console.log(req.params.categoria);
         let categoriaSeleccionada = req.params.categoria
-        /* let categoria = ['Cotillon', 'Coleccionables', 'Mujer', 'Hombre', 'Infantil'] */
-        
-        /* productoPorCategoria = productos.filter(producto =>{
-            return producto.categoria.toLowerCase() === categoriaSeleccionada.toLowerCase()
-        }) */
         db.Categorias.findOne({
             where:{
                 nombre:categoriaSeleccionada

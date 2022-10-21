@@ -98,7 +98,7 @@ store: (req, res) => {
       let subCategoria = db.subCategorias.findAll()
       Promise.all([categorias,subCategoria])
       .then(([categorias,subCategoria]) => {
-          return res.render('admin/crear',{
+          return res.render('/admin/crear',{
               categorias,
               subCategoria,
               errors: errors.mapped(),
@@ -207,66 +207,52 @@ store: (req, res) => {
     })
   } 
 },
-  destroy: (req, res) => {
+destroy: (req, res) => {
     let id = +req.params.id;
 
     db.Productos.findOne({
       where: {
         id: id,
       },
-      include: [
-        {
+      include: [{
           all: true,
-        },
-      ],
+      }],
     })
-      .then((producto) => {
+    .then(producto => {
         db.Historiales.create({
-          titulo: producto.Titulo,
-          categoria: producto.Categoria,
-          subcategoria: producto.subCategoria,
-          precio: producto.Precio,
-          descuento: producto.Descuento,
-          stock: producto.Stock,
-          descripcion: producto.Descripcion,
-        }).then((historial) => {
-          let promesas = [];
-
-          let imagen1 = db.HistorialImagenes.create({
-            nombre: producto.imagenes[0].nombre,
-            historialId: historial.id,
-          });
-
-          Promise.all(imagen1).then((imagen1) => {
-            db.Productos.destroy({
-              where: {
-                id: id,
-              },
-            }).then((producto) => {
-              return res.redirect(
-                "/admin/listar"
-              ); /* ruta a listar o historial? */
-            });
-          });
-        });
-      })
-      .catch((error) => res.send(error));
-    /* let productoParaEliminar = productos.find((elemento) => {
-            return elemento.id == id
+          titulo: producto.titulo,
+          precio: producto.precio,
+          descuento: producto.descuento,
+          stock: producto.stock,
+          descripcion: producto.descripcion,
+          categoriasId: producto.categoriasId,
+          subCategoriasId: producto.subCategoriasId,
         })
-        historial.push(productoParaEliminar)
-        guardarHistorial(historial)
-        let productosModificados = productos.filter(producto => producto.id !== id)
-        guardar(productosModificados)
- */
-  },
+        .then(historial => {
+            db.HistorialesImagenes.create({
+              nombre: producto.imagenes[0].nombre,
+              historialesId: historial.id,
+            })
+            .then(imagen => {
+              db.Productos.destroy({
+                where: {
+                  id: id,
+                },
+              })
+              .then(producto => {
+                res.redirect('/admin/historial');              
+              })
+            })
+        })
+    })
+    .catch((error) => res.send(error));
+          
+},
   historial: (req, res) => {
     db.Historiales.findAll({
-      include: [
-        {
+      include: [{
           all: true,
-        },
-      ],
+        }],
     })
       .then((historial) => {
         /* return res.send(historial) */
@@ -277,44 +263,43 @@ store: (req, res) => {
       })
       .catch((error) => res.send(error));
   },
-
-  restore: (req, res) => {
+restore: (req, res) => {
     let id = +req.params.id;
 
     db.Historiales.findOne({
       where: {
         id: id,
       },
-      include: [
-        {
+      include: [{
           all: true,
-        },
-      ],
+        }]
     })
-      .then((historialProducto) => {
+    .then(historialProducto => {
         db.Productos.create({
-          titulo: historialProducto.Titulo,
-          categoria: historialProducto.Categoria,
-          subcategoria: historialProducto.subCategoria,
-          precio: historialProducto.Precio,
-          descuento: historialProducto.Descuento,
-          stock: historialProducto.Stock,
-          descripcion: historialProducto.Descripcion,
-        }).then((productoNuevo) => {
-          let imagen1 = db.Imagenes.create({
+          titulo: historialProducto.titulo,
+          precio: historialProducto.precio,
+          descuento: historialProducto.descuento,
+          stock: historialProducto.stock,
+          descripcion: historialProducto.descripcion,
+          categoriasId: historialProducto.categoriasId,
+          subCategoriasId: historialProducto.subCategoriasId,
+        })
+        .then(productoNuevo => {
+          let imagen = db.Imagenes.create({
             nombre: historialProducto.imagenes[0].nombre,
-            productoId: productoNuevo.id,
-          });
-          Promise.all(imagen1).then((imagen1) => {
+            productosId: productoNuevo.id,
+          })
+          .then((imagen) => {
             db.Historiales.destroy({
               where: {
                 id: id,
-              },
-            }).then((eliminar) => {
+              }
+            })
+            .then(eliminar => {
               return res.redirect("/admin/listar");
-            });
-          });
-        });
+            })
+          })
+        })
       })
       .catch((error) => res.send(error));
   },
@@ -322,51 +307,31 @@ store: (req, res) => {
     let id = +req.params.id;
 
     db.Historiales.findOne({
-      where: {
-        id: id,
-      },
-      include: [
-        {
-          all: true,
+        where: {
+          id: id
         },
-      ],
+        include: [{
+            all: true
+        }]
     })
-      .then((producto) => {
-        /* return res.send(producto) */
-        /*  let producto = historial.find(product => product.id === id) */
+    .then(producto => {
+        let imagen = req.file
 
-        let ruta = (dato) =>
-          fs.existsSync(
-            path.join(__dirname, "..", "public", "images", "productos", dato)
-          );
-        if (
-          ruta(producto.image.nombre) &&
-          producto.image.nombre !== "default-image.png"
-        ) {
-          fs.unlinkSync(
-            path.join(
-              __dirname,
-              "..",
-              "public",
-              "images",
-              "productos",
-              producto.image.nombre
-            )
-          ); //supuestamente esto eliminaria la imagen
+        let ruta = (dato) => fs.existsSync(path.join(__dirname, "..", "public", "images", "productos", dato));
+        if (imagen){
+            if (ruta(imagen.filename) && (imagen.filename !== "default-image.png")) {
+                fs.unlinkSync(path.join(__dirname,"..","public","images","productos",imagen.filename)); //supuestamente esto eliminaria la imagen
+            }
         }
       })
+        db.Historiales.destroy({
+            where: {
+              id: id
+            }
+        })
+        .then(eliminar => {
+          return res.redirect("/admin/listar");
+        })
       .catch((error) => res.send(error));
-
-    db.Historiales.destroy({
-      where: {
-        id: id,
-      },
-    })
-      .then((eliminar) => {
-        return res.redirect("/admin/listar");
-      })
-      .catch((error) => res.send(error));
-    /* let historialModificado = historial.filter(producto => producto.id !== id)
-        guardarHistorial(historialModificado) */
   },
 };

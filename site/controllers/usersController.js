@@ -127,7 +127,7 @@ module.exports = {
             }]
         })
         .then((usuario) => {
-            console.log(usuario);
+            //console.log(usuario);
             return res.render('editarUsuario', {
                 usuario
             });
