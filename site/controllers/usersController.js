@@ -81,7 +81,10 @@ module.exports = {
             db.Usuarios.findOne({
                 where : {
                     email
-                }
+                },
+                include: [{
+                    all: true
+                }]
             })
             .then(usuario => {
                 
@@ -101,7 +104,7 @@ module.exports = {
                     rol : usuario.rolId
                 }
             if(recordarme){
-                res.cookie('TiendAr',req.session.userLogin,{maxAge: 1000 * 60 * 60 * 24})
+                res.cookie('TiendArgenta',req.session.userLogin,{maxAge: 1000 * 60 * 60 * 24})
             }
             /* console.log(req.session.userLogin); */
             return res.redirect('/usuario/perfil')
