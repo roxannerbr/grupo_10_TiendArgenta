@@ -6,15 +6,8 @@ const bcryptjs = require('bcryptjs');
 module.exports=[
     /* EMAIL */
     check('email').trim()
-    .notEmpty().withMessage('Debes ingresar su email.').bail()
-    .isEmail().withMessage('Ingresa un email válido.'),
+    .isEmail().withMessage('Debe ingresar un email válido.'),
     
-    /* PASSWORD */
-    check('pass').trim()
-    .notEmpty().withMessage('Debes ingresar su contraseña.').bail()
-    .isLength({min:8}).withMessage('Debe contener al menos 8 caracteres.'),
-    
-    /* BODY */
     body('email')
         .custom((value)=>{
             return db.Usuarios.findOne({
@@ -24,10 +17,16 @@ module.exports=[
             })
             .then(user => {
                 if(!user){
-                    return Promise.reject("Email no se encuentra registrado.")
+                    return Promise.reject("El usuario no se encuentra registrado.")
             }
         })
     }),
+
+    /* PASSWORD */
+    check('pass').trim()
+    .isLength({min:8}).withMessage('Debe contener al menos 8 caracteres.'),
+    
+    /* BODY */
     body('pass')
         .custom((value,{req})=>{
             
@@ -42,7 +41,7 @@ module.exports=[
                 }
             })
             .catch(() => {
-                return Promise.reject("El Email o la contraseña no coinciden")
+                return Promise.reject("El Email o la contraseña no coinciden.")
             })
         })
 ]

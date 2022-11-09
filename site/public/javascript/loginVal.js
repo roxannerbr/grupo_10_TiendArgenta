@@ -1,13 +1,13 @@
 window.addEventListener('load', ()=> {
     let $ = (elemento) => document.querySelector(elemento)
     console.log("Login iniciado correctamente");
-
-    const regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
-    const regExEmail =  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
-
+    
     let form = $('#form')
     let email = $('#email')
     let inputPass = $('#pass')
+    
+    const regExEmail =  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
+    const regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
 
     let errores = [{
         id: 1,
@@ -28,11 +28,11 @@ window.addEventListener('load', ()=> {
         let variable = true
         switch (true) {
             case !email.value:
-                $('#emailContainer').innerHTML = "<small>No ha ingresado ningun email.</small>"
+                $('#emailContainer').innerHTML = "<small>El email es obligatorio.</small>"
                 email.style.border = "1px solid red"
                 errores.forEach(e => {
                     if(e.id === 1 ){
-                        e.mensaje = "No ha ingresado ningun email."
+                        e.mensaje = "El email es obligatorio."
                         variable = false
                     }
                 });
@@ -41,11 +41,11 @@ window.addEventListener('load', ()=> {
                 }
                 break;
             case !regExEmail.test(email.value):
-                $('#emailContainer').innerHTML = "<small>El email no coincide con un email valido</small>"
+                $('#emailContainer').innerHTML = "<small>Ingrese un email válido.</small>"
                 email.style.border = "1px solid red"
                 errores.forEach(e => {
                     if(e.id === 1 ){
-                        e.mensaje = "El email no coincide con un email valido"
+                        e.mensaje = "Ingrese un email válido."
                         variable = false
                     }
                 });
@@ -67,16 +67,16 @@ window.addEventListener('load', ()=> {
         let error = {
             id: 2,
             elemento:"inputPass",
-            mensaje: "La contraseña es incorrecta"
+            mensaje: "La contraseña es obligatoria."
         }
         let variable = true
         switch (true) {
             case !inputPass.value:
-                $('#passContainer').innerHTML = "<small>No ha ingresado ninguna contraseña.</small>"
+                $('#passContainer').innerHTML = "<small>La contraseña es obligatoria.</small>"
                 inputPass.style.border = "1px solid red"
                 errores.forEach(e => {
                     if(e.id === 2 ){
-                        e.mensaje = "No ha ingresado ninguna contraseña."
+                        e.mensaje = "La contraseña es obligatoria."
                         variable = false
                     }
                 });

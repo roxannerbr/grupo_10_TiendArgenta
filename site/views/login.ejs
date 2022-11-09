@@ -8,18 +8,16 @@
             <h1>Iniciar sesión</h1>
             <form action="/usuario/login" method="post" id="form">
                 <div>
-                    <input class="ingreso" type="email" name="email" id="email" value="<%=locals.old && old.email ? old.email: null %>" placeholder="Ingrese su email electr&oacute;nico">
-                    <div id="emailContainer"></div>
-                    <% if (locals.errors && errors.email) { %>
-                        <small><%= errors.email.msg %> </small>
-                    <% } %> 
+                    <input class="ingreso" type="email" name="email" id="email" value="<%=
+                        (typeof locals.old != 'undefined' && old.email )? old.email : "" %>" placeholder="Ingrese su email electr&oacute;nico">
+                    
+                    <small id="emailContainer"><%= locals.errors && errors.email ? errors.email.msg : null %> </small>
                 </div>
                 <div>
                     <input class="ingreso" type="password" name="pass" id="pass" placeholder="Ingrese su contraseña">
-                    <div id="passContainer"></div>
-                    <% if (locals.errors && errors.pass) { %>
-                        <small><%= errors.pass.msg %> </small>
-                    <% } %> 
+                    
+                    <small id="passContainer"><%= locals.errors && errors.pass ? errors.pass.msg : null %> </small>
+                    
                 </div>
                 <div class="recForm">
                     <label><input type="checkbox" name="check">&nbsp;Recordarme</label>
