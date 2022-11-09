@@ -10,14 +10,14 @@
             <form  action="" method="post" enctype="multipart/form-data" id="formulario"><!--ENCTYPE FUNDAMENTAL PARA SUBIR IMG CON MULTER-->
 
                 <div>
-                    <input class="ingreso" type="text" name="Nombres" id="Nombres" value="<%= locals.old && old.nombres ? old.nombres: null %>" placeholder="Ingrese su nombre" >
+                    <input class="ingreso" type="text" name="Nombres" id="Nombres" value="<%= locals.old && old.Nombres ? old.Nombres: null %>" placeholder="Ingrese su nombre" >
                     <div id="nombresContainer"></div>
                     <% if (locals.errors && errors.Nombres) { %>
                         <small><%= errors.Nombres.msg %> </small>
                     <% } %>                    
                 </div>
                 <div>
-                    <input class="ingreso" type="text" name="Apellidos" id="Apellidos" value="<%= locals.old && old.apellidos ? old.apellidos: null %>" placeholder="Ingrese su apellido" >
+                    <input class="ingreso" type="text" name="Apellidos" id="Apellidos" value="<%= locals.old && old.Apellidos ? old.Apellidos: null %>" placeholder="Ingrese su apellido" >
                     <div id="apellidosContainer"></div>
                     <% if (locals.errors && errors.Apellidos) { %>
                         <small><%= errors.Apellidos.msg %> </small>
@@ -47,6 +47,8 @@
                 <div class="mb-3">
                     <label for="formFileMultiple" class="form-label">Subir imágen</label>
                     <input class="form-control" type="file" name="imagen" id="formFileMultiple" value="<%= locals.old && old.imagen ? old.nombre: null %>" >
+                    <div id="imagenContainer"></div>
+                    
                     <% if (locals.errors && errors.imagen) { %>
                         <small><%= errors.imagen.msg %> </small>
                     <% } %>
@@ -54,6 +56,7 @@
 
                 <div class="aceptoTerm">
                     <label><input type="checkbox" name="Terminos" id="terminos">&nbsp;Acepto los&nbsp;<a href="">Términos y Condiciones.</a></label>
+                    <div id="terminosContainer"></div>
                     <% if (locals.errors && errors.Terminos) { %>
                         <small><%= errors.Terminos.msg %> </small>
                     <% } %>  
@@ -67,5 +70,6 @@
         </section>
     </main>
     <%- include('./partials/footer') %>
+    <script src="/javascript/register.js"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 window.addEventListener("load", () => {
     let $ = (elemento) => document.querySelector(elemento)
-    
+
+    /* Expresiones regulares */
     const regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
     const regExExt = /\.(jpg|jpeg|png|jfif|gif|webp)$/
     const regExEmail =  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
@@ -171,25 +172,24 @@ pass.addEventListener('change',() => {
                     }
                 
                     break;
-                 case !Pass2.value < 6:
-            $("#passContainer2").innerHTML = "<small>El campo debe tener al menos 6 digitos</small>"
-            pass.style.border = "1px solid red"
-            break; 
-                case !Pass2.value:
-                    $('#passContainer2').innerHTML = "<small>La confirmacion de la contraseña no puede estar vacia</small>"
-                    Pass2.style.border = "1px solid red"
-                    error.mensaje = "La confirmacion de la contraseña no puede estar vacia"
-                    errores.forEach(e => {
-                        if(e.id === 5 ){
-                            variable = false
+                    case !Pass2.value:
+                        $('#passContainer2').innerHTML = "<small>La confirmacion de la contraseña no puede estar vacia</small>"
+                        Pass2.style.border = "1px solid red"
+                        error.mensaje = "La confirmacion de la contraseña no puede estar vacia"
+                        errores.forEach(e => {
+                            if(e.id === 5 ){
+                                variable = false
+                            }
+                        });
+                        if (variable) {
+                            errores.push(error)
                         }
-                    });
-                    if (variable) {
-                        errores.push(error)
-                    }
-                    
-                    break;
-                
+                        break;
+                        case Pass2.value < 6:
+                   $("#passContainer2").innerHTML = "<small>El campo debe tener al menos 6 digitos</small>"
+                   Pass2.style.border = "1px solid red"
+                   break; 
+                        
                 default:
                     $('#passContainer2').innerHTML = ""
                     Pass2.style.border = "1px solid black"
@@ -200,4 +200,41 @@ pass.addEventListener('change',() => {
             }
         })  
         
+        terminos.addEventListener('blur', (e) => {
+           switch (true) {
+            case !terminos.checked:
+        $("#terminosContainer").innerHTML = "<small>Debe aceptar los terminos y condiciones</small>"
+        terminos.style.border = "1px solid red"
+        break;
+
+    default:
+        $("#terminosContainer").innerHTML = ""
+        terminos.style.border = "1px solid black"
+        break;
+}
+        })
+        imagen.addEventListener('change', function() {
+            switch (true) {
+                case !regExExt.exec(imagen.value):
+                    $('#formFileMultiple').innerHTML = "Solo se permite ingresar una imagen valida fomato (jpg|jpeg|png|jfif|gif|webp)"
+                    validate.imagen = false
+                    break;
+                default:
+                    $('#formFileMultiple').innerHTML = null
+                    validate.imagen = true
+                    break;
+            }
+            funcValidate(validate)
+        })
+
+
+        /* formulario.addEventListener('submit',(e) => {
+            e.preventDefault();
+    
+            console.log(formulario.elements);
+            if(errores.length > 0){
+                formulario.submit()
+            }
+        }) */ 
+
 })
