@@ -26,8 +26,8 @@ listar: (req, res) => {
 },
 crear: (req, res) => {
       let categorias = db.Categorias.findAll()
-      let subcategoria = db.subCategorias.findAll()
-      Promise.all([categorias,subcategoria])
+      let subCategoria = db.subCategorias.findAll()
+      Promise.all([categorias,subCategoria])
       .then(([categorias,subCategoria]) => {
           return res.render('admin/crear',{
               categorias,
@@ -77,7 +77,7 @@ store: (req, res) => {
             nombre: "default-image.png",
             productosId: productoNuevo.id,
           })
-          .then((imagen) => {
+          .then(imagen => {
             return res.redirect("/admin/listar");
           });
         }
@@ -98,7 +98,7 @@ store: (req, res) => {
       let subCategoria = db.subCategorias.findAll()
       Promise.all([categorias,subCategoria])
       .then(([categorias,subCategoria]) => {
-          return res.render('/admin/crear',{
+          return res.render('admin/crear',{
               categorias,
               subCategoria,
               errors: errors.mapped(),

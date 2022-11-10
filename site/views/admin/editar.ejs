@@ -141,7 +141,7 @@
 <!--SUBIDA DE IMAGENES-->
                 <div class="mb-3">
                     <label for="formFileMultiple" class="form-label">Subir imagenes del producto</label>
-                    <input class="form-control" type="file" name="imagen" id="formFileMultiple" accept="image/png, .PNG" value="<%= locals.old && old.imagen ? old.nombre: null %>" >
+                    <input class="form-control" type="file" name="imagen" id="formFileMultiple" accept="image/jpg,jpeg,png,jfif,gif,webp" value="<%= locals.old && old.imagen ? old.nombre: null %>" >
                     <% if (locals.errors && errors.imagen) { %>
                         <small><%= errors.imagen.msg %> </small>
                     <% } %>

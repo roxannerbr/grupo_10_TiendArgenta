@@ -57,6 +57,9 @@
 .crear-editar main form .form-floating small{
     color: white;
 }
+.crear-editar main form .form-floating p{
+    color: white;
+}
 .crear-editar main form .btn{
     width: 400px;
     color: white;
