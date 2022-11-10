@@ -81,7 +81,10 @@ module.exports = {
             db.Usuarios.findOne({
                 where : {
                     email
-                }
+                },
+                include: [{
+                    all: true
+                }]
             })
             .then(usuario => {
                 
