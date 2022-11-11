@@ -333,7 +333,7 @@ CREATE TABLE `usuarios` (
   PRIMARY KEY (`id`),
   KEY `rolId` (`rolId`),
   CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`rolId`) REFERENCES `roles` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -342,7 +342,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'roxana','roman',35667787,1144663322,'Av. del campo 123','Cordoba','Cordoba',1234,'romaniello@gmail.com','$2a$10$F0tPvJyEredWP1/94GN0xepXC.pHfJAWZbEuX2VXvPau6mEh5yawO','profile3.jpg',1,'2022-10-21 19:51:37','2022-10-21 19:51:37'),(2,'Mariana Soledad','Blanez',39112233,1132133561,'Av. de los michis 666','San Miguel','Buenos Aires',1234,'Marianablanez@gmail.com','$2a$10$qq1bHOscBbYrK.dpBYIAn.NN0SfPCUcilX5srz6DdSbYaKoB0cM7.','profile4.jpg',1,'2022-10-21 19:51:37','2022-10-21 19:51:37'),(3,'Cristian','Ramirez',36848577,1122334455,'Nos abandono 123','CABA','Buenos Aires',1234,'CristianRamirez@gmail.com','$2a$10$2Z601Z3tdhsHEBJsy282X.VLhBCN6MyK86QHZNdw6oO2c3Rpg7ib6','profile1.jpg',1,'2022-10-21 19:51:37','2022-10-21 19:51:37'),(4,'Cristian','Elias',40599588,1155667788,'Vinos 444','Guaymallen','Mendoza',2667,'comision17@hotmail.com','$2a$10$BqJD/fPxEOKSgnCBNe2ua.q.uiJ4IzxVKOcu72jEs08gktMxWdjbG','profile5.jpg',2,'2022-10-21 19:51:37','2022-10-21 19:51:37'),(5,'Jeanette','Garcia Barrera',36485755,1103034567,'Av. corrientes 222','CABA','Buenos Aires',1454,'comision17@gmail.com','$2a$10$NYe9Jm2.02Rz.C4IB.YUx.BMzJtqXRJoPWFbOurn0InkHhRTwhRru','profile6.jpg',2,'2022-10-21 19:51:37','2022-10-21 19:51:37'),(6,'Patricio','Cristaldo',10472576,1173686874,'Av. de los Patos 123','San Miguel','Buenos Aires',1234,'patricio_cristaldo@outlook.com','$2a$10$8jzunmBWDZvfOcWCxs9SruiYpXq7IM1CIJtME5s1CnqC6/CekQTzO','profile2.jpg',1,'2022-10-21 19:51:37','2022-10-21 19:51:37');
+INSERT INTO `usuarios` VALUES (1,'Patricio','Cristaldo',10472576,1173686874,'Av. de los Patos 123','San Miguel','Buenos Aires',1234,'patricio_cristaldo@outlook.com','$2a$10$lkYvS81ly9TQqkLIH56y0OZcxzl9WtZLN6xoFlX9tt4FMZ4ePvWtu','profile2.jpg',1,'2022-11-11 17:23:29','2022-11-11 17:23:29'),(2,'Mariana Soledad','Blanez',39112233,1132133561,'Av. de los michis 666','San Miguel','Buenos Aires',1234,'Marianablanez@gmail.com','$2a$10$efq8vtkTJu1nhAtqA1BXnetRKvri8qAYojlx4D4e.30Fz/ESEX5Te','profile4.jpg',1,'2022-11-11 17:19:59','2022-11-11 17:19:59'),(3,'Roxana','Romaniello',35667787,1144663322,'Av. del campo 123','Cordoba','Cordoba',1234,'romaniello@gmail.com','$2a$10$P7mHrGKiTjIHuGWcXhJ8/eVphxJDZH5afnFTKZwyzyd5af9boUfd.','profile3.jpg',1,'2022-11-11 17:24:19','2022-11-11 17:24:19'),(4,'Cristian','Ramirez',36848577,1122334455,'Nos abandono 123','CABA','Buenos Aires',1454,'CristianRamirez@gmail.com','$2a$10$VSuc8RCwZo78kkQkMY/BGO6hrpTFM1tv4ECfLn1gmrOsII5fdqYlS','profile1.jpg',2,'2022-11-11 17:24:50','2022-11-11 17:24:50'),(5,'Cristian','Elias',40599588,1155667788,'Vinos 444','Guaymallen','Mendoza',2667,'comision17@hotmail.com','$2a$10$OM/qqvzFdgypE3dK5oSnL.nimk1/Rzml1.pS0MdG/gdfVXIoMtyEW','profile5.jpg',2,'2022-11-11 17:25:33','2022-11-11 17:25:33'),(6,'Jeanette','Garcia Barrera',36485755,1103034567,'Av. corrientes 222','CABA','Buenos Aires',1454,'comision17@gmail.com','$2a$10$7Fr3Q8sKQBKl4i2IZBqhjedgE2FaXTgVtT71JilAJOxo0TRkWZWr.','profile6.jpg',2,'2022-11-11 17:26:05','2022-11-11 17:26:05');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -355,4 +355,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-21 17:04:01
+-- Dump completed on 2022-11-11 14:41:59
