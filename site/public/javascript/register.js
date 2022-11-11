@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
     const regExEmail =  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
     const regExLetter = /^[A-Z]+$/;
 
-    let formulario = $("#formulario")
+    let form = $("#formulario")
     let nombre = $("#Nombres")
     let apellido = $("#Apellidos")
     let email = $("#email")
@@ -16,7 +16,21 @@ window.addEventListener("load", () => {
     let Pass = $("#pass")
     let Pass2 = $("#pass2")
     let pass = $("#pass")
-    let pass2 = $("#pass2")
+    
+    let errores = [{
+        id: 4,
+        elemento:"inputPass",
+        mensaje: "La contraseña es obligatoria"
+    },{
+        id: 5,
+        elemento:"inputPass2",
+        mensaje: "Debe confirmar su contraseña"
+    },{
+        id: 6,
+        elemento:"checkbox",
+        mensaje: "Debe aceptar los terminos y condiciones"
+    }]
+
 
 
 nombre.addEventListener("blur",() => {
@@ -71,40 +85,7 @@ switch (true) {
 
     }
 
-})/* 
-pass.addEventListener('change',() => {
-    switch (true) {
-        case !pass.value:
-            $("#passContainer").innerHTML = "<small>El campo contraseña es obligatorio</small>"
-            pass.style.border = "1px solid red"
-            break;
-         case !Pass.value.length < 6:
-            $("#passContainer").innerHTML = "<small>El campo debe tener al menos 6 digitos</small>"
-            pass.style.border = "1px solid red"
-            break; 
-            default:
-                $("#passContainer").innerHTML = ""
-                pass.style.border = "1px solid black"
-                break;
-            }
-            
-        }) 
-         pass2.addEventListener("blur",() => {
-        switch (true) {
-            case !pass2.value != pass.value:
-                $("#passContainer2").innerHTML = "<small>Las contraseñas no coinciden</small>"
-                pass2.style.border = "1px solid red"
-                break;
-            case !pass2.value == pass.value:
-                $("#passContainer2").innerHTML = ""
-                pass2.style.border = "1px solid black"
-                break;
-            default:
-                $("#passContainer2").innerHTML = ""
-                pass2.style.border = "1px solid black"
-                break;
-        } 
-        }) */
+})
         Pass.addEventListener('blur',() => {
             let error = {
                 id: 4,
@@ -214,27 +195,27 @@ pass.addEventListener('change',() => {
 }
         })
         imagen.addEventListener('change', function() {
+          console.log("mensaje");
             switch (true) {
                 case !regExExt.exec(imagen.value):
-                    $('#formFileMultiple').innerHTML = "Solo se permite ingresar una imagen valida fomato (jpg|jpeg|png|jfif|gif|webp)"
-                    validate.imagen = false
+                    $('#imagenContainer').innerHTML = "<small>Solo se permite ingresar una imagen valida fomato (jpg|jpeg|png|jfif|gif|webp)</small>"
+                   /*  validate.imagen = false */
                     break;
                 default:
-                    $('#formFileMultiple').innerHTML = null
-                    validate.imagen = true
+                    $('#imagenContainer').innerHTML = null
+                   /*  validate.imagen = true */
                     break;
             }
             funcValidate(validate)
         })
 
 
-        /* formulario.addEventListener('submit',(e) => {
+        form.addEventListener('submit',(e) => {
             e.preventDefault();
     
-            console.log(formulario.elements);
+            console.log(form.elements);
             if(errores.length > 0){
-                formulario.submit()
+                form.submit()
             }
-        }) */ 
-
+        })
 })

@@ -111,7 +111,7 @@ window.addEventListener('load', ()=> {
         e.preventDefault();
 
         console.log(form.elements);
-        if(errores.length > 0){
+        if(!errores.length > 0){
             form.submit()
         }
     })

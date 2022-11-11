@@ -381,7 +381,7 @@
         "precio": 10000,
         "descuento": 10,
         "stock": 5,
-        "descripcion": "Luciendo el clásico color blanco, este short de fútbol adidas de la Selección Argentina sigue el ejemplo de la camiseta a la que acompañan. Creado para mantener cómodo al hincha, están hechos de tejido suave y cuentan con tecnología de absorción AEROREADY. EL logo de la selección bordado le pone el toque final al diseño.",
+        "descripcion": "Luciendo el clásico color blanco, este short de fútbol adidas de la Selección Argentina sigue el ejemplo de la camiseta a la que acompañan.",
         "imagen": "H-shortblanco.png"
     },
     {
@@ -392,6 +392,7 @@
         "precio": "10000",
         "descuento": "10",
         "stock": "6",
+        "descripcion": "Un short re fachero de la seleccion",
         "imagen": "H-shortnegro.png"
     },
     {
