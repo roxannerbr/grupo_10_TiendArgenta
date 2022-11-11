@@ -193,8 +193,13 @@ store: (req, res) => {
             },
           });
             /* para borrar la img anterior */
-          if (fs.existsSync(path.join(__dirname, "../../public/images/productos", imagen1)))
-              fs.existsSync(path.join(__dirname, "../../public/images/productos", imagen1));
+            let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'productos', dato))
+            producto.imagenes.forEach(imagen => {
+                if (ruta(imagen.nombre) && (imagen.nombre !== "default-image.png")) {
+                    fs.unlinkSync(path.join(__dirname, '..', 'public', 'images', 'productos', imagen.nombre))
+                }
+            })
+            return res.redirect('/admin/listar')
             } else {
               return res.redirect('/admin/listar')
         }
@@ -315,15 +320,16 @@ restore: (req, res) => {
         }]
     })
     .then(producto => {
-        let imagen = req.file
 
-        let ruta = (dato) => fs.existsSync(path.join(__dirname, "..", "public", "images", "productos", dato));
-        if (imagen){
-            if (ruta(imagen.filename) && (imagen.filename !== "default-image.png")) {
-                fs.unlinkSync(path.join(__dirname,"..","public","images","productos",imagen.filename)); //supuestamente esto eliminaria la imagen
-            }
-        }
+      let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'productos', dato))
+      producto.imagenes.forEach(imagen => {
+          if (ruta(imagen.nombre) && (imagen.nombre !== "default-image.png")) {
+              fs.unlinkSync(path.join(__dirname, '..', 'public', 'images', 'productos', imagen.nombre))
+          }
       })
+    })
+        
+      
         db.Historiales.destroy({
             where: {
               id: id

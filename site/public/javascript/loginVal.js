@@ -1,29 +1,29 @@
 window.addEventListener('load', ()=> {
     let $ = (elemento) => document.querySelector(elemento)
     console.log("Login iniciado correctamente");
-    
+
+    const regExEmail =  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
+    const regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
+
     let form = $('#form')
     let email = $('#email')
     let inputPass = $('#pass')
-    
-    const regExEmail =  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
-    const regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
 
     let errores = [{
         id: 1,
         elemento:"email",
-        mensaje: "El campo Email es obligatorio"
+        mensaje: "El campo Email es obligatorio."
     },{
         id: 2,
         elemento:"inputPass",
-        mensaje: "La contraseña es obligatoria"
-    }]
+        mensaje: "La contraseña es obligatoria."
+    }];
 
     email.addEventListener('blur',() => {
         let error = {
             id: 1,
             elemento:"email",
-            mensaje: "El campo Email es obligatorio"
+            mensaje: "El Email es obligatorio."
         }
         let variable = true
         switch (true) {
@@ -85,11 +85,11 @@ window.addEventListener('load', ()=> {
                 }
                 break;
             case !regExPass.test(inputPass.value):
-                $('#passContainer').innerHTML = "<small>La contraseña es incorrecta.</small>"
+                $('#passContainer').innerHTML = "<small>La contraseña debe tener entre 6 y 12 caracteres.</small>"
                 email.style.border = "1px solid red"
                 errores.forEach(e => {
                     if(e.id === 1 ){
-                        e.mensaje = "La contraseña es incorrecta."
+                        e.mensaje = "La contraseña debe tener entre 6 y 12 caracteres."
                         variable = false
                     }
                 });

@@ -33,7 +33,7 @@ window.addEventListener('load', () => {
     /* Expresiones regulares para utilizar */
     //let regExLetter = /^[a-zA-Z\sñáéíóúü]*$/
     let regExNumber = /^[+]?([0-9][0-9]?|150)$/
-    const regExExt = /\.(jpg|jpeg|png|jfif|gif|webp)$/
+    const regExExt = /\.(png)/
 
     /* validar elementos */
         /* Titulo del producto */
@@ -192,7 +192,7 @@ window.addEventListener('load', () => {
     imagen.addEventListener('change', function() {
         switch (true) {
             case !regExExt.exec(imagen.value):
-                $('#imagenError').innerHTML = "Solo se permite ingresar una imagen formato (jpg|jpeg|png|jfif|gif|webp)"
+                $('#imagenError').innerHTML = "Solo se permite ingresar una imagen formato .png"
                 validate.imagen = false
                 break;
             default:

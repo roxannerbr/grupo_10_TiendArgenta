@@ -24,9 +24,19 @@
     <!--TIPO DE PRODUCTO-->
                 <div class="form-floating">
                     <select class="form-select" name="Categoria" id="floatingSelect" aria-label="Floating label select example">
-                        <% categorias.forEach(categoria => { %>
-                            <option value="<%= categoria.id %>" <%= producto.categoriaId === categoria.id ? 'selected' : null %> ><%= categoria.nombre %></option>
-                        <% }) %>
+                        <% if (locals.errors && old.categoria) { %>
+                            <option hidden value="">Selecciona una opcion</option>
+                            <option <%= old.categoria == "1" ? "selected" : null %>  value="cotillon">Cotillon</option>
+                            <option <%= old.categoria == "2" ? "selected" : null %>   value="coleccionables">Coleccionables</option>
+                            <option <%= old.categoria == "3" ? "selected" : null %>   value="mujer">Mujer</option>
+                            <option <%= old.categoria == "4" ? "selected" : null %>   value="hombre">Hombre</option>
+                            <option <%= old.categoria == "5" ? "selected" : null %>   value="infantil">Infantil</option>
+                        <% }else{ %>
+                            <option selected hidden value="">Selecciona una opcion</option>
+                            <% categorias.forEach(categoria => { %>
+                                <option value="<%= categoria.id %>" <%= producto.categoriasId === categoria.id ? "selected" : null %>><%= categoria.nombre %></option>
+                            <% }) %>
+                        <% } %> 
                     </select>
                     
                     <label for="floatingSelect">Categoria de Producto</label>
@@ -37,9 +47,18 @@
     <!--SUBCATEGORIAS PARA INDUMENTARIA-->
                 <div class="form-floating">
                     <select class="form-select" name="subCategoria" id="floatingSelect" aria-label="Floating label select example">
-                        <% subcategoria.forEach(subcategoria => { %>
-                            <option value="<%= subcategoria.id %>" <%= producto.subcategoriaId === subcategoria.id ? 'selected' : null %> ><%= subcategoria.nombre %></option>
-                        <% }) %>
+                        <% if (locals.errors && old.subcategoria) { %>
+                            <option hidden value="">Selecciona una opcion</option>
+                            <option <%= old.subcategoria == "1" ? "selected" : null %>  value="camisetas">Camisetas</option>
+                            <option <%= old.subcategoria == "2" ? "selected" : null %>   value="pantalones">Pantalones</option>
+                            <option <%= old.subcategoria == "3" ? "selected" : null %>   value="accesorios">Accesorios</option>
+                            <option <%= old.subcategoria == "4" ? "selected" : null %>   value=""></option>
+                        <% }else{ %>
+                            <option selected hidden value="">Selecciona una opcion</option>
+                            <% subcategoria.forEach(subcategoria => { %>
+                                <option value="<%= subcategoria.id %>" <%= producto.subcategoriasId === subcategoria.id ? "selected" : null %>><%= subcategoria.nombre %></option>
+                            <% }) %>
+                        <% } %> 
                     </select>
                     
                     <label for="floatingSelect">Tipo de Producto</label>
@@ -71,65 +90,6 @@
                         <small><%= errors.stock.msg %> </small>
                     <% } %>
                 </div>
-<!--EN PROCESO DE PRUEBA EN OTRA RAMA CHECK DE TALLES DE CAMISETAS, PANTALONES Y STOCK-->
-                <!-- <div class="contenedor-checks">
-                    <div class="form-check">
-                        <input class="form-check-input" name="talles" type="checkbox" value="XS" id="T-XS">
-                        <label class="form-check-label" for="product-t-xs"> XS </label>
-                        <input type="number" name="Stock" class="form-control" id="Stock" value="<%#=locals.old && old.stock ?old.nombre: null %><%#=producto.stock%>" placeholder="Stock">
-                        ## if (locals.errors && errors.stock) { %>
-                        <small>##= errors.stock.msg %> </small>
-                    <%# } %>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" name="talles" type="checkbox" value="S" id="T-S">
-                        <label class="form-check-label" for="product-t-s"> S </label>
-                        <input type="number" name="Stock" class="form-control" id="Stock" value="<%#=locals.old && old.stock ?old.nombre: null %><%#=producto.stock%>" placeholder="Stock">
-                        <%# if (locals.errors && errors.stock) { %>
-                        <small><%#= errors.stock.msg %> </small>
-                    <%# } %>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" name="talles" type="checkbox" value="M" id="T-M">
-                        <label class="form-check-label" for="product-t-m"> M </label>
-                        <input type="number" name="Stock" class="form-control" id="Stock" value="<%#=locals.old && old.stock ?old.nombre: null %><%#=producto.stock%>" placeholder="Stock">
-                        <%# if (locals.errors && errors.stock) { %>
-                        <small><%#= errors.stock.msg %> </small>
-                    <%# } %>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" name="talles" type="checkbox" value="L" id="T-L">
-                        <label class="form-check-label" for="product-t-l"> L </label>
-                        <input type="number" name="Stock" class="form-control" id="Stock" value="<%#=locals.old && old.stock ?old.nombre: null %><%#=producto.stock%>" placeholder="Stock">
-                        <%# if (locals.errors && errors.stock) { %>
-                        <small><%#= errors.stock.msg %> </small>
-                    <%# } %>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" name="talles" type="checkbox" value="XL" id="T-XL">
-                        <label class="form-check-label" for="product-t-xl"> XL </label>
-                        <input type="number" name="Stock" class="form-control" id="Stock" value="<%#=locals.old && old.stock ?old.nombre: null %><%#=producto.stock%>" placeholder="Stock">
-                        <%# if (locals.errors && errors.stock) { %>
-                        <small><%#= errors.stock.msg %> </small>
-                    <%# } %>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" name="talles" type="checkbox" value="XXL" id="T-XXL">
-                        <label class="form-check-label" for="product-t-xxl"> XXL </label>
-                        <input type="number" name="Stock" class="form-control" id="Stock" value="<%#=locals.old && old.stock ?old.nombre: null %><%#=producto.stock%>" placeholder="Stock">
-                        <%# if (locals.errors && errors.stock) { %>
-                        <small><%#= errors.stock.msg %> </small>
-                    <%# } %>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" name="talles" type="checkbox" value="XXXL" id="T-XXXL">
-                        <label class="form-check-label" for="product-t-xxxl"> XXXL </label>
-                        <input type="number" name="Stock" class="form-control" id="Stock" value="<%#=locals.old && old.stock ?old.nombre: null %><%#=producto.stock%>" placeholder="Stock">
-                        <%# if (locals.errors && errors.stock) { %>
-                        <small><%#= errors.stock.msg %> </small>
-                    <%# } %>
-                    </div>
-                </div> -->
     <!--DESCRIPCION DE PRODUCTO-->
                 <div class="form-floating">
                     <input type="text" class="form-control" id="description" placeholder="Descripción" name="Descripcion" value="<%= producto.descripcion %> ">
@@ -141,7 +101,7 @@
 <!--SUBIDA DE IMAGENES-->
                 <div class="mb-3">
                     <label for="formFileMultiple" class="form-label">Subir imagenes del producto</label>
-                    <input class="form-control" type="file" name="imagen" id="formFileMultiple" accept="image/jpg,jpeg,png,jfif,gif,webp" value="<%= locals.old && old.imagen ? old.nombre: null %>" >
+                    <input class="form-control" type="file" name="imagen" id="formFileMultiple" accept="image/png" value="<%= locals.old && old.imagen ? old.nombre: null %><%= producto.imagenes[0].nombre %>" >
                     <% if (locals.errors && errors.imagen) { %>
                         <small><%= errors.imagen.msg %> </small>
                     <% } %>
