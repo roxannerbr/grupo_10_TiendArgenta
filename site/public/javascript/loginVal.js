@@ -106,7 +106,7 @@ window.addEventListener('load', ()=> {
                 break;
         }
     })
-
+//PRUEBA DE SI SE HACE EL PULL CORRECTO
     form.addEventListener('submit',(e) => {
         e.preventDefault();
 
