@@ -68,7 +68,7 @@
                 </div>
         <!--PRECIO-->
                 <div class="form-floating">
-                    <input type="number" name="Precio" class="form-control" id="Precio" value="<%=locals.old && old.precio ?old.nombre: null%><%=producto.precio%>" placeholder="Precio">
+                    <input type="number" name="Precio" min="1" class="form-control" id="Precio" value="<%=locals.old && old.precio ?old.nombre: null%><%=producto.precio%>" placeholder="Precio">
                     <label for="Precio">Precio</label>
                     <% if (locals.errors && errors.precio) { %>
                         <small><%= errors.precio.msg %> </small>
@@ -76,7 +76,7 @@
                 </div>
         <!--DESCUENTO-->
                 <div class="form-floating">
-                    <input type="number" name="Descuento" class="form-control" id="Descuento" value="<%=locals.old && old.descuento ? old.nombre: null%><%=producto.descuento%>" placeholder="Descuento">
+                    <input type="number" name="Descuento" min="0" class="form-control" id="Descuento" value="<%=locals.old && old.descuento ? old.nombre: null%><%=producto.descuento%>" placeholder="Descuento">
                     <label for="Descuento">Descuento</label>
                     <% if (locals.errors && errors.descuento) { %>
                         <small><%= errors.descuento.msg %> </small>
@@ -84,7 +84,7 @@
                 </div>
 <!--STOCK GRAL PARA COTILLON, COLECCIONABLES Y ACCESORIOS-->
                 <div class="form-floating">
-                    <input type="number" name="Stock" class="form-control" id="Stock" value="<%=locals.old && old.stock ?old.nombre: null %><%=producto.stock%>" placeholder="Stock">
+                    <input type="number" name="Stock" min="1" class="form-control" id="Stock" value="<%=locals.old && old.stock ?old.nombre: null %><%=producto.stock%>" placeholder="Stock">
                     <label for="Stock">Stock</label>
                     <% if (locals.errors && errors.stock) { %>
                         <small><%= errors.stock.msg %> </small>

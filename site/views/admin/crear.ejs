@@ -70,7 +70,7 @@
             <%# } %>
         <!--PRECIO-->
                 <div class="form-floating">
-                    <input type="number" name="Precio" class="form-control" id="Precio" value="<%=locals.old && old.precio ?old.nombre: null%>" placeholder="Precio">
+                    <input type="number" name="Precio" class="form-control" min="1" id="Precio" value="<%=locals.old && old.precio ?old.nombre: null%>" placeholder="Precio">
                     <label for="Precio">Precio</label>
                     <p id="precioError">
                         <%= locals.errors && errors.precio ? errors.precio.msg : null %>
@@ -78,7 +78,7 @@
                 </div>
         <!--DESCUENTO-->
                 <div class="form-floating">
-                    <input type="number" name="Descuento" class="form-control" id="Descuento" value="<%=locals.old && old.descuento ? old.nombre: null%>" placeholder="Descuento">
+                    <input type="number" name="Descuento" class="form-control" min="0" id="Descuento" value="<%=locals.old && old.descuento ? old.nombre: null%>" placeholder="Descuento">
                     <label for="Descuento">Descuento</label>
                     <p id="descuentoError">
                         <%= locals.errors && errors.descuento ? errors.descuento.msg : null %>
@@ -86,50 +86,12 @@
                 </div>
 <!--STOCK GRAL PARA COTILLON, COLECCIONABLES Y ACCESORIOS-->
                 <div class="form-floating">
-                    <input type="number" name="Stock" class="form-control" id="Stock" value="<%=locals.old && old.stock ?old.nombre: null %>" placeholder="Stock">
+                    <input type="number" name="Stock" class="form-control" min="1" id="Stock" value="<%=locals.old && old.stock ?old.nombre: null %>" placeholder="Stock">
                     <label for="Stock">Stock</label>
                     <p id="stockError">
                         <%= locals.errors && errors.stock ? errors.stock.msg : null %>
                     </p>
                 </div>
-<!--EN PROCESO DE PRUEBA EN OTRA RAMA CHECK DE TALLES DE CAMISETAS, PANTALONES Y STOCK-->
-                <!-- <div class="contenedor-checks">
-                    <div class="form-check">
-                        <input class="form-check-input" name="variable" type="checkbox" value="XS" id="T-XS">
-                        <label class="form-check-label" for="product-t-xs"> XS </label>
-                        <input type="number" name="cantidad" class="form-control" id="cantidad" value="<%#=locals.old && old.stock ?old.nombre: null %>" placeholder="Stock">
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" name="variable" type="checkbox" value="S" id="T-S">
-                        <label class="form-check-label" for="product-t-s"> S </label>
-                        <input type="number" name="StockS" class="form-control" id="cantidad" value="<%#=locals.old && old.stock ?old.nombre: null %>" placeholder="Stock">
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" name="variable" type="checkbox" value="M" id="T-M">
-                        <label class="form-check-label" for="product-t-m"> M </label>
-                        <input type="number" name="StockM" class="form-control" id="cantidad" value="<%#=locals.old && old.stock ?old.nombre: null %>" placeholder="Stock">
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" name="variable" type="checkbox" value="L" id="T-L">
-                        <label class="form-check-label" for="product-t-l"> L </label>
-                        <input type="number" name="StockL" class="form-control" id="StockL" value="<%#=locals.old && old.stock ?old.nombre: null %>" placeholder="Stock">
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" name="variable" type="checkbox" value="XL" id="T-XL">
-                        <label class="form-check-label" for="product-t-xl"> XL </label>
-                        <input type="number" name="StockXL" class="form-control" id="StockXL" value="<%#=locals.old && old.stock ?old.nombre: null %>" placeholder="Stock">
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" name="variable" type="checkbox" value="XXL" id="T-XXL">
-                        <label class="form-check-label" for="product-t-xxl"> XXL </label>
-                        <input type="number" name="StockXXL" class="form-control" id="StockXXL" value="<%#=locals.old && old.stock ?old.nombre: null %>" placeholder="Stock">
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" name="variable" type="checkbox" value="XXXL" id="T-XXXL">
-                        <label class="form-check-label" for="product-t-xxxl"> XXXL </label>
-                        <input type="number" name="StockXXXL" class="form-control" id="StockXXXL" value="<%#=locals.old && old.stock ?old.nombre: null %>" placeholder="Stock">
-                    </div>
-                </div> -->
     <!--DESCRIPCION-->
                 <div class="form-floating">
                     <input type="text" class="form-control" id="description" placeholder="Descripción" name="Descripcion" >
