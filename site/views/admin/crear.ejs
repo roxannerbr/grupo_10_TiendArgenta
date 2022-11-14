@@ -65,7 +65,7 @@
                         <% } %> 
                     </select>
                     <label for="floatingSelect">Tipo de Producto</label>
-                    <small class="" id="subCategoriaError"><%= (locals.errors && errors.subCategoria) ? errors.subCategoria.msg : null%></small>
+                    <small id="subCategoriaError"><%= (locals.errors && errors.subCategoria) ? errors.subCategoria.msg : null%></small>
                 </div>
             <%# } %>
         <!--PRECIO-->
@@ -103,7 +103,7 @@
         <!--SUBIDA DE IMAGENES-->
                 <div class="mb-3">
                     <label for="formFileSm" class="form-label">Subir imagenes del producto</label>
-                    <input class="form-control form-control-sm" type="file" name="imagen" id="imagen" accept="image/jpg,jpeg,png,jfif,gif,webp" value="<%= locals.old && old.imagen ? old.nombre: null %>" >
+                    <input class="form-control form-control-sm" type="file" name="imagen" id="imagen" accept="image/png" value="<%= locals.old && old.imagen ? old.nombre: null %>" >
                     <p id="imagenError">
                         <%= locals.errors && errors.imagen ? errors.imagen.msg : null %>
                     </p>
@@ -121,4 +121,4 @@
 </html>
 
 <script src="/javascript/imagenes.js"></script>
-<script src="/javascript/validacionProductos.js"></script>
+<script src="/javascript/validacionProductosCrear.js"></script>

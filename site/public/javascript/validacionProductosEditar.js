@@ -32,20 +32,22 @@ window.addEventListener('load', () => {
 
     /* Expresiones regulares para utilizar */
     //let regExLetter = /^[a-zA-Z\sñáéíóúü]*$/
+    let RegExp= /^\d*$/;
+    /* let ExpRegNumDec=/^\d*\.\d+$/; */
     let regExNumber = /^[+]?([0-9][0-9]?|150)$/
-    const regExExt = /\.(png)/
+    let regExExt = /\.(png)/
 
     /* validar elementos */
         /* Titulo del producto */
     titulo.addEventListener('blur', function() {
         switch (true) {
             case !this.value.trim():
-                $('#tituloError').innerHTML = "Debes ingresar el titulo de tu producto"
+                $('#tituloError').innerHTML = "Debes ingresar un titulo"
                 this.classList.add('is-invalid')
                 validate.type = false
                 break;
             case !(this.value.trim().length > 2 && this.value.trim().length < 100):
-                $('#tituloError').innerHTML = "El titulo del producto debe 2 letras y maximo 10"
+                $('#tituloError').innerHTML = "El titulo del producto debe tener 2 letras y maximo 10"
                 this.classList.add('is-invalid')
                 validate.titulo = false
                 break;
@@ -63,7 +65,7 @@ window.addEventListener('load', () => {
     categoria.addEventListener('blur', function() {
         switch (true) {
             case !this.value.trim():
-                $('#categoriaError').innerHTML = "Debes seleccionar una categoria"
+                $('#categoriaError').innerHTML = "Selecciona una opcion"
                 this.classList.add('is-invalid')
                 validate.categoria = false
                 break;
@@ -82,7 +84,7 @@ window.addEventListener('load', () => {
     subCategoria.addEventListener('blur', function() {
         switch (true) {
             case !this.value.trim():
-                $('#subCategoriaError').innerHTML = "Debes seleccionar una subcategoria"
+                $('#subCategoriaError').innerHTML = "Selecciona una opcion"
                 this.classList.add('is-invalid')
                 validate.subCategoria = false
                 break;
@@ -97,84 +99,95 @@ window.addEventListener('load', () => {
     })
 
         /* precio del producto */
-    precio.addEventListener('blur', function() {
-        switch (true) {
-            case !this.value.trim():
-                $('#precioError').innerHTML = "Debes ingresar un precio al producto"
-                this.classList.add('is-invalid')
-                validate.precio = false
-                break;
-            case !(this.value.trim().length >= 2 && this.value.trim().length <= 16):
-                $('#precioError').innerHTML = "El precio del producto debe contener entre 2 y 10 caracteres"
-                this.classList.add('is-invalid')
-                validate.precio = false
-                break;
-            default:
-                $('#precioError').innerHTML = null
-                this.classList.remove('is-invalid')
-                this.classList.add('is-valid')
-                validate.precio = true
-                break;
-        }
-        funcValidate(validate)
-    })
-
-    /* descuento */
-    descuento.addEventListener('blur', function() {
-        switch (true) {
-            case !(this.value.trim().length <= 2    ):
-                $('#descuentoError').innerHTML = "El descuento no debe ser mayor a 2 cifras"
-                this.classList.add('is-invalid')
-                validate.descuento = false
-                break;
-            default:
-                $('#descuentoError').innerHTML = null
-                this.classList.remove('is-invalid')
-                this.classList.add('is-valid')
-                validate.descuento = true
-                break;
-        }
-        funcValidate(validate)
-    })
-
-    /* stock */
-    stock.addEventListener('blur', function() {
-        switch (true) {
-            case !this.value.trim():
-                $('#stockError').innerHTML = "Debes ingresar el stock de tu producto"
-                this.classList.add('is-invalid')
-                validate.stock = false
-                break;
-            case !regExNumber.test(this.value.trim()):
-                $('#stockError').innerHTML = "Debes ingresar un numero menor a 100"
-                this.classList.add('is-invalid')
-                validate.stock = false
-                break;
-            case !(this.value.trim().length >= 1 && this.value.trim().length <= 16):
-                $('#stockError').innerHTML = "El stock del producto debe contener entre 1 y 10 caracteres"
-                this.classList.add('is-invalid')
-                validate.stock = false
-                break;
-            default:
-                $('#stockError').innerHTML = null
-                this.classList.remove('is-invalid')
-                this.classList.add('is-valid')
-                validate.stock = true
-                break;
-        }
-        funcValidate(validate)
-    })
+        precio.addEventListener('blur', function() {
+            switch (true) {
+                case !this.value.trim():
+                    $('#precioError').innerHTML = "Debes ingresar un precio"
+                    this.classList.add('is-invalid')
+                    validate.precio = false
+                    break;
+                case !(this.value.trim().length >= 2 && this.value.trim().length <= 16):
+                    $('#precioError').innerHTML = "El precio del producto debe contener 2 caracteres y maximo 10"
+                    this.classList.add('is-invalid')
+                    validate.precio = false
+                    break;
+                case !RegExp.test(this.value.trim()):
+                    $('#precioError').innerHTML = "Debe ser un numero mayor a 0"
+                    this.classList.add('is-invalid')
+                    validate.stock = false
+                    break 
+                default:
+                    $('#precioError').innerHTML = null
+                    this.classList.remove('is-invalid')
+                    this.classList.add('is-valid')
+                    validate.precio = true
+                    break;
+            }
+            funcValidate(validate)
+        })
+    
+        /* descuento */
+        descuento.addEventListener('blur', function() {
+            switch (true) {
+                case !(this.value.trim().length <= 2    ):
+                    $('#descuentoError').innerHTML = "Debe ser menor a 100"
+                    this.classList.add('is-invalid')
+                    validate.descuento = false
+                    break;
+               case !regExNumber.test(this.value.trim()):
+                    $('#descuentoError').innerHTML = "Debe ser un numero mayor a 0 y menor a 100"
+                    this.classList.add('is-invalid')
+                    validate.stock = false
+                    break;
+                default:
+                    $('#descuentoError').innerHTML = null
+                    this.classList.remove('is-invalid')
+                    this.classList.add('is-valid')
+                    validate.descuento = true
+                    break;
+            }
+            funcValidate(validate)
+        })
+    
+        /* stock */
+        stock.addEventListener('blur', function() {
+            switch (true) {
+                case !this.value.trim():
+                    $('#stockError').innerHTML = "Debes ingresar el stock"
+                    this.classList.add('is-invalid')
+                    validate.stock = false
+                    break;
+                case !regExNumber.test(this.value.trim()):
+                    $('#stockError').innerHTML = "Debe ser un numero mayor a 0 y menor a 100"
+                    this.classList.add('is-invalid')
+                    validate.stock = false
+                    break;
+                /* case !(this.value.trim().length >= 1 && this.value.trim().length <= 16):
+                    $('#stockError').innerHTML = "El stock del producto debe contener entre 1 y 10 caracteres"
+                    this.classList.add('is-invalid')
+                    validate.stock = false
+                    break; */
+                default:
+                    $('#stockError').innerHTML = null
+                    this.classList.remove('is-invalid')
+                    this.classList.add('is-valid')
+                    validate.stock = true
+                    break;
+            }
+            funcValidate(validate)
+        })
+    
 
     /* descripcion */    
     descripcion.addEventListener('blur', function() {
         switch (true) {
             case !this.value.trim():
-                $('#descripcionError').innerHTML = "Debes ingresar una descripcion de tu producto"
+                $('#descripcionError').innerHTML = "Debes ingresar una descripcion"
                 this.classList.add('is-invalid')
                 validate.descripcion = false
                 break;
             case !(this.value.trim().length >= 10 && this.value.trim().length <= 255):
-                $('#descripcionError').innerHTML = "La descripcion del producto debe contener entre 10 y 255 caracteres"
+                $('#descripcionError').innerHTML = "La descripcion debe contener mas de 10 caracteres"
                 this.classList.add('is-invalid')
                 validate.stock = false
                 break;
@@ -192,7 +205,7 @@ window.addEventListener('load', () => {
     imagen.addEventListener('change', function() {
         switch (true) {
             case !regExExt.exec(imagen.value):
-                $('#imagenError').innerHTML = "Solo se permite ingresar una imagen formato .png"
+                $('#imagenError').innerHTML = "Solo se permite formato .png"
                 validate.imagen = false
                 break;
             default:

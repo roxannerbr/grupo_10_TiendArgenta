@@ -5,10 +5,10 @@ module.exports=[
     check('Titulo').trim().notEmpty().withMessage('Este campo es obligatorio').bail().isLength({min:5}). withMessage('Debe contener al menos 5 caracteres'),    
 
     /* categoria */
-    check('Categoria').trim().notEmpty().withMessage('Debe seleccionar una categoría').bail(),
+    check('Categoria').trim().notEmpty().withMessage('Debe seleccionar una opcion').bail(),
 
     /* Sub-categoria */
-    check('subCategoria').trim().notEmpty().withMessage('Debe seleccionar un tipo de producto').bail(),
+    check('subCategoria').trim().notEmpty().withMessage('Debe seleccionar una opcion').bail(),
 
     /* precio */
     check('Precio').trim().notEmpty().withMessage('Debe ingresar un precio').isInt().bail(),
