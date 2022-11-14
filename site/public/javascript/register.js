@@ -137,40 +137,47 @@ switch (true) {
             }
             let variable = true
             
-            switch (true) {
-                case Pass2.value != pass.value:
-                    $('#passContainer2').innerHTML = "<small>Las contraseñas no coinciden</small>"
-                    error.mensaje = "Las contraseñas no coinciden"
-                    Pass2.style.border = "1px solid red"
+            switch (true) {case !Pass2.value:
+                $('#passContainer2').innerHTML = "<small>La confirmacion de la contraseña no puede estar vacia</small>"
+                Pass2.style.border = "1px solid red"
+                error.mensaje = "La confirmacion de la contraseña no puede estar vacia"
+                errores.forEach(e => {
+                    if(e.id === 5 ){
+                        variable = false
+                    }
+                });
+                if (variable) {
+                    errores.push(error)
+                }
+                break; 
+                case !regExPass.test(Pass2.value):
+                    $('#passContainer2').innerHTML = "<small>La confirmación de contraseña debe tener entre 6 y 12 caracteres y debe contener una mayuscula, una minuscula y un numero</small>"
+                    email.style.border = "1px solid red"
                     errores.forEach(e => {
-                        if(e.id === 5 ){
+                        if(e.id === 3 ){
+                            e.mensaje = "La confirmación de contraseña contraseña debe tener entre 6 y 12 caracteres y debe contener una mayuscula, una minuscula y un numero"
                             variable = false
                         }
                     });
-                    
                     if (variable) {
                         errores.push(error)
                     }
-                
                     break;
-                    case !Pass2.value:
-                        $('#passContainer2').innerHTML = "<small>La confirmacion de la contraseña no puede estar vacia</small>"
+                    case Pass2.value != pass.value:
+                        $('#passContainer2').innerHTML = "<small>Las contraseñas no coinciden</small>"
+                        error.mensaje = "Las contraseñas no coinciden"
                         Pass2.style.border = "1px solid red"
-                        error.mensaje = "La confirmacion de la contraseña no puede estar vacia"
                         errores.forEach(e => {
                             if(e.id === 5 ){
                                 variable = false
                             }
                         });
+                        
                         if (variable) {
                             errores.push(error)
                         }
                         break;
-                        case Pass2.value < 6:
-                   $("#passContainer2").innerHTML = "<small>El campo debe tener al menos 6 digitos</small>"
-                   Pass2.style.border = "1px solid red"
-                   break; 
-                        
+                     
                 default:
                     $('#passContainer2').innerHTML = ""
                     Pass2.style.border = "1px solid black"

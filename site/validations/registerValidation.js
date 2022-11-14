@@ -26,10 +26,12 @@ module.exports=[
         })
     }),
     /* password */
-    check('pass').trim().isLength({min:6},{max:12}).withMessage('Debe contener al menos 6 caracteres y un máximo de 12').bail(),
+    check('pass').trim().notEmpty().withMessage('La contraseña no puede estar vacia').isLowercase().not()
+    .isUppercase().not().isNumeric().not().isLength({min:6},{max:12}).withMessage('La contraseña debe tener entre 6 y 12 caracteres y debe contener una mayuscula, una minuscula y un numero').bail(),
     
     /* password2 */
-    check('pass2').trim().notEmpty().withMessage('Las contraseñas deben coincidir').isLength({min:6},{max:12}).withMessage('Debe contener al menos 6 caracteres y un máximo de 12').bail(),
+    check('pass2').trim().notEmpty().withMessage('La confirmacion de la contraseña no puede estar vacia').isLowercase().not()
+    .isUppercase().not().isNumeric().not().isLength({min:6},{max:12}).withMessage('La confirmación de contraseña contraseña debe tener entre 6 y 12 caracteres y debe contener una mayuscula, una minuscula y un numero').bail(),
     
     /* terminos */
     check('Terminos').trim().notEmpty().withMessage('Debes aceptar los terminos y condiciones para continuar').bail(),
