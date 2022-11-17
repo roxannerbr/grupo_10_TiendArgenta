@@ -6,25 +6,14 @@ const bcryptjs = require('bcryptjs');
 module.exports=[
     /* EMAIL */
     check('email').trim()
+    .notEmpty().withMessage('Debe ingresar su email').bail()
     .isEmail().withMessage('Debe ingresar un email válido.'),
     
-    body('email')
-        .custom((value)=>{
-            return db.Usuarios.findOne({
-                where:{
-                    email:value
-                }
-            })
-            .then(user => {
-                if(!user){
-                    return Promise.reject("El usuario no se encuentra registrado.")
-            }
-        })
-    }),
 
     /* PASSWORD */
     check('pass').trim()
-    .isLength({min:8}).withMessage('Debe contener al menos 8 caracteres.'),
+    .notEmpty().withMessage('Debe ingresar su contraseña')
+    .isLength({min:6, max:12}).withMessage('La contraseña debe tener entre 6 y 12 caracteres y debe contener una mayuscula, una minuscula y un numero.'),
     
     /* BODY */
     body('pass')

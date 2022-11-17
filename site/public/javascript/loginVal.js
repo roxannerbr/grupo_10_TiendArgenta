@@ -9,30 +9,45 @@ window.addEventListener('load', ()=> {
     let email = $('#email')
     let inputPass = $('#pass')
 
+    const validate = {
+        email: false,
+        pass: false,
+    }
+    const funcValidate = (obj) => {
+        let arr = Object.values(obj)
+        console.log(arr);
+        if (!arr.includes(false)) {
+            btn.disabled = false
+        } else {
+            btn.disabled = true
+        }
+    }
+
     let errores = [{
-        id: 1,
-        elemento:"email",
-        mensaje: "El campo Email es obligatorio."
-    },{
-        id: 2,
-        elemento:"inputPass",
-        mensaje: "La contraseña es obligatoria."
-    }];
+            id: 1,
+            elemento:"email",
+            mensaje: "El campo Email es obligatorio."
+        },{
+            id: 2,
+            elemento:"inputPass",
+            mensaje: "La contraseña es obligatoria."
+        },
+    ];
 
     email.addEventListener('blur',() => {
         let error = {
             id: 1,
             elemento:"email",
-            mensaje: "El Email es obligatorio."
+            mensaje: "El campo Email es obligatorio."
         }
         let variable = true
         switch (true) {
             case !email.value:
-                $('#emailContainer').innerHTML = "<small>El email es obligatorio.</small>"
-                email.style.border = "1px solid red"
+                $('#emailContainer').innerHTML = "El campo Email es obligatorio."
+                email.style.border = "2px solid red"
                 errores.forEach(e => {
                     if(e.id === 1 ){
-                        e.mensaje = "El email es obligatorio."
+                        e.mensaje = "El campo Email es obligatorio."
                         variable = false
                     }
                 });
@@ -41,8 +56,9 @@ window.addEventListener('load', ()=> {
                 }
                 break;
             case !regExEmail.test(email.value):
-                $('#emailContainer').innerHTML = "<small>Ingrese un email válido.</small>"
-                email.style.border = "1px solid red"
+                $('#emailContainer').innerHTML = "Ingrese un email válido."
+                email.style.border = "2px solid red"
+                validate.email= false
                 errores.forEach(e => {
                     if(e.id === 1 ){
                         e.mensaje = "Ingrese un email válido."
@@ -55,12 +71,13 @@ window.addEventListener('load', ()=> {
                 break;
             default:
                 $('#emailContainer').innerHTML = ""
-                email.style.border = "1px solid #BFB063"
+                email.style.border = "2px solid #BFB063"
                 errores = errores.filter(error => {
                     return error.id !== 1
                 })
                 break;
         }
+        funcValidate(validate)
         console.log(errores);
     })
     inputPass.addEventListener('blur',() => {
@@ -69,11 +86,12 @@ window.addEventListener('load', ()=> {
             elemento:"inputPass",
             mensaje: "La contraseña es obligatoria."
         }
-        let variable = true
+        let variable = false
         switch (true) {
             case !inputPass.value:
-                $('#passContainer').innerHTML = "<small>La contraseña es obligatoria.</small>"
-                inputPass.style.border = "1px solid red"
+                $('#passContainer').innerHTML = "La contraseña es obligatoria."
+                inputPass.style.border = "2px solid red"
+                validate.pass= false
                 errores.forEach(e => {
                     if(e.id === 2 ){
                         e.mensaje = "La contraseña es obligatoria."
@@ -85,11 +103,12 @@ window.addEventListener('load', ()=> {
                 }
                 break;
             case !regExPass.test(inputPass.value):
-                $('#passContainer').innerHTML = "<small>La contraseña debe tener entre 6 y 12 caracteres.</small>"
-                email.style.border = "1px solid red"
+                $('#passContainer').innerHTML = "La contraseña debe tener entre 6 y 12 caracteres y debe contener una mayuscula, una minuscula y un numero."
+                inputPass.style.border = "2px solid red"
+                validate.pass= false
                 errores.forEach(e => {
                     if(e.id === 1 ){
-                        e.mensaje = "La contraseña debe tener entre 6 y 12 caracteres."
+                        e.mensaje = "La contraseña debe tener entre 6 y 12 caracteres y debe contener una mayuscula, una minuscula y un numero."
                         variable = false
                     }
                 });
@@ -99,13 +118,18 @@ window.addEventListener('load', ()=> {
                 break;
             default:
                 $('#passContainer').innerHTML = ""
-                inputPass.style.border = "1px solid black"
+                inputPass.style.border = "2px solid black"
+                validate.pass= true
                 errores = errores.filter(error => {
                     return error.id !== 2
                 })
                 break;
         }
+        funcValidate(validate)
     })
+    funcValidate(validate)
+
+
     form.addEventListener('submit',(e) => {
         e.preventDefault();
 
