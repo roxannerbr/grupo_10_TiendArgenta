@@ -1,5 +1,6 @@
 /* Dotenv */
 require('dotenv').config()
+//const createError = require('http-errors');
 
 /* Livereload */
 const livereload = require('livereload');
@@ -60,22 +61,16 @@ app.use("/usuario", usuariosRouter);
 app.use("/productos", productosRouter);
 app.use("/admin", adminRouter);
 
+// catch 404 and forward to error handler
+// app.use(function(req, res, next) {
+//   next(createError(404));
+// });
+app.use(function(req, res, next) {
+  res.status(404).render('404');
+}); 
+
 /* Levantamos el servidor con app listen */
 app.listen(port,function(){
     return console.log(`Se levanta el servidor en http://localhost:${port}`)
 });
 
-
-/* Rutas 
-app.get('/',(req,res) => res.sendFile(path.resolve(__dirname,'views','home.html')));
-app.get('/login',(req,res) => res.sendFile(path.resolve(__dirname,'views','login.html')));
-app.get('/register',(req,res) => res.sendFile(path.resolve(__dirname,'views','register.html')));
-app.get('/detalles',(req,res) => res.sendFile(path.resolve(__dirname,'views','detalles.html')));
-app.get('/carrito',(req,res) => res.sendFile(path.resolve(__dirname,'views','carrito.html')));*/
-
-/* Funcion de actualizacion del servidor 
-liveReloadServer.server.once("connection", () => {
-    setTimeout(() => {
-      liveReloadServer.refresh("/");
-    }, 50);
-  });*/
