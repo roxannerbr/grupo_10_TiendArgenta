@@ -96,6 +96,14 @@
     color:var(--azulPetroleo);
     display: flex;
 }
+.usuario main .accordion-body .red small{
+    color:red;
+    display: flex;
+}
+.usuario main .red small{
+    color:red;
+    display: flex;
+}
 .usuario main .accordion-body h3{
     display: contents;
 }
