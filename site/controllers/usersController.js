@@ -175,18 +175,10 @@ module.exports = {
                         },
                     })
 
-                    /* .then(imagen => {
-                        db.Usuarios.imagen.destroy({
-                            imagen : req.file ? req.file.filename : usuario.imagen,                
-                          where: {
-                            id: id,
-                        },
-                    })
-                    }) */ 
                 .then((result) => {
                     if (req.file) {
-                        if (fs.existsSync(path.join(__dirname, "../../public/images/usuario", usuario.imagen)))
-                            fs.existsSync(path.join(__dirname, "../../public/images/usuario", usuario.imagen));
+                        if (fs.existsSync(path.join(__dirname, "../public/images/usuario", usuario.imagen)))
+                        fs.unlinkSync(path.join(__dirname, "../public/images/usuario", usuario.imagen));
                     }
                     return res.redirect('/usuario/perfil')
                 })

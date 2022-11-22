@@ -5,6 +5,7 @@ window.addEventListener("load", () => {
     const regExExt = /\.(jpg|jpeg|png|jfif|gif|webp)$/
     const regExNumber = /^[+]?([0-9][0-9]?|150)$/
     const regExLetter = /^[A-Z]+$/;
+    const regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{2,30}$/;
 
     let form = $("#formulario")
     let imagen = $("#formFileMultiple")
@@ -12,9 +13,10 @@ window.addEventListener("load", () => {
     let apellido = $("#Apellidos")
     let dni = $("#dni")
     let telefono = $("#telefono")
-    let Pass = $("#pass")
-    let Pass2 = $("#pass2")
-    let pass = $("#pass")
+    let direccion = $("#direccion")
+    let localidad = $("#localidad")
+    let provincia = $("#provincia")
+    let codPost = $("#codPost")
     
     imagen.addEventListener('change', function() {
         console.log("mensaje");
@@ -85,26 +87,76 @@ switch (true) {
 
 })
 telefono.addEventListener("blur",() => {
+    switch (true) {
+        case telefono.value.length > 10:
+            $("#telefonoContainer").innerHTML = "<small>El campo no debe tener mas de 10 digitos</small>"
+            telefono.style.border = "1px solid red"
+            break;
+        default:
+            $("#telefonoContainer").innerHTML = ""
+            telefono.style.border = "1px solid black"
+            break;
+    
+        }
+    })
+direccion.addEventListener("blur",() => {
 switch (true) {
-    case telefono.value.length > 10:
-        $("#telefonoContainer").innerHTML = "<small>El campo no debe tener mas de 10 digitos</small>"
-        telefono.style.border = "1px solid red"
+    case !regExPass.test(direccion.value):
+        $("#direccionContainer").innerHTML = "<small>El campo debe tener numeros y al menos una letra mayuscula</small>"
+        direccion.style.border = "1px solid red"
         break;
     default:
-        $("#telefonoContainer").innerHTML = ""
-        telefono.style.border = "1px solid black"
+        $("#direccionContainer").innerHTML = ""
+        direccion.style.border = "1px solid black"
         break;
 
     }
-
 })
+localidad.addEventListener("blur",() => {
+    switch (true) {
+        case regExLetter.test(localidad.value):
+            $("#localidadContainer").innerHTML = "<small>El campo debe contener solo letras</small>"
+            localidad.style.border = "1px solid red"
+            break;
+        default:
+            $("#localidadContainer").innerHTML = ""
+            localidad.style.border = "1px solid black"
+            break;
+    
+        }
+    })
+    provincia.addEventListener("blur",() => {
+        switch (true) {
+            case regExLetter.test(provincia.value):
+                $("#provinciaContainer").innerHTML = "<small>El campo debe contener solo letras</small>"
+                provincia.style.border = "1px solid red"
+                break;
+            default:
+                $("#provinciaContainer").innerHTML = ""
+                provincia.style.border = "1px solid black"
+                break;
         
-        form.addEventListener('submit',(e) => {
+            }
+        })
+        codPost.addEventListener("blur",() => {
+            switch (true) {
+                case codPost.value.length > 5:
+                    $("#codPostContainer").innerHTML = "<small>El campo no puede tener mas de 5 caracteres</small>"
+                    codPost.style.border = "1px solid red"
+                    break;
+                default:
+                    $("#codPostContainer").innerHTML = ""
+                    codPost.style.border = "1px solid black"
+                    break;
+            
+                }
+            })
+        /* form.addEventListener('submit',(e) => {
             e.preventDefault();
     
             console.log(form.elements);
             if(errores.length > 0){
                 form.submit()
             }
-        })
+        }) */
 })

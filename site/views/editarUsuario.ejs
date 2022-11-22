@@ -57,10 +57,14 @@
             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
               <div class="accordion-body">
                 <ul>
-                  <li><span>Dirección</span><input class="form-control" type="text" name="direccion" id="direccion" value="<%= locals.old && old.direccion ? old.direccion: null %><%= usuario.direccion  %>" placeholder="Ingrese su dirección" ></li>
-                  <li><span>Localidad</span> <input class="form-control" type="text" name="localidad" id="localidad" value="<%= locals.old && old.localidad ? old.localidad: null %><%= usuario.localidad %>" placeholder="Ingrese su localidad" ></li>
-                  <li><span>Provincia</span><input class="form-control" type="text" name="provincia" id="provincia" value="<%= locals.old && old.provincia ? old.provincia: null %><%= usuario.provincia %>" placeholder="Ingrese su provincia" ></li>
-                  <li><span>Código postal</span> <input class="form-control" type="text" name="codPost" id="codPost" value="<%= locals.old && old.codPost ? old.codPost: null %><%= usuario.codPost %>" placeholder="Ingrese su código postal" ></li>
+                  <li><span>Dirección</span><input class="form-control" type="text" name="direccion" id="direccion" value="<%= locals.old && old.direccion ? old.direccion: null %><%= usuario.direccion  %>" placeholder="Ingrese su dirección" >
+                    <small class="red" id="direccionContainer"><%= locals.errors && errors.direccion ? errors.direccion.msg : null %> </small></li>
+                  <li><span>Localidad</span> <input class="form-control" type="text" name="localidad" id="localidad" value="<%= locals.old && old.localidad ? old.localidad: null %><%= usuario.localidad %>" placeholder="Ingrese su localidad" >
+                    <small class="red" id="localidadContainer"><%= locals.errors && errors.localidad ? errors.localidad.msg : null %> </small></li>
+                  <li><span>Provincia</span><input class="form-control" type="text" name="provincia" id="provincia" value="<%= locals.old && old.provincia ? old.provincia: null %><%= usuario.provincia %>" placeholder="Ingrese su provincia" >
+                    <small class="red" id="provinciaContainer"><%= locals.errors && errors.provincia ? errors.provincia.msg : null %> </small></li>
+                  <li><span>Código postal</span> <input class="form-control" type="number" name="codPost" id="codPost" value="<%= locals.old && old.codPost ? old.codPost: null %><%= usuario.codPost %>" placeholder="Ingrese su código postal" >
+                    <small class="red" id="codPostContainer"><%= locals.errors && errors.codPost ? errors.codPost.msg : null %> </small></li>
                 </ul>
               </div>
             </div>
