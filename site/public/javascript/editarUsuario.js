@@ -3,11 +3,10 @@ window.addEventListener("load", () => {
 
     /* Expresiones regulares */
     const regExExt = /\.(jpg|jpeg|png|jfif|gif|webp)$/
-    const regExNumber = /^[+]?([0-9][0-9]?|150)$/
     const regExLetter = /^[A-Z]+$/;
     const regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{2,30}$/;
 
-    let form = $("#formulario")
+    
     let imagen = $("#formFileMultiple")
     let nombre = $("#Nombres")
     let apellido = $("#Apellidos")
@@ -151,12 +150,4 @@ localidad.addEventListener("blur",() => {
             
                 }
             })
-        /* form.addEventListener('submit',(e) => {
-            e.preventDefault();
-    
-            console.log(form.elements);
-            if(errores.length > 0){
-                form.submit()
-            }
-        }) */
 })
