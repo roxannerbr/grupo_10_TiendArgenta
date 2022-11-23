@@ -151,9 +151,10 @@ module.exports = {
             //console.log(id);
             let {Nombres, Apellidos, dni, telefono, direccion, localidad, provincia, codPost, imagen} = req.body
             db.Usuarios.findOne({
-                where:{
+                /* where:{
                     id:id
-                }
+                } */
+                id:id
             })
             .then((usuario) => {
                 //return res.send(usuario)
@@ -171,7 +172,7 @@ module.exports = {
                         imagen : req.file ? req.file.filename : usuario.imagen,
                     }, 
                     {where:{
-                            id:id,
+                            id:+req.params.id,
                         },
                     })
 
@@ -180,12 +181,42 @@ module.exports = {
                         if (fs.existsSync(path.join(__dirname, "../public/images/usuario", usuario.imagen)))
                         fs.unlinkSync(path.join(__dirname, "../public/images/usuario", usuario.imagen));
                     }
-                    return res.redirect('/usuario/perfil')
+                    /* return res.redirect('/usuario/perfil') */
                 })
+                 .then(data=> {
+                    db.Usuarios.findOne({
+                        id: +req.params.id
+                    })
+                    .then(usuario => { 
+                        req.session.userLogin = {
+                            id : usuario.id,
+                            name : usuario.nombre,
+                            lastName : usuario.apellido,
+                            dni: usuario.dni,
+                            telefono: usuario.telefono,
+                            direccion: usuario.direccion,
+                            localidad: usuario.localidad,
+                            provincia: usuario.provincia,
+                            codPost: usuario.codPost,
+                            email : usuario.email,
+                            image : usuario.imagen,
+                            rol : usuario.rolId
+                        }
+                        if(req.cookies.TiendArgenta){
+                            res.cookie('TiendArgenta','',{maxAge: -1});
+                            res.cookie('TiendArgenta', req.session.userLogin, {maxAge: 1000 * 60 * 60 * 24})
+                        }
+                        req.session.save( (err) => {
+                            req.session.reload((err) => {
+                                return res.redirect('/usuario/perfil')
+                            })
+                }) 
+             })
+            })
                 .catch((error) => res.send(error));
             })
             .catch((error) => res.send(error));
-        }else {
+                }else {
             return res.render('editarUsuario', {
                 errors: errors.mapped(),
                 old: req.body
