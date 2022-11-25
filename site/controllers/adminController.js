@@ -1,9 +1,8 @@
 const fs = require("fs");
 const path = require("path");
+let db = require("../database/models");
 /* const productos = require('../data/productos.json');
 const historial = require('../data/historial.json'); */
-
-let db = require("../database/models");
 
 const { validationResult } = require("express-validator");
 

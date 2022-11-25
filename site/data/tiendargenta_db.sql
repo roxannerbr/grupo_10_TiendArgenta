@@ -94,7 +94,7 @@ CREATE TABLE `historiales` (
   KEY `subCategoriasId` (`subCategoriasId`),
   CONSTRAINT `historiales_ibfk_1` FOREIGN KEY (`categoriasId`) REFERENCES `categorias` (`id`),
   CONSTRAINT `historiales_ibfk_2` FOREIGN KEY (`subCategoriasId`) REFERENCES `subcategorias` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -103,7 +103,7 @@ CREATE TABLE `historiales` (
 
 LOCK TABLES `historiales` WRITE;
 /*!40000 ALTER TABLE `historiales` DISABLE KEYS */;
-INSERT INTO `historiales` VALUES (1,'Mochila Seleccion',7,20000,5,'Para que no te olvides nada',2,3,'2022-10-21 19:58:26','2022-10-21 19:58:26'),(2,'Medias violeta',5,3000,5,'Medias sexys violetas para la noche de boda..',3,3,'2022-10-21 19:59:41','2022-10-21 19:59:41'),(3,'Bucaneras con borde violeta (medias)',87,5000,10,'Medias sexys violetas para la noche de boda..',3,3,'2022-10-21 20:00:26','2022-10-21 20:00:26'),(4,'Camiseta infantil suplente',18,14000,10,'para el mas chiquito de la casa, talle unico',5,1,'2022-10-21 20:01:15','2022-10-21 20:01:15'),(5,'Remera blanca sin sentido',25,6000,0,'por que pinto',2,1,'2022-10-21 20:02:03','2022-10-21 20:02:03');
+INSERT INTO `historiales` VALUES (1,'Mochila Seleccion',7,20000,5,'Para que no te olvides nada',2,3,'2022-10-21 19:58:26','2022-10-21 19:58:26'),(2,'Medias violeta',5,3000,5,'Medias sexys violetas para la noche de boda..',3,3,'2022-10-21 19:59:41','2022-10-21 19:59:41'),(3,'Bucaneras con borde violeta (medias)',87,5000,10,'Medias sexys violetas para la noche de boda..',3,3,'2022-10-21 20:00:26','2022-10-21 20:00:26'),(4,'Camiseta infantil suplente',18,14000,10,'para el mas chiquito de la casa, talle unico',5,1,'2022-10-21 20:01:15','2022-10-21 20:01:15'),(6,'Remera con detalle en bolsillo',10,15000,10,'Una remera blanco con detalle de bolsillo camuflado',2,1,'2022-11-25 21:07:30','2022-11-25 21:07:30');
 /*!40000 ALTER TABLE `historiales` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,7 +123,7 @@ CREATE TABLE `historialesimagenes` (
   PRIMARY KEY (`id`),
   KEY `historialesId` (`historialesId`),
   CONSTRAINT `historialesimagenes_ibfk_1` FOREIGN KEY (`historialesId`) REFERENCES `historiales` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -132,7 +132,7 @@ CREATE TABLE `historialesimagenes` (
 
 LOCK TABLES `historialesimagenes` WRITE;
 /*!40000 ALTER TABLE `historialesimagenes` DISABLE KEYS */;
-INSERT INTO `historialesimagenes` VALUES (1,'img-1666382298580.png',1,'2022-10-21 19:58:26','2022-10-21 19:58:26'),(2,'img-1666382372885.png',2,'2022-10-21 19:59:41','2022-10-21 19:59:41'),(3,'img-1666382418296.png',3,'2022-10-21 20:00:26','2022-10-21 20:00:26'),(4,'img-1666382466804.png',4,'2022-10-21 20:01:15','2022-10-21 20:01:15'),(5,'img-1666382517376.png',5,'2022-10-21 20:02:03','2022-10-21 20:02:03');
+INSERT INTO `historialesimagenes` VALUES (1,'img-1666382298580.png',1,'2022-10-21 19:58:26','2022-10-21 19:58:26'),(2,'img-1666382372885.png',2,'2022-10-21 19:59:41','2022-10-21 19:59:41'),(3,'img-1666382418296.png',3,'2022-10-21 20:00:26','2022-10-21 20:00:26'),(4,'img-1666382466804.png',4,'2022-10-21 20:01:15','2022-10-21 20:01:15'),(6,'img-1669410443462.png',6,'2022-11-25 21:07:30','2022-11-25 21:07:30');
 /*!40000 ALTER TABLE `historialesimagenes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -152,7 +152,7 @@ CREATE TABLE `imagenes` (
   PRIMARY KEY (`id`),
   KEY `productosId` (`productosId`),
   CONSTRAINT `imagenes_ibfk_1` FOREIGN KEY (`productosId`) REFERENCES `productos` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -218,7 +218,7 @@ CREATE TABLE `productos` (
   KEY `subCategoriasId` (`subCategoriasId`),
   CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`categoriasId`) REFERENCES `categorias` (`id`),
   CONSTRAINT `productos_ibfk_2` FOREIGN KEY (`subCategoriasId`) REFERENCES `subcategorias` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -355,4 +355,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-17 21:55:55
+-- Dump completed on 2022-11-25 18:09:47
