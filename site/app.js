@@ -25,6 +25,7 @@ const indexRouter = require('./routes/index')
 const adminRouter = require('./routes/admin')
 const productosRouter = require('./routes/productos')
 const usuariosRouter = require('./routes/usuario')
+const apiRouter = require('./routes/api/apiRouter');
 
 /* Archivos estaticos monitoreados */
 liveReloadServer.watch(path.join(__dirname, 'public'));
@@ -60,6 +61,7 @@ app.use("/", indexRouter);
 app.use("/usuario", usuariosRouter);
 app.use("/productos", productosRouter);
 app.use("/admin", adminRouter);
+app.use('/api',apiRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next)=> {
