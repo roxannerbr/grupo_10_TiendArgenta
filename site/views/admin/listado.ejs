@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('../partials/head',{title:'ADMIN | Lista de Productos'}) %>
+<body class="listar">
+  <%- include('../partials/header') %>
+  <main>
+    <h1>Administracion</h1>
+    <div class="btnHeader">
+      <div class="btncrear">
+        <a href="/admin/crear">
+            <button type="button" class="btn crear">Crear Producto</button>
+        </a>
+      </div>
+      <div class="btncrear">
+        <a href="/admin/<%= redirection %>">
+          <button type="button" class="btn crear"><%= redirection==="historial"?"Historial Productos":"Listar" %> </button>
+        </a>
+      </div>
+    </div>
+    <!--TABLA PAGINACION-->
+    <div class="table-responsive tabla-mob">
+      <div class="filtros col-12 d-flex flex-wrap" id="filter">
+        <div class="col-12 my-1">
+          <input class="form-control" name="titulo" type="text" placeholder="Titulo">
+        </div>
+        <div class="col-3 my-1">
+          <select class="form-select" name="categoriasId" aria-label="Default select example">
+            <option value="0" selected>Categoria</option>
+              <% categorias.forEach(categoria => { %>
+                <option value="<%= categoria.id %>"><%= categoria.nombre %></option>
+              <% }) %>
+          </select>
+        </div>
+        <div class="col-3 my-1">
+          <select class="form-select" name="subCategoriasId" aria-label="Default select example">
+            <option value="0" selected>Sub-Categoria</option>
+            <% subCategoria.forEach(subcategoria => { %>
+              <option value="<%= subcategoria.id %>"><%= subcategoria.nombre %> </option>
+            <% }) %>
+          </select>
+        </div>
+        <div class="col-3 my-1">
+          <select class="form-select" name="orderDirect" aria-label="Default select example">
+            <option value="0" selected>Ordenar</option>
+            <option value="ASC">Ascendente</option>
+            <option value="DESC">Descendente</option>
+          </select>
+        </div>
+        <div class="col-3 my-1 size " id="size">
+          <select class="form-select" name="size" aria-label="Default select example">
+            <option value="10">10</option>
+            <option value="15">15</option>
+          </select>
+        </div>
+      </div>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">subCategoria</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Desc</th>
+            <th scope="col">Acción</th>
+          </tr>
+        </thead>
+        <tbody id="contain-tbody"></tbody>
+      </table>
+      <div class="col-12 d-flex justify-content-between align-items-center">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-end" id="pages-links">
+          </ul>
+        </nav>
+      </div>
+      <template id="tempale-tbody">
+        <tr>
+          <th id="id" scope="row"><a href=""></a></th>
+          <td id="titulo" colspan="2"><a href=""></a></td>
+          <th id="categoria"><a href=""></a><a href="/productos/cotillon"></a></th>
+          <th id="subcategoria"><a href=""></a></th>
+          <td id="stock"><a href=""></a></td>
+          <td id="precio"><a href=""></a></td>
+          <td id="descuento"><a href=""></a></td>
+          <td>
+            <div>
+              <a id="btn-edit" href="">
+                    <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
+                  </a>
+                  <form id="btn-delete" action="" method="post">
+                    <button type="submit" id="eliminar-producto" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                  </form>
+                </div>
+          </td>
+        </tr>
+      </template>
+    </div>
+</main>
+<%- include('../partials/footer') %>
+<script src="/javascript/paginacion.js"></script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 'use strict';
 
-let listado = ['Camisetas', 'Pantalones', 'Accesorios', null]
+let listado = ['Camisetas', 'Pantalones', 'Accesorios', 'Otros' ]
 
 let subCategorias = listado.map(subcategoria => {
   let elemento = {

@@ -1,4 +1,4 @@
-const {listar,crear,editar,store,update,destroy,historial,restore,crash} = require('../controllers/adminController');
+const {listar,listado,crear,editar,store,update,destroy,historial,restore,crash} = require('../controllers/adminController');
 const express = require('express');
 const router = express.Router();
 const multer = require('multer')
@@ -9,7 +9,7 @@ const productsValidation=require('../validations/productsValidation');
 
 
 /* get home page */
-router.get('/listar',adminCheck, listar);
+router.get('/listar',adminCheck, listado);
 router.get('/historial',adminCheck,historial);
 
 /* Añadir un producto */

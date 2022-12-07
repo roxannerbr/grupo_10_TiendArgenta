@@ -152,7 +152,7 @@ CREATE TABLE `imagenes` (
   PRIMARY KEY (`id`),
   KEY `productosId` (`productosId`),
   CONSTRAINT `imagenes_ibfk_1` FOREIGN KEY (`productosId`) REFERENCES `productos` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -218,7 +218,7 @@ CREATE TABLE `productos` (
   KEY `subCategoriasId` (`subCategoriasId`),
   CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`categoriasId`) REFERENCES `categorias` (`id`),
   CONSTRAINT `productos_ibfk_2` FOREIGN KEY (`subCategoriasId`) REFERENCES `subcategorias` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -303,7 +303,7 @@ CREATE TABLE `subcategorias` (
 
 LOCK TABLES `subcategorias` WRITE;
 /*!40000 ALTER TABLE `subcategorias` DISABLE KEYS */;
-INSERT INTO `subcategorias` VALUES (1,'Camisetas','2022-10-21 19:51:37','2022-10-21 19:51:37'),(2,'Pantalones','2022-10-21 19:51:37','2022-10-21 19:51:37'),(3,'Accesorios','2022-10-21 19:51:37','2022-10-21 19:51:37'),(4,NULL,'2022-10-21 19:51:37','2022-10-21 19:51:37');
+INSERT INTO `subcategorias` VALUES (1,'Camisetas','2022-10-21 19:51:37','2022-10-21 19:51:37'),(2,'Pantalones','2022-10-21 19:51:37','2022-10-21 19:51:37'),(3,'Accesorios','2022-10-21 19:51:37','2022-10-21 19:51:37'),(4,'Otros','2022-10-21 19:51:37','2022-10-21 19:51:37');
 /*!40000 ALTER TABLE `subcategorias` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -355,4 +355,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-25 18:09:47
+-- Dump completed on 2022-12-07 19:13:12

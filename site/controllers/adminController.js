@@ -23,6 +23,20 @@ listar: (req, res) => {
         });
     });
 },
+listado: (req, res) => {
+  let categorias = db.Categorias.findAll()
+  let subCategoria = db.subCategorias.findAll()
+
+  Promise.all([categorias,subCategoria])
+  .then(([categorias,subCategoria]) => {      
+      return res.render("admin/listado", {
+        categorias,
+        subCategoria,
+        redirection: "historial"
+      })
+  })
+  .catch(error => res.send(error))
+},
 crear: (req, res) => {
       let categorias = db.Categorias.findAll()
       let subCategoria = db.subCategorias.findAll()
