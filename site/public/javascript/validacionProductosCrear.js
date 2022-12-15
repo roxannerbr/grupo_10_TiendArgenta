@@ -66,7 +66,7 @@ window.addEventListener('load', () => {
     categoria.addEventListener('blur', function() {
         switch (true) {
             case !this.value.trim():
-                $('#categoriaError').innerHTML = "Selecciona una opcion"
+                $('#categoriaError').innerHTML = "Debe seleccionar una opcion"
                 this.classList.add('is-invalid')
                 validate.categoria = false
                 break;
@@ -85,7 +85,7 @@ window.addEventListener('load', () => {
     subCategoria.addEventListener('blur', function() {
         switch (true) {
             case !this.value.trim():
-                $('#subCategoriaError').innerHTML = "Selecciona una opcion"
+                $('#subCategoriaError').innerHTML = "Debe seleccionar una opcion"
                 this.classList.add('is-invalid')
                 validate.subCategoria = false
                 break;
@@ -103,7 +103,7 @@ window.addEventListener('load', () => {
         precio.addEventListener('blur', function() {
             switch (true) {
                 case !this.value.trim():
-                    $('#precioError').innerHTML = "Debes ingresar un precio"
+                    $('#precioError').innerHTML = "Debe ingresar un precio"
                     this.classList.add('is-invalid')
                     validate.precio = false
                     break;
@@ -136,7 +136,7 @@ window.addEventListener('load', () => {
                 validate.descuento = false
                 break;
            case !regExNumber.test(this.value.trim()):
-                $('#descuentoError').innerHTML = "Debe ser un numero mayor a 0 y menor a 100"
+                $('#descuentoError').innerHTML = 'De no aplicar descuento inserte 0 (Cero)'
                 this.classList.add('is-invalid')
                 validate.stock = false
                 break;
@@ -182,7 +182,7 @@ window.addEventListener('load', () => {
     descripcion.addEventListener('blur', function() {
         switch (true) {
             case !this.value.trim():
-                $('#descripcionError').innerHTML = "Debes ingresar una descripcion"
+                $('#descripcionError').innerHTML = "Debe ingresar una descripcion"
                 this.classList.add('is-invalid')
                 validate.descripcion = false
                 break;
