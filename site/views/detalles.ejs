@@ -23,25 +23,11 @@
                 <%= producto.descripcion %>
               </p>
             </div>
-            <div class="talles">
-              <h4>Talles</h4>
-              <label for="select">
-                <select name="talles" id="talles">
-                  <option value="">S</option>
-                  <option value="">M</option>
-                  <option value="">L</option>
-                  <option value="">XL</option>
-                  <option value="">XXL</option>
-                  <option value="">XXXL</option>
-                </select>
-              </label>
-              <h4>Stock:<%= producto.stock %></h4>
-            </div>
             <div class="agregarCarrito">
-              <h4>Cantidad</h4>
-                <button class="button button--addOnLeft">-</button>
-                <input type="text" placeholder="Stock" value="1" class="input agregarCarrito__input"/>
-                <button class="button button--addOnRight">+</button>
+              <input value="<%= producto.stock %>" id="stockOculto" />  
+              <div class="button restar" id="decrease">-</div>
+              <input type="number" value="1" min="1" class="input agregarCarrito__input" id="contador"/>
+              <div class="button agregar" id="increase">+</div>
             </div>
               <div class="linea"></div>
             <div class="envio">
@@ -51,22 +37,16 @@
             <div class="linea"></div>
             <div class="precio">
               <div class="contPrice">
-                <h4>Precio</h4>
                 <div class="precioViejo">
                   <small>$<%= producto.precio%></small>
                   <h4><%= producto.descuento%>%</h4>
                 </div>
               </div>
-              <div class="contPrice">
-                <h4>Descuento</h4>
-                <h5>$<%=(producto.precio * producto.descuento / 100)%></h5>
+              <div class="totalFinal">
+                <h4>$<%= producto.precio - (producto.precio * producto.descuento / 100)%></h4>
               </div>
             </div>
             <div class="linea"></div>
-            <div class="totalFinal">
-              <h4>Total</h4>
-              <h4>$<%= producto.precio - (producto.precio * producto.descuento / 100)%></h4>
-            </div>
             <div class="btnComprar">
               <button type="submit"><a href="/productos/carrito">AÑADIR AL CARRITO</a></button>
             </div>
@@ -95,6 +75,6 @@
     </main>
     
     <%- include('./partials/footer') %>
-    
+    <script src="/javascript/increase.js"></script>
   </body>
 </html>

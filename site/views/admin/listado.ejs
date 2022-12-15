@@ -53,51 +53,54 @@
           </select>
         </div>
       </div>
-    <table class="table table-hover">
-        <thead>
+      <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Titulo</th>
+              <th scope="col">Categoria</th>
+              <th scope="col">subCategoria</th>
+              <th scope="col">Stock</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Desc</th>
+              <th scope="col">Acción</th>
+            </tr>
+          </thead>
+          <tbody id="contain-tbody">
+          </tbody>
+        </table>
+        <div class="col-12 d-flex justify-content-center align-items-center">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-end" id="pages-links">
+            </ul>
+          </nav>
+        </div>
+        <template id="tempale-tbody">
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Titulo</th>
-            <th scope="col">Categoria</th>
-            <th scope="col">subCategoria</th>
-            <th scope="col">Stock</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Desc</th>
-            <th scope="col">Acción</th>
+            <th id="id" scope="row"><a href=""></a></th>
+            <td id="titulo" colspan="2"><a href=""></a></td>
+            <th id="categoria"><a href=""></a><a href="/productos/cotillon"></a></th>
+            <th id="subcategoria"><a href=""></a></th>
+            <td id="stock"><a href=""></a></td>
+            <td id="precio"><a href=""></a></td>
+            <td id="descuento"><a href=""></a></td>
+            <td>
+              <div>
+                    <a id="btn-edit" href="">
+                      <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
+                    </a>
+                    <form id="btn-delete" action="" method="post">
+                      <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                    </form>
+                  </div>
+            </td>
           </tr>
-        </thead>
-        <tbody id="contain-tbody"></tbody>
-      </table>
-      <div class="col-12 d-flex justify-content-between align-items-center">
-        <nav aria-label="Page navigation example">
-          <ul class="pagination justify-content-end" id="pages-links">
-          </ul>
-        </nav>
-      </div>
-      <template id="tempale-tbody">
-        <tr>
-          <th id="id" scope="row"><a href=""></a></th>
-          <td id="titulo" colspan="2"><a href=""></a></td>
-          <th id="categoria"><a href=""></a><a href="/productos/cotillon"></a></th>
-          <th id="subcategoria"><a href=""></a></th>
-          <td id="stock"><a href=""></a></td>
-          <td id="precio"><a href=""></a></td>
-          <td id="descuento"><a href=""></a></td>
-          <td>
-            <div>
-              <a id="btn-edit" href="">
-                    <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                  </a>
-                  <form id="btn-delete" action="" method="post">
-                    <button type="submit" id="eliminar-producto" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                  </form>
-                </div>
-          </td>
-        </tr>
-      </template>
+        </template>
     </div>
 </main>
 <%- include('../partials/footer') %>
 <script src="/javascript/paginacion.js"></script>
+<script src="/javascript/borrarHistorial.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
