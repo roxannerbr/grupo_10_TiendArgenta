@@ -151,10 +151,10 @@ module.exports = {
             //console.log(id);
             let {Nombres, Apellidos, dni, telefono, direccion, localidad, provincia, codPost, imagen} = req.body
             db.Usuarios.findOne({
-                /* where:{
+                where:{
                     id:id
-                } */
-                id:id
+                } ,
+                /* id:id */
             })
             .then((usuario) => {
                 //return res.send(usuario)
@@ -184,8 +184,11 @@ module.exports = {
                     /* return res.redirect('/usuario/perfil') */
                 })
                  .then(data=> {
-                    db.Usuarios.findOne({
-                        id: +req.params.id
+                    db.Usuarios.findOne({where:{
+                        
+                        id: +req.params.id,
+                    },
+                
                     })
                     .then(usuario => { 
                         req.session.userLogin = {
@@ -217,10 +220,22 @@ module.exports = {
             })
             .catch((error) => res.send(error));
                 }else {
+        db.Usuarios.findOne({
+            where: {
+                id : req.params.id
+            },
+            include: [{
+                all: true,
+            }]
+        })
+        .then((usuario) => {
+            console.log(errors.mapped());
             return res.render('editarUsuario', {
+                usuario ,
                 errors: errors.mapped(),
                 old: req.body
-        })
+            });
+        }).catch((error)=> res.send(error));
     } 
 },
 

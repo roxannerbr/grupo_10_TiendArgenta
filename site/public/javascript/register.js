@@ -109,9 +109,9 @@ switch (true) {
                     break;
                 case !regExPass.test(Pass.value):
                     $('#passContainer').innerHTML = "<small>La contraseña debe tener entre 6 y 12 caracteres y debe contener una mayuscula, una minuscula y un numero</small>"
-                    email.style.border = "1px solid red"
+                    Pass.style.border = "1px solid red"
                     errores.forEach(e => {
-                        if(e.id === 3 ){
+                        if(e.id === 4 ){
                             e.mensaje = "La contraseña debe tener entre 6 y 12 caracteres y debe contener una mayuscula, una minuscula y un numero"
                             variable = false
                         }
@@ -130,6 +130,7 @@ switch (true) {
             }
         }) 
         Pass2.addEventListener('blur',() => {
+            console.log(Pass2);
             let error = {
                 id: 5,
                 elemento:"Pass2",
@@ -138,9 +139,9 @@ switch (true) {
             let variable = true
             
             switch (true) {case !Pass2.value:
-                $('#passContainer2').innerHTML = "<small>La confirmacion de la contraseña no puede estar vacia</small>"
+                $('#pass2Container').innerHTML = "<small>La confirmacion de la contraseña no puede estar vacia</small>"
                 Pass2.style.border = "1px solid red"
-                error.mensaje = "La confirmacion de la contraseña no puede estar vacia"
+                
                 errores.forEach(e => {
                     if(e.id === 5 ){
                         variable = false
@@ -151,10 +152,10 @@ switch (true) {
                 }
                 break; 
                 case !regExPass.test(Pass2.value):
-                    $('#passContainer2').innerHTML = "<small>La confirmación de contraseña debe tener entre 6 y 12 caracteres y debe contener una mayuscula, una minuscula y un numero</small>"
-                    email.style.border = "1px solid red"
+                    $('#pass2Container').innerHTML = "<small>La confirmación de contraseña debe tener entre 6 y 12 caracteres y debe contener una mayuscula, una minuscula y un numero</small>"
+                    Pass2.style.border = "1px solid red"
                     errores.forEach(e => {
-                        if(e.id === 3 ){
+                        if(e.id === 5 ){
                             e.mensaje = "La confirmación de contraseña contraseña debe tener entre 6 y 12 caracteres y debe contener una mayuscula, una minuscula y un numero"
                             variable = false
                         }
@@ -164,22 +165,22 @@ switch (true) {
                     }
                     break;
                     case Pass2.value != pass.value:
-                        $('#passContainer2').innerHTML = "<small>Las contraseñas no coinciden</small>"
-                        error.mensaje = "Las contraseñas no coinciden"
+                        $('#pass2Container').innerHTML = "<small>Las contraseñas no coinciden</small>"
+                       
                         Pass2.style.border = "1px solid red"
                         errores.forEach(e => {
                             if(e.id === 5 ){
                                 variable = false
                             }
                         });
-                        
+                      
                         if (variable) {
                             errores.push(error)
                         }
                         break;
                      
                 default:
-                    $('#passContainer2').innerHTML = ""
+                    $('#pass2Container').innerHTML = ""
                     Pass2.style.border = "1px solid black"
                     errores = errores.filter(error => {
                         return error.id !== 5
@@ -187,19 +188,35 @@ switch (true) {
                     break;
             }
         })  
-        
-        terminos.addEventListener('blur', (e) => {
-           switch (true) {
-            case !terminos.checked:
-        $("#terminosContainer").innerHTML = "<small>Debe aceptar los terminos y condiciones</small>"
-        terminos.style.border = "1px solid red"
-        break;
-
-    default:
-        $("#terminosContainer").innerHTML = ""
-        terminos.style.border = "1px solid black"
-        break;
-}
+        terminos.addEventListener('click', (e) => {
+          console.log(terminos);
+            let error = {
+            id: 6,
+            elemento:"checkbox",
+            mensaje: "Debe aceptar los terminos y condiciones"
+                }   
+           console.log(errores);
+                let variable = true
+            if (terminos.checked) {  
+                console.log("mensajeConsola");
+                    errores = errores.filter(error => {
+                        return error.id !== 6
+                    })
+            }else{
+            $('#terminosContainer').innerHTML = "<small>Debe aceptar los terminos y condiciones</small>"
+            errores.forEach(e => {
+                if(e.id === 6 ){
+                        error.mensaje = "Debe aceptar los terminos y condiciones"
+                        variable = false
+                    }
+                });
+                if (variable) {
+                    errores.push(error)
+                }
+            
+            }
+            console.log(errores);
+            console.log(terminos.checked);
         })
         imagen.addEventListener('change', function() {
           console.log("mensaje");
@@ -219,9 +236,9 @@ switch (true) {
 
         form.addEventListener('submit',(e) => {
             e.preventDefault();
-    
+            console.log(errores)
             console.log(form.elements);
-            if(errores.length > 0){
+            if(errores.length == 0){
                 form.submit()
             }
         })
