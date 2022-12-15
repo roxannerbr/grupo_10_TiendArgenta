@@ -71,6 +71,11 @@ margin-bottom: 10px;
 .detalles main .descripcion .talles select{
 margin-right: 50px;
 }
+.detalles main input[type=number]::-webkit-inner-spin-button, 
+.detalles main input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 .detalles main .descripcion .agregarCarrito {
     display: flex;
     flex-direction: row;
@@ -92,11 +97,11 @@ margin-right: 50px;
     border: 1px solid var(--azulPetroleo);
     border-radius: 4px;
 }
-.detalles main .descripcion .agregarCarrito .button--addOnLeft {
+.detalles main .descripcion .agregarCarrito .restar {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
-.detalles main .descripcion .agregarCarrito .button--addOnRight {
+.detalles main .descripcion .agregarCarrito .agregar {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
@@ -209,7 +214,7 @@ margin-right: 50px;
         flex-direction: row;
         align-items: flex-start;
         height: auto;
-        width: 100%;
+        width: 98%;
     } 
     .detalles main .descripcion{
         padding: 10px;
@@ -245,7 +250,7 @@ margin-right: 50px;
     .detalles main .descripcion .agregarCarrito {
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: baseline;
     }
     .detalles main .descripcion .agregarCarrito .input {
@@ -253,7 +258,7 @@ margin-right: 50px;
         padding: 0 10px;
         border-radius: 0;
         box-shadow: none;
-        height: 28px;
+        height: 36px;
     }
     .detalles main .descripcion .envio {
         display: flex;

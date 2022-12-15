@@ -2,20 +2,22 @@ let db = require('../../database/models')
 const { Op } = require("sequelize");
 
 module.exports = {
-    paginacion: async (req, res) => {
+    userPagination: async (req, res) => {
         const url = new URL(`${req.protocol}://${req.get('host')}${req.originalUrl}`)
         try {
+            /*let dato = await db.Usuarios.findAndCountAll()
+            return res.send(dato)*/
             let {orderBy, orderDirect, page, size, ...updateQuery} = req.query;
             const order = orderBy ? orderBy : 'id';
             const direction = orderDirect ? orderDirect : 'ASC';
 
             for(let key in updateQuery) {
-                if(key == 'titulo' || key == 'categoriasId' || key == 'subCategoriasId') {
-                    if(updateQuery[key] == null || updateQuery[key].trim().length == 0) {
+                if(key == 'nombre' || key == 'rolId') {
+                    if (updateQuery[key] == null || updateQuery[key].trim().length == 0) {
                         delete updateQuery[key]
-                    } else {
-                        if( key == 'titulo') {
-                            updateQuery[key] = {[Op.substring]: req.query.titulo.trim()}
+                    }else{
+                        if (key == 'nombre'){
+                            updateQuery[key] = {[Op.substring]: req.query.nombre.trim()}
                         }
                     }
                 } else {
@@ -23,13 +25,14 @@ module.exports = {
                     url.searchParams.delete(key)
                 }
             }
+            //console.log(updateQuery);
             const getPagination = (page, size) => {
                 const limit = size ? +size : 10
                 const offset = page ? (page-1) * limit : 0
                 return  {limit, offset}
             }
             const {limit, offset} = getPagination(page, size);
-            //return res.send(data)
+        
             getPageData = (data, page, limit) => {
                 const { count, rows: result } = data;
                 const pages = Math.ceil(count / limit);
@@ -40,6 +43,7 @@ module.exports = {
                 } else {
                     let next_page = ""
                     let previous_page = ""
+
                     if (url.searchParams.has('page') ) {
                         if(!url.searchParams.has('size')) {
                             url.searchParams.set('size', limit)
@@ -60,37 +64,35 @@ module.exports = {
                     }
                     const next = (currentPage == pages) ? null : next_page;
                     const previous = (currentPage == 1) ? null : previous_page;
+
                     return { count, pages, previous, next, result }
                 }
             }
-            let data = await db.Productos.findAndCountAll({
+            let data = await db.Usuarios.findAndCountAll({
                 where: updateQuery,
                 order: [[order, direction]],
                 include : [
                     {
-                        association : 'categoria',
-                        attributes: ['nombre']
-                    },
-                    {
-                        association : 'subcategoria',
+                        association : 'rol',
                         attributes: ['nombre']
                     }
                 ],
                 limit,
                 offset
             })
+            let {count, pages, previous, next, result} = getPageData(data, page, limit)
+            //return res.send(dataPage)
 
-            const { count, pages, previous, next, result } = await getPageData(data, page, limit)
-            return res.status(200).json({
+            return res.status(200).json( {
                 count,
                 pages,
-                previous,
                 next,
+                previous,
                 result
             })
         } catch (error) {
             return res.status(500).json({
-                msg: 'UPPS! Lo siento, ha ocurrido un error!'
+                msg: 'UPPS! Tenes un error, espero que lo encuentres (:'
             })
         }
     }
