@@ -59,7 +59,43 @@ module.exports = {
             })
             .catch(errores => res.send(errores))
             
+        
+         .then(productoNuevo => {
+
+                if (req.files) {
+                    let img = req.files.map(imagen => {
+                        let nuevo = {
+                            nombre: imagen.filename,
+                            id : usuario.id
+                        }
+                        return nuevo
+                    })
+                    db.Imagenes.bulkCreate(img)
+                    .then(imagenes => {
+                        return res.redirect('/register')
+                    })
+                }else{
+                    db.Imagenes.create({
+                        nombre: 'login.png',
+                        productosId: productoNuevo.id
+                    })
+                    .then(imagenes => {
+                        return res.redirect('/register')
+                    })
+                }
+            })
+            .catch(errores => res.send(errores))
+            
+
         } else {
+            let ruta = (dato) => fs.existsSync(path.join(__dirname,'..', '..', 'public', 'images', 'usuario', dato))
+
+            req.files.forEach(imagen => {
+                if (ruta(imagen) && (imagen !== "login.png")) {
+                    fs.unlinkSync(path.join(__dirname,'..', '..', 'public', 'images', 'usuario', imagen))
+                }
+            }) 
+          
             return res.render('register', {
                 errors: errors.mapped(),
                 old: req.body

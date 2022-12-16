@@ -30,9 +30,20 @@
                     <small id="pass2Container"><%= locals.errors && errors.pass2 ? errors.pass2.msg : null %> </small>
                 </div>
                 <div class="mb-3">
-                    <label for="formFileMultiple" class="form-label">Subir imágen</label>
-                    <input class="form-control" type="file" name="imagen" id="formFileMultiple" value="<%= locals.old && old.imagen ? old.nombre: null %>" >
+                    <label for="usuario-img"  class="form-label">Subir imágen</label>
+                    <input class="form-control" type="file" name="imagen" id="usuario-img" value="<%= locals.old && old.imagen ? old.nombre: null %>" >
                     <small id="imagenContainer"><%= locals.errors && errors.imagen ? errors.imagen.msg : null %> </small>
+               <!-- Imagen 1 -->
+
+               <div class="col col-5">
+                <label class="selectImg" for="usuario-img">
+                    <img id="img-preview" class="img-fluid img-thumbnail imagen-height rounded"  src="/images/usuario/login.png" alt="">
+                    <div class="imgHover">
+                        
+                    </div>
+                </label>
+                
+            </div> 
                 </div>
 
                 <div class="aceptoTerm">
@@ -49,6 +60,7 @@
         </section>
     </main>
     <%- include('./partials/footer') %>
+    <script src="/javascript/userImagen.js"></script>
     <script src="/javascript/register.js"></script>
 </body>
 </html>
