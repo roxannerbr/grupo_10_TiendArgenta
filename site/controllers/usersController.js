@@ -23,7 +23,7 @@ module.exports = {
             errors.errors.push(imagen)
         }
         if (errors.isEmpty()) {
-            let {Nombres, Apellidos, dni, telefono, direccion, localidad, provincia,codPost, email, pass} = req.body
+            let {Nombres, Apellidos, dni, telefono, direccion, localidad, provincia,codPost, email, pass,imagen} = req.body
             
             db.Usuarios.create({
                 nombre: Nombres,
@@ -37,7 +37,7 @@ module.exports = {
                 email,
                 password: bcrypt.hashSync(pass, 10),
                 rolId: 2,
-                imagen: req.file > 1 ? req.file.filename : "login.png"
+                imagen: req.file ? req.file.filename : "login.png" /* req.file > 1 ? req.file.filename : "login.png" */
                 
             })
             .then(usuario => {
@@ -52,50 +52,13 @@ module.exports = {
                     provincia: usuario.provincia,
                     codPost: usuario.codPost,
                     email : usuario.email,
-                    image : usuario.imagen,
+                    image : req.file ? req.file.filename : usuario.imagen,
                     rol : usuario.rolId
                 }
                 return res.redirect('/')
             })
             .catch(errores => res.send(errores))
         }  else {
-        
-        /*  .then(productoNuevo => {
-
-                if (req.files) {
-                    let img = req.files.map(imagen => {
-                        let nuevo = {
-                            nombre: imagen.filename,
-                            id : usuario.id
-                        }
-                        return nuevo
-                    })
-                    db.Imagenes.bulkCreate(img)
-                    .then(imagenes => {
-                        return res.redirect('/register')
-                    })
-                }else{
-                    db.Imagenes.create({
-                        nombre: 'login.png',
-                        productosId: productoNuevo.id
-                    })
-                    .then(imagenes => {
-                        return res.redirect('/register')
-                    })
-                }
-            })
-            .catch(errores => res.send(errores))
-            
-
-        } else {
-            let ruta = (dato) => fs.existsSync(path.join(__dirname,'..', '..', 'public', 'images', 'usuario', dato))
-
-            req.files.forEach(imagen => {
-                if (ruta(imagen) && (imagen !== "login.png")) {
-                    fs.unlinkSync(path.join(__dirname,'..', '..', 'public', 'images', 'usuario', imagen))
-                }
-            })  */
-        
             return res.render('register', {
                 errors: errors.mapped(),
                 old: req.body

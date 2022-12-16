@@ -44,7 +44,7 @@ window.addEventListener('load', () => {
             case !this.value.trim():
                 $('#tituloError').innerHTML = "Debes ingresar un titulo"
                 this.classList.add('is-invalid')
-                validate.type = false
+                validate.titulo = false
                 break;
             case !(this.value.trim().length > 2 && this.value.trim().length < 100):
                 $('#tituloError').innerHTML = "El titulo del producto debe tener 2 letras y maximo 10"
@@ -114,7 +114,7 @@ window.addEventListener('load', () => {
                 case !RegExp.test(this.value.trim()):
                     $('#precioError').innerHTML = "Debe ser un numero mayor a 0"
                     this.classList.add('is-invalid')
-                    validate.stock = false
+                    validate.precio = false
                     break 
                 default:
                     $('#precioError').innerHTML = null
@@ -137,7 +137,7 @@ window.addEventListener('load', () => {
                case !regExNumber.test(this.value.trim()):
                     $('#descuentoError').innerHTML = "Debe ser un numero mayor a 0 y menor a 100"
                     this.classList.add('is-invalid')
-                    validate.stock = false
+                    validate.descuento = false
                     break;
                 default:
                     $('#descuentoError').innerHTML = null
@@ -189,7 +189,7 @@ window.addEventListener('load', () => {
             case !(this.value.trim().length >= 10 && this.value.trim().length <= 255):
                 $('#descripcionError').innerHTML = "La descripcion debe contener mas de 10 caracteres"
                 this.classList.add('is-invalid')
-                validate.stock = false
+                validate.descripcion = false
                 break;
             default:
                 $('#descripcionError').innerHTML = null
@@ -219,13 +219,13 @@ window.addEventListener('load', () => {
 
     /* Validacion */
     const validate = {
-        titulo : false,
-        categoria : false ,
-        subCategoria : false ,
-        precio : false,
+        titulo : true,
+        categoria : true ,
+        subCategoria : true ,
+        precio : true,
         descuento : true ,
-        stock : false ,        
-        descripcion : false ,
+        stock : true ,        
+        descripcion : true ,
         imagen : true 
     }
 
