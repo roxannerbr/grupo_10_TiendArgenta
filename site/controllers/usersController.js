@@ -58,9 +58,9 @@ module.exports = {
                 return res.redirect('/')
             })
             .catch(errores => res.send(errores))
-            
+        }  else {
         
-         .then(productoNuevo => {
+        /*  .then(productoNuevo => {
 
                 if (req.files) {
                     let img = req.files.map(imagen => {
@@ -94,8 +94,8 @@ module.exports = {
                 if (ruta(imagen) && (imagen !== "login.png")) {
                     fs.unlinkSync(path.join(__dirname,'..', '..', 'public', 'images', 'usuario', imagen))
                 }
-            }) 
-          
+            })  */
+        
             return res.render('register', {
                 errors: errors.mapped(),
                 old: req.body
