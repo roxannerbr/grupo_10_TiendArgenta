@@ -106,11 +106,57 @@ module.exports = {
             if(recordarme){
                 res.cookie('TiendArgenta',req.session.userLogin,{maxAge: 1000 * 60 * 60 * 24})
             }
-            /* console.log(req.session.userLogin); */
-            return res.redirect('/usuario/perfil')
-            /* return res.send(req.body) */
-            })
-            .catch(errores => res.send(errores))
+            //CARRITO
+            req.session.carrito = []
+            db.Ordenes.findOne({
+                usuariosId: req.session.userLogin.id,
+                status: 'pending',
+                include: [
+                    {
+                        association : 'carrito',
+                        attributes: ['productosId', 'cantidad'],
+                        include: [
+                            {
+                                association : 'producto',
+                                attributes: ['id', 'titulo', 'precio', 'descuento', 'stock'],
+                                include: [
+                                    {
+                                        association : 'imagenes',
+                                        attributes: ['nombre']
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }).then(orden =>{
+                if(!orden) {
+                    console.log("El usuario logueado no tiene una orden pendiente")
+                    return res.redirect('/users/profile')
+
+                } else {
+                    console.log("El usuario logueado tiene una orden pendiente")
+                    orden.carrito.forEach(item => {
+
+                        let producto = {
+                            id: item.producto.id,
+                            titulo: item.producto.titulo,
+                            precio: item.producto.precio,
+                            descuento: item.producto.descuento,
+                            imagen: item.producto.imagenes[0].nombre,
+                            stock: item.producto.stock,
+                            cantidad: +item.cantidad,
+                            subtotal: (+item.producto.precio - (+item.producto.precio * +item.producto.descuento / 100)) * item.cantidad ,
+                            ordenId: orden.id ,
+                        }
+                        req.session.carrito.push(producto)
+                    })
+                    console.log(req.session.carrito)
+                    return res.redirect('/usuario/perfil')
+                }
+            }).catch(errores => res.send(errores))
+            
+        }).catch(errores => res.send(errores))
         } else {
             //return res.send(req.body)
             return res.render('login', {
@@ -151,10 +197,9 @@ module.exports = {
             //console.log(id);
             let {Nombres, Apellidos, dni, telefono, direccion, localidad, provincia, codPost, imagen} = req.body
             db.Usuarios.findOne({
-                /* where:{
+                where:{
                     id:id
-                } */
-                id:id
+                }
             })
             .then((usuario) => {
                 //return res.send(usuario)

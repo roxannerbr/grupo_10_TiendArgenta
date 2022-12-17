@@ -1,7 +1,14 @@
-.carrito .buy{
+.carrito main h1 {
+    width: 100%;
+    background: var(--dorado);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+.carrito main .compra{
     margin: 20px;
 }
-.carrito .buy .radio{
+.carrito main .radio{
     border: solid 1px var(--azulPetroleo);
     border-radius: 5px;
     box-shadow: 0 0 30px rgb(0 0 0);
@@ -15,13 +22,13 @@
     padding: 8px;
     justify-content: center;
 }
-.carrito .buy .radio input{
+.carrito main  .radio input{
     margin-right: 2px;
 }
-.carrito .buy .radio label.cuenta-text{
+.carrito main  .radio label.cuenta-text{
     margin-right: 15px;
 }
-.carrito .buy .submit{
+.carrito main  .submit{
     border: solid 1px var(--azulPetroleo);
     border-radius: 5px;
     box-shadow: 0 0 30px rgb(0 0 0);
@@ -34,47 +41,47 @@
     align-items: center;
     padding: 8px;
 }
-.carrito .buy .email{
+.carrito main  .email{
     width: 100%;
     margin-bottom: 10px;
     border: solid 1px var(--azulPetroleo);
     border-radius: 5px;
     box-shadow: 0 0 3px rgba(0,0,0,18);
 }
-.carrito .buy .email input{
+.carrito main  .email input{
     border: none;
 }
-.carrito .buy .registrarse{
+.carrito main  .registrarse{
     margin-bottom: 10px;
     border-radius: 5px;
     background-color: var(--celeste);
     color: white;
     padding: 5px;
 }
-.carrito .buy .registrarse:hover {
+.carrito main  .registrarse:hover {
     background-color: var(--dorado);
     color: white;
 }
-.carrito .buy .registrarse a {
+.carrito main  .registrarse a {
     color: white;
     font-weight: 400;
     text-decoration: none;
 }
-.carrito .buy h4{
+.carrito main  h4{
     background-color: white;
     font-size: 30px;
     color: var(--azulPetroleo);
     text-align: center;
     margin-top: 20px;
 }
-.carrito .buy .product img{
+.carrito main  .product img{
     height: 70px;
     border: solid 1px var(--azulPetroleo);
     border-radius: 20px;
     box-shadow: 0 0 3px rgba(0,0,0,18);
     margin-top: 10px;
 }
-.carrito .buy .product article{
+.carrito main  .product article{
     margin-top: 10px;
     background-color: white;
     width: 100%;
@@ -87,19 +94,19 @@
     justify-content: space-between;
     flex-direction: row;
 }
-.carrito .buy .product h3{
+.carrito main  .product h3{
     margin-top: 10px;
     font-weight: bold;
     color: var(--cyan);
     font-size: 15px;
     margin-left: 5px;
 }
-.carrito .buy .product .detalle{
+.carrito main  .product .detalle{
     display: flex;
     flex-direction: column;
     width: 50%;
 }
-.carrito .buy .product .precio{
+.carrito main  .product .precio{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -107,7 +114,7 @@
     padding: 5px;
     flex-wrap: wrap;
 }
-.carrito .buy .product .principal{
+.carrito main  .product .principal{
     color: green;
     font-size: 16px;
     font-weight: bold;
@@ -115,7 +122,7 @@
     width: 30%;
     
 }
-.carrito .buy .product .secundario{
+.carrito main  .product .secundario{
     text-decoration: line-through;
     font-weight: bold;
     font-size: 12px;
@@ -124,7 +131,7 @@
     width: 30%;
     
 }
-.carrito .buy .product .descuento{
+.carrito main  .product .descuento{
     font-size: 18px;
     color: red;
     font-weight: bold;
@@ -132,21 +139,21 @@
     width: 30%;
 }
 
-.carrito .buy .agregarCarrito {
+.carrito main  .agregarCarrito {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     margin-left: 16px;
 }
 
-.carrito .buy .agregarCarrito .agregarCarrito__input {
+.carrito main  .agregarCarrito .agregarCarrito__input {
     border-left: 0;
     border-right: 0;
     width: 30px;
     text-align: center;
     padding: 5px;
     }
-.carrito .buy .agregarCarrito .button {
+.carrito main  .agregarCarrito .button {
     cursor: pointer;
     padding: 5px 10px;
     color: #FFFFFF;
@@ -155,23 +162,23 @@
     border: 1px solid var(--azulPetroleo);
     border-radius: 4px;
 }
-.carrito .buy .agregarCarrito .button--addOnLeft{
+.carrito main  .agregarCarrito .restar{
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     padding: 5px;
 }
-.carrito .buy .agregarCarrito .button--addOnRight{
+.carrito main  .agregarCarrito .agregar{
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     padding: 5px;
 }
-.carrito .buy .agregarCarrito .input {
+.carrito main  .agregarCarrito .input {
     border: 1px solid #D7DBDD;
     padding: 0 10px;
     border-radius: 0;
     box-shadow: none;
 }
-/* .carrito .buy .product .añadir{
+/* .carrito main  .product .añadir{
     display: flex;
     font-weight: 900;
     color: var(--azulPetroleo);
@@ -181,17 +188,17 @@
     align-items: center;
     justify-content: center;
 } */
-/* .carrito .buy .product input{
+/* .carrito main  .product input{
     border: solid 2px;
     height: 30px;
     width: 20px;
 }
-.carrito .buy .product .restar, .carrito .buy .product .agregar{
+.carrito main  .product .restar, .carrito main  .product .agregar{
     font-size: 2rem;
     border: none;
     height: 3rem;
 } */
-.carrito .buy .product .botones{
+.carrito main  .product .botones{
     display: flex;
     width: 20%;
     flex-direction: column;
@@ -199,19 +206,19 @@
     align-items: center;
     padding: 4px;
 }
-.carrito .buy .product .botones i{
+.carrito main  .product .botones i{
     width: 25px;
     height: 25px;
     padding: 5px;
     background-color: var(--celeste);
     color: white;
 }
-.carrito .buy .product .botones i:hover{
+.carrito main  .product .botones i:hover{
     background-color: var(--dorado);
     color: white;
 }
 
-.carrito .buy .resumen{
+.carrito main  .resumen{
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -223,19 +230,19 @@
     border: solid 1px var(--azulPetroleo);
     box-shadow: 0 0 30px rgb(0 0 0);
 }
-.carrito .buy .resumen tr{
+.carrito main  .resumen tr{
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
 }
-.carrito .buy .linea {
+.carrito main  .linea {
     border-top: 1px solid var(--dorado);
     height: 2px;
     max-width: 400px;
     padding: 0;
 }
-.carrito .buy .codigo{
+.carrito main  .codigo{
     background-color: white;
     padding: 10px;
     margin-top: 10px;
@@ -249,17 +256,17 @@
     border: solid 1px var(--azulPetroleo);
     box-shadow: 0 0 30px rgb(0 0 0);
 }
-.carrito .buy .codigo label{
+.carrito main  .codigo label{
     margin-right: 20px;
     font-weight: 600;
 }
-.carrito .buy .codigo input{
+.carrito main  .codigo input{
     width: 50%;
     height: 20px;
     border: solid 1px var(--azulPetroleo);
     text-align: center;
 }
-.carrito .buy .codigo .cdgo{
+.carrito main  .codigo .cdgo{
     width: 90%;
     background-color: var(--celeste);
     color: white;
@@ -269,15 +276,15 @@
     transition: 1s hall;
     margin-top: 10px;
 }
-.carrito .buy .codigo .cdgo:hover {
+.carrito main  .codigo .cdgo:hover {
     background-color: var(--dorado);
     color: white;
 }
-.carrito .buy .compraFinal{
+.carrito main  .compraFinal{
     display:flex;
     justify-content: space-between;
 }
-.carrito .buy .compraFinal .btnfinal{
+.carrito main  .compraFinal .btnfinal{
     width: 180px;
     background-color: var(--celeste);
     color: white;
@@ -287,33 +294,33 @@
     transition: 1s hall;
     margin-top: 10px;
 }
-.carrito .buy .compraFinal .btnfinal a {
+.carrito main  .compraFinal .btnfinal a {
     color: white;
     font-weight: 400;
     text-decoration: none;
 }
-.carrito .buy .compraFinal .btnfinal:hover {
+.carrito main  .compraFinal .btnfinal:hover {
     background-color: var(--dorado);
     color: white;
 }
 
 @media(min-width:768px){
-    .carrito .buy{
+    .carrito main .compra {
         display: flex;
         flex-direction: column;
         margin: 20px;
     }
-    .carrito .buy .total, .carrito .buy .product{
+    .carrito main  .total, .carrito main  .product{
         width: 48%;
     }
-    .carrito .buy .compra{
+    .carrito main  .compra{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         align-items: flex-start;
         align-content: center;
     }
-    .carrito .buy .radio{
+    .carrito main  .radio{
         display: flex;
         flex-direction: row-reverse;
         font-weight: bold;
@@ -322,7 +329,7 @@
         justify-content: center;
     }
     
-    .carrito .buy .resumen{
+    .carrito main  .resumen{
         background-color: white;
         display: flex;
         flex-direction: column;
@@ -334,39 +341,39 @@
         border: solid 1px var(--azulPetroleo);
         box-shadow: 0 0 30px rgb(0 0 0);
     }
-    .carrito .buy .resumen tr{
+    .carrito main  .resumen tr{
         display: flex;
         flex-direction: row;
         width: 100%;
         justify-content: space-between;
     }
-    .carrito .buy .linea {
+    .carrito main  .linea {
         border-top: 1px solid var(--dorado);
         height: 2px;
         max-width: 400px;
         padding: 0;
     }
 
-    .carrito .buy .agregarCarrito {
+    .carrito main  .agregarCarrito {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: baseline;
     }
-    .carrito .buy .agregarCarrito .input {
+    .carrito main  .agregarCarrito .input {
         border: 1px solid #D7DBDD;
         padding: 0 10px;
         border-radius: 0;
         box-shadow: none;
         height: 28px;
     }
-    /* .carrito .buy .product .añadir{
+    /* .carrito main  .product .añadir{
         display: flex;
         justify-content: flex-start;
         align-items: center;
         flex-direction: row-reverse;
     } */
-    .carrito .buy .codigo .btnfinal{
+    .carrito main  .codigo .btnfinal{
         width: 90%;
         background-color: var(--celeste);
         color: white;
@@ -376,7 +383,7 @@
         transition: 1s hall;
         margin-top: 10px;
     }
-    .carrito .buy .codigo .btnfinal:hover {
+    .carrito main  .codigo .btnfinal:hover {
         background-color: var(--dorado);
         color: white;
     }
