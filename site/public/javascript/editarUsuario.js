@@ -17,6 +17,16 @@ window.addEventListener("load", () => {
     let provincia = $("#provincia")
     let codPost = $("#codPost")
     
+    let errores = [{
+        id: 1,
+        elemento:"nombre",
+        mensaje: "El Nombre es obligatorio"
+    },{
+        id: 2,
+        elemento:"apellido",
+        mensaje: "Falta el apellido"
+    }]
+
     imagen.addEventListener('change', function() {
         console.log("mensaje");
           switch (true) {
@@ -32,14 +42,25 @@ window.addEventListener("load", () => {
           funcValidate(validate)
       })
 nombre.addEventListener("blur",() => {
+    let error = {
+        id: 1,
+        elemento:"nombre",
+        mensaje: "El Nombre es obligatorio"
+    }
 switch (true) {
     case !nombre.value:
-        $("#nombresContainer").innerHTML = "<small>El campo nombre es obligatorio</small>"
-        nombre.style.border = "1px solid red"
-        nombre.style.color = "red"
-        nombre.style.small = "red"
-        
-        break;
+                $('#nombresContainer').innerHTML = "<small>El Nombre es obligatorio</small>"
+                nombre.style.border = "1px solid red"
+                errores.forEach(e => {
+                    if(e.id === 1 ){
+                        e.mensaje = "El Nombre es obligatorio"
+                        variable = false
+                    }
+                });
+                if (variable) {
+                    errores.push(error)
+                }
+                break;
     case nombre.value.length < 2:
         $("#nombresContainer").innerHTML = "<small>El campo nombre debe tener al menos 2 caracteres</small>"
         nombre.style.border = "1px solid red"
@@ -48,26 +69,47 @@ switch (true) {
         break;
 
     default:
-        $("#nombresContainer").innerHTML = ""
-        nombre.style.border = "1px solid black"
-        break;
+        $('#nombresContainer').innerHTML = ""
+                nombre.style.border = "1px solid black"
+                errores = errores.filter(error => {
+                    return error.id !== 1
+                })
+                break;
 }
 
 })
 apellido.addEventListener("blur",() => {
+    let error = {
+        id: 2,
+        elemento:"apellido",
+        mensaje: "Falta el apellido"
+    }
+    let variable = true
 switch (true) {
     case !apellido.value:
-        $("#apellidosContainer").innerHTML = "<small>El campo apellido es obligatorio</small>"
-        apellido.style.border = "1px solid red"
-        break;
+                $('#apellidosContainer').innerHTML = "<small>El apellido es obligatorio</small>"
+                apellido.style.border = "1px solid red"
+                errores.forEach(e => {
+                    if(e.id === 2 ){
+                        e.mensaje = "El apellido es obligatorio"
+                        variable = false
+                    }
+                });
+                if (variable) {
+                    errores.push(error)
+                }
+                break;
         case apellido.value.length < 2:
             $("#apellidosContainer").innerHTML = "<small>El campo apellido debe tener al menos 2 caracteres</small>"
             apellido.style.border = "1px solid red"
             break;
-    default:
-        $("#apellidosContainer").innerHTML = ""
-        apellido.style.border = "1px solid black"
-        break;
+            default:
+                $('#apellidosContainer').innerHTML = ""
+                apellido.style.border = "1px solid black"
+                errores = errores.filter(error => {
+                    return error.id !== 2
+                })
+                break;
 }
 
 })
@@ -148,6 +190,14 @@ localidad.addEventListener("blur",() => {
                     codPost.style.border = "1px solid black"
                     break;
             
+                }
+            })
+            form.addEventListener('submit',(e) => {
+                e.preventDefault();
+        
+                console.log(form.elements);
+                if(errores.length > 0){
+                    form.submit()
                 }
             })
 })

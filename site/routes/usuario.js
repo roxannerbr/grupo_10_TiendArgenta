@@ -3,6 +3,7 @@ const router = express.Router();
 const userCheck = require('../middlewares/userCheck')
 const registerValidation = require('../validations/registerValidation');
 const loginValidation = require('../validations/loginValidation');
+const editarUsuarioValidation = require('../validations/editarUsuarioValidation');
 const upload = require('../middlewares/multerUsuarios');
 const {login, register,  processLogin, processRegister,  usuarios, logout, editarUsuario, edit} = require('../controllers/usersController');
 
@@ -25,7 +26,7 @@ router.get('/check', function(req, res){
 
 //editar un usuario
 router.get("/editarUsuario/:id", editarUsuario);
-router.put("/editarUsuario/:id",upload.single('imagen'),edit);
+router.put("/editarUsuario/:id" ,upload.single('imagen'),editarUsuarioValidation,edit);
 
 router.get('/perfil',userCheck,usuarios)
 router.delete('/logout', logout)

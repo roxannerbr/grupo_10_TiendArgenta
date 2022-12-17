@@ -16,7 +16,7 @@ check('dni').trim().isLength({max:9}).withMessage('El campo no debe tener mas de
 check('telefono').trim().isLength({max:10}).withMessage('El campo no debe tener mas de 10 digitos').bail(),
 
 /* direccion */ 
-check('direccion').trim().matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{2,30}$/).withMessage("El campo debe tener numeros y al menos una letra mayuscula").bail(),
+check('direccion').trim().bail(),
 
 /* localidad */ 
 check('localidad').trim().matches(/^[a-zA-Z\sñáéíóúü ]*$/).withMessage("El campo debe contener solo letras").bail(),
