@@ -8,20 +8,21 @@
             <h1>Contactanos</h1>
             <form action="" method="post">
                 <div>
-                    <input class="mensaje" type="name" name="name" id="name" placeholder="Nombre" required>
-                    <small>*Ingrese su nombre:</small>
+                    <input class="mensaje" type="name" name="name" id="name" value="<%= locals.old && old.name ? old.name: null %>"placeholder="Nombre y apellido" required>
+                    <small><%= locals.errors && errors.name ? errors.name.msg : null %> </small>    
                 </div>
                 <div>
-                    <input class="mensaje" type="email" name="email" id="email" placeholder="Ingrese su correo electr&oacute;nico" required>
-                    <small>*Ingrese su E-mail</small>
+                    <input class="mensaje" type="email" name="email" id="email" value="<%= locals.old && old.email ? old.email: null %>" placeholder="Ingrese su correo electr&oacute;nico" required>
+                    <small><%= locals.errors && errors.email ? errors.email.msg : null %> </small>
                 </div>
                 <div>
-                  <input class="mensaje" type="asunto" name="asunto" id="asunto" placeholder="Asunto" required>
-                  <small>*Ingrese un asunto</small>
+                  <input class="mensaje" type="asunto" name="asunto" id="asunto" value="<%= locals.old && old.asunto ? old.asunto: null %>" placeholder="Asunto" required>
+                  <small><%= locals.errors && errors.asunto ? errors.asunto.msg : null %> </small>
                 </div>
                 <div>
-                  <textarea class="mensaje" type="mensaje" name="mensaje" id="mensaje" placeholder="Mensaje" rows="6" required></textarea>
-                  <small>*Ingrese un mensaje</small>
+                  <textarea class="mensaje" type="mensaje" name="mensaje" id="mensaje"
+                  value="<%= locals.old && old.mensaje ? old.mensaje: null %>" placeholder="Mensaje" rows="6" required></textarea>
+                  <small><%= locals.errors && errors.asunto ? errors.asunto.msg : null %> </small>
                 </div>
                 <div> 
                     <button type="submit" class="boton">Enviar</button>

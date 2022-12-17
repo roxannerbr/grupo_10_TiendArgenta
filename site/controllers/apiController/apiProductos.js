@@ -30,6 +30,32 @@ module.exports = {
                 return res.status(200).json(totalResp)
             }).catch(errors => res.status(500).json('Error al acceder a la vista'));
     },
+    productosPorCategoria: (req, res) =>{
+        let categoriaSeleccionada = req.params.categorias
+        db.Categorias.findOne({
+            where:{
+                id: categoriaSeleccionada,
+            },
+            include:[{
+                association: 'productos',
+                include: [{
+                    all: true
+                }]
+            }]
+        }).then(categorias =>{
+            let categoryResp={
+                referencia: 'CATEGORIA',
+                status: 200,
+                meta: {
+                    url: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+                },
+                data: {
+                    categorias
+                }
+            }
+            return res.status(200).json(categoryResp)
+        }).catch(error => res.send(error))
+    },
     detalles: (req, res) => {
         const id = req.params.id;
         db.Productos.findByPk(id, {

@@ -1,22 +1,23 @@
 window.addEventListener('load', () => {
 
-    let vinculacion = 'Documento vinculado con exito'
+    let vinculacion = 'Buscador iniciado'
     console.log(vinculacion);
     
     let $ = (elemento) => document.querySelector(elemento)
-    let selectorAll = (elemento) => document.querySelectorAll(elemento)
-
-    let buscador = $('#search')
-    let botones = selectorAll('.botonRedireccion')
-    let palabra = ""
-    buscador.onkeydown = (event) => {
-        let letra = event.key
-        letra === 'Backspace' ? palabra = palabra.substring(0, palabra.length - 1) : letra.length > 1 ? null : palabra = palabra += letra
-        if (palabra === 'camiseta') {
-            botones.forEach(element => {
-                element.style.backgroundColor = 'var(--celeste)'
-            });
-        }
-    }
     
+    let buscador = $('#search')
+    let form = $('#searchForm')
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        console.log(buscador.value)
+
+        let value = $('#search').value
+        //let value = e.target.value
+        if (value && value.trim().length > 0){
+            value = value.trim().toLowerCase()
+            form.submit()
+        }
+    })
 })
+

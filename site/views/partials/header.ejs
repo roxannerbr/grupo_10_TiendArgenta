@@ -7,8 +7,8 @@
       </a>
       </div>
       <div class="icons">
-          <form action="/busqueda" method="get">
-            <input type="search" name="search" placeholder="Buscar"/>
+          <form id="searchForm" action="/busqueda" method="GET">
+            <input type="text" id="search" name="search" placeholder="Buscar"/>
           </form>
 
           <% if(locals.userLogin){ %> 
