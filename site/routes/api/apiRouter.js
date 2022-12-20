@@ -1,4 +1,4 @@
-const {listado, detalles, productosPorCategoria} = require('../../controllers/apiController/apiProductos');
+const {listado, detalles, ProductosCopy} = require('../../controllers/apiController/apiProductos');
 const {listUsers, idUsers} = require('../../controllers/apiController/apiUsers');
 const {paginacion} = require('../../controllers/apiController/paginacion');
 const {userPagination} = require('../../controllers/apiController/userPagination');
@@ -12,7 +12,7 @@ router.get('/usuarios/:id', idUsers);
 /* GET API DE PRODUCTOS. */
 router.get('/productos', paginacion /*listado*/);
 router.get('/productos/:id', detalles);
-router.get('/categorias/:categorias', productosPorCategoria);
-
-
+router.get('/categorias', listado);
+/* router.post('/productosCopy', ProductosCopy);  */
+ 
 module.exports = router;

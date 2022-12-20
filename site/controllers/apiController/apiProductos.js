@@ -7,26 +7,15 @@ module.exports = {
                 let totalResp={
                     referencia: 'LISTADO DE PRODUCTOS',
                     status :200,
-                    meta:{
-                        count: productos.length,
-                        countByCategory: {
-                            Cotillon: productos.filter(byCategory => byCategory.categoriasId == 1).length,
-                            Coleccionables: productos.filter(byCategory => byCategory.categoriasId == 2).length,
-                            IndumentariaMujer: productos.filter(byCategory => byCategory.categoriasId == 3).length,
-                            IndumentariaHombre: productos.filter(byCategory => byCategory.categoriasId == 4).length,
-                            IndumentariaMujer: productos.filter(byCategory => byCategory.categoriasId == 5).length,
-                            url: `http://localhost:3012/api/productos/`
+                    data:{
+                            Cotillon: productos.filter(byCategory => byCategory.categoriasId == 1),
+                            Coleccionables: productos.filter(byCategory => byCategory.categoriasId == 2),
+                            IndumentariaMujer: productos.filter(byCategory => byCategory.categoriasId == 3),
+                            IndumentariaHombre: productos.filter(byCategory => byCategory.categoriasId == 4),
+                            IndumentariaInfantil: productos.filter(byCategory => byCategory.categoriasId == 5),
+                            url: `http://localhost:3012/api/productos`
                         },
-                    },                    
-                    data: productos.map( byCategory => {
-                        return {
-                            id: byCategory.id,
-                            name: byCategory.titulo,
-                            description: byCategory.descripcion,
-                            detail: "http://localhost:3012/api/productos/"+byCategory.id
-                        }
-                    })
-                }
+                    }                   
                 return res.status(200).json(totalResp)
             }).catch(errors => res.status(500).json('Error al acceder a la vista'));
     },

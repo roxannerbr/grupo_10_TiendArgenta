@@ -26,14 +26,18 @@ CREATE TABLE `carritos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `usuariosId` int(11) NOT NULL,
   `productosId` int(11) NOT NULL,
+  `ordenesId` int(11) NOT NULL,
+  `cantidad` int(11) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `usuariosId` (`usuariosId`),
   KEY `productosId` (`productosId`),
+  KEY `ordenesId` (`ordenesId`),
   CONSTRAINT `carritos_ibfk_1` FOREIGN KEY (`usuariosId`) REFERENCES `usuarios` (`id`),
-  CONSTRAINT `carritos_ibfk_2` FOREIGN KEY (`productosId`) REFERENCES `productos` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  CONSTRAINT `carritos_ibfk_2` FOREIGN KEY (`productosId`) REFERENCES `productos` (`id`),
+  CONSTRAINT `carritos_ibfk_3` FOREIGN KEY (`ordenesId`) REFERENCES `ordenes` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +46,7 @@ CREATE TABLE `carritos` (
 
 LOCK TABLES `carritos` WRITE;
 /*!40000 ALTER TABLE `carritos` DISABLE KEYS */;
+INSERT INTO `carritos` VALUES (1,2,1,1,2,'2022-11-11 17:23:29','2022-11-11 17:23:29');
 /*!40000 ALTER TABLE `carritos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -67,7 +72,7 @@ CREATE TABLE `categorias` (
 
 LOCK TABLES `categorias` WRITE;
 /*!40000 ALTER TABLE `categorias` DISABLE KEYS */;
-INSERT INTO `categorias` VALUES (1,'Cotillon','2022-10-21 19:51:37','2022-10-21 19:51:37'),(2,'Coleccionables','2022-10-21 19:51:37','2022-10-21 19:51:37'),(3,'Mujer','2022-10-21 19:51:37','2022-10-21 19:51:37'),(4,'Hombre','2022-10-21 19:51:37','2022-10-21 19:51:37'),(5,'Infantil','2022-10-21 19:51:37','2022-10-21 19:51:37');
+INSERT INTO `categorias` VALUES (1,'Cotillon','2022-12-15 13:43:42','2022-12-15 13:43:42'),(2,'Coleccionables','2022-12-15 13:43:42','2022-12-15 13:43:42'),(3,'Mujer','2022-12-15 13:43:42','2022-12-15 13:43:42'),(4,'Hombre','2022-12-15 13:43:42','2022-12-15 13:43:42'),(5,'Infantil','2022-12-15 13:43:42','2022-12-15 13:43:42');
 /*!40000 ALTER TABLE `categorias` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,7 +108,7 @@ CREATE TABLE `historiales` (
 
 LOCK TABLES `historiales` WRITE;
 /*!40000 ALTER TABLE `historiales` DISABLE KEYS */;
-INSERT INTO `historiales` VALUES (1,'Mochila Seleccion',7,20000,5,'Para que no te olvides nada',2,3,'2022-10-21 19:58:26','2022-10-21 19:58:26'),(2,'Medias violeta',5,3000,5,'Medias sexys violetas para la noche de boda..',3,3,'2022-10-21 19:59:41','2022-10-21 19:59:41'),(3,'Bucaneras con borde violeta (medias)',87,5000,10,'Medias sexys violetas para la noche de boda..',3,3,'2022-10-21 20:00:26','2022-10-21 20:00:26'),(4,'Camiseta infantil suplente',18,14000,10,'para el mas chiquito de la casa, talle unico',5,1,'2022-10-21 20:01:15','2022-10-21 20:01:15'),(6,'Remera con detalle en bolsillo',10,15000,10,'Una remera blanco con detalle de bolsillo camuflado',2,1,'2022-11-25 21:07:30','2022-11-25 21:07:30');
+INSERT INTO `historiales` VALUES (1,'Mochila Seleccion',7,20000,5,'Para que no te olvides nada',2,3,'2022-10-21 19:58:26','2022-10-21 19:58:26'),(2,'Medias violeta',5,3000,5,'Medias sexys violetas para la noche de boda..',3,3,'2022-10-21 19:59:41','2022-10-21 19:59:41'),(3,'Bucaneras con borde violeta (medias)',87,5000,10,'Medias sexys violetas para la noche de boda..',3,3,'2022-10-21 20:00:26','2022-10-21 20:00:26'),(4,'Camiseta infantil suplente',18,14000,10,'para el mas chiquito de la casa, talle unico',5,1,'2022-10-21 20:01:15','2022-10-21 20:01:15');
 /*!40000 ALTER TABLE `historiales` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,7 +128,7 @@ CREATE TABLE `historialesimagenes` (
   PRIMARY KEY (`id`),
   KEY `historialesId` (`historialesId`),
   CONSTRAINT `historialesimagenes_ibfk_1` FOREIGN KEY (`historialesId`) REFERENCES `historiales` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -132,7 +137,7 @@ CREATE TABLE `historialesimagenes` (
 
 LOCK TABLES `historialesimagenes` WRITE;
 /*!40000 ALTER TABLE `historialesimagenes` DISABLE KEYS */;
-INSERT INTO `historialesimagenes` VALUES (1,'img-1666382298580.png',1,'2022-10-21 19:58:26','2022-10-21 19:58:26'),(2,'img-1666382372885.png',2,'2022-10-21 19:59:41','2022-10-21 19:59:41'),(3,'img-1666382418296.png',3,'2022-10-21 20:00:26','2022-10-21 20:00:26'),(4,'img-1666382466804.png',4,'2022-10-21 20:01:15','2022-10-21 20:01:15'),(6,'img-1669410443462.png',6,'2022-11-25 21:07:30','2022-11-25 21:07:30');
+INSERT INTO `historialesimagenes` VALUES (1,'img-1666382298580.png',1,'2022-10-21 19:58:26','2022-10-21 19:58:26'),(2,'img-1666382372885.png',2,'2022-10-21 19:59:41','2022-10-21 19:59:41'),(3,'img-1666382418296.png',3,'2022-10-21 20:00:26','2022-10-21 20:00:26'),(4,'img-1666382466804.png',4,'2022-10-21 20:01:15','2022-10-21 20:01:15');
 /*!40000 ALTER TABLE `historialesimagenes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -152,7 +157,7 @@ CREATE TABLE `imagenes` (
   PRIMARY KEY (`id`),
   KEY `productosId` (`productosId`),
   CONSTRAINT `imagenes_ibfk_1` FOREIGN KEY (`productosId`) REFERENCES `productos` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -175,15 +180,13 @@ DROP TABLE IF EXISTS `ordenes`;
 CREATE TABLE `ordenes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `usuariosId` int(11) NOT NULL,
-  `carritosId` int(11) NOT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `usuariosId` (`usuariosId`),
-  KEY `carritosId` (`carritosId`),
-  CONSTRAINT `ordenes_ibfk_1` FOREIGN KEY (`usuariosId`) REFERENCES `usuarios` (`id`),
-  CONSTRAINT `ordenes_ibfk_2` FOREIGN KEY (`carritosId`) REFERENCES `carritos` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  CONSTRAINT `ordenes_ibfk_1` FOREIGN KEY (`usuariosId`) REFERENCES `usuarios` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -192,6 +195,7 @@ CREATE TABLE `ordenes` (
 
 LOCK TABLES `ordenes` WRITE;
 /*!40000 ALTER TABLE `ordenes` DISABLE KEYS */;
+INSERT INTO `ordenes` VALUES (1,2,'pending','2022-11-11 17:23:29','2022-11-11 17:23:29');
 /*!40000 ALTER TABLE `ordenes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -218,7 +222,7 @@ CREATE TABLE `productos` (
   KEY `subCategoriasId` (`subCategoriasId`),
   CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`categoriasId`) REFERENCES `categorias` (`id`),
   CONSTRAINT `productos_ibfk_2` FOREIGN KEY (`subCategoriasId`) REFERENCES `subcategorias` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -253,7 +257,7 @@ CREATE TABLE `roles` (
 
 LOCK TABLES `roles` WRITE;
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
-INSERT INTO `roles` VALUES (1,'Admin','2022-10-21 19:51:37','2022-10-21 19:51:37'),(2,'Usuario','2022-10-21 19:51:37','2022-10-21 19:51:37');
+INSERT INTO `roles` VALUES (1,'Admin','2022-12-15 13:43:44','2022-12-15 13:43:44'),(2,'Usuario','2022-12-15 13:43:44','2022-12-15 13:43:44');
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -277,7 +281,7 @@ CREATE TABLE `sequelizemeta` (
 
 LOCK TABLES `sequelizemeta` WRITE;
 /*!40000 ALTER TABLE `sequelizemeta` DISABLE KEYS */;
-INSERT INTO `sequelizemeta` VALUES ('20221008041627-create-categorias.js'),('20221008041826-create-sub-categorias.js'),('20221008042323-create-roles.js'),('20221008042627-create-usuarios.js'),('20221008043305-create-productos.js'),('20221008043653-create-historiales.js'),('20221008043935-create-imagenes.js'),('20221008043947-create-historiales-imagenes.js'),('20221008044055-create-carritos.js'),('20221008044249-create-ordenes.js');
+INSERT INTO `sequelizemeta` VALUES ('20221008041627-create-categorias.js'),('20221008041826-create-sub-categorias.js'),('20221008042323-create-roles.js'),('20221008042627-create-usuarios.js'),('20221008043305-create-productos.js'),('20221008043653-create-historiales.js'),('20221008043935-create-imagenes.js'),('20221008043947-create-historiales-imagenes.js'),('20221008044007-create-ordenes.js'),('20221008044255-create-carritos.js');
 /*!40000 ALTER TABLE `sequelizemeta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -303,7 +307,7 @@ CREATE TABLE `subcategorias` (
 
 LOCK TABLES `subcategorias` WRITE;
 /*!40000 ALTER TABLE `subcategorias` DISABLE KEYS */;
-INSERT INTO `subcategorias` VALUES (1,'Camisetas','2022-10-21 19:51:37','2022-10-21 19:51:37'),(2,'Pantalones','2022-10-21 19:51:37','2022-10-21 19:51:37'),(3,'Accesorios','2022-10-21 19:51:37','2022-10-21 19:51:37'),(4,'Otros','2022-10-21 19:51:37','2022-10-21 19:51:37');
+INSERT INTO `subcategorias` VALUES (1,'Camisetas','2022-12-15 13:43:43','2022-12-15 13:43:43'),(2,'Pantalones','2022-12-15 13:43:43','2022-12-15 13:43:43'),(3,'Accesorios','2022-12-15 13:43:43','2022-12-15 13:43:43'),(4,'Otros','2022-12-15 13:43:43','2022-12-15 13:43:43');
 /*!40000 ALTER TABLE `subcategorias` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -355,4 +359,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-14  0:29:28
+-- Dump completed on 2022-12-20 10:29:36

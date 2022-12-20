@@ -15,6 +15,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const methodOverride=require('method-override');
 const session= require ('express-session');
+const cors = require('cors')
 
 /* implementamos locals dentro la app */
 const userLogin= require('./middlewares/userLoginCheck');
@@ -46,6 +47,7 @@ app.use(session({
   secret:"TiendArgenta"}));
 
 app.use(userLogin);
+app.use(cors())
 
 app.use(cookieParser());
 
