@@ -96,11 +96,17 @@
                 </div>
 <!--SUBIDA DE IMAGENES-->
                 <div class="mb-3">
-                    <label for="formFileMultiple" class="form-label">Subir imagenes del producto</label>
-                    <input class="form-control" type="file" name="imagen" id="imagen" accept="image/png" value="<%= locals.old && old.imagen ? old.nombre: null %><%= producto.imagenes[0].nombre %>" >
+                    <label for="producto-img" class="form-label">Subir imagenes del producto</label>
+                    <input class="form-control" type="file" name="imagen" id="producto-img" accept="image/png" value="<%= locals.old && old.imagen ? old.nombre: null %><%= producto.imagenes[0].nombre %>" >
                     <p id="imagenError">
                         <%= locals.errors && errors.imagen ? errors.imagen.msg : null %>
                     </p>
+                    <!-- Imagen 1 -->
+                    <div class="col col-5">
+                        <label class="selectImg" for="producto-img">
+                            <img id="img-preview" class="img-fluid img-thumbnail imagen-height rounded"  src="<%= producto.imagenes[0].nombre %>" value="<%= locals.old && old.imagen ? old.nombre: null %><%= producto.imagenes[0].nombre %>" alt="">
+                        </label>   
+                    </div> 
                 </div>
                 
                 <div class="button d-flex justify-content-center">
@@ -114,5 +120,5 @@
 </body>
 </html>
 
-<script src="/javascript/imagenes.js"></script>
+<script src="/javascript/productosImagen.js"></script>
 <script src="/javascript/validacionProductosEditar.js"></script>

@@ -23,7 +23,7 @@
                     </p>
 
                 </div>
-    <!--TIPO DE PRODUCTO-->
+    <!--Categoria de Producto-->
                 <div class="form-floating">
                     <select class="form-select" name="Categoria" id="categoria" aria-label="Floating label select example">
                         <% if (locals.errors && old.categoria) { %>
@@ -43,8 +43,8 @@
                     <label for="floatingSelect">Categoria de Producto</label>
                     <p id="categoriaError"><%= (locals.errors && errors.categoria) ?  errors.categoria.msg : null %></p>
                 </div>
-    <!--SUBCATEGORIAsS PARA INDUMENTARIA-->
-            <%# if () { %>
+    <!--SUBCATEGORIAS PARA INDUMENTARIA/Tipo de Producto-->
+            
                 <div class="form-floating">
                     <select class="form-select" name="subCategoria" id="subCategoria" aria-label="Floating label select example">
                         <% if (locals.errors && old.subCategoria){%>
@@ -55,7 +55,7 @@
                                 <% }else{ %>
                                     <option value="<%= subCategoria.id %>"><%= subCategoria.nombre %></option>
                                 <% } %>
-                                <option value="<%= subCategoria.id %>"><%= subCategoria.nombre %></option>
+                                
                             <% }) %>
                         <% }else{ %>
                             <option selected hidden value="">Selecciona una opcion</option>
@@ -67,7 +67,7 @@
                     <label for="floatingSelect">Tipo de Producto</label>
                     <small id="subCategoriaError"><%= (locals.errors && errors.subCategoria) ? errors.subCategoria.msg : null%></small>
                 </div>
-            <%# } %>
+            
         <!--PRECIO-->
                 <div class="form-floating">
                     <input type="number" name="Precio" class="form-control" min="1" id="Precio" value="<%=locals.old && old.precio ?old.nombre: null%>" placeholder="Precio">
@@ -102,11 +102,17 @@
                 </div>
         <!--SUBIDA DE IMAGENES-->
                 <div class="mb-3">
-                    <label for="formFileSm" class="form-label">Subir imagenes del producto</label>
-                    <input class="form-control form-control-sm" type="file" name="imagen" id="imagen" accept="image/png" value="<%= locals.old && old.imagen ? old.nombre: null %>" >
+                    <label for="producto-img" class="form-label">Subir imagenes del producto</label>
+                    <input class="form-control form-control-sm" type="file" name="imagen" id="producto-img" accept="image/png" value="<%= locals.old && old.imagen ? old.nombre: null %>" >
                     <p id="imagenError">
                         <%= locals.errors && errors.imagen ? errors.imagen.msg : null %>
                     </p>
+                    <!-- Imagen 1 -->
+                    <div class="col col-5">
+                        <label class="selectImg" for="producto-img">
+                            <img id="img-preview" class="img-fluid img-thumbnail imagen-height rounded"  src="/images/productos/default-image.png" alt="">
+                        </label>   
+                    </div> 
                 </div>
                 
                 <div class="button d-flex justify-content-center">
@@ -120,5 +126,5 @@
 </body>
 </html>
 
-<script src="/javascript/imagenes.js"></script>
+<script src="/javascript/productosImagen.js"></script>
 <!-- <script src="/javascript/validacionProductosCrear.js"></script> -->
