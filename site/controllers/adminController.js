@@ -237,31 +237,78 @@ destroy: (req, res) => {
       }],
     })
     .then(producto => {
-        db.Historiales.create({
-          titulo: producto.titulo,
-          precio: producto.precio,
-          descuento: producto.descuento,
-          stock: producto.stock,
-          descripcion: producto.descripcion,
-          categoriasId: producto.categoriasId,
-          subCategoriasId: producto.subCategoriasId,
+      producto = producto.dataValues
+      producto.carritos = producto.carritos.map(carrito => carrito.dataValues)
+      producto.categoria = producto.categoria.dataValues
+      producto.subcategoria = producto.subcategoria.dataValues
+      producto.imagenes = producto.imagenes.map(imagen => imagen.dataValues)
+      console.log(producto);
+      if (producto.carritos.length > 0) {
+        let orden = db.Ordenes.destroy({
+          where: {
+            id: producto.carritos[0].ordenesId,
+          },
         })
-        .then(historial => {
-            db.HistorialesImagenes.create({
-              nombre: producto.imagenes[0].nombre,
-              historialesId: historial.id,
-            })
-            .then(imagen => {
-              db.Productos.destroy({
-                where: {
-                  id: id,
-                },
-              })
-              .then(producto => {
-                res.redirect('/admin/historial');              
-              })
-            })
+        let carrito = db.Carritos.destroy({
+          where: {
+            id: producto.carritos[0].id,
+          },
         })
+        Promise.all([orden,carrito])
+        .then(([orden,carrito]) => {
+          db.Historiales.create({
+            titulo: producto.titulo,
+            precio: producto.precio,
+            descuento: producto.descuento,
+            stock: producto.stock,
+            descripcion: producto.descripcion,
+            categoriasId: producto.categoriasId,
+            subCategoriasId: producto.subCategoriasId,
+          })
+          .then(historial => {
+              db.HistorialesImagenes.create({
+                nombre: producto.imagenes[0].nombre,
+                historialesId: historial.id,
+              })
+              .then(imagen => {
+                db.Productos.destroy({
+                  where: {
+                    id: id,
+                  },
+                })
+                .then(producto => {
+                  res.redirect('/admin/historial');              
+                })
+              })
+          })
+        })
+      }else{
+         db.Historiales.create({
+           titulo: producto.titulo,
+           precio: producto.precio,
+           descuento: producto.descuento,
+           stock: producto.stock,
+           descripcion: producto.descripcion,
+           categoriasId: producto.categoriasId,
+           subCategoriasId: producto.subCategoriasId,
+         })
+         .then(historial => {
+             db.HistorialesImagenes.create({
+               nombre: producto.imagenes[0].nombre,
+               historialesId: historial.id,
+             })
+             .then(imagen => {
+               db.Productos.destroy({
+                 where: {
+                   id: id,
+                 },
+               })
+               .then(producto => {
+                 res.redirect('/admin/historial');              
+               })
+             })
+         })
+      }
     })
     .catch((error) => res.send(error));
           
@@ -334,23 +381,21 @@ restore: (req, res) => {
     })
     .then(producto => {
 
-      let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'productos', dato))
-      producto.imagenes.forEach(imagen => {
+      /* let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'productos', dato)) */
+      /* producto.imagenes.forEach(imagen => {
           if (ruta(imagen.nombre) && (imagen.nombre !== "default-image.png")) {
               fs.unlinkSync(path.join(__dirname, '..', 'public', 'images', 'productos', imagen.nombre))
           }
+      }) */
+      db.Historiales.destroy({
+          where: {
+            id: id
+          }
+      })
+      .then(eliminar => {
+        return res.redirect("/admin/listar");
       })
     })
-        
-      
-        db.Historiales.destroy({
-            where: {
-              id: id
-            }
-        })
-        .then(eliminar => {
-          return res.redirect("/admin/listar");
-        })
       .catch((error) => res.send(error));
   },
 };
