@@ -2,17 +2,21 @@ let db = require('../../database/models')
 
 module.exports = {
     listado: (req, res) => {
-        db.Productos.findAll()
-            .then(productos => {
+        db.Productos.findAll({
+            include:[
+                {association:'imagenes',}
+            ]
+    })
+    .then(productos => {
                 let totalResp={
                     referencia: 'LISTADO DE PRODUCTOS',
                     status :200,
                     data:{
                             Cotillon: productos.filter(byCategory => byCategory.categoriasId == 1),
                             Coleccionables: productos.filter(byCategory => byCategory.categoriasId == 2),
-                            IndumentariaMujer: productos.filter(byCategory => byCategory.categoriasId == 3),
-                            IndumentariaHombre: productos.filter(byCategory => byCategory.categoriasId == 4),
-                            IndumentariaInfantil: productos.filter(byCategory => byCategory.categoriasId == 5),
+                            Mujer: productos.filter(byCategory => byCategory.categoriasId == 3),
+                            Hombre: productos.filter(byCategory => byCategory.categoriasId == 4),
+                            Infantil: productos.filter(byCategory => byCategory.categoriasId == 5),
                             url: `http://localhost:3012/api/productos`
                         },
                     }                   
