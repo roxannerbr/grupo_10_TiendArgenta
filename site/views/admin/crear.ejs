@@ -65,7 +65,7 @@
                         <% } %> 
                     </select>
                     <label for="floatingSelect">Tipo de Producto</label>
-                    <small id="subCategoriaError"><%= (locals.errors && errors.subCategoria) ? errors.subCategoria.msg : null%></small>
+                    <p id="subCategoriaError"><%= (locals.errors && errors.subCategoria) ? errors.subCategoria.msg : null%></p>
                 </div>
             
         <!--PRECIO-->
@@ -123,8 +123,8 @@
         </form>
     </main>
     <%- include('../partials/footer') %>
+    
+    <script src="/javascript/productosImagen.js"></script>
+    <script src="/javascript/validacionProductosCrear.js"></script> 
 </body>
 </html>
-
-<script src="/javascript/productosImagen.js"></script>
-<script src="/javascript/validacionProductosCrear.js"></script> 

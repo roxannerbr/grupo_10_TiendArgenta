@@ -42,25 +42,29 @@
                     <label for="floatingSelect">Categoria de Producto</label>
                     <p id="categoriaError"><%= (locals.errors && errors.categoria) ?  errors.categoria.msg : null %></p>
                 </div>
-    <!--SUBCATEGORIAS PARA INDUMENTARIA-->
+        <!--SUBCATEGORIAS PARA INDUMENTARIA-->
                 <div class="form-floating">
                     <select class="form-select" name="subCategoria" id="subCategoria" aria-label="Floating label select example">
                         <% if (locals.errors && old.subcategoria) { %>
                             <option hidden value="">Selecciona una opcion</option>
-                            <option <%= old.subcategoria == "1" ? "selected" : null %>  value="camisetas">Camisetas</option>
-                            <option <%= old.subcategoria == "2" ? "selected" : null %>   value="pantalones">Pantalones</option>
-                            <option <%= old.subcategoria == "3" ? "selected" : null %>   value="accesorios">Accesorios</option>
-                            <option <%= old.subcategoria == "4" ? "selected" : null %>   value="">Otros</option>
+                            <% subcategoria.forEach(subcategoria => { %>
+                                <% if (subcategoria.id == old.subcategoria) { %>
+                                    <option value="<%= subcategoria.id %>" selected><%= subcategoria.nombre %></option>
+                                <% }else{ %>
+                                    <option value="<%= subcategoria.id %>"><%= subcategoria.nombre %></option>
+                                <% } %>
+                                <option value="<%= subcategoria.id %>"><%= subcategoria.nombre %></option>
+                            <% }) %>
                         <% }else{ %>
                             <option selected hidden value="">Selecciona una opcion</option>
                             <% subcategoria.forEach(subcategoria => { %>
-                                <option value="<%= subcategoria.id %>" <%= producto.subcategoriasId === subcategoria.id ? "selected" : null %>><%= subcategoria.nombre %></option>
+                                <option value="<%= subcategoria.id %>" <%= producto.subCategoriasId === subcategoria.id ? "selected" : null %>><%= subcategoria.nombre %></option>
                             <% }) %>
                         <% } %> 
                     </select>
                     
                     <label for="floatingSelect">Tipo de Producto</label>
-                    <small id="subCategoriaError"><%= (locals.errors && errors.subCategoria) ? errors.subCategoria.msg : null%></small>
+                    <p id="subCategoriaError"><%= (locals.errors && errors.subCategoria) ? errors.subCategoria.msg : null%></p>
                 </div>
         <!--PRECIO-->
                 <div class="form-floating">
@@ -96,17 +100,11 @@
                 </div>
 <!--SUBIDA DE IMAGENES-->
                 <div class="mb-3">
-                    <label for="producto-img" class="form-label">Subir imagenes del producto</label>
-                    <input class="form-control" type="file" name="imagen" id="producto-img" accept="image/png" value="<%= locals.old && old.imagen ? old.nombre: null %><%= producto.imagenes[0].nombre %>" >
+                    <label for="formFileMultiple" class="form-label">Subir imagenes del producto</label>
+                    <input class="form-control" type="file" name="imagen" id="imagen" accept="image/png" value="<%= locals.old && old.imagen ? old.nombre: null %><%= producto.imagenes[0].nombre %>" >
                     <p id="imagenError">
                         <%= locals.errors && errors.imagen ? errors.imagen.msg : null %>
                     </p>
-                    <!-- Imagen 1 -->
-                    <div class="col col-5">
-                        <label class="selectImg" for="producto-img">
-                            <img id="img-preview" class="img-fluid img-thumbnail imagen-height rounded"  src="<%= producto.imagenes[0].nombre %>" value="<%= locals.old && old.imagen ? old.nombre: null %><%= producto.imagenes[0].nombre %>" alt="">
-                        </label>   
-                    </div> 
                 </div>
                 
                 <div class="button d-flex justify-content-center">
@@ -120,5 +118,5 @@
 </body>
 </html>
 
-<script src="/javascript/productosImagen.js"></script>
+<script src="/javascript/imagenes.js"></script>
 <script src="/javascript/validacionProductosEditar.js"></script>
