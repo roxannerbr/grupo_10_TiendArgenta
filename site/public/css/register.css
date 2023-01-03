@@ -46,7 +46,7 @@
     color: #ff0000;
 }
 .register .aceptoTerm label {
-    display: flex;
+    /* display: flex; */
     text-align: center;
     font-size: 12px;
     line-height: 20px;

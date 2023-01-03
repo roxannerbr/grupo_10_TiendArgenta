@@ -41,7 +41,7 @@ header .contenedor-header form{
     color: var(--dorado);
 }
 
-header .contenedor-header input[type="search"]{
+header .contenedor-header input[type="text"]{
     width: 40px;
     background-color: white;
     background-image: url('/images/home/header/search-icon.png');
@@ -56,7 +56,7 @@ header .contenedor-header input[type="search"]{
     transition: .5s; 
     outline: none; 
 }
-header .contenedor-header input[type="search"]:focus{
+header .contenedor-header input[type="text"]:focus{
     width: 130px;
     background-position: left center;
     color: #000;

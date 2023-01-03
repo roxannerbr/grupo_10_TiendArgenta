@@ -1,12 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const userCheck= require('../middlewares/userCheck')
+const userCheck = require('../middlewares/userCheck')
 const registerValidation = require('../validations/registerValidation');
 const loginValidation = require('../validations/loginValidation');
-const upload= require('../middlewares/multerUsuarios');
+const editarUsuarioValidation = require('../validations/editarUsuarioValidation');
+const upload = require('../middlewares/multerUsuarios');
 const {login, register,  processLogin, processRegister,  usuarios, logout, editarUsuario, edit} = require('../controllers/usersController');
-const { Router } = require('express');
-const usersController = require('../controllers/usersController');
 
 //registro de usuario
 router.get('/register', register)
@@ -27,7 +26,7 @@ router.get('/check', function(req, res){
 
 //editar un usuario
 router.get("/editarUsuario/:id", editarUsuario);
-router.put("/editarUsuario/:id",upload.single('imagen'),edit);
+router.put("/editarUsuario/:id" ,upload.single('imagen'),editarUsuarioValidation,edit);
 
 router.get('/perfil',userCheck,usuarios)
 router.delete('/logout', logout)

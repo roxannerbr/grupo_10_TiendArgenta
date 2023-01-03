@@ -4,12 +4,12 @@
 <body class="productos">
   <%- include('./partials/header') %>
     <main>
-        <h1 class="productsPage"><%= categoriaSeleccionada %></h1>
+        <h1 class="productsPage"><%= categorias.nombre %></h1>
         <section class="cardProduct">
-          <% productoPorCategoria.forEach(producto => { %>
+          <% categorias.productos.forEach(producto => { %>
               <%- include('./partials/cards',{
                   id: producto.id,
-                  imagen: producto.imagen,
+                  imagen: producto.imagenes[0].nombre,
                   titulo: producto.titulo,
                   descuento: producto.descuento,
                   precio: producto.precio

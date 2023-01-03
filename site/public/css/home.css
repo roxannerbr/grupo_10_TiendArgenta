@@ -6,6 +6,39 @@
     text-align: center;
     padding: 10px 0;
 }
+/*CUENTA ATRAS*/
+.home main #cuenta {
+	display: flex;
+	justify-content: center;
+    flex-direction: row;
+}
+
+.home main .simply-section {
+    background: #fff;
+    color: var(--celeste);
+    width: 80px;
+    height: 90px;
+    margin: 0px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home main .simply-amount {
+	display: block;
+    text-align: center;
+	font-size: 40px;
+	font-weight: 700;
+}
+
+.home main .simply-word {
+    display:flex;
+    flex-direction: column;
+    font-size: 12px;
+	font-weight: 500;
+}
+
 /*PRODUCTOS*/
 .home main .cards{
     display: grid;
@@ -88,6 +121,8 @@
         transform: translate3d(calc(-100% * 3), 0, 0);
     }
 }
+
+
 @media(min-width:425px){
     .home main .card:hover {
         transform: translateY(-15px);
@@ -108,6 +143,39 @@
         text-align: center;
         margin: 10px;
         font-size: 20px;
+    }
+    /*CUENTA ATRAS*/
+    .home main #cuenta {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .home main .simply-section {
+        background: #fff;
+        color: var(--celeste);
+        width: 110px;
+        height: 120px;
+        margin: 0px 10px;
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0,0,0,18);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home main .simply-amount {
+        display: block;
+        text-align: center;
+        font-size: 55px;
+        font-weight: 700;
+    }
+
+    .home main .simply-word {
+        display:flex;
+        flex-direction: column;
+        font-weight: 500;
+        font-size: 12px;
     }
 }
 
@@ -134,5 +202,39 @@
         text-align: center;
         margin: 10px;
         font-size: 20px;
+    }
+    /*CUENTA ATRAS*/
+    .home main #cuenta {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .home main .simply-section {
+        background: #fff;
+        color: var(--celeste);
+        width: 140px;
+        height: 150px;
+        margin: 0px 10px;
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0,0,0,18);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home main .simply-amount {
+        display: block;
+        text-align: center;
+        font-size: 55px;
+        font-weight: 700;
+    }
+
+    .home main .simply-word {
+        display:flex;
+        flex-direction: column;
+        text-align: center;
+        font-weight: 500;
+        font-size: 12px;
     }
 }

@@ -35,7 +35,7 @@
             <tr>
               <th scope="row"><a href="/admin/editar/<%= producto.id %>"><%= producto.id %> </a></th>
               <td><a href="/admin/editar/<%= producto.id %>"><%= producto.titulo %></a></td>
-              <td><a href="/products/detail/<%= producto.id %>"><%= producto.categoria %></a></td>
+              <td><a href="/products/detail/<%= producto.id %>"><%= producto.categoria.nombre %></a></td>
               <td><a href="/admin/editar/<%= producto.id %> "><%= producto.stock %></a></td>
               <td><a href="/admin/editar/<%= producto.id %> ">$<%= producto.precio %></a></td>
               <td><a href="/admin/editar/<%= producto.id %> "><%= producto.descuento %>%</a></td>
@@ -55,8 +55,8 @@
                       <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                     </form>
                   <% }else{ %>
-                    <form action="/admin/crash/<%= producto.id%>?_method=DELETE" method="post">
-                      <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                    <form class="danger" action="/admin/crash/<%= producto.id%>?_method=DELETE" method="post">
+                      <button type="submit"  class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                     </form>
                   <% } %>
                 </div>
@@ -68,5 +68,8 @@
     </div>
 </main>
 <%- include('../partials/footer') %>
+<script src="/javascript/paginacion.js"></script>
+<script src="/javascript/borrarHistorial.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

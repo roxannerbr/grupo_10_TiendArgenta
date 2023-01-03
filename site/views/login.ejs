@@ -6,25 +6,25 @@
     <main>
         <section class="form-reglog">
             <h1>Iniciar sesión</h1>
-            <form action="" method="post">
+            <form action="/usuario/login" method="post" id="form">
                 <div>
-                    <input class="ingreso" type="email" name="Correo" id="Correo" placeholder="Ingrese su correo electr&oacute;nico">
-                    <% if (locals.errors && errors.Correo) { %>
-                        <small><%= errors.Correo.msg %> </small>
-                    <% } %> 
+                    <input class="ingreso" type="email" name="email" id="email" value="<%=
+                        (typeof locals.old != 'undefined' && old.email )? old.email : "" %>" placeholder="Ingrese su email electr&oacute;nico">
+                    
+                    <small id="emailContainer"><%= locals.errors && errors.email ? errors.email.msg : null %> </small>
                 </div>
                 <div>
                     <input class="ingreso" type="password" name="pass" id="pass" placeholder="Ingrese su contraseña">
-                    <% if (locals.errors && errors.pass) { %>
-                        <small><%= errors.pass.msg %> </small>
-                    <% } %> 
+                    
+                    <small id="passContainer"><%= locals.errors && errors.pass ? errors.pass.msg : null %> </small>
+                    
                 </div>
                 <div class="recForm">
-                    <label><input type="checkbox" name="check">&nbsp;Recordarme</label>
+                    <label><input type="checkbox" name="recordarme" id="recordarme">&nbsp;Recordarme</label>
                     <label><a href="/">Olvidé mi contraseña</a></label>
                 </div>
                 <div> 
-                    <button type="submit"class="boton">Iniciar sesión</button>
+                    <button type="submit" class="boton">Iniciar sesión</button>
                 </div>
                 <div class="linea"></div>
                 <p>¿No tenes cuenta?<a href="/usuario/register"> Registrarme</a></p>
@@ -32,5 +32,6 @@
         </section>
     </main>
     <%- include('./partials/footer') %>
+    <script src="/javascript/loginVal.js"></script>
 </body>
 </html>

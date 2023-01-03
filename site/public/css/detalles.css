@@ -45,8 +45,11 @@ margin-bottom: 10px;
 }   
 .detalles main .descripcion .desc{
     background-color: var(--celesteClaro);
+    display: flex;
     margin: 4px;
     border-radius: 15px;
+    flex-direction: column;
+    align-items: center;
 }    
 .detalles main .descripcion .desc h4{
     text-decoration: underline;
@@ -71,10 +74,15 @@ margin-bottom: 10px;
 .detalles main .descripcion .talles select{
 margin-right: 50px;
 }
+.detalles main input[type=number]::-webkit-inner-spin-button, 
+.detalles main input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 .detalles main .descripcion .agregarCarrito {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .detalles main .descripcion .agregarCarrito .agregarCarrito__input {
@@ -92,11 +100,11 @@ margin-right: 50px;
     border: 1px solid var(--azulPetroleo);
     border-radius: 4px;
 }
-.detalles main .descripcion .agregarCarrito .button--addOnLeft {
+.detalles main .descripcion .agregarCarrito .restar {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
-.detalles main .descripcion .agregarCarrito .button--addOnRight {
+.detalles main .descripcion .agregarCarrito .agregar {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
@@ -116,15 +124,16 @@ margin-right: 50px;
 .detalles main .descripcion .envio{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+}
 
-}
-.detalles main .descripcion .envio i{
-    color: var(--celeste);
-    margin: 5px;
-}
 .detalles main .descripcion .envio a{
-    padding-left: 10px;
+    color: var(--dorado);
+    font-size: 14px;
+}
+.detalles main .descripcion .envio a:hover{
+    color: var(--celeste);
+    font-size: 14px;
 }
 .detalles main .precio{
     display: flex;
@@ -209,7 +218,7 @@ margin-right: 50px;
         flex-direction: row;
         align-items: flex-start;
         height: auto;
-        width: 100%;
+        width: 98%;
     } 
     .detalles main .descripcion{
         padding: 10px;
@@ -245,7 +254,7 @@ margin-right: 50px;
     .detalles main .descripcion .agregarCarrito {
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: baseline;
     }
     .detalles main .descripcion .agregarCarrito .input {
@@ -253,13 +262,13 @@ margin-right: 50px;
         padding: 0 10px;
         border-radius: 0;
         box-shadow: none;
-        height: 28px;
+        height: 36px;
     }
     .detalles main .descripcion .envio {
         display: flex;
         flex-direction: row;
-        align-items: baseline;
-        align-content: center;
+        align-items: center;
+        justify-content: space-around;
     }
     .detalles main .descripcion .envio h3{
         font-size: 16px;
@@ -331,6 +340,7 @@ margin-right: 50px;
     }
     .detalles main .descripcion .envio h3 {
         font-size: 24px;
+        margin-bottom: unset;
     }
    
     .detalles main .nombre h2{

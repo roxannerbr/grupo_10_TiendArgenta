@@ -16,6 +16,11 @@
     max-width: 25%;
     border: 2px solid var(--dorado);
 } 
+.usuario .foto .selImg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .usuario .foto h3{
     width: 100%;
     display: flex;
@@ -26,21 +31,42 @@
     margin: 5px 0px;
 }
 .usuario .foto .btn{
-    margin-right: 10%;
     background-color: var(--dorado);
     color: white;
     border-color: var(--azulPetroleo);
+}
+.usuario main .foto .btnUsers{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+.usuario main .foto .editUser{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: var(--dorado);
+    color: white;
+    padding: 10px;
+    margin: 0;
+}
+.usuario main .foto .editUser:hover {
+    background-color: var(--azulPetroleo);
+    color: white;
+}
+.usuario main .foto .editUser a {
+    color: white;
+    font-weight: 400;
 }
 .usuario main .foto .cSession{
     margin-bottom: 10px;
     border-radius: 5px;
     background-color: var(--celeste);
     color: white;
-    padding: 5px;
+    padding: 10px;
     margin: 0;
 }
 .usuario main .foto .cSession:hover {
-    background-color: var(--dorado);
+    background-color: var(--azulPetroleo);
     color: white;
 }
 .usuario main .foto .cSession a {
@@ -68,6 +94,14 @@
 }
 .usuario main .accordion-body small{
     color:var(--azulPetroleo);
+    display: flex;
+}
+.usuario main .accordion-body .red small{
+    color:red;
+    display: flex;
+}
+.usuario main .red small{
+    color:red;
     display: flex;
 }
 .usuario main .accordion-body h3{
@@ -102,6 +136,11 @@
         border-top: 1px solid var(--dorado);
         
     }
+    .usuario .foto .selImg{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .usuario .foto h3{
         width: 100%;
         display: flex;
@@ -111,16 +150,36 @@
         justify-content: center;
         margin: 0;
     }
-    
+    .usuario main .foto .btnUsers{
+        display: flex;
+        width: 25%;
+    }
+    .usuario main .foto .editUser{
+        margin-bottom: 10px;
+        border-radius: 5px;
+        background-color: var(--dorado);
+        color: white;
+        padding: 10px;
+        margin: 0;
+    }
+    .usuario main .foto .editUser:hover {
+        background-color: var(--azulPetroleo);
+        color: white;
+    }
+    .usuario main .foto .editUser a {
+        color: white;
+        font-weight: 400;
+    }
     .usuario main .foto .cSession{
+        margin-bottom: 10px;
         border-radius: 5px;
         background-color: var(--celeste);
         color: white;
-        padding: 5px;
+        padding: 10px;
         margin: 0;
     }
     .usuario main .foto .cSession:hover {
-        background-color: var(--dorado);
+        background-color: var(--azulPetroleo);
         color: white;
     }
     .usuario main .foto .cSession a {

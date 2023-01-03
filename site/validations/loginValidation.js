@@ -1,22 +1,36 @@
-const {check, body}=require ('express-validator');
-const usuarios= require('../data/users.json');
+const {check, body} = require ('express-validator');
+const db = require('../database/models')
 const bcryptjs = require('bcryptjs');
 
-module.exports=[
-    /* email */
-    check('Correo').trim().notEmpty().withMessage('Debes ingresar un email').bail().isEmail().withMessage('Ingresa un email válido'),
-    /* password */
-    check('pass').trim().notEmpty().withMessage('Debes completar la contraseña').bail().isLength({min:6}). withMessage('Debe contener al menos 6 caracteres'),
-    /* body */
-    body('Correo')
-    .custom((value,{req}) =>{
-        let usuario = usuarios.find(user => user.Correo === value && bcryptjs.compareSync(req.body.pass, user.pass))
 
-        if (usuario) {
-            return true
-        }else{
-            return false
-        }
-    })
-    .withMessage('El Correo y/o la contraseña no son válidos')
+module.exports=[
+    /* EMAIL */
+    check('email').trim()
+    .notEmpty().withMessage('Debe ingresar su email').bail()
+    .isEmail().withMessage('Debe ingresar un email válido.'),
+    
+
+    /* PASSWORD */
+    check('pass').trim()
+    .notEmpty().withMessage('Debe ingresar su contraseña')
+    .isLength({min:6, max:12}).withMessage('La contraseña debe tener entre 6 y 12 caracteres y debe contener una mayuscula, una minuscula y un numero.'),
+    
+    /* BODY */
+    body('pass')
+        .custom((value,{req})=>{
+            
+            return db.Usuarios.findOne({
+                where:{
+                    email:req.body.email
+                }
+            })
+            .then(user => {
+                if(!bcryptjs.compareSync(value, user.dataValues.password)){
+                    return Promise.reject()
+                }
+            })
+            .catch(() => {
+                return Promise.reject("El Email o la contraseña no coinciden.")
+            })
+        })
 ]

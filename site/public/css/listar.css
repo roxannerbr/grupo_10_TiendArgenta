@@ -39,6 +39,12 @@
     font-weight: 500;
     text-decoration: none;
 }
+.listar main .table-responsive tbody#contain-tbody tr td div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
 .listar main .table-responsive .btnMod{
     display: flex;
     justify-content: center;
@@ -96,9 +102,15 @@
         align-items: stretch;
         width: 80%;
     }
-    .listar main .tabla-mob tbody tr{
+    .listar main .tabla-mob tbody#contain-tbody tr{
         display: flex;
         flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+    }
+    .listar main .tabla-mob tbody#contain-tbody tr td div{
+        display: flex;
+        flex-direction: row;
         align-items: flex-end;
         width: 100%;
     }

@@ -2,23 +2,23 @@ const {check}= require('express-validator');
 
 module.exports=[
     /* titulo */
-    check('titulo').trim().notEmpty().withMessage('Este campo es obligatorio').bail(),    
+    check('Titulo').trim().notEmpty().withMessage("Debes ingresar un titulo").bail().isLength({min:2},{max:10}).withMessage("El titulo del producto debe tener 2 letras y maximo 10"),    
 
     /* categoria */
-    check('categoria').trim().notEmpty().withMessage('Debe seleccionar una categoría').bail(),
+    check('Categoria').trim().notEmpty().withMessage('Debe seleccionar una opcion').bail(),
 
     /* Sub-categoria */
-    check('subcategoria').trim().notEmpty().withMessage('Debe seleccionar un tipo de producto').bail(),
+    check('subCategoria').trim().notEmpty().withMessage('Debe seleccionar una opcion').bail(),
 
     /* precio */
-    check('precio').trim().notEmpty().isInt().bail(),
+    check('Precio').trim().notEmpty().withMessage('Debe ingresar un precio').isInt().bail().isLength({min:2},{max:10}).withMessage("El precio del producto debe contener 2 caracteres y maximo 10"),
 
     /* desc */
-    check('descuento').trim().isInt().withMessage('De no aplicar descuento inserte 0 (Cero)').bail(),
+    check('Descuento').trim().isInt().withMessage('De no aplicar descuento inserte 0 (Cero)').bail(),
 
     /* stock */
-    check('stock').trim().notEmpty().isInt().withMessage('Campo obligatorio').bail(),
+    check('Stock').trim().notEmpty().withMessage("Debe ser un numero mayor a 0 y menor a 100").isInt().bail(),
 
     /* descripcion */
-    check('descripcion').trim().notEmpty().withMessage('Por favor inserte la descripción del producto').bail()
+    check('Descripcion').trim().notEmpty().withMessage("Debe ingresar una descripcion").bail().isLength({min:10}). withMessage("La descripcion debe contener mas de 10 caracteres"),
 ]

@@ -1,3 +1,7 @@
+/* Dotenv */
+require('dotenv').config()
+//const createError = require('http-errors');
+
 /* Livereload */
 const livereload = require('livereload');
 const liveReloadServer = livereload.createServer();
@@ -11,19 +15,25 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const methodOverride=require('method-override');
 const session= require ('express-session');
+const cors = require('cors')
 
 /* implementamos locals dentro la app */
 const userLogin= require('./middlewares/userLoginCheck');
+const dbConnectionTest = require('./middlewares/dbConnectionTest')
 
 /*Requerir Rutas */
 const indexRouter = require('./routes/index')
 const adminRouter = require('./routes/admin')
 const productosRouter = require('./routes/productos')
 const usuariosRouter = require('./routes/usuario')
+const apiRouter = require('./routes/api/apiRouter');
+const apiCarrito = require('./routes/api/apiCarrito');
 
 /* Archivos estaticos monitoreados */
 liveReloadServer.watch(path.join(__dirname, 'public'));
 app.use(connectLivereload());
+
+dbConnectionTest()
 
 /* Trabajar con metodos HTTP (post) */
 app.use(express.json());
@@ -37,6 +47,7 @@ app.use(session({
   secret:"TiendArgenta"}));
 
 app.use(userLogin);
+app.use(cors())
 
 app.use(cookieParser());
 
@@ -53,23 +64,16 @@ app.use("/", indexRouter);
 app.use("/usuario", usuariosRouter);
 app.use("/productos", productosRouter);
 app.use("/admin", adminRouter);
+app.use('/api',apiRouter);
+app.use('/api/carrito',apiCarrito);
+
+// catch 404 and forward to error handler
+app.use((req, res, next)=> {
+  res.status(404).render('404')
+}); 
 
 /* Levantamos el servidor con app listen */
 app.listen(port,function(){
     return console.log(`Se levanta el servidor en http://localhost:${port}`)
 });
 
-
-/* Rutas 
-app.get('/',(req,res) => res.sendFile(path.resolve(__dirname,'views','home.html')));
-app.get('/login',(req,res) => res.sendFile(path.resolve(__dirname,'views','login.html')));
-app.get('/register',(req,res) => res.sendFile(path.resolve(__dirname,'views','register.html')));
-app.get('/detalles',(req,res) => res.sendFile(path.resolve(__dirname,'views','detalles.html')));
-app.get('/carrito',(req,res) => res.sendFile(path.resolve(__dirname,'views','carrito.html')));*/
-
-/* Funcion de actualizacion del servidor 
-liveReloadServer.server.once("connection", () => {
-    setTimeout(() => {
-      liveReloadServer.refresh("/");
-    }, 50);
-  });*/

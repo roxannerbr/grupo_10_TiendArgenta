@@ -1,25 +1,35 @@
 const {check, body}=require ('express-validator');
-const fs = require('fs');
-const path = require('path');
-const guardar = (dato) => fs.writeFileSync(path.join(__dirname, '../data/productos.json')
-    , JSON.stringify(dato, null, 4), 'utf-8')
+const db = require('../database/models')
+const bcryptjs = require('bcryptjs');
 
 module.exports=[
     /* nombre */
-    check('Nombres').trim().notEmpty().withMessage('Campo obligarorio').bail(),
+    check('Nombres').trim().notEmpty().withMessage('Campo obligarorio').isLength({min:2}).withMessage('Debe contener al menos 2 caracteres').bail(),
     
     /* apellido */
-    check('Apellidos').trim().notEmpty().withMessage('Campo obligatorio').bail(),
+    check('Apellidos').trim().notEmpty().withMessage('Campo obligatorio').isLength({min:2}).withMessage('Debe contener al menos 2 caracteres').bail(),
     
     /* email */
-    check('Correo').trim().notEmpty().withMessage('Debes agregar un email ').isEmail().withMessage('Debes agregar un email válido').bail(),
+    check('email').trim().isEmail().withMessage('Debe ingresar un email válido.'),
     
+    body('email')
+        .custom((value)=>{
+            return db.Usuarios.findOne({
+                where:{
+                    email:value
+                }
+            })
+            .then(user => {
+                if(user){
+                    return Promise.reject("El email ya se encuentra registrado.")
+            }
+        })
+    }),
     /* password */
-    check('pass').trim().isLength({min:6}).withMessage('Debe contener al menos 6 caracteres').bail(),
+    check('pass').trim().notEmpty().withMessage('La contraseña no puede estar vacia').matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/).withMessage('La contraseña debe tener entre 6 y 12 caracteres y debe contener una mayuscula, una minuscula y un numero').bail(),
     
     /* password2 */
-    check('pass2').trim().notEmpty().withMessage('Las contraseñas deben coincidir').bail(),
-    
+    check('pass2').trim().notEmpty().withMessage('La confirmacion de la contraseña no puede estar vacia').matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/).withMessage('La confirmación de contraseña contraseña debe tener entre 6 y 12 caracteres y debe contener una mayuscula, una minuscula y un numero').bail(),
     /* terminos */
     check('Terminos').trim().notEmpty().withMessage('Debes aceptar los terminos y condiciones para continuar').bail(),
     

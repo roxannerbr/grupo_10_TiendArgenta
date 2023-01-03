@@ -5,13 +5,17 @@
   <body class="home">
     <%- include('./partials/header') %>
     <main>
+      <h1 class="productsPage">PROXIMO PARTIDO EN</h1>
+      <section>
+        <div id="cuenta"></div>
+      </section>
       <!--OFERTAS-->
       <h1 class="productsPage">NUEVOS INGRESOS</h1>
         <section class="cardProduct">
-          <% nuevosProductos.forEach(producto => { %>
+          <% productos.forEach(producto => { %>
               <%- include('./partials/cards',{
                   id: producto.id,
-                  imagen: producto.imagen,
+                  imagen: producto.imagenes[0].nombre,
                   titulo: producto.titulo,
                   descuento: producto.descuento,
                   precio: producto.precio
@@ -77,5 +81,7 @@
     </main>
     <!--FOOTER-->
     <%- include('./partials/footer') %>
+    <script src="/javascript/simplyCountdown.min.js"></script>
+    <script src="/javascript/countdown.js"></script>
   </body>
 </html>
